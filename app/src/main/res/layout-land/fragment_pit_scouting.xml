@@ -1,0 +1,616 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.pit_scouting.PitScoutingFragment">
+
+    <TextView
+        android:id="@+id/text_home"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:ignore="MissingConstraints">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/_167_pit_scouting_form"
+                android:textAlignment="center"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbarSize="15dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingBottom="100dp"
+                android:background="#5a755b">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:paddingBottom="40dp">
+
+                    <TextView
+                        android:id="@+id/basic_questions"
+                        android:layout_width="match_parent"
+                        android:layout_height="25dp"
+                        android:text="@string/basic_info_questions"
+                        android:textAlignment="center"
+                        android:textColor="#E8F5E9" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="96dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/team_name"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/team_number"
+                            android:textColor="#E1F5FE" />
+
+                        <EditText
+                            android:id="@+id/team_name_answer"
+                            android:layout_width="109dp"
+                            android:layout_height="48dp"
+                            android:autofillHints="Team Number"
+                            android:ems="10"
+                            android:inputType="number"
+                            android:hint="@string/_0"
+                            android:textColor="#E1F5FE"
+                            android:textSize="15sp"
+                            tools:ignore="DuplicateSpeakableTextCheck" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/coach"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/drive_coach_name"
+                            android:textColor="#E1F5FE"
+                            android:textColorHint="#E8F5E9" />
+
+                        <EditText
+                            android:id="@+id/coach_answer"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:autofillHints="@string/drive_coach_name"
+                            android:ems="10"
+                            android:hint="@string/drive_coach_name"
+                            android:inputType="text"
+                            android:textColor="#E1F5FE"
+                            android:textColorHint="#E8F5E9"
+                            android:textSize="15sp"
+                            tools:ignore="DuplicateSpeakableTextCheck" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/drive_base"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/drive_base"
+                            android:textColor="#E1F5FE" />
+
+                        <EditText
+                            android:id="@+id/drive_base_answer"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:autofillHints="@string/drive_base"
+                            android:ems="10"
+                            android:inputType="text"
+                            android:hint="@string/drive_base"
+                            android:textColor="#E1F5FE"
+                            android:textSize="15sp"
+                            tools:ignore="DuplicateSpeakableTextCheck" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.SwitchCompat
+                            android:id="@+id/rookie_team"
+                            android:layout_width="336dp"
+                            android:layout_height="wrap_content"
+                            android:text="@string/rookie_team"
+                            android:textColor="#E1F5FE" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:paddingBottom="40dp">
+
+                    <TextView
+                        android:id="@+id/auto_questions"
+                        android:layout_width="match_parent"
+                        android:layout_height="25dp"
+                        android:text="@string/auto_questions"
+                        android:textAlignment="center"
+                        android:textColor="#E8F5E9" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/auto_count"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/how_many_autos"
+                            android:textColor="#E1F5FE" />
+
+                        <EditText
+                            android:id="@+id/auto_count_number"
+                            android:layout_width="109dp"
+                            android:layout_height="wrap_content"
+                            android:autofillHints="Auto count"
+                            android:ems="10"
+                            android:inputType="number"
+                            android:minHeight="48dp"
+                            android:hint="@string/_0"
+                            android:textColor="#E1F5FE"
+                            android:textAlignment="center" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="336dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.SwitchCompat
+                            android:id="@+id/has_auto"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/do_you_have_an_auto"
+                            android:textColor="#E1F5FE" />
+
+                        <androidx.appcompat.widget.SwitchCompat
+                            android:id="@+id/does_preload"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/do_you_preload"
+                            android:textColor="#E1F5FE" />
+
+                        <androidx.appcompat.widget.SwitchCompat
+                            android:id="@+id/does_shoot"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/do_you_shoot"
+                            android:textColor="#E8F5E9" />
+
+                        <androidx.appcompat.widget.SwitchCompat
+                            android:id="@+id/does_intake"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/do_you_intake"
+                            android:textColor="#E1F5FE"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/starting_area"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/where_do_you_start"
+                            android:textColor="#E1F5FE"/>
+
+                        <LinearLayout
+                            android:layout_width="712dp"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+
+                            <CheckBox
+                                android:id="@+id/does_matter"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="@string/all"
+                                android:textColor="#E1F5FE"/>
+
+                            <CheckBox
+                                android:id="@+id/left"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="@string/left"
+                                android:textColor="#E1F5FE"/>
+
+                            <CheckBox
+                                android:id="@+id/right"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="@string/right"
+                                android:textColor="#E1F5FE"/>
+
+                            <CheckBox
+                                android:id="@+id/center"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="@string/center"
+                                android:textColor="#E1F5FE"/>
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/where_do_you_score"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/where_do_you_score"
+                            android:textColor="#E1F5FE"/>
+
+                        <LinearLayout
+                            android:layout_width="452dp"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+
+                            <CheckBox
+                                android:id="@+id/amp_and_speaker"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="@string/both"
+                                android:textColor="#E1F5FE"/>
+
+                            <CheckBox
+                                android:id="@+id/amp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="@string/amp"
+                                android:textColor="#E1F5FE"/>
+
+                            <CheckBox
+                                android:id="@+id/speaker"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="@string/speaker"
+                                android:textColor="#E1F5FE"/>
+                        </LinearLayout>
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/score_auto"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/how_many_notes_can_you_score"
+                            android:textColor="#E1F5FE"/>
+
+                        <EditText
+                            android:id="@+id/score_count_auto"
+                            android:layout_width="109dp"
+                            android:layout_height="wrap_content"
+                            android:ems="10"
+                            android:inputType="number"
+                            android:hint="@string/_0"
+                            android:textAlignment="center"
+                            android:autofillHints="Average auto score"
+                            android:textColor="#E1F5FE"/>
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingBottom="40dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/teleop_questions"
+                        android:layout_width="match_parent"
+                        android:layout_height="25dp"
+                        android:text="@string/teleop_questions"
+                        android:textAlignment="center"
+                        android:textColor="#E1F5FE"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/game_strategy"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/game_strategy"
+                            android:textColor="#E1F5FE"/>
+
+                        <EditText
+                            android:id="@+id/game_strategy_answer"
+                            android:layout_width="match_parent"
+                            android:layout_height="84dp"
+                            android:ems="10"
+                            android:autofillHints="Game strategy"
+                            android:gravity="start|top"
+                            android:inputType="textMultiLine"
+                            android:textColor="#E1F5FE"
+                            android:hint="@string/enter_a_description_of_their_strategy" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/intake"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/intake"
+                            android:textColor="#E1F5FE"/>
+
+                        <LinearLayout
+                            android:layout_width="445dp"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+
+                            <CheckBox
+                                android:id="@+id/ground_and_source"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:textColor="#E1F5FE"
+                                android:text="@string/both" />
+
+                            <CheckBox
+                                android:id="@+id/ground"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:textColor="#E1F5FE"
+                                android:text="@string/ground" />
+
+                            <CheckBox
+                                android:id="@+id/source"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:textColor="#E1F5FE"
+                                android:text="@string/source" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/longest_shot"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="#E1F5FE"
+                            android:text="@string/what_is_the_farthest_shot_you_can_make" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+
+                            <CheckBox
+                                android:id="@+id/wooferPodiumAndWing"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:textColor="#E1F5FE"
+                                android:text="@string/all" />
+
+                            <CheckBox
+                                android:id="@+id/against_subwoofer"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:textColor="#E1F5FE"
+                                android:text="@string/against_subwoofer" />
+
+                            <CheckBox
+                                android:id="@+id/against_podium"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:textColor="#E1F5FE"
+                                android:text="@string/against_podium" />
+
+                            <CheckBox
+                                android:id="@+id/in_your_wing"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:textColor="#E1F5FE"
+                                android:text="@string/in_your_wing" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/score_teleop"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="#E1F5FE"
+                            android:text="@string/how_many_points_can_you_score" />
+
+                        <EditText
+                            android:id="@+id/score_teleop_answer"
+                            android:layout_width="109dp"
+                            android:layout_height="wrap_content"
+                            android:ems="10"
+                            android:textAlignment="center"
+                            android:hint="@string/_0"
+                            android:textColor="#E1F5FE"
+                            android:autofillHints="Score Teleop"
+                            android:inputType="number" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:paddingBottom="40dp">
+
+                    <TextView
+                        android:id="@+id/endgame_questions"
+                        android:layout_width="match_parent"
+                        android:layout_height="25dp"
+                        android:textColor="#E1F5FE"
+                        android:text="@string/endgame_questions"
+                        android:textAlignment="center" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+
+                        <androidx.appcompat.widget.SwitchCompat
+                            android:id="@+id/can_climb"
+                            android:layout_width="336dp"
+                            android:textColor="#E1F5FE"
+                            android:layout_height="wrap_content"
+                            android:text="@string/do_you_climb" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/climb_time"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="#E1F5FE"
+                            android:text="@string/how_long_does_it_take_you_to_climb" />
+
+                        <EditText
+                            android:id="@+id/climb_time_answer"
+                            android:layout_width="109dp"
+                            android:layout_height="wrap_content"
+                            android:ems="10"
+                            android:inputType="number"
+                            android:hint="@string/_0"
+                            android:textColor="#E1F5FE"
+                            android:autofillHints="Climb time"
+                            android:textAlignment="center" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.SwitchCompat
+                            android:id="@+id/can_get_harmony"
+                            android:layout_width="336dp"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:text="@string/can_you_get_a_harmony"
+                            android:textColor="#E1F5FE"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.SwitchCompat
+                            android:id="@+id/can_score_trap"
+                            android:layout_width="336dp"
+                            android:layout_height="wrap_content"
+                            android:text="@string/do_you_score_on_the_trap"
+                            android:textColor="#E1F5FE"
+                            />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/submit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="#f2d852"
+                    android:text="@string/submit" />
+
+            </LinearLayout>
+        </ScrollView>
+
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

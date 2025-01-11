@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+<!--    <item-->
+<!--        android:id="@+id/navigation_blue_alliance"-->
+<!--        android:icon="@drawable/ic_launcher_foreground"-->
+<!--        android:title="@string/title_blue_alliance" />-->
+
+    <item
+        android:id="@+id/navigation_pit_scouting"
+        android:icon="@drawable/ic_launcher_foreground"
+        android:title="@string/title_pit_scouting" />
+
+    <item
+        android:id="@+id/navigation_match_scouting"
+        android:icon="@drawable/ic_launcher_foreground"
+        android:title="@string/title_match_scouting" />
+    <item
+        android:id="@+id/navigation_alliance_scouting"
+        android:icon="@drawable/ic_launcher_foreground"
+        android:title="@string/title_alliance_scouting" />
+
+</menu>
