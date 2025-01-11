@@ -1,4 +1,4 @@
-package com.example.cotcscouting.ui.match_scouting
+package com.example.cotcscouting.ui.end_game_scouting
 
 import android.content.Context
 import android.os.Bundle
@@ -10,14 +10,16 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.cotcscouting.data.model.AppDatabase
-import com.example.cotcscouting.data.model.Match
 import com.example.cotcscouting.databinding.FragmentMatchScoutingBinding
+import com.example.cotcscouting.ui.match_scouting.MatchScoutingViewModel
 import org.json.JSONArray
 import org.json.JSONObject
 import java.net.URL
 import java.util.StringTokenizer
 
-class MatchScoutingFragment : Fragment()  {
+
+class EndGameScoutingFragment : Fragment(){
+
 
     private var _binding: FragmentMatchScoutingBinding? = null
     private val newMatch = Match(
@@ -150,7 +152,7 @@ class MatchScoutingFragment : Fragment()  {
             activeMatch.disabledRobot = binding.disabledRobot?.isChecked == true
         }
 
-            binding.shootingDistanceBar?.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener{
+        binding.shootingDistanceBar?.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener{
             override fun onProgressChanged(seekBar: SeekBar, progress: Int, fromUser: Boolean) {
                 activeMatch.shootingDistanceBar = progress
             }
@@ -174,10 +176,10 @@ class MatchScoutingFragment : Fragment()  {
 
                     val matchData = JSONObject(URL(blueAllianceURL + activeMatch.matchNumber + blueAllianceAuthKey).readText())
                     activeMatch.teamNumber = (((((matchData.get("alliances") as JSONObject)
-                            .get(allianceColor) as JSONObject)
-                            .get("team_keys")) as JSONArray)
-                            .get(allianceNum - 1) as String)
-                            .substring(3)
+                        .get(allianceColor) as JSONObject)
+                        .get("team_keys")) as JSONArray)
+                        .get(allianceNum - 1) as String)
+                        .substring(3)
 
                     binding.teamNumber?.setText(activeMatch.teamNumber.toString(), TextView.BufferType.EDITABLE)
                 } catch(e : Exception) {

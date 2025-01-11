@@ -7,17 +7,17 @@
 <!--        android:title="@string/title_blue_alliance" />-->
 
     <item
-        android:id="@+id/navigation_pit_scouting"
+        android:id="@+id/navigation_auto_scouting"
         android:icon="@drawable/ic_launcher_foreground"
-        android:title="@string/title_pit_scouting" />
+        android:title="@string/title_auto_scouting" />
 
     <item
-        android:id="@+id/navigation_match_scouting"
+        android:id="@+id/navigation_tele_op_scouting"
         android:icon="@drawable/ic_launcher_foreground"
-        android:title="@string/title_match_scouting" />
+        android:title="@string/title_tele_op_scouting" />
     <item
-        android:id="@+id/navigation_alliance_scouting"
+        android:id="@+id/navigation_end_game_scouting"
         android:icon="@drawable/ic_launcher_foreground"
-        android:title="@string/title_alliance_scouting" />
+        android:title="@string/title_end_game_scouting" />
 
 </menu>

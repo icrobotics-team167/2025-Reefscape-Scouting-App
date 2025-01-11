@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_pit_scouting">
+    app:startDestination="@+id/navigation_auto_scouting">
 
     <fragment
         android:id="@+id/navigation_blue_alliance"
@@ -12,19 +12,19 @@
         tools:layout="@layout/fragment_blue_alliance" />
 
     <fragment
-        android:id="@+id/navigation_match_scouting"
-        android:name="com.example.cotcscouting.ui.match_scouting.MatchScoutingFragment"
-        android:label="@string/title_match_scouting"
-        tools:layout="@layout/fragment_match_scouting" />
+        android:id="@+id/navigation_tele_op_scouting"
+        android:name="com.example.cotcscouting.ui.tele_op_scouting.TeleOpScoutingFragment"
+        android:label="@string/title_tele_op_scouting"
+        tools:layout="@layout/fragment_tele_op_scouting" />
 
     <fragment
-        android:id="@+id/navigation_pit_scouting"
-        android:name="com.example.cotcscouting.ui.pit_scouting.PitScoutingFragment"
-        android:label="@string/title_pit_scouting"
-        tools:layout="@layout/fragment_pit_scouting" />
+        android:id="@+id/navigation_auto_scouting"
+        android:name="com.example.cotcscouting.ui.auto_scouting.AutoScoutingFragment"
+        android:label="@string/title_auto_scouting"
+        tools:layout="@layout/fragment_auto_scouting" />
     <fragment
-        android:id="@+id/navigation_alliance_scouting"
-        android:name="com.example.cotcscouting.ui.alliance_scouting.AllianceScoutingFragment"
-        android:label="@string/title_alliance_scouting"
-        tools:layout="@layout/fragment_alliance_scouting" />
+        android:id="@+id/navigation_end_game_scouting"
+        android:name="com.example.cotcscouting.ui.end_game_scouting.EndGameScoutingFragment"
+        android:label="@string/title_end_game_scouting"
+        tools:layout="@layout/fragment_end_game_scouting" />
 </navigation>
