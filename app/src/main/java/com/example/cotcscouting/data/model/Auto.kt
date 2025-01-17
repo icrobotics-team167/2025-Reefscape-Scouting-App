@@ -5,7 +5,7 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 @Entity(tableName = "match")
-data class Match(
+data class Auto(
     @PrimaryKey(autoGenerate = true) var uid: Int,
     @ColumnInfo(name = "auto_amp_count") var autoAmpCount: Int,
     @ColumnInfo(name = "auto_speaker_count") var autoSpeakerCount: Int,

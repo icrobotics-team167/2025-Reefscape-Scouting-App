@@ -1,8 +1,9 @@
 <resources>
     <string name="app_name">167 Scouting</string>
     <string name="title_blue_alliance">Blue Alliance</string>
-    <string name="title_pit_scouting">Pit Scouting</string>
-    <string name="title_match_scouting">Match Scouting</string>
+    <string name="title_auto_scouting">Auto</string>
+    <string name="title_tele_op_scouting">Tele Op</string>
+    <string name="title_end_game_scouting">End Game</string>
     <string name="auto">Auto</string>
     <string name="amp_notes"> Amp:</string>
     <string name="speaker_notes"> Speaker:</string>
@@ -25,7 +26,6 @@
     <string name="dec_button">-</string>
     <string name="inc_button">+</string>
     <string name="submit">Submit</string>
-    <string name="title_alliance_scouting">Alliance Scouting</string>
     <string name="blue_alliance">Blue Alliance</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="username">Username</string>
