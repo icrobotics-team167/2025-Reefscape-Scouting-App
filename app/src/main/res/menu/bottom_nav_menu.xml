@@ -19,5 +19,9 @@
         android:id="@+id/navigation_alliance_scouting"
         android:icon="@drawable/ic_launcher_foreground"
         android:title="@string/title_alliance_scouting" />
+    <item
+        android:id="@+id/navigation_hex_tech"
+        android:icon="@drawable/ic_launcher_foreground"
+        android:title="Hex_Tech" />
 
 </menu>

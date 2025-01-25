@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
         // menu should be considered as top level destinations.
         AppBarConfiguration(
             setOf(
-                R.id.navigation_blue_alliance, R.id.navigation_match_scouting, R.id.navigation_pit_scouting, R.id.navigation_alliance_scouting
+                R.id.navigation_blue_alliance, R.id.navigation_match_scouting, R.id.navigation_pit_scouting, R.id.navigation_alliance_scouting, R.id.navigation_hex_tech
             )
         )
         navView.setupWithNavController(navController)

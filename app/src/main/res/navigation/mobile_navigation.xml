@@ -27,4 +27,9 @@
         android:name="com.example.cotcscouting.ui.alliance_scouting.AllianceScoutingFragment"
         android:label="@string/title_alliance_scouting"
         tools:layout="@layout/fragment_alliance_scouting" />
+    <fragment
+        android:id="@+id/navigation_hex_tech"
+        android:name="com.example.cotcscouting.ui.HexTechViewModel"
+        android:label="hex_tech"
+        tools:layout="@layout/fragment_hex_tech_view_model" />
 </navigation>
