@@ -120,4 +120,27 @@
     <string name="melody_desc">18 (15 Co-Op) Notes scored</string>
     <string name="co_op_desc">Pressed yellow button</string>
     <string name="tablet_number">Tablet Number</string>
+    <string name="scout_name_text">Scout Name:</string>
+    <string name="scout_name_input">Scout Name input</string>
+    <string name="match_number_text">Match Number:</string>
+    <string name="match_number_input">Match Number input</string>
+    <string name="team_number_text">Team Number:</string>
+    <string name="team_number_input">Team Number input</string>
+    <string name="total_points_text">Total Points:</string>
+    <string name="total_points_input">Total Points input</string>
+    <string name="algae_text">Algae:</string>
+    <string name="processor_text">Processor:</string>
+    <string name="blank">blank</string>
+    <string name="net_text">Net:</string>
+    <string name="l1_text">L1:</string>
+    <string name="l2_text">L2:</string>
+    <string name="l3_text">L3:</string>
+    <string name="l4_text">L4:</string>
+    <string name="auto_data_text">Auto Data:</string>
+    <string name="past_starting_line_text">Past Starting line:</string>
+    <string name="tele_op_data_text">Tele-op Data:</string>
+    <string name="teleop_text">Teleop:</string>
+    <string name="end_game_text">End Game:</string>
+    <string name="total_barge_algae_text">Total barge algae:</string>
+    <string name="coral_reef_key_header">Coral Reef Key:</string>
 </resources>
