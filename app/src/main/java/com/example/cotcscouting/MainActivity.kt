@@ -34,5 +34,5 @@ class MainActivity : AppCompatActivity() {
         navView.setupWithNavController(navController)
             LoginFragment().show(supportFragmentManager, "login_fragment")
     }
-
+    //Comment to make this commitable
 }
