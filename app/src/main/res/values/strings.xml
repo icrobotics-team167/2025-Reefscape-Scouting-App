@@ -19,7 +19,7 @@
     <string name="melody">Melody</string>
     <string name="ensamble">Ensamble</string>
     <string name="harmony">Harmony</string>
-    <string name="_18_15_co_op_notes">18(15 co-op) Notes</string>
+    <string name="_18_15_co_op_notes">18(15 co-op) </string>
     <string name="_10_stage_points_2_onstage_robot">10 Stage Points 2 Onstage Robot</string>
     <string name="harmony_desc">2 Robot Same Chain</string>
     <string name="dec_button">-</string>
@@ -143,4 +143,11 @@
     <string name="end_game_text">End Game:</string>
     <string name="total_barge_algae_text">Total barge algae:</string>
     <string name="coral_reef_key_header">Coral Reef Key:</string>
+    <string name="planets_array">f</string>
+    <string-array name="planets_array">
+        <item>Did Not Park</item>
+        <item>Did Not Hang But Parked</item>
+        <item>Shallow Hang</item>
+        <item>Deep Hang</item>
+    </string-array>
 </resources>
