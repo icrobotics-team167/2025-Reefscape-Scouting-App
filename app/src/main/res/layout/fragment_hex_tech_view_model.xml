@@ -458,7 +458,7 @@
                             app:layout_constraintTop_toTopOf="@+id/spaceHorizontal"
                             tools:ignore="TouchTargetSizeCheck" />
 
-                        <Space
+                        <android.widget.Space
                             android:id="@+id/spaceVertical"
                             android:layout_width="1dp"
                             android:layout_height="360dp"
@@ -467,7 +467,7 @@
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
 
-                        <Space
+                        <android.widget.Space
                             android:id="@+id/spaceHorizontal"
                             android:layout_width="360dp"
                             android:layout_height="1dp"
@@ -486,12 +486,18 @@
                         <View
                             android:id="@+id/dividerReef"
                             android:layout_width="10dp"
-                            android:layout_height="274dp"
+                            android:layout_height="173dp"
                             android:background="?android:attr/listDivider" />
 
-                        <Space
+                        <android.widget.Space
                             android:layout_width="match_parent"
-                            android:layout_height="139dp" />
+                            android:layout_height="84dp" />
+
+                        <View
+                            android:id="@+id/divider"
+                            android:layout_width="match_parent"
+                            android:layout_height="150dp"
+                            android:background="?android:attr/listDivider" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -573,10 +579,6 @@
                                 android:text="@string/inc_button" />
                         </LinearLayout>
 
-                        <Space
-                            android:layout_width="match_parent"
-                            android:layout_height="128dp" />
-
                         <View
                             android:id="@+id/dividerAlgae"
                             android:layout_width="match_parent"
@@ -641,7 +643,7 @@
                                 android:layout_height="wrap_content"
                                 android:text="" />
 
-                            <Space
+                            <android.widget.Space
                                 android:layout_width="78dp"
                                 android:layout_height="46dp"
                                 android:layout_weight="1" />
@@ -660,7 +662,7 @@
                                 android:layout_weight="1"
                                 android:text="" />
 
-                            <Space
+                            <android.widget.Space
                                 android:layout_width="71dp"
                                 android:layout_height="50dp"
                                 android:layout_weight="1" />
@@ -679,6 +681,22 @@
                                 android:layout_weight="1"
                                 android:text="" />
                         </LinearLayout>
+
+                        <View
+                            android:id="@+id/dividerSubmit"
+                            android:layout_width="match_parent"
+                            android:layout_height="10dp"
+                            android:background="?android:attr/listDivider" />
+
+                        <android.widget.Space
+                            android:layout_width="match_parent"
+                            android:layout_height="66dp" />
+
+                        <Button
+                            android:id="@+id/button"
+                            android:layout_width="match_parent"
+                            android:layout_height="53dp"
+                            android:text="@string/submit" />
                     </LinearLayout>
 
                     <View
@@ -840,7 +858,7 @@
 
         </LinearLayout>
 
-        <Space
+        <android.widget.Space
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1" />
