@@ -808,12 +808,14 @@
                     <Spinner
                         android:id="@+id/parkDropDown"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="53dp"
+                        android:background="#fafad2 "
+                        android:backgroundTint="#FAFAD2" />
 
                     <EditText
                         android:id="@+id/notes"
                         android:layout_width="match_parent"
-                        android:layout_height="233dp"
+                        android:layout_height="213dp"
                         android:ems="10"
                         android:inputType="text"
                         android:text="@string/notes" />

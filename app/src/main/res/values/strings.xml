@@ -143,4 +143,15 @@
     <string name="end_game_text">End Game:</string>
     <string name="total_barge_algae_text">Total barge algae:</string>
     <string name="coral_reef_key_header">Coral Reef Key:</string>
+
+    <string-array name="planets_array">
+        <item>Mercury</item>
+        <item>Venus</item>
+        <item>Earth</item>
+        <item>Mars</item>
+        <item>Jupiter</item>
+        <item>Saturn</item>
+        <item>Uranus</item>
+        <item>Neptune</item>
+    </string-array>
 </resources>
