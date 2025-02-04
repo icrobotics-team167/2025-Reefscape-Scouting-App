@@ -605,7 +605,7 @@
                                 android:text="@string/blank" />
 
                             <Button
-                                android:id="@+id/l1CoralDec"
+                                android:id="@+id/L1CoralDec"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
