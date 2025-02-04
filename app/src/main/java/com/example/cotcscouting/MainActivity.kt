@@ -5,6 +5,8 @@ import android.widget.ArrayAdapter
 import android.widget.Spinner
 import android.widget.AdapterView
 import android.widget.Button
+import android.widget.CheckBox
+import android.widget.CompoundButton
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
@@ -24,24 +26,31 @@ class MainActivity : AppCompatActivity() {
             android.R.layout.simple_spinner_item
         )
 
+        //is the is telop check box
+        var IsTelop:CheckBox = findViewById(R.id.teleOpCheck)
+
 
         // prosser points
         val ProcessorDec: Button = findViewById(R.id.ProcessorDec)
         val ProcessorInc: Button = findViewById(R.id.ProcessorInc)
-        val textView: TextView = findViewById(R.id.ProcessorPoints)
-        var ProsserPoints = 0
+        val ProsserTextView: TextView = findViewById(R.id.ProcessorPoints)
+        var AutoProsserPoints = 0
+        var TelopProsserPoints = 0
 
         ProcessorDec.setOnClickListener {
-            if (ProsserPoints > 0){
-                ProsserPoints--
-                textView.text = ProsserPoints.toString()
+            if (AutoProsserPoints > 0){
+                if (IsTelop.isActivated){
+                    AutoProsserPoints--
+                    ProsserTextView.text = AutoProsserPoints.toString()
+                }
+
             }
         }
 
         ProcessorInc.setOnClickListener {
             if (true){
-                ProsserPoints++
-                textView.text = ProsserPoints.toString()
+                AutoProsserPoints++
+                ProsserTextView.text = AutoProsserPoints.toString()
             }
         }
 
@@ -53,7 +62,7 @@ class MainActivity : AppCompatActivity() {
         var NetPoints = 0
 
         NetDec.setOnClickListener {
-            if (ProsserPoints > 0){
+            if (AutoProsserPoints > 0){
                 NetPoints--
                 NetTextView.text = NetPoints.toString()
             }
@@ -108,7 +117,13 @@ class MainActivity : AppCompatActivity() {
         }
 
 
-
+        IsTelop.setOnCheckedChangeListener { compoundButton: CompoundButton, b: Boolean ->
+            if (IsTelop.isChecked){
+                ProsserTextView.text = TelopProsserPoints.toString()
+            }else{
+                ProsserTextView.text = AutoProsserPoints.toString()
+            }
+        }
 
         // Set the layout for the dropdown view of the Spinner
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
