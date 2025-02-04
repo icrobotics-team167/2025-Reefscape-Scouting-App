@@ -10,7 +10,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.fragment_hex_tech_view_model)  // This uses the R class
+        setContentView(R.layout.hex_tech_view_model)  // This uses the R class
 
         // Find the Spinner by its ID
         val planetsSpinner: Spinner = findViewById(R.id.parkDropDown)
