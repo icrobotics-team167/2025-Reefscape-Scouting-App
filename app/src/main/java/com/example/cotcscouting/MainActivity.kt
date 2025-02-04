@@ -4,6 +4,8 @@ import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.Spinner
 import android.widget.AdapterView
+import android.widget.Button
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
@@ -22,6 +24,26 @@ class MainActivity : AppCompatActivity() {
             android.R.layout.simple_spinner_item
         )
 
+        val ProcessorDec: Button = findViewById(R.id.ProcessorDec)
+        val ProcessorInc: Button = findViewById(R.id.ProcessorInc)
+        val textView: TextView = findViewById(R.id.ProcessorPoints)
+        var ProsserPoints = 0
+
+        ProcessorDec.setOnClickListener {
+            if (ProsserPoints > 0){
+                ProsserPoints--
+                textView.text = ProsserPoints.toString()
+
+            }
+        }
+
+        ProcessorInc.setOnClickListener {
+            if (true){
+                ProsserPoints++
+                textView.text = ProsserPoints.toString()
+            }
+        }
+
         // Set the layout for the dropdown view of the Spinner
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
 
@@ -39,5 +61,7 @@ class MainActivity : AppCompatActivity() {
                 // Handle case where no item is selected, if necessary
             }
         }
+
+
     }
 }
