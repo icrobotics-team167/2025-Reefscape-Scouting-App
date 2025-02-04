@@ -39,7 +39,10 @@ class MainActivity : AppCompatActivity() {
 
         ProcessorDec.setOnClickListener {
             if (AutoProsserPoints > 0){
-                if (IsTelop.isActivated){
+                if (IsTelop.isChecked){
+                    TelopProsserPoints--
+                    ProsserTextView.text = TelopProsserPoints.toString()
+                }else{
                     AutoProsserPoints--
                     ProsserTextView.text = AutoProsserPoints.toString()
                 }
@@ -48,7 +51,10 @@ class MainActivity : AppCompatActivity() {
         }
 
         ProcessorInc.setOnClickListener {
-            if (true){
+            if (IsTelop.isChecked){
+                TelopProsserPoints++
+                ProsserTextView.text = TelopProsserPoints.toString()
+            }else{
                 AutoProsserPoints++
                 ProsserTextView.text = AutoProsserPoints.toString()
             }
@@ -59,19 +65,29 @@ class MainActivity : AppCompatActivity() {
         val NetDec: Button = findViewById(R.id.NetDec)
         val NetInc: Button = findViewById(R.id.NetInc)
         val NetTextView: TextView = findViewById(R.id.NetPoints)
-        var NetPoints = 0
+        var AutoNetPoints = 0
+        var TelopNetPoints = 0
 
         NetDec.setOnClickListener {
             if (AutoProsserPoints > 0){
-                NetPoints--
-                NetTextView.text = NetPoints.toString()
+                //note is reveserd
+                if (!IsTelop.isChecked) {
+                    AutoNetPoints--
+                    NetTextView.text = AutoNetPoints.toString()
+                }else{
+                    TelopNetPoints--
+                    NetTextView.text = TelopNetPoints.toString()
+                }
             }
         }
 
         NetInc.setOnClickListener {
-            if (true){
-                NetPoints++
-                NetTextView.text = NetPoints.toString()
+            if (!IsTelop.isChecked){
+                AutoNetPoints++
+                NetTextView.text = AutoNetPoints.toString()
+            }else{
+                TelopNetPoints++
+                NetTextView.text = TelopNetPoints.toString()
             }
         }
 
@@ -79,20 +95,30 @@ class MainActivity : AppCompatActivity() {
         val L1Dec: Button = findViewById(R.id.L1CoralDec)
         val L1Inc: Button = findViewById(R.id.L1CoralInc)
         val L1TextView: TextView = findViewById(R.id.L1Points)
-        var L1Points = 0
+        var TelopL1Points = 0
+        var AutoL1Points = 0
         //when the time come for diferenting between teleop you can add a nother var
 
         L1Dec.setOnClickListener {
-            if (L1Points > 0){
-                L1Points--
-                L1TextView.text = L1Points.toString()
+            if (TelopL1Points > 0){
+                if (IsTelop.isChecked){
+                    TelopL1Points--
+                    L1TextView.text = TelopL1Points.toString()
+                }else{
+                    AutoL1Points--
+                    L1TextView.text = AutoL1Points.toString()
+                }
+
             }
         }
 
         L1Inc.setOnClickListener {
-            if (true){
-                L1Points++
-                L1TextView.text = L1Points.toString()
+            if (IsTelop.isChecked){
+                TelopL1Points++
+                L1TextView.text = TelopL1Points.toString()
+            }else{
+                AutoL1Points++
+                L1TextView.text = AutoL1Points.toString()
             }
         }
 
@@ -100,19 +126,28 @@ class MainActivity : AppCompatActivity() {
         val BargeDec: Button = findViewById(R.id.BargeDec)
         val BargeInc: Button = findViewById(R.id.BargeInc)
         val BargeTextView: TextView = findViewById(R.id.BargePoints)
-        var BargePoints = 0
+        var TelopBargePoints = 0
+        var AutoBargePoints = 0
 
         BargeDec.setOnClickListener {
-            if (BargePoints > 0){
-                BargePoints--
-                BargeTextView.text = BargePoints.toString()
+            if (TelopBargePoints > 0){
+                if (IsTelop.isChecked) {
+                    TelopBargePoints--
+                    BargeTextView.text = TelopBargePoints.toString()
+                }else{
+                    AutoBargePoints--
+                    BargeTextView.text = AutoBargePoints.toString()
+                }
             }
         }
 
         BargeInc.setOnClickListener {
-            if (true){
-                BargePoints++
-                BargeTextView.text = BargePoints.toString()
+            if (IsTelop.isChecked) {
+                TelopBargePoints++
+                BargeTextView.text = TelopBargePoints.toString()
+            }else{
+                AutoBargePoints++
+                BargeTextView.text = AutoBargePoints.toString()
             }
         }
 
@@ -120,8 +155,15 @@ class MainActivity : AppCompatActivity() {
         IsTelop.setOnCheckedChangeListener { compoundButton: CompoundButton, b: Boolean ->
             if (IsTelop.isChecked){
                 ProsserTextView.text = TelopProsserPoints.toString()
+                NetTextView.text = TelopNetPoints.toString()
+                BargeTextView.text = TelopBargePoints.toString()
+                L1TextView.text = TelopL1Points.toString()
             }else{
+//                ProsserTextView.text = AutoProsserPoints.toString()
                 ProsserTextView.text = AutoProsserPoints.toString()
+                NetTextView.text = AutoNetPoints.toString()
+                BargeTextView.text = AutoBargePoints.toString()
+                L1TextView.text = AutoL1Points.toString()
             }
         }
 
