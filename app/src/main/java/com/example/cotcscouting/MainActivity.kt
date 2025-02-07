@@ -126,28 +126,20 @@ class MainActivity : AppCompatActivity() {
         val BargeDec: Button = findViewById(R.id.BargeDec)
         val BargeInc: Button = findViewById(R.id.BargeInc)
         val BargeTextView: TextView = findViewById(R.id.BargePoints)
-        var TelopBargePoints = 0
-        var AutoBargePoints = 0
+        var BargePoints = 0
+//        var AutoBargePoints = 0
 
         BargeDec.setOnClickListener {
-            if (TelopBargePoints > 0){
-                if (IsTelop.isChecked) {
-                    TelopBargePoints--
-                    BargeTextView.text = TelopBargePoints.toString()
-                }else{
-                    AutoBargePoints--
-                    BargeTextView.text = AutoBargePoints.toString()
-                }
+            if (BargePoints > 0){
+                BargePoints--
+                BargeTextView.text = BargePoints.toString()
             }
         }
 
         BargeInc.setOnClickListener {
-            if (IsTelop.isChecked) {
-                TelopBargePoints++
-                BargeTextView.text = TelopBargePoints.toString()
-            }else{
-                AutoBargePoints++
-                BargeTextView.text = AutoBargePoints.toString()
+            if (true){
+                BargePoints++
+                BargeTextView.text = BargePoints.toString()
             }
         }
 
@@ -156,13 +148,13 @@ class MainActivity : AppCompatActivity() {
             if (IsTelop.isChecked){
                 ProsserTextView.text = TelopProsserPoints.toString()
                 NetTextView.text = TelopNetPoints.toString()
-                BargeTextView.text = TelopBargePoints.toString()
+//                BargeTextView.text = TelopBargePoints.toString()
                 L1TextView.text = TelopL1Points.toString()
             }else{
 //                ProsserTextView.text = AutoProsserPoints.toString()
                 ProsserTextView.text = AutoProsserPoints.toString()
                 NetTextView.text = AutoNetPoints.toString()
-                BargeTextView.text = AutoBargePoints.toString()
+//                BargeTextView.text = AutoBargePoints.toString()
                 L1TextView.text = AutoL1Points.toString()
             }
         }
