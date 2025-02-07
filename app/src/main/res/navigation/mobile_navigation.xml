@@ -31,5 +31,5 @@
         android:id="@+id/navigation_hex_tech"
         android:name="com.example.cotcscouting.ui.HexTechViewModel"
         android:label="hex_tech"
-        tools:layout="@layout/fragment_hex_tech_view_model" />
+        tools:layout="@layout/hex_tech_view_model" />
 </navigation>
