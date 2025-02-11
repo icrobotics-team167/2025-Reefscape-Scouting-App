@@ -224,7 +224,7 @@ class MainActivity : AppCompatActivity() {
         val SubmitButtion:Button = findViewById(R.id.SubmitButtion)
 
         SubmitButtion.setOnClickListener{
-            saveFileToDownloads("test.csv","asd")
+            saveFileToDownloads("test.txt","asd")
         }
 
     }
