@@ -1,5 +1,10 @@
 package com.example.cotcscouting  // Make sure this matches your manifest package
 
+
+import android.os.Environment
+import java.io.File
+import java.io.FileOutputStream
+import java.io.IOException
 import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.Spinner
@@ -9,6 +14,10 @@ import android.widget.CheckBox
 import android.widget.CompoundButton
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import qrcode.QRCode
+import qrcode.color.Colors
+import qrcode.render.QRCodeGraphics
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -26,8 +35,53 @@ class MainActivity : AppCompatActivity() {
             android.R.layout.simple_spinner_item
         )
 
+        fun generateQRCode(content: String): QRCodeGraphics {
+            val helloWorld = QRCode.ofSquares()
+                .withColor(Colors.DEEP_SKY_BLUE) // Default is Colors.BLACK
+                .withSize(10) // Default is 25
+                .build("Hello world!")
+
+            // By default, QRCodes are rendered as PNGs.
+            val pngBytes = helloWorld.render()
+
+            return pngBytes
+//    FileOutputStream("hello-world.png").use { it.write(pngBytes) }
+
+
+        }
+
+        fun saveFileToDownloads(fileName: String, content: String) {
+            // Check if external storage is available
+            if (Environment.getExternalStorageState() == Environment.MEDIA_MOUNTED) {
+                val context = this  // Replace with your actual context
+
+                // Get the Downloads directory
+                val downloadsDir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS)
+                val file = File(downloadsDir, fileName)
+
+                try {
+                    // Ensure the Downloads directory exists
+                    if (!downloadsDir.exists()) {
+                        downloadsDir.mkdirs()
+                    }
+
+                    // Write the content to the file
+                    val fileOutputStream = FileOutputStream(file)
+                    fileOutputStream.write(content.toByteArray())
+                    fileOutputStream.close()
+
+                    println("File saved successfully at: ${file.absolutePath}")
+                } catch (e: IOException) {
+                    e.printStackTrace()
+                }
+            } else {
+                println("External storage is not available")
+            }
+        }
+
         //is the is telop check box
         var IsTelop:CheckBox = findViewById(R.id.teleOpCheck)
+
 
 
         // prosser points
@@ -38,15 +92,12 @@ class MainActivity : AppCompatActivity() {
         var TelopProsserPoints = 0
 
         ProcessorDec.setOnClickListener {
-            if (AutoProsserPoints > 0){
-                if (IsTelop.isChecked){
-                    TelopProsserPoints--
-                    ProsserTextView.text = TelopProsserPoints.toString()
-                }else{
-                    AutoProsserPoints--
-                    ProsserTextView.text = AutoProsserPoints.toString()
-                }
-
+            if (IsTelop.isChecked && TelopProsserPoints > 0){
+                TelopProsserPoints--
+                ProsserTextView.text = TelopProsserPoints.toString()
+            }else if (AutoProsserPoints > 0){
+                AutoProsserPoints--
+                ProsserTextView.text = AutoProsserPoints.toString()
             }
         }
 
@@ -69,25 +120,23 @@ class MainActivity : AppCompatActivity() {
         var TelopNetPoints = 0
 
         NetDec.setOnClickListener {
-            if (AutoProsserPoints > 0){
-                //note is reveserd
-                if (!IsTelop.isChecked) {
-                    AutoNetPoints--
-                    NetTextView.text = AutoNetPoints.toString()
-                }else{
-                    TelopNetPoints--
-                    NetTextView.text = TelopNetPoints.toString()
-                }
-            }
+           if (IsTelop.isChecked && TelopNetPoints > 0){
+               TelopNetPoints--
+               NetTextView.text = TelopNetPoints.toString()
+           }else if (AutoNetPoints > 0){
+               AutoNetPoints--
+               NetTextView.text = AutoNetPoints.toString()
+           }
+
         }
 
         NetInc.setOnClickListener {
-            if (!IsTelop.isChecked){
-                AutoNetPoints++
-                NetTextView.text = AutoNetPoints.toString()
-            }else{
+            if (IsTelop.isChecked){
                 TelopNetPoints++
                 NetTextView.text = TelopNetPoints.toString()
+            }else{
+                AutoNetPoints++
+                NetTextView.text = AutoNetPoints.toString()
             }
         }
 
@@ -100,15 +149,12 @@ class MainActivity : AppCompatActivity() {
         //when the time come for diferenting between teleop you can add a nother var
 
         L1Dec.setOnClickListener {
-            if (TelopL1Points > 0){
-                if (IsTelop.isChecked){
-                    TelopL1Points--
-                    L1TextView.text = TelopL1Points.toString()
-                }else{
-                    AutoL1Points--
-                    L1TextView.text = AutoL1Points.toString()
-                }
-
+            if (IsTelop.isChecked && TelopL1Points > 0){
+                TelopL1Points--
+                L1TextView.text = TelopL1Points.toString()
+            }else if (AutoL1Points > 0){
+                AutoL1Points--
+                L1TextView.text = AutoL1Points.toString()
             }
         }
 
@@ -137,10 +183,8 @@ class MainActivity : AppCompatActivity() {
         }
 
         BargeInc.setOnClickListener {
-            if (true){
-                BargePoints++
-                BargeTextView.text = BargePoints.toString()
-            }
+            BargePoints++
+            BargeTextView.text = BargePoints.toString()
         }
 
 
@@ -177,6 +221,11 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
+        val SubmitButtion:Button = findViewById(R.id.SubmitButtion)
+
+        SubmitButtion.setOnClickListener{
+            saveFileToDownloads("test.csv","asd")
+        }
 
     }
 }

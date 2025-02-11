@@ -145,13 +145,9 @@
     <string name="coral_reef_key_header">Coral Reef Key:</string>
 
     <string-array name="planets_array">
-        <item>Mercury</item>
-        <item>Venus</item>
-        <item>Earth</item>
-        <item>Mars</item>
-        <item>Jupiter</item>
-        <item>Saturn</item>
-        <item>Uranus</item>
-        <item>Neptune</item>
+        <item>Did Not Park</item>
+        <item>Parked</item>
+        <item>Low Hang</item>
+        <item>High Hang</item>
     </string-array>
 </resources>

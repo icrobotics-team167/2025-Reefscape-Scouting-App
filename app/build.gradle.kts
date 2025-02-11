@@ -63,4 +63,14 @@ dependencies {
     testImplementation("androidx.room:room-testing:$roomVersion")
     implementation("androidx.room:room-paging:$roomVersion")
     ksp("androidx.room:room-compiler:$roomVersion")
+
+    // Correct QR code generator dependency
+//    implementation("androidmads.library.qrgenerator:qr-generator:1.0.3")
+//    implementation("androidmads.library.qrgenerator:QRGenerator:1.0.3")
+
+
+    implementation("io.github.g0dkar:qrcode-kotlin:4.1.1")
+    implementation("io.github.g0dkar:qrcode-kotlin:4.1.1")
+
+
 }

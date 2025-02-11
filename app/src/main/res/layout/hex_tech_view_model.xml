@@ -3,8 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.HexTechViewModel">
+    android:layout_height="match_parent">
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -41,7 +41,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="@string/scout_name_input" />
+                        android:hint="@string/scout_name_input" />
 
                     <TextView
                         android:id="@+id/match_number_text"
@@ -55,7 +55,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="@string/match_number_input"
+                        android:hint="@string/match_number_input"
                         tools:ignore="DuplicateIds" />
 
                     <TextView
@@ -70,7 +70,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="@string/team_number_input" />
+                        android:hint="@string/team_number_input" />
 
                     <TextView
                         android:id="@+id/total_points_text"
@@ -84,7 +84,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="@string/total_points_input" />
+                        android:hint="@string/total_points_input" />
 
                 </LinearLayout>
 
@@ -641,7 +641,8 @@
                                 android:id="@+id/L2Key"
                                 android:layout_width="27dp"
                                 android:layout_height="wrap_content"
-                                android:text="" />
+                                android:text=""
+                                tools:ignore="TouchTargetSizeCheck" />
 
                             <android.widget.Space
                                 android:layout_width="78dp"
@@ -679,7 +680,8 @@
                                 android:layout_width="32dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text="" />
+                                android:text=""
+                                tools:ignore="TouchTargetSizeCheck" />
                         </LinearLayout>
 
                         <View
@@ -693,7 +695,7 @@
                             android:layout_height="66dp" />
 
                         <Button
-                            android:id="@+id/button"
+                            android:id="@+id/SubmitButtion"
                             android:layout_width="match_parent"
                             android:layout_height="53dp"
                             android:text="@string/submit" />
@@ -749,7 +751,8 @@
                                     <CheckBox
                                         android:id="@+id/PastStartingLineCheck"
                                         android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content" />
+                                        android:layout_height="wrap_content"
+                                        tools:ignore="TouchTargetSizeCheck" />
                                 </LinearLayout>
 
                             </LinearLayout>
@@ -817,8 +820,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="213dp"
                         android:ems="10"
-                        android:inputType="text"
-                        android:text="@string/notes" />
+                        android:hint="@string/notes"
+                        android:inputType="text" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
