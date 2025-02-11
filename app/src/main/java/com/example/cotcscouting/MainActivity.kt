@@ -95,7 +95,7 @@ class MainActivity : AppCompatActivity() {
             if (IsTelop.isChecked && TelopProsserPoints > 0){
                 TelopProsserPoints--
                 ProsserTextView.text = TelopProsserPoints.toString()
-            }else if (AutoProsserPoints > 0){
+            }else if (!IsTelop.isChecked  && AutoProsserPoints > 0){
                 AutoProsserPoints--
                 ProsserTextView.text = AutoProsserPoints.toString()
             }
@@ -123,7 +123,7 @@ class MainActivity : AppCompatActivity() {
            if (IsTelop.isChecked && TelopNetPoints > 0){
                TelopNetPoints--
                NetTextView.text = TelopNetPoints.toString()
-           }else if (AutoNetPoints > 0){
+           }else if (!IsTelop.isChecked && AutoNetPoints > 0){
                AutoNetPoints--
                NetTextView.text = AutoNetPoints.toString()
            }
@@ -152,7 +152,7 @@ class MainActivity : AppCompatActivity() {
             if (IsTelop.isChecked && TelopL1Points > 0){
                 TelopL1Points--
                 L1TextView.text = TelopL1Points.toString()
-            }else if (AutoL1Points > 0){
+            }else if (!IsTelop.isChecked && AutoL1Points > 0){
                 AutoL1Points--
                 L1TextView.text = AutoL1Points.toString()
             }
