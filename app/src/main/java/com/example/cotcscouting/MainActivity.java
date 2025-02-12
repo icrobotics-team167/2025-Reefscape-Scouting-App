@@ -1,36 +1,79 @@
 package com.example.cotcscouting;
 
+import android.content.Context;
+import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.cotcscouting.data.model.QRCodeUtils;
+
+import java.io.File;
+import java.util.ArrayList;
+
 
 public class MainActivity extends AppCompatActivity {
 
-
-    //Prosser Points
+    //all below this line is for the data entry
+    //Prosser
     int TelopProsserPoints = 0;
     int AutopProsserPoints = 0;
+    Button ProserDec;
+    Button ProserInc;
+    TextView ProsserPoints;
 
     //Net Points
-
     int TelopNetPoints = 0;
     int AutoNetPoints = 0;
+    Button NetDec;
+    Button NetInc;
+    TextView NetPoints;
 
-    //L1 Points
-
+    //L1
     int TelopL1Points = 0;
     int AutoL1Points = 0;
+    Button L1Dec;
+    Button L1Inc;
+    TextView L1Points;
 
     //Barge
     int BargePoints = 0;
+    Button BargeInc;
+    Button BargeDec;
+    TextView BargePointsLabel;
+
     //forthe drop down
+    Spinner ParkingPlaces;
+
+    //Keeps Tack of what page it is
+    boolean IsMain = true;
+
+    //is checked
+    CheckBox IsTelop;
+
+    //submit
+    Button Submit;
+
+    //The Qr Code Screen
+    Button GoToQrCode;
+
+
+    //all below this line is for the qr code screen
+
+    Button GoBack;
+    Spinner QrCodes;
+
+    ImageView TheQrImage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -38,13 +81,19 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.hex_tech_view_model);
 
-        CheckBox IsTelop = findViewById(R.id.teleOpCheck);
+        SetUpMainScreen();
 
+    }
 
-        //Prosser Junk
-        Button ProserDec = findViewById(R.id.ProcessorDec);
-        Button ProserInc = findViewById(R.id.ProcessorInc);
-        TextView ProsserPoints =  findViewById(R.id.ProcessorPoints);
+    public void SetUpMainScreen(){
+
+        //cheks telop
+        IsTelop = findViewById(R.id.teleOpCheck);
+
+        //prosser
+        ProserDec  = findViewById(R.id.ProcessorDec);
+        ProserInc = findViewById(R.id.ProcessorInc);
+        ProsserPoints =  findViewById(R.id.ProcessorPoints);
 
         ProserInc.setOnClickListener(view -> {
             if (IsTelop.isChecked()){
@@ -67,10 +116,10 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        //Net
-        Button NetDec = findViewById(R.id.NetDec);
-        Button NetInc = findViewById(R.id.NetInc);
-        TextView NetPoints = findViewById(R.id.NetPoints);
+        //net
+        NetDec = findViewById(R.id.NetDec);
+        NetInc = findViewById(R.id.NetInc);
+        NetPoints = findViewById(R.id.NetPoints);
 
         NetInc.setOnClickListener(view -> {
             if (IsTelop.isChecked()){
@@ -93,9 +142,9 @@ public class MainActivity extends AppCompatActivity {
         });
 
         //L1
-        Button L1Dec = findViewById(R.id.L1CoralDec);
-        Button L1Inc = findViewById(R.id.L1CoralInc);
-        TextView L1Points = findViewById(R.id.L1Points);
+        L1Dec = findViewById(R.id.L1CoralDec);
+        L1Inc = findViewById(R.id.L1CoralInc);
+        L1Points = findViewById(R.id.L1Text);
 
         L1Inc.setOnClickListener(view -> {
             if (IsTelop.isChecked()){
@@ -117,20 +166,25 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        BargeDec = findViewById(R.id.BargeDec);
+        BargeInc = findViewById(R.id.BargeInc);
+        BargePointsLabel = findViewById(R.id.BargeText);
+
         //barge
-
-        Button BargeInc = findViewById(R.id.BargeInc);
-        Button BargeDec = findViewById(R.id.BargeDec);
-        TextView BargePointsLabel = findViewById(R.id.BargePoints);
-
-        BargeInc.setOnClickListener(view -> {
-            BargePoints++;
-            BargePointsLabel.setText(String.valueOf(BargePoints));
+        BargeDec.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (BargePoints > 0){
+                    BargePoints--;
+                    BargePointsLabel.setText(String.valueOf(BargePoints));
+                }
+            }
         });
 
-        BargeDec.setOnClickListener(view -> {
-            if (BargePoints > 0){
-                BargePoints--;
+        BargeInc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                BargePoints++;
                 BargePointsLabel.setText(String.valueOf(BargePoints));
             }
         });
@@ -148,9 +202,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        //drop down
-
-        Spinner ParkingPlaces = findViewById(R.id.parkDropDown);
+        //spinner
+        ParkingPlaces = findViewById(R.id.parkDropDown);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
                 this,
                 R.array.planets_array,
@@ -163,9 +216,8 @@ public class MainActivity extends AppCompatActivity {
         // Apply the adapter to the spinner.
         ParkingPlaces.setAdapter(adapter);
 
-        //Submit Buttion
-
-        Button Submit = findViewById(R.id.SubmitButtion);
+        //submit
+        Submit = findViewById(R.id.SubmitButtion);
 
         Submit.setOnClickListener(view -> {
             //creates file needs to be save the data am lazy
@@ -176,11 +228,64 @@ public class MainActivity extends AppCompatActivity {
             EditText team_number = findViewById(R.id.team_number);
             String FileName = scoutNameEditText.getText().toString() + "," + match_number.getText().toString() + "," + team_number.getText().toString();
 
-            JavaData.writeFileOnInternalStorage(MainActivity.this, FileName, "");
+            QRCodeUtils.generateAndSaveQRCode(MainActivity.this,"skibbdi1");
 
-            
+        });
+
+        //go to the qr code screen
+        GoToQrCode = findViewById(R.id.jerry);
+        GoToQrCode.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                setContentView(R.layout.show_the_codes);
+                SetUpQrCodes();
+            }
         });
     }
 
+    public void SetUpQrCodes(){
+        GoBack = findViewById(R.id.Goback);
+        GoBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                setContentView(R.layout.hex_tech_view_model);
+                SetUpMainScreen();
+            }
+        });
+
+        //spinner
+        ArrayList<String> QrCodesFileNames = JavaData.getAllFilesInDir(MainActivity.this);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, QrCodesFileNames);
+
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+    // Set the adapter to the Spinner
+        Spinner qrCodesSpinner = findViewById(R.id.QrCodeFiles);
+        qrCodesSpinner.setAdapter(adapter);
+
+        TheQrImage = findViewById(R.id.QrCodeImage);
+        qrCodesSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
+                // Get the selected item
+                String selectedItem = parentView.getItemAtPosition(position).toString();
+
+//                idk  a= MainActivity;
+
+                File dir = new File(getFilesDir(), "QRCodeImages");
+                File file = new File(dir ,selectedItem);
+                Uri uri = Uri.fromFile(file);
+                TheQrImage.setImageURI(uri);
+
+                // You can now use the selectedItem
+                Log.d("Spinner", "Selected item: " + selectedItem);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parentView) {
+                // Optional: Handle the case where no item is selected (e.g., if the spinner is reset)
+            }
+        });
+    }
 
 }

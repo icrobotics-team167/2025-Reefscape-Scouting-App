@@ -31,7 +31,7 @@ public class JavaData {
 
     public static ArrayList<String> getAllFilesInDir(Context context) {
         // Create a File object pointing to the directory
-        File dir = new File(context.getFilesDir(), "mydir");
+        File dir = new File(context.getFilesDir(), "QRCodeImages"); //dir for qr codes
 
         // Create an ArrayList to hold the file names
         ArrayList<String> fileList = new ArrayList<>();
@@ -59,7 +59,7 @@ public class JavaData {
         Log.d("Starting Deletion Of All Files!","Make sure this is called after all data is collected");
 
         // Create a File object pointing to the directory
-        File dir = new File(context.getFilesDir(), "mydir");
+        File dir = new File(context.getFilesDir(), "QRCodeImages");
 
         // Create an ArrayList to hold the file names
 

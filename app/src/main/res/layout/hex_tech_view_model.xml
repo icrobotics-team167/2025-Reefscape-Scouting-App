@@ -10,7 +10,9 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="16dp">
 
         <LinearLayout
             android:layout_width="979dp"
@@ -707,9 +709,16 @@
 
                             <Button
                                 android:id="@+id/SubmitButtion"
-                                android:layout_width="225dp"
+                                android:layout_width="105dp"
                                 android:layout_height="match_parent"
                                 android:text="@string/submit" />
+
+                            <Button
+                                android:id="@+id/jerry"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Jerry" />
 
                             <CheckBox
                                 android:id="@+id/checkBox"
@@ -885,11 +894,6 @@
             </LinearLayout>
 
         </LinearLayout>
-
-        <android.widget.Space
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1" />
 
     </LinearLayout>
 
