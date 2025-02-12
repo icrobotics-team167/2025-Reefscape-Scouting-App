@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:visibility="visible">
 
 
     <LinearLayout
@@ -109,7 +110,8 @@
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:visibility="visible">
 
                         <CheckBox
                             android:id="@+id/checkBox1"
@@ -491,13 +493,16 @@
 
                         <android.widget.Space
                             android:layout_width="match_parent"
-                            android:layout_height="84dp" />
+                            android:layout_height="84dp"
+                            android:visibility="gone"
+                            tools:visibility="gone" />
 
                         <View
                             android:id="@+id/divider"
                             android:layout_width="match_parent"
-                            android:layout_height="150dp"
-                            android:background="?android:attr/listDivider" />
+                            android:layout_height="246dp"
+                            android:background="?android:attr/listDivider"
+                            android:visibility="visible" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -661,7 +666,8 @@
                                 android:layout_width="26dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text="" />
+                                android:text=""
+                                tools:ignore="TouchTargetSizeCheck" />
 
                             <android.widget.Space
                                 android:layout_width="71dp"
@@ -694,11 +700,27 @@
                             android:layout_width="match_parent"
                             android:layout_height="66dp" />
 
-                        <Button
-                            android:id="@+id/SubmitButtion"
+                        <LinearLayout
                             android:layout_width="match_parent"
-                            android:layout_height="53dp"
-                            android:text="@string/submit" />
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+
+                            <Button
+                                android:id="@+id/SubmitButtion"
+                                android:layout_width="225dp"
+                                android:layout_height="match_parent"
+                                android:text="@string/submit" />
+
+                            <CheckBox
+                                android:id="@+id/checkBox"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Gold Team"
+                                tools:ignore="InefficientWeight" />
+
+                        </LinearLayout>
+
                     </LinearLayout>
 
                     <View
@@ -790,7 +812,8 @@
                                         android:id="@+id/teleOpCheck"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
-                                        android:layout_weight="1" />
+                                        android:layout_weight="1"
+                                        tools:ignore="TouchTargetSizeCheck" />
                                 </LinearLayout>
                             </LinearLayout>
                         </LinearLayout>

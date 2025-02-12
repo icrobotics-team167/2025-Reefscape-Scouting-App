@@ -144,6 +144,11 @@
     <string name="total_barge_algae_text">Total barge algae:</string>
     <string name="coral_reef_key_header">Coral Reef Key:</string>
 
+<!--    <string name="app_name">GFG App</string>-->
+    <string name="qr_code">qr_code</string>
+    <string name="enter_your_info">Enter your info</string>
+    <string name="generate_qr_code">Generate QR Code</string>
+
     <string-array name="planets_array">
         <item>Did Not Park</item>
         <item>Parked</item>
