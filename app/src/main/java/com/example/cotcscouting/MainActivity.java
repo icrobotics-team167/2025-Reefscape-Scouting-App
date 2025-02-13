@@ -26,28 +26,28 @@ public class MainActivity extends AppCompatActivity {
 
     //all below this line is for the data entry
     //Prosser
-    int TelopProsserPoints = 0;
-    int AutopProsserPoints = 0;
+    static int TelopProsserPoints = 0;
+    static int AutopProsserPoints = 0;
     Button ProserDec;
     Button ProserInc;
     TextView ProsserPoints;
 
     //Net Points
-    int TelopNetPoints = 0;
-    int AutoNetPoints = 0;
+    static int TelopNetPoints = 0;
+    static int AutoNetPoints = 0;
     Button NetDec;
     Button NetInc;
     TextView NetPoints;
 
     //L1
-    int TelopL1Points = 0;
-    int AutoL1Points = 0;
+    static int TelopL1Points = 0;
+    static int AutoL1Points = 0;
     Button L1Dec;
     Button L1Inc;
     TextView L1Points;
 
     //Barge
-    int BargePoints = 0;
+    static int BargePoints = 0;
     Button BargeInc;
     Button BargeDec;
     TextView BargePointsLabel;
@@ -134,7 +134,7 @@ public class MainActivity extends AppCompatActivity {
         NetDec.setOnClickListener(view -> {
             if (IsTelop.isChecked() && TelopNetPoints > 0){
                 TelopNetPoints--;
-                ProsserPoints.setText(String.valueOf(TelopNetPoints));
+                NetPoints.setText(String.valueOf(TelopNetPoints));
             } else if (!IsTelop.isChecked() && AutoNetPoints > 0) {
                 AutoNetPoints--;
                 NetPoints.setText(String.valueOf(AutoNetPoints));
@@ -144,7 +144,7 @@ public class MainActivity extends AppCompatActivity {
         //L1
         L1Dec = findViewById(R.id.L1CoralDec);
         L1Inc = findViewById(R.id.L1CoralInc);
-        L1Points = findViewById(R.id.L1Text);
+        L1Points = findViewById(R.id.L1Points);
 
         L1Inc.setOnClickListener(view -> {
             if (IsTelop.isChecked()){
@@ -168,7 +168,7 @@ public class MainActivity extends AppCompatActivity {
 
         BargeDec = findViewById(R.id.BargeDec);
         BargeInc = findViewById(R.id.BargeInc);
-        BargePointsLabel = findViewById(R.id.BargeText);
+        BargePointsLabel = findViewById(R.id.BargePoints);
 
         //barge
         BargeDec.setOnClickListener(new View.OnClickListener() {
@@ -220,16 +220,7 @@ public class MainActivity extends AppCompatActivity {
         Submit = findViewById(R.id.SubmitButtion);
 
         Submit.setOnClickListener(view -> {
-            //creates file needs to be save the data am lazy
-            //TODO: add fix and make work
-
-            EditText scoutNameEditText = findViewById(R.id.scout_name);
-            EditText match_number = findViewById(R.id.match_number);
-            EditText team_number = findViewById(R.id.team_number);
-            String FileName = scoutNameEditText.getText().toString() + "," + match_number.getText().toString() + "," + team_number.getText().toString();
-
-            QRCodeUtils.generateAndSaveQRCode(MainActivity.this,"skibbdi1");
-
+            new CreateCSV().GenerateCs(this,MainActivity.this);
         });
 
         //go to the qr code screen
@@ -249,6 +240,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 setContentView(R.layout.hex_tech_view_model);
+                RestMem();
                 SetUpMainScreen();
             }
         });
@@ -286,6 +278,17 @@ public class MainActivity extends AppCompatActivity {
                 // Optional: Handle the case where no item is selected (e.g., if the spinner is reset)
             }
         });
+    }
+
+    public void RestMem(){
+        TelopProsserPoints = 0;
+        AutopProsserPoints = 0;
+        TelopNetPoints = 0;
+        AutoNetPoints = 0;
+
+        TelopL1Points = 0;
+        AutoL1Points = 0;
+        BargePoints = 0;
     }
 
 }

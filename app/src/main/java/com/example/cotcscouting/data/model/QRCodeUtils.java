@@ -15,15 +15,15 @@ import java.io.IOException;
 public class QRCodeUtils {
 
     // Generate and save the QR Code
-    public static void generateAndSaveQRCode(Context context, String text) {
+    public static void generateAndSaveQRCode(Context context, String Message,String Filename) {
         // Create the QR code bitmap
         BarcodeEncoder barcodeEncoder = new BarcodeEncoder();
         try {
             // Generate the bitmap
-            Bitmap bitmap = barcodeEncoder.encodeBitmap(text, BarcodeFormat.QR_CODE, 400, 400);
+            Bitmap bitmap = barcodeEncoder.encodeBitmap(Message, BarcodeFormat.QR_CODE, 400, 400);
 
             // Save the generated QR code to a file
-            saveQRCodeToFile(context, bitmap, text);
+            saveQRCodeToFile(context, bitmap, Filename);
 
             // Show success message
             Toast.makeText(context, "QR Code generated and saved!", Toast.LENGTH_SHORT).show();
