@@ -61,4 +61,36 @@
     <color name="md_theme_dark_surfaceTint">#82D996</color>
     <color name="md_theme_dark_outlineVariant">#414941</color>
     <color name="md_theme_dark_scrim">#000000</color>
+
+    <color name="red">#FF0000</color>color>
+    <color name="orange">#FF8000</color>color>
+    <color name="yellow">#FFFF00</color>color>
+    <color name="green">#00FF00</color>color>
+    <color name="cyan">#00FFFF</color>color>
+    <color name="blue">#0000FF</color>color>
+    <color name="purple">#8000FF</color>color>
+    <color name="magenta">#FF00FF</color>color>
+
+    <color name="medium_red">#CC2020</color>color>
+    <color name="medium_orange">#FF8040</color>color>
+    <color name="medium_yellow">#CCCC40</color>color>
+    <color name="medium_green">#40CC40</color>color>
+    <color name="medium_cyan">#40CCCC</color>color>
+    <color name="medium_blue">#4040FF</color>color>
+    <color name="medium_purple">#8040CC</color>color>
+    <color name="medium_magenta">#CC40CC</color>color>
+
+    <color name="dull_red">#800000</color>color>
+    <color name="dull_orange">#804000</color>color>
+    <color name="dull_yellow">#808000</color>color>
+    <color name="dull_green">#008000</color>color>
+    <color name="dull_cyan">#008080</color>color>
+    <color name="dull_blue">#000080</color>color>
+    <color name="dull_purple">#400080</color>color>
+    <color name="dull_magenta">#800080</color>color>
+
+    <color name="white">#FFFFFF</color>color>
+    <color name="gray">#808080</color>color>
+    <color name="black">#000000</color>color>
+    <color name="gold">#FFD700</color>color>
 </resources>

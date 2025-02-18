@@ -138,7 +138,9 @@
     <string name="l4_text">L4:</string>
     <string name="auto_data_text">Auto Data:</string>
     <string name="past_starting_line_text">Past Starting line:</string>
-    <string name="tele_op_data_text">Tele-op Data:</string>
+    <string name="tele_op_switch_text">Tele-op Switch:</string>
+    <string name="tele_op_switch_data_text_auto">Auto</string>
+    <string name="tele_op_switch_data_text_tele_op">Tele-Op</string>
     <string name="teleop_text">Teleop:</string>
     <string name="end_game_text">End Game:</string>
     <string name="total_barge_algae_text">Total barge algae:</string>
@@ -148,6 +150,7 @@
     <string name="qr_code">qr_code</string>
     <string name="enter_your_info">Enter your info</string>
     <string name="generate_qr_code">Generate QR Code</string>
+    <string name="barge_reference_header_text">BARGE</string>
 
     <string-array name="planets_array">
         <item>Did Not Park</item>
