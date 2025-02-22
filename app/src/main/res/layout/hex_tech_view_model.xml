@@ -666,7 +666,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:backgroundTint="@color/dull_green"
+                                android:backgroundTint="@color/medium_green"
                                 android:text="@string/dec_button" />
 
                             <Button
@@ -674,7 +674,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:backgroundTint="@color/dull_green"
+                                android:backgroundTint="@color/medium_green"
                                 android:text="@string/inc_button" />
                         </LinearLayout>
 
@@ -702,7 +702,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:backgroundTint="@color/dull_green"
+                                android:backgroundTint="@color/medium_green"
                                 android:text="@string/dec_button" />
 
                             <Button
@@ -710,7 +710,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:backgroundTint="@color/dull_green"
+                                android:backgroundTint="@color/medium_green"
                                 android:text="@string/inc_button" />
                         </LinearLayout>
 

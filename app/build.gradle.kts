@@ -75,3 +75,8 @@ dependencies {
     implementation("com.journeyapps:zxing-android-embedded:4.1.0")
 
 }
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
