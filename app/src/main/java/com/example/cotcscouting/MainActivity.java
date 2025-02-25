@@ -1,13 +1,9 @@
 package com.example.cotcscouting;
 
-import static androidx.core.view.ViewCompat.setBackgroundTintList;
-
 import static com.example.cotcscouting.R.color.medium_purple;
 
 import android.annotation.SuppressLint;
-import android.content.Context;
 import android.content.res.ColorStateList;
-import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
@@ -16,16 +12,12 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Switch;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import com.example.cotcscouting.data.model.QRCodeUtils;
-import com.google.android.material.switchmaterial.SwitchMaterial;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -74,7 +66,8 @@ public class MainActivity extends AppCompatActivity {
     Button GoBack;
     Spinner QrCodes;
 
-    ImageView TheQrImage;
+    ImageView TheQrImage1;
+    ImageView TheQrImage2;
 
     @SuppressLint("SetTextI18n")
     @Override
@@ -492,7 +485,14 @@ public class MainActivity extends AppCompatActivity {
         });
 
         //spinner
-        ArrayList<String> QrCodesFileNames = JavaData.getAllFilesInDir(MainActivity.this);
+        ArrayList<String> QrCodesFileNamesAllParts = JavaData.getAllFilesInDir(MainActivity.this);
+        ArrayList<String> QrCodesFileNames = new ArrayList<>();
+        for (int i = 0; i < QrCodesFileNamesAllParts.size(); i++) {
+            if (i%2 == 0){
+                QrCodesFileNames.add(QrCodesFileNamesAllParts.get(i));
+                //To hide the part 2 so that it isnt seltecd acdently
+            }
+        }
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, QrCodesFileNames);
 
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -501,22 +501,38 @@ public class MainActivity extends AppCompatActivity {
         Spinner qrCodesSpinner = findViewById(R.id.QrCodeFiles);
         qrCodesSpinner.setAdapter(adapter);
 
-        TheQrImage = findViewById(R.id.QrCodeImage);
+        TheQrImage1 = findViewById(R.id.QrCodeImage1);
+        TheQrImage2 = findViewById(R.id.QrCodeImage2);
         qrCodesSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
                 // Get the selected item
-                String selectedItem = parentView.getItemAtPosition(position).toString();
+                String selectedItem1 = parentView.getItemAtPosition(position).toString();
+                String selectedItem2 = parentView.getItemAtPosition(position).toString();
+                //removes png header and P2 to get the secend part
+                selectedItem2 = selectedItem2.substring(0,selectedItem2.length() - 4) + "P2.png";
+
+
 
 //                idk  a= MainActivity;
 
                 File dir = new File(getFilesDir(), "QRCodeImages");
-                File file = new File(dir ,selectedItem);
-                Uri uri = Uri.fromFile(file);
-                TheQrImage.setImageURI(uri);
+                //file 1
+                File file1 = new File(dir ,selectedItem1);
+                Uri uri1 = Uri.fromFile(file1);
+
+                //file 2
+                File file2 = new File(dir ,selectedItem2);
+                Uri uri2 = Uri.fromFile(file2);
+
+                TheQrImage1.setImageURI(uri1);
+                Log.d("Set image 1", selectedItem1);
+                TheQrImage2.setImageURI(uri2);
+                Log.d("Set image 2", selectedItem2);
+
 
                 // You can now use the selectedItem
-                Log.d("Spinner", "Selected item: " + selectedItem);
+                Log.d("Spinner", "Selected item: " + selectedItem1);
             }
 
             @Override
