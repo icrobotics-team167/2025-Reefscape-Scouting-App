@@ -1,13 +1,9 @@
 package com.example.cotcscouting;
 
-import static androidx.core.view.ViewCompat.setBackgroundTintList;
-
 import static com.example.cotcscouting.R.color.medium_purple;
 
 import android.annotation.SuppressLint;
-import android.content.Context;
 import android.content.res.ColorStateList;
-import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
@@ -16,7 +12,6 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Switch;
@@ -24,11 +19,9 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.cotcscouting.data.model.QRCodeUtils;
-import com.google.android.material.switchmaterial.SwitchMaterial;
-
 import java.io.File;
 import java.util.ArrayList;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -116,21 +109,49 @@ public class MainActivity extends AppCompatActivity {
         for(int i = 0; i < 36; i++) {
             CheckBoxes[i] = findViewById(checkBoxes[i]);
         }
+        //check box find fiew by id
+        CheckBoxes[0].findViewById(checkBoxes[0]);
+        CheckBoxes[1].findViewById(checkBoxes[1]);
+        CheckBoxes[2].findViewById(checkBoxes[2]);
+        CheckBoxes[3].findViewById(checkBoxes[3]);
+        CheckBoxes[4].findViewById(checkBoxes[4]);
+        CheckBoxes[5].findViewById(checkBoxes[5]);
+        CheckBoxes[6].findViewById(checkBoxes[6]);
+        CheckBoxes[7].findViewById(checkBoxes[7]);
+        CheckBoxes[8].findViewById(checkBoxes[8]);
+        CheckBoxes[9].findViewById(checkBoxes[9]);
+        CheckBoxes[10].findViewById(checkBoxes[10]);
+        CheckBoxes[11].findViewById(checkBoxes[11]);
+        CheckBoxes[12].findViewById(checkBoxes[12]);
+        CheckBoxes[13].findViewById(checkBoxes[13]);
+        CheckBoxes[14].findViewById(checkBoxes[14]);
+        CheckBoxes[15].findViewById(checkBoxes[15]);
+        CheckBoxes[16].findViewById(checkBoxes[16]);
+        CheckBoxes[17].findViewById(checkBoxes[17]);
+        CheckBoxes[18].findViewById(checkBoxes[18]);
+        CheckBoxes[19].findViewById(checkBoxes[19]);
+        CheckBoxes[20].findViewById(checkBoxes[20]);
+        CheckBoxes[21].findViewById(checkBoxes[21]);
+        CheckBoxes[22].findViewById(checkBoxes[22]);
+        CheckBoxes[23].findViewById(checkBoxes[23]);
+        CheckBoxes[24].findViewById(checkBoxes[24]);
+        CheckBoxes[25].findViewById(checkBoxes[25]);
+        CheckBoxes[26].findViewById(checkBoxes[26]);
+        CheckBoxes[27].findViewById(checkBoxes[27]);
+        CheckBoxes[28].findViewById(checkBoxes[28]);
+        CheckBoxes[29].findViewById(checkBoxes[29]);
+        CheckBoxes[30].findViewById(checkBoxes[30]);
+        CheckBoxes[31].findViewById(checkBoxes[31]);
+        CheckBoxes[32].findViewById(checkBoxes[32]);
+        CheckBoxes[33].findViewById(checkBoxes[33]);
+        CheckBoxes[34].findViewById(checkBoxes[34]);
+        CheckBoxes[35].findViewById(checkBoxes[35]);
+
+
 
         //cheks telop
         IsTelop = findViewById(R.id.teleOpCheck);
         TeleOpCheckText = findViewById(R.id.teleOpCheckText);
-        //check box listeners
-        for(int i = 0; i < 36; i++) {
-            int finalI = i;
-            CheckBoxes[i].setOnClickListener(view -> {
-                if(!IsTelop.isChecked()) {
-                    checkBoxesAuto[finalI] = CheckBoxes[finalI].isChecked();
-                }else {
-                    checkBoxesTeleOp[finalI] = CheckBoxes[finalI].isChecked();
-                }
-            });
-        }
         ProsserPoints = findViewById(R.id.ProcessorPoints);
         ProsserPoints.setText("0");
 
@@ -290,7 +311,6 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-
         BargeReferenceHeader.setOnClickListener(view -> {
             if(isDullBlue) {
                 BargeReferenceHeader.setBackgroundResource(R.color.dull_red);
@@ -304,6 +324,9 @@ public class MainActivity extends AppCompatActivity {
         //needs to be at the bottem this is also whare the Telop switch happens IsTelop
         IsTelop.setOnClickListener(view -> {
             if (IsTelop.isChecked()){
+                for(int i = 0; i < 36; i++) {
+                    checkBoxesAuto[i] = CheckBoxes[i].isChecked();
+                }
                 ProsserPoints.setText(String.valueOf(TelopProsserPoints));
                 NetPoints.setText(String.valueOf(TelopNetPoints));
                 L1Points.setText(String.valueOf(TelopL1Points));
@@ -314,6 +337,9 @@ public class MainActivity extends AppCompatActivity {
                 }
                 //colors L4
                 if(true) {
+                    for(int i = 0; i < 36; i++) {
+                        CheckBoxes[i].isChecked();
+                    }
                     L4Key.setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_magenta)));
                     CheckBoxes[0].setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_magenta)));
                     CheckBoxes[1].setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_magenta)));
@@ -375,6 +401,9 @@ public class MainActivity extends AppCompatActivity {
                 }
                 //Barge Reference Header
             }else{
+                for(int i = 0; i < 36; i++) {
+                    checkBoxesTeleOp[i] = CheckBoxes[i].isChecked();
+                }
                 ProsserPoints.setText(String.valueOf(AutopProsserPoints));
                 NetPoints.setText(String.valueOf(AutoNetPoints));
                 L1Points.setText(String.valueOf(AutoL1Points));
@@ -466,6 +495,15 @@ public class MainActivity extends AppCompatActivity {
         Submit = findViewById(R.id.SubmitButtion);
 
         Submit.setOnClickListener(view -> {
+            if(IsTelop.isChecked()) {
+                for(int i = 0; i < 36; i++) {
+                    checkBoxesTeleOp[i] = CheckBoxes[i].isChecked();
+                }
+            } else {
+                for(int i = 0; i < 36; i++) {
+                    checkBoxesAuto[i] = CheckBoxes[i].isChecked();
+                }
+            }
             new CreateCSV().GenerateCs(this,MainActivity.this);
         });
 
@@ -525,6 +563,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
+
 // checkBox + num + teleop
     public void RestMem(){
         TelopProsserPoints = 0;
