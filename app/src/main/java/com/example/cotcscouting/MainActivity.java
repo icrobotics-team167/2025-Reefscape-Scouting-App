@@ -21,6 +21,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -30,28 +31,31 @@ public class MainActivity extends AppCompatActivity {
     //Declarations
     Button ProserDec, ProserInc, NetDec, NetInc, L1Dec, L1Inc, BargeInc, BargeDec;
     TextView ProsserPoints, NetPoints, L1Points, BargePointsLabel, BargeReferenceHeader;
-    CheckBox L2Key, L3Key, L4Key, CheckBox1, CheckBox2, CheckBox3, CheckBox4, CheckBox5, CheckBox6, CheckBox7, CheckBox8, CheckBox9, CheckBox10, CheckBox11, CheckBox12, CheckBox13, CheckBox14, CheckBox15, CheckBox16, CheckBox17, CheckBox18, CheckBox19, CheckBox20, CheckBox21, CheckBox22, CheckBox23, CheckBox24, CheckBox25, CheckBox26, CheckBox27, CheckBox28, CheckBox29, CheckBox30, CheckBox31, CheckBox32, CheckBox33, CheckBox34, CheckBox35, CheckBox36;
 
     static int TelopProsserPoints, AutopProsserPoints, TelopNetPoints, AutoNetPoints, TelopL1Points, AutoL1Points, BargePoints = 0;
     static boolean checkBox1Auto, checkBox2Auto, checkBox3Auto, checkBox4Auto, checkBox5Auto, checkBox6Auto, checkBox7Auto, checkBox8Auto, checkBox9Auto, checkBox10Auto, checkBox11Auto, checkBox12Auto, checkBox13Auto, checkBox14Auto, checkBox15Auto, checkBox16Auto, checkBox17Auto, checkBox18Auto, checkBox19Auto, checkBox20Auto, checkBox21Auto, checkBox22Auto, checkBox23Auto, checkBox24Auto, checkBox25Auto, checkBox26Auto, checkBox27Auto, checkBox28Auto, checkBox29Auto, checkBox30Auto, checkBox31Auto, checkBox32Auto, checkBox33Auto, checkBox34Auto, checkBox35Auto, checkBox36Auto = false;
     static boolean checkBox1TeleOp, checkBox2TeleOp, checkBox3TeleOp, checkBox4TeleOp, checkBox5TeleOp, checkBox6TeleOp, checkBox7TeleOp, checkBox8TeleOp, checkBox9TeleOp, checkBox10TeleOp, checkBox11TeleOp, checkBox12TeleOp, checkBox13TeleOp, checkBox14TeleOp, checkBox15TeleOp, checkBox16TeleOp, checkBox17TeleOp, checkBox18TeleOp, checkBox19TeleOp, checkBox20TeleOp, checkBox21TeleOp, checkBox22TeleOp, checkBox23TeleOp, checkBox24TeleOp, checkBox25TeleOp, checkBox26TeleOp, checkBox27TeleOp, checkBox28TeleOp, checkBox29TeleOp, checkBox30TeleOp, checkBox31TeleOp, checkBox32TeleOp, checkBox33TeleOp, checkBox34TeleOp, checkBox35TeleOp, checkBox36TeleOp = false;
 
-    //coral check box lists
-    CheckBox[] CheckBoxes = new CheckBox[36];
-    boolean[] checkBoxesAuto = {checkBox1Auto, checkBox2Auto, checkBox3Auto, checkBox4Auto, checkBox5Auto, checkBox6Auto, checkBox7Auto, checkBox8Auto, checkBox9Auto, checkBox10Auto, checkBox11Auto, checkBox12Auto, checkBox13Auto, checkBox14Auto, checkBox15Auto, checkBox16Auto, checkBox17Auto, checkBox18Auto, checkBox19Auto, checkBox20Auto, checkBox21Auto, checkBox22Auto, checkBox23Auto, checkBox24Auto, checkBox25Auto, checkBox26Auto, checkBox27Auto, checkBox28Auto, checkBox29Auto, checkBox30Auto, checkBox31Auto, checkBox32Auto, checkBox33Auto, checkBox34Auto, checkBox35Auto, checkBox36Auto};
-    boolean[] checkBoxesTeleOp = {checkBox1TeleOp, checkBox2TeleOp, checkBox3TeleOp, checkBox4TeleOp, checkBox5TeleOp, checkBox6TeleOp, checkBox7TeleOp, checkBox8TeleOp, checkBox9TeleOp, checkBox10TeleOp, checkBox11TeleOp, checkBox12TeleOp, checkBox13TeleOp, checkBox14TeleOp, checkBox15TeleOp, checkBox16TeleOp, checkBox17TeleOp, checkBox18TeleOp, checkBox19TeleOp, checkBox20TeleOp, checkBox21TeleOp, checkBox22TeleOp, checkBox23TeleOp, checkBox24TeleOp, checkBox25TeleOp, checkBox26TeleOp, checkBox27TeleOp, checkBox28TeleOp, checkBox29TeleOp, checkBox30TeleOp, checkBox31TeleOp, checkBox32TeleOp, checkBox33TeleOp, checkBox34TeleOp, checkBox35TeleOp, checkBox36TeleOp};
+    //coral levels check boxes
+
+    static CheckBox[] CheckBoxes = new CheckBox[36];
+
+    static Boolean[] IsCheckedInAuto = new Boolean[36];
+
+    static Boolean[] IsCheckedInTelop = new Boolean[36];
 
 
-    //for the drop down
+
+    //for the drop down of parking
     Spinner ParkingPlaces;
+    static String WhareParked = "Did Not Park";
 
-    //Keeps Tack of what page it is
-    boolean IsMain = true;
+
     boolean isDullBlue = true;
 
     //is checked
     @SuppressLint("UseSwitchCompatOrMaterialCode")
-    static Switch IsTelop;
+    Switch IsTelop;
     TextView TeleOpCheckText;
 
     //submit
@@ -64,7 +68,6 @@ public class MainActivity extends AppCompatActivity {
     //all below this line is for the qr code screen
 
     Button GoBack;
-    Spinner QrCodes;
 
     ImageView TheQrImage1;
     ImageView TheQrImage2;
@@ -78,10 +81,47 @@ public class MainActivity extends AppCompatActivity {
         SetUpMainScreen();
     }
 
+
+
     @SuppressLint({"SetTextI18n", "UseCompatLoadingForDrawables"})
     public void SetUpMainScreen(){
-        CheckBoxes = new CheckBox[] {CheckBox1, CheckBox2, CheckBox3, CheckBox4, CheckBox5, CheckBox6, CheckBox7, CheckBox8, CheckBox9, CheckBox10, CheckBox11, CheckBox12, CheckBox13, CheckBox14, CheckBox15, CheckBox16, CheckBox17, CheckBox18, CheckBox19, CheckBox20, CheckBox21, CheckBox22, CheckBox23, CheckBox24, CheckBox25, CheckBox26, CheckBox27, CheckBox28, CheckBox29, CheckBox30, CheckBox31, CheckBox32, CheckBox33, CheckBox34, CheckBox35, CheckBox36};
-        int[] checkBoxes = {(R.id.checkBox1), (R.id.checkBox2), (R.id.checkBox3), (R.id.checkBox4), (R.id.checkBox5), (R.id.checkBox6), (R.id.checkBox7), (R.id.checkBox8), (R.id.checkBox9), (R.id.checkBox10), (R.id.checkBox11), (R.id.checkBox12), (R.id.checkBox13), (R.id.checkBox14), (R.id.checkBox15), (R.id.checkBox16), (R.id.checkBox17), (R.id.checkBox18), (R.id.checkBox19), (R.id.checkBox20), (R.id.checkBox21), (R.id.checkBox22), (R.id.checkBox23), (R.id.checkBox24), (R.id.checkBox25), (R.id.checkBox26), (R.id.checkBox27), (R.id.checkBox28), (R.id.checkBox29), (R.id.checkBox30), (R.id.checkBox31), (R.id.checkBox32), (R.id.checkBox33), (R.id.checkBox34), (R.id.checkBox35), (R.id.checkBox36)};
+        //restes the memery of the hexagon
+
+        Arrays.fill(IsCheckedInAuto, Boolean.FALSE);
+        Arrays.fill(IsCheckedInTelop, Boolean.FALSE);
+
+
+
+        // will probaly make caulder happy
+        //ettuing up the Monstrasty (afecnite) that is the hexagon
+        for (int i = 0; i < 36; i++) {
+            @SuppressLint("DiscouragedApi") int resID = getResources().getIdentifier("checkBox" + (i + 1), "id", getPackageName());
+            CheckBoxes[i] = findViewById(resID);
+        }
+
+        for (int i = 0; i < CheckBoxes.length; i++) {
+            int finalI = i;
+            CheckBoxes[i].setOnClickListener(view -> {
+                if (IsTelop.isChecked()){
+                    IsCheckedInTelop[finalI] = CheckBoxes[finalI].isChecked();
+                    Log.d("Hecagon checked", "buttion With id: " + finalI + "Was checked and set is checked in telop to " + CheckBoxes[finalI].isChecked());
+                }else if (!IsTelop.isChecked()){
+                    IsCheckedInAuto[finalI] = CheckBoxes[finalI].isChecked();
+                    Log.d("Hecagon checked", "buttion With id: " + finalI + "Was checked and set is check in Auto to " + CheckBoxes[finalI].isChecked());
+                }
+            });
+        }
+
+        //Color keys for l2 l3 l4
+        CheckBox L2Key = findViewById(R.id.L2Key);
+        CheckBox L3Key = findViewById(R.id.L3Key);
+        CheckBox L4Key = findViewById(R.id.L4Key);
+
+
+
+
+
+
 
         ProserDec  = findViewById(R.id.ProcessorDec);
         ProserInc = findViewById(R.id.ProcessorInc);
@@ -100,30 +140,16 @@ public class MainActivity extends AppCompatActivity {
         BargePointsLabel = findViewById(R.id.BargePoints);
         BargeReferenceHeader = findViewById(R.id.BargeReferenceHeader);
 
-        //Coral check boxes
-        L2Key = findViewById(R.id.L2Key);
-        L3Key = findViewById(R.id.L3Key);
-        L4Key = findViewById(R.id.L4Key);
-        CheckBox1 = findViewById(R.id.checkBox1);
 
-        for(int i = 0; i < 36; i++) {
-            CheckBoxes[i] = findViewById(checkBoxes[i]);
-        }
+
+
+
 
         //cheks telop
         IsTelop = findViewById(R.id.teleOpCheck);
         TeleOpCheckText = findViewById(R.id.teleOpCheckText);
         //check box listeners
-        for(int i = 0; i < 36; i++) {
-            int finalI = i;
-            CheckBoxes[i].setOnClickListener(view -> {
-                if(!IsTelop.isChecked()) {
-                    checkBoxesAuto[finalI] = CheckBoxes[finalI].isChecked();
-                }else {
-                    checkBoxesTeleOp[finalI] = CheckBoxes[finalI].isChecked();
-                }
-            });
-        }
+
         ProsserPoints = findViewById(R.id.ProcessorPoints);
         ProsserPoints.setText("0");
 
@@ -140,6 +166,7 @@ public class MainActivity extends AppCompatActivity {
             CheckBoxes[i].setChecked(false);
         }
         if(true) {
+
             L4Key.setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_yellow)));
             CheckBoxes[0].setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_yellow)));
             CheckBoxes[1].setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_yellow)));
@@ -303,7 +330,7 @@ public class MainActivity extends AppCompatActivity {
                 TeleOpCheckText.setText("Tele-Op");
                 //check box reset
                 for(int i = 0; i < 36; i++) {
-                    CheckBoxes[i].setChecked(checkBoxesTeleOp[i]);
+                    CheckBoxes[i].setChecked(IsCheckedInTelop[i]);
                 }
                 //colors L4
                 if(true) {
@@ -372,9 +399,9 @@ public class MainActivity extends AppCompatActivity {
                 NetPoints.setText(String.valueOf(AutoNetPoints));
                 L1Points.setText(String.valueOf(AutoL1Points));
                 TeleOpCheckText.setText("Auto");
-                //check box reset
+                //check box reset uses is check in auto
                 for(int i = 0; i < 36; i++) {
-                    CheckBoxes[i].setChecked(checkBoxesAuto[i]);
+                    CheckBoxes[i].setChecked(IsCheckedInAuto[i]);
                 }
                 //colors L4
                 if(true) {
@@ -454,6 +481,18 @@ public class MainActivity extends AppCompatActivity {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         // Apply the adapter to the spinner.
         ParkingPlaces.setAdapter(adapter);
+
+        ParkingPlaces.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                WhareParked = ParkingPlaces.getItemAtPosition(i).toString();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
 
         //submit
         Submit = findViewById(R.id.SubmitButtion);
@@ -551,8 +590,8 @@ public class MainActivity extends AppCompatActivity {
         AutoL1Points = 0;
         BargePoints = 0;
         for(int i = 0; i < 36; i++) {
-            checkBoxesAuto[i] = false;
-            checkBoxesTeleOp[i] = false;
+            IsCheckedInAuto[i] = false;
+            IsCheckedInTelop[i] = false;
         }
     }
 

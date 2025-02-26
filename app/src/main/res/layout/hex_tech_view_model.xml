@@ -729,7 +729,8 @@
                                 android:id="@+id/SubmitButtion"
                                 android:layout_width="105dp"
                                 android:layout_height="match_parent"
-                                android:text="@string/submit" />
+                                android:text="@string/submit"
+                                tools:ignore="TouchTargetSizeCheck" />
 
                             <Button
                                 android:id="@+id/jerry"
