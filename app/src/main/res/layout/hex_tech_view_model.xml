@@ -17,7 +17,8 @@
         <LinearLayout
             android:layout_width="979dp"
             android:layout_height="799dp"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            tools:ignore="UselessParent">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -128,6 +129,7 @@
                             <androidx.constraintlayout.widget.ConstraintLayout
                                 android:layout_width="360dp"
                                 android:layout_height="wrap_content"
+                                android:background="@drawable/BlueSide"
                                 android:visibility="visible">
 
                                 <CheckBox
@@ -495,6 +497,16 @@
                                     app:layout_constraintStart_toStartOf="parent"
                                     app:layout_constraintTop_toTopOf="parent" />
 
+                                <ImageView
+                                    android:id="@+id/imageView"
+                                    android:layout_width="95dp"
+                                    android:layout_height="88dp"
+                                    app:layout_constraintBottom_toBottomOf="@+id/spaceVertical"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="@+id/checkBox13"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:srcCompat="@drawable/background" />
+
                             </androidx.constraintlayout.widget.ConstraintLayout>
 
                             <TextView
@@ -530,7 +542,8 @@
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="25dp"
-                                android:orientation="horizontal">
+                                android:orientation="horizontal"
+                                tools:ignore="TextSizeCheck">
 
                                 <TextView
                                     android:id="@+id/L2KeyText"
@@ -723,21 +736,15 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="46dp"
-                            android:orientation="horizontal">
-
-                            <Button
-                                android:id="@+id/SubmitButtion"
-                                android:layout_width="105dp"
-                                android:layout_height="match_parent"
-                                android:text="@string/submit"
-                                tools:ignore="TouchTargetSizeCheck" />
+                            android:orientation="horizontal"
+                            tools:ignore="TextSizeCheck">
 
                             <Button
                                 android:id="@+id/jerry"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text="Jerry" />
+                                android:text="Show Data" />
 
                             <CheckBox
                                 android:id="@+id/checkBox"
@@ -746,9 +753,16 @@
                                 android:layout_weight="1"
                                 android:buttonTint="@color/gold"
                                 android:text="Gold Team"
-                                tools:ignore="InefficientWeight" />
+                                tools:ignore="InefficientWeight,TouchTargetSizeCheck" />
 
                         </LinearLayout>
+
+                        <Button
+                            android:id="@+id/SubmitButtion"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="@string/submit"
+                            tools:ignore="TouchTargetSizeCheck" />
 
                     </LinearLayout>
 
@@ -797,7 +811,8 @@
                                         android:id="@+id/PastStartingLineText"
                                         android:layout_width="87dp"
                                         android:layout_height="wrap_content"
-                                        android:text="@string/past_starting_line_text" />
+                                        android:text="@string/past_starting_line_text"
+                                        tools:ignore="TextSizeCheck" />
 
                                     <CheckBox
                                         android:id="@+id/PastStartingLineCheck"
