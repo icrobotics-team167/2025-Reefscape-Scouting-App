@@ -93,9 +93,8 @@ public class MainActivity extends AppCompatActivity {
 
 
         // will probaly make caulder happy
-        //ettuing up the Monstrasty (afecnite) that is the hexagon
         for (int i = 0; i < 36; i++) {
-            @SuppressLint("DiscouragedApi") int resID = getResources().getIdentifier("checkBox" + (i + 1), "id", getPackageName());
+            @SuppressLint("DiscouragedApi") int resID = getResources().getIdentifier("checkBox" + i, "id", getPackageName());
             CheckBoxes[i] = findViewById(resID);
         }
 
