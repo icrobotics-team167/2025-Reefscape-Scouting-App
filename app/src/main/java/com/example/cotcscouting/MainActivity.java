@@ -96,6 +96,7 @@ public class MainActivity extends AppCompatActivity {
         for (int i = 0; i < 36; i++) {
             @SuppressLint("DiscouragedApi") int resID = getResources().getIdentifier("checkBox" + i, "id", getPackageName());
             CheckBoxes[i] = findViewById(resID);
+            CheckBoxes[i].setButtonTintList(ColorStateList.valueOf(getColor(medium_purple)));
         }
 
         for (int i = 0; i < CheckBoxes.length; i++) {
@@ -164,55 +165,24 @@ public class MainActivity extends AppCompatActivity {
         for(int i = 0; i < 36; i++) {
             CheckBoxes[i].setChecked(false);
         }
-        if(true) {
 
-            L4Key.setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_yellow)));
-            CheckBoxes[0].setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_yellow)));
-            CheckBoxes[1].setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_yellow)));
-            CheckBoxes[2].setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_yellow)));
-            CheckBoxes[3].setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_yellow)));
-            CheckBoxes[12].setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_yellow)));
-            CheckBoxes[17].setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_yellow)));
-            CheckBoxes[18].setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_yellow)));
-            CheckBoxes[23].setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_yellow)));
-            CheckBoxes[32].setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_yellow)));
-            CheckBoxes[33].setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_yellow)));
-            CheckBoxes[34].setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_yellow)));
-            CheckBoxes[35].setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_yellow)));
+        //color for telop Barge?
+        L4Key.setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_yellow)));
+        L3Key.setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_orange)));
+        L2Key.setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_red)));
+
+        boolean FilpFlop = false;
+        for (int i = 0; i < CheckBoxes.length; i++) {
+            if ((i+1)%3 == 0){
+                CheckBoxes[i].setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_yellow)));
+            } else if (FilpFlop) {
+                FilpFlop = !FilpFlop;
+                CheckBoxes[i].setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_orange)));
+            }else{
+                FilpFlop = !FilpFlop;
+                CheckBoxes[i].setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_red)));
+            }
         }
-        //colors L3
-        if(true) {
-            L3Key.setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_orange)));
-            CheckBoxes[4].setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_orange)));
-            CheckBoxes[5].setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_orange)));
-            CheckBoxes[6].setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_orange)));
-            CheckBoxes[7].setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_orange)));
-            CheckBoxes[13].setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_orange)));
-            CheckBoxes[16].setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_orange)));
-            CheckBoxes[19].setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_orange)));
-            CheckBoxes[22].setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_orange)));
-            CheckBoxes[27].setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_orange)));
-            CheckBoxes[28].setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_orange)));
-            CheckBoxes[29].setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_orange)));
-            CheckBoxes[30].setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_orange)));
-            CheckBoxes[31].setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_orange)));
-        }
-        //colors L2
-        if(true) {
-            L2Key.setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_red)));
-            CheckBoxes[8].setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_red)));
-            CheckBoxes[9].setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_red)));
-            CheckBoxes[10].setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_red)));
-            CheckBoxes[11].setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_red)));
-            CheckBoxes[14].setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_red)));
-            CheckBoxes[15].setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_red)));
-            CheckBoxes[20].setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_red)));
-            CheckBoxes[21].setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_red)));
-            CheckBoxes[24].setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_red)));
-            CheckBoxes[25].setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_red)));
-            CheckBoxes[26].setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_red)));
-            CheckBoxes[27].setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_red)));
-        }//color extras
 
         BargeReferenceHeader.setBackgroundResource(R.color.dull_blue);
         IsTelop.setThumbTintList(ColorStateList.valueOf(getColor(R.color.medium_orange)));
@@ -331,54 +301,27 @@ public class MainActivity extends AppCompatActivity {
                 for(int i = 0; i < 36; i++) {
                     CheckBoxes[i].setChecked(IsCheckedInTelop[i]);
                 }
-                //colors L4
-                if(true) {
-                    L4Key.setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_magenta)));
-                    CheckBoxes[0].setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_magenta)));
-                    CheckBoxes[1].setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_magenta)));
-                    CheckBoxes[2].setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_magenta)));
-                    CheckBoxes[3].setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_magenta)));
-                    CheckBoxes[12].setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_magenta)));
-                    CheckBoxes[17].setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_magenta)));
-                    CheckBoxes[18].setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_magenta)));
-                    CheckBoxes[23].setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_magenta)));
-                    CheckBoxes[32].setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_magenta)));
-                    CheckBoxes[33].setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_magenta)));
-                    CheckBoxes[34].setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_magenta)));
-                    CheckBoxes[35].setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_magenta)));
+
+                //color for auto
+                L4Key.setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_magenta)));
+                L3Key.setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_purple)));
+                L2Key.setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_blue)));
+
+
+                boolean NewFilpFlop = false;
+                for (int i = 0; i < CheckBoxes.length; i++) {
+                    if ((i+1)%3 == 0){
+                        CheckBoxes[i].setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_magenta)));
+                    } else if (NewFilpFlop) {
+                        NewFilpFlop = !NewFilpFlop;
+                        CheckBoxes[i].setButtonTintList(ColorStateList.valueOf(getColor(medium_purple)));
+                    }else{
+                        NewFilpFlop = !NewFilpFlop;
+                        CheckBoxes[i].setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_blue)));
+                    }
                 }
-                //colors L3
-                if(true) {
-                    L3Key.setButtonTintList(ColorStateList.valueOf(getColor(medium_purple)));
-                    CheckBoxes[4].setButtonTintList(ColorStateList.valueOf(getColor(medium_purple)));
-                    CheckBoxes[5].setButtonTintList(ColorStateList.valueOf(getColor(medium_purple)));
-                    CheckBoxes[6].setButtonTintList(ColorStateList.valueOf(getColor(medium_purple)));
-                    CheckBoxes[7].setButtonTintList(ColorStateList.valueOf(getColor(medium_purple)));
-                    CheckBoxes[13].setButtonTintList(ColorStateList.valueOf(getColor(medium_purple)));
-                    CheckBoxes[16].setButtonTintList(ColorStateList.valueOf(getColor(medium_purple)));
-                    CheckBoxes[19].setButtonTintList(ColorStateList.valueOf(getColor(medium_purple)));
-                    CheckBoxes[22].setButtonTintList(ColorStateList.valueOf(getColor(medium_purple)));
-                    CheckBoxes[28].setButtonTintList(ColorStateList.valueOf(getColor(medium_purple)));
-                    CheckBoxes[29].setButtonTintList(ColorStateList.valueOf(getColor(medium_purple)));
-                    CheckBoxes[30].setButtonTintList(ColorStateList.valueOf(getColor(medium_purple)));
-                    CheckBoxes[31].setButtonTintList(ColorStateList.valueOf(getColor(medium_purple)));
-                }
-                //colors L2
-                if(true) {
-                    L2Key.setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_blue)));
-                    CheckBoxes[8].setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_blue)));
-                    CheckBoxes[9].setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_blue)));
-                    CheckBoxes[10].setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_blue)));
-                    CheckBoxes[11].setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_blue)));
-                    CheckBoxes[14].setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_blue)));
-                    CheckBoxes[15].setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_blue)));
-                    CheckBoxes[20].setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_blue)));
-                    CheckBoxes[21].setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_blue)));
-                    CheckBoxes[24].setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_blue)));
-                    CheckBoxes[25].setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_blue)));
-                    CheckBoxes[26].setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_blue)));
-                    CheckBoxes[27].setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_blue)));
-                }
+
+
                 //color extras
                 if(true) {
                     //colors L1
@@ -402,54 +345,24 @@ public class MainActivity extends AppCompatActivity {
                 for(int i = 0; i < 36; i++) {
                     CheckBoxes[i].setChecked(IsCheckedInAuto[i]);
                 }
-                //colors L4
-                if(true) {
-                    L4Key.setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_yellow)));
-                    CheckBoxes[0].setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_yellow)));
-                    CheckBoxes[1].setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_yellow)));
-                    CheckBoxes[2].setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_yellow)));
-                    CheckBoxes[3].setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_yellow)));
-                    CheckBoxes[12].setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_yellow)));
-                    CheckBoxes[17].setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_yellow)));
-                    CheckBoxes[18].setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_yellow)));
-                    CheckBoxes[23].setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_yellow)));
-                    CheckBoxes[32].setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_yellow)));
-                    CheckBoxes[33].setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_yellow)));
-                    CheckBoxes[34].setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_yellow)));
-                    CheckBoxes[35].setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_yellow)));
-                }
-                //colors L3
-                if(true) {
-                    L3Key.setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_orange)));
-                    CheckBoxes[4].setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_orange)));
-                    CheckBoxes[5].setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_orange)));
-                    CheckBoxes[6].setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_orange)));
-                    CheckBoxes[7].setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_orange)));
-                    CheckBoxes[13].setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_orange)));
-                    CheckBoxes[16].setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_orange)));
-                    CheckBoxes[19].setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_orange)));
-                    CheckBoxes[22].setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_orange)));
-                    CheckBoxes[27].setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_orange)));
-                    CheckBoxes[28].setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_orange)));
-                    CheckBoxes[29].setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_orange)));
-                    CheckBoxes[30].setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_orange)));
-                    CheckBoxes[31].setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_orange)));
-                }
-                //colors L2
-                if(true) {
-                    L2Key.setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_red)));
-                    CheckBoxes[8].setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_red)));
-                    CheckBoxes[9].setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_red)));
-                    CheckBoxes[10].setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_red)));
-                    CheckBoxes[11].setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_red)));
-                    CheckBoxes[14].setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_red)));
-                    CheckBoxes[15].setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_red)));
-                    CheckBoxes[20].setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_red)));
-                    CheckBoxes[21].setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_red)));
-                    CheckBoxes[24].setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_red)));
-                    CheckBoxes[25].setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_red)));
-                    CheckBoxes[26].setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_red)));
-                    CheckBoxes[27].setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_red)));
+
+                //color for auto l2,l3,l4
+                L4Key.setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_yellow)));
+                L3Key.setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_orange)));
+                L2Key.setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_red)));
+
+
+                boolean NewFilpFlop = false;
+                for (int i = 0; i < CheckBoxes.length; i++) {
+                    if ((i+1)%3 == 0){
+                        CheckBoxes[i].setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_yellow)));
+                    } else if (NewFilpFlop) {
+                        NewFilpFlop = !NewFilpFlop;
+                        CheckBoxes[i].setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_orange)));
+                    }else{
+                        NewFilpFlop = !NewFilpFlop;
+                        CheckBoxes[i].setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_red)));
+                    }
                 }
                 //color extras
                 if(true) {
