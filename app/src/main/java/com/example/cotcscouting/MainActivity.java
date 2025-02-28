@@ -33,8 +33,6 @@ public class MainActivity extends AppCompatActivity {
     TextView ProsserPoints, NetPoints, L1Points, BargePointsLabel, BargeReferenceHeader;
 
     static int TelopProsserPoints, AutopProsserPoints, TelopNetPoints, AutoNetPoints, TelopL1Points, AutoL1Points, BargePoints = 0;
-    static boolean checkBox1Auto, checkBox2Auto, checkBox3Auto, checkBox4Auto, checkBox5Auto, checkBox6Auto, checkBox7Auto, checkBox8Auto, checkBox9Auto, checkBox10Auto, checkBox11Auto, checkBox12Auto, checkBox13Auto, checkBox14Auto, checkBox15Auto, checkBox16Auto, checkBox17Auto, checkBox18Auto, checkBox19Auto, checkBox20Auto, checkBox21Auto, checkBox22Auto, checkBox23Auto, checkBox24Auto, checkBox25Auto, checkBox26Auto, checkBox27Auto, checkBox28Auto, checkBox29Auto, checkBox30Auto, checkBox31Auto, checkBox32Auto, checkBox33Auto, checkBox34Auto, checkBox35Auto, checkBox36Auto = false;
-    static boolean checkBox1TeleOp, checkBox2TeleOp, checkBox3TeleOp, checkBox4TeleOp, checkBox5TeleOp, checkBox6TeleOp, checkBox7TeleOp, checkBox8TeleOp, checkBox9TeleOp, checkBox10TeleOp, checkBox11TeleOp, checkBox12TeleOp, checkBox13TeleOp, checkBox14TeleOp, checkBox15TeleOp, checkBox16TeleOp, checkBox17TeleOp, checkBox18TeleOp, checkBox19TeleOp, checkBox20TeleOp, checkBox21TeleOp, checkBox22TeleOp, checkBox23TeleOp, checkBox24TeleOp, checkBox25TeleOp, checkBox26TeleOp, checkBox27TeleOp, checkBox28TeleOp, checkBox29TeleOp, checkBox30TeleOp, checkBox31TeleOp, checkBox32TeleOp, checkBox33TeleOp, checkBox34TeleOp, checkBox35TeleOp, checkBox36TeleOp = false;
 
     //coral levels check boxes
 
@@ -92,10 +90,10 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        // will probaly make caulder happy
-        //ettuing up the Monstrasty (afecnite) that is the hexagon
+        // will probaly make Coulder happy
         for (int i = 0; i < 36; i++) {
-            @SuppressLint("DiscouragedApi") int resID = getResources().getIdentifier("checkBox" + (i + 1), "id", getPackageName());
+            @SuppressLint("DiscouragedApi")
+            int resID = getResources().getIdentifier("checkBox" + (i + 1), "id", getPackageName());
             CheckBoxes[i] = findViewById(resID);
         }
 
@@ -116,12 +114,6 @@ public class MainActivity extends AppCompatActivity {
         CheckBox L2Key = findViewById(R.id.L2Key);
         CheckBox L3Key = findViewById(R.id.L3Key);
         CheckBox L4Key = findViewById(R.id.L4Key);
-
-
-
-
-
-
 
         ProserDec  = findViewById(R.id.ProcessorDec);
         ProserInc = findViewById(R.id.ProcessorInc);
