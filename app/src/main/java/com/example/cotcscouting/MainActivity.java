@@ -12,6 +12,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Switch;
@@ -30,28 +31,35 @@ public class MainActivity extends AppCompatActivity {
 
     //Declarations
     Button ProserDec, ProserInc, NetDec, NetInc, L1Dec, L1Inc, BargeInc, BargeDec;
-    TextView ProsserPoints, NetPoints, L1Points, BargePointsLabel, BargeReferenceHeader;
+    TextView ProsserPoints, NetPoints, L1Points, BargePointsLabel, BargeReferenceHeaderRight, BargeReferenceHeaderLeft;
 
     static int TelopProsserPoints, AutopProsserPoints, TelopNetPoints, AutoNetPoints, TelopL1Points, AutoL1Points, BargePoints = 0;
-    static boolean checkBox1Auto, checkBox2Auto, checkBox3Auto, checkBox4Auto, checkBox5Auto, checkBox6Auto, checkBox7Auto, checkBox8Auto, checkBox9Auto, checkBox10Auto, checkBox11Auto, checkBox12Auto, checkBox13Auto, checkBox14Auto, checkBox15Auto, checkBox16Auto, checkBox17Auto, checkBox18Auto, checkBox19Auto, checkBox20Auto, checkBox21Auto, checkBox22Auto, checkBox23Auto, checkBox24Auto, checkBox25Auto, checkBox26Auto, checkBox27Auto, checkBox28Auto, checkBox29Auto, checkBox30Auto, checkBox31Auto, checkBox32Auto, checkBox33Auto, checkBox34Auto, checkBox35Auto, checkBox36Auto = false;
-    static boolean checkBox1TeleOp, checkBox2TeleOp, checkBox3TeleOp, checkBox4TeleOp, checkBox5TeleOp, checkBox6TeleOp, checkBox7TeleOp, checkBox8TeleOp, checkBox9TeleOp, checkBox10TeleOp, checkBox11TeleOp, checkBox12TeleOp, checkBox13TeleOp, checkBox14TeleOp, checkBox15TeleOp, checkBox16TeleOp, checkBox17TeleOp, checkBox18TeleOp, checkBox19TeleOp, checkBox20TeleOp, checkBox21TeleOp, checkBox22TeleOp, checkBox23TeleOp, checkBox24TeleOp, checkBox25TeleOp, checkBox26TeleOp, checkBox27TeleOp, checkBox28TeleOp, checkBox29TeleOp, checkBox30TeleOp, checkBox31TeleOp, checkBox32TeleOp, checkBox33TeleOp, checkBox34TeleOp, checkBox35TeleOp, checkBox36TeleOp = false;
 
-    //coral levels check boxes
 
+    @SuppressLint("UseSwitchCompatOrMaterialCode")
+    Switch BargeIsLeft;
     static CheckBox[] CheckBoxes = new CheckBox[36];
 
     static Boolean[] IsCheckedInAuto = new Boolean[36];
 
     static Boolean[] IsCheckedInTelop = new Boolean[36];
 
+    //Used for the golden check box
+    static boolean IsGoodTeam = false;
+    CheckBox GoldenTeam;
 
+    //Used for if they passed start in auto
+    static boolean PassedGo = false;
+    CheckBox DidTheyPassGo;
 
     //for the drop down of parking
+
     Spinner ParkingPlaces;
     static String WhareParked = "Did Not Park";
 
 
     boolean isDullBlue = true;
+
 
     //is checked
     @SuppressLint("UseSwitchCompatOrMaterialCode")
@@ -63,6 +71,10 @@ public class MainActivity extends AppCompatActivity {
 
     //The Qr Code Screen
     Button GoToQrCode;
+
+    //the boolen for where on left or right Barge header
+
+    static boolean BargeOnLeft = true;
 
 
     //all below this line is for the qr code screen
@@ -138,7 +150,8 @@ public class MainActivity extends AppCompatActivity {
         BargeDec = findViewById(R.id.BargeDec);
         BargeInc = findViewById(R.id.BargeInc);
         BargePointsLabel = findViewById(R.id.BargePoints);
-        BargeReferenceHeader = findViewById(R.id.BargeReferenceHeader);
+        BargeReferenceHeaderRight = findViewById(R.id.BargeReferenceHeaderRight);
+        BargeReferenceHeaderLeft = findViewById(R.id.BargeReferenceHeaderLeft);
 
 
 
@@ -184,8 +197,7 @@ public class MainActivity extends AppCompatActivity {
             }
         }
 
-        BargeReferenceHeader.setBackgroundResource(R.color.dull_blue);
-        IsTelop.setThumbTintList(ColorStateList.valueOf(getColor(R.color.medium_orange)));
+
 
 
         //prosser
@@ -270,6 +282,15 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
+        //barge logic
+
+        BargeReferenceHeaderRight.setBackgroundResource(R.color.white);
+        BargeReferenceHeaderLeft.setBackgroundResource(R.color.dull_red);
+
+        IsTelop.setThumbTintList(ColorStateList.valueOf(getColor(R.color.medium_orange)));
+
+
         BargeInc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -278,17 +299,48 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        BargeIsLeft = findViewById(R.id.BargeSwitcher);
+        BargeIsLeft.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (BargeIsLeft.isChecked()){
+                    BargeReferenceHeaderLeft.setBackgroundResource(R.color.white);
+                    BargeReferenceHeaderRight.setBackgroundResource(R.color.dull_blue);
+                    BargeOnLeft = true;
+                }else{
+                    BargeReferenceHeaderRight.setBackgroundResource(R.color.white);
+                    BargeReferenceHeaderLeft.setBackgroundResource(R.color.dull_red);
+                    BargeOnLeft = false;
 
-
-        BargeReferenceHeader.setOnClickListener(view -> {
-            if(isDullBlue) {
-                BargeReferenceHeader.setBackgroundResource(R.color.dull_red);
-                isDullBlue = false;
-            } else {
-                BargeReferenceHeader.setBackgroundResource(R.color.dull_blue);
-                isDullBlue = true;
+                }
             }
         });
+        // TODO: was commented to complex
+//        BargeReferenceHeaderRight.setOnClickListener(view -> {
+//            if(isDullBlue && BargeIsLeft.isChecked()) {
+//                BargeReferenceHeaderRight.setBackgroundResource(R.color.dull_red);
+//                BargeReferenceHeaderLeft.setBackgroundResource(R.color.white);
+//
+//                isDullBlue = false;
+//            } else if(BargeIsLeft.isChecked()) {
+//                BargeReferenceHeaderRight.setBackgroundResource(R.color.dull_blue);
+//                BargeReferenceHeaderLeft.setBackgroundResource(R.color.white);
+//
+//                isDullBlue = true;
+//            }
+//        });
+//
+//        BargeReferenceHeaderLeft.setOnClickListener(view -> {
+//            if(isDullBlue && !BargeIsLeft.isChecked()) {
+//                BargeReferenceHeaderLeft.setBackgroundResource(R.color.dull_red);
+//                BargeReferenceHeaderRight.setBackgroundResource(R.color.white);
+//                isDullBlue = false;
+//            } else if(!BargeIsLeft.isChecked()){
+//                BargeReferenceHeaderLeft.setBackgroundResource(R.color.dull_blue);
+//                BargeReferenceHeaderRight.setBackgroundResource(R.color.white);
+//                isDullBlue = true;
+//            }
+//        });
 
         //needs to be at the bottem this is also whare the Telop switch happens IsTelop
         IsTelop.setOnClickListener(view -> {
@@ -380,7 +432,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        //spinner
+        //spinner for Parking
         ParkingPlaces = findViewById(R.id.parkDropDown);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
                 this,
@@ -421,6 +473,22 @@ public class MainActivity extends AppCompatActivity {
                 setContentView(R.layout.show_the_codes);
                 SetUpQrCodes();
             }
+        });
+
+        //is good team / golden team
+
+        GoldenTeam = findViewById(R.id.checkBox);
+
+        GoldenTeam.setOnClickListener(view -> {
+            IsGoodTeam = GoldenTeam.isChecked();
+        });
+
+        //If the passed the starting line
+
+        DidTheyPassGo = findViewById(R.id.PastStartingLineCheck);
+
+        DidTheyPassGo.setOnClickListener(view -> {
+            PassedGo = GoldenTeam.isChecked();
         });
     }
 
