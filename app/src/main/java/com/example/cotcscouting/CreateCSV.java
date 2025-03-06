@@ -2,6 +2,7 @@ package com.example.cotcscouting;
 
 import android.app.Activity;
 import android.content.Context;
+import android.util.Log;
 import android.widget.CheckBox;
 import android.widget.EditText;
 
@@ -112,10 +113,12 @@ public class CreateCSV {
             Header.append(Places[WingCounter]);
             Header.append(" Level :");
             Header.append(counter);
+            Header.append(",");
+
 
 
             counter++;
-            if(counter > 3){
+            if(counter > 4){
                 counter = 2;
             }
             if ((i + Offset) < MainActivity.IsCheckedInAuto.length){
@@ -136,14 +139,14 @@ public class CreateCSV {
 
 
         Offset = 0;
-        //Wing counter is uesd to keep track of waht wing it is;
+        //Wing counter is uesd to keep track of What wing it is ie
         WingCounter = 0;
 
         if (!MainActivity.BargeOnLeft){
             Offset = 17;
             WingCounter = 6;
         }
-
+        counter = 2;
         for (int i = 0; i < MainActivity.IsCheckedInTelop.length; i++) {
             if ((i + 1) % 3 == 0){
                 WingCounter++;
@@ -159,10 +162,11 @@ public class CreateCSV {
             Header.append(Places[WingCounter]);
             Header.append(" Level :");
             Header.append(counter);
+            Header.append(",");
 
 
             counter++;
-            if(counter > 3){
+            if(counter > 4){
                 counter = 2;
             }
             if ((i + Offset) < MainActivity.IsCheckedInAuto.length){
@@ -182,9 +186,10 @@ public class CreateCSV {
         }
 
 
+        Header.append("Notes,");
+        vals.append(Notes.getText().toString());
 
-
-
+        Log.d("Header", Header.toString());
 
 
         QRCodeUtils.generateAndSaveQRCode(context,vals.toString(),FileName);
