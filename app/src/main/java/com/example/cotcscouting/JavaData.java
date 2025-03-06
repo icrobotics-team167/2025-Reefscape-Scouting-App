@@ -7,6 +7,10 @@ import java.io.File;
 import java.io.FileWriter;
 import java.util.ArrayList;
 
+
+//TODO: When making chages make sure to sinc or the changes to this file woint affect the programing
+
+
 public class JavaData {
 
     //Note appends daat if given the name of a file.
@@ -40,6 +44,10 @@ public class JavaData {
         if (dir.exists() && dir.isDirectory()) {
             // Get all files in the directory
             File[] files = dir.listFiles();
+            assert files != null;
+            for (File FileName: files) {
+                Log.d("Found File", FileName.getName());
+            }
 
             // If files are found, loop through them and add their names to the list
             if (files != null) {

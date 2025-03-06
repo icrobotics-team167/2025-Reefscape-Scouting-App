@@ -20,16 +20,17 @@
             android:orientation="vertical">
 
             <ImageView
-                android:id="@+id/QrCodeImage"
+                android:id="@+id/QrCodeImage1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/gear" />
 
-            <Button
-                android:id="@+id/Goback"
+            <ImageView
+                android:id="@+id/QrCodeImage2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Go Back To Data Collection" />
+                android:src="@drawable/gear" />
+
         </LinearLayout>
 
         <LinearLayout
@@ -37,16 +38,16 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <Button
-                android:id="@+id/ShowQrCodes"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Show Qr Code" />
-
             <Spinner
                 android:id="@+id/QrCodeFiles"
                 android:layout_width="match_parent"
                 android:layout_height="76dp" />
+
+            <Button
+                android:id="@+id/Goback"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Go Back To Data Collection" />
         </LinearLayout>
     </LinearLayout>
 

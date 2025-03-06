@@ -11,6 +11,7 @@ import com.journeyapps.barcodescanner.BarcodeEncoder;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+//TODO: When making chages make sure to sinc or the changes to this file woint affect the programing
 
 public class QRCodeUtils {
 
