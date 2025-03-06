@@ -114,11 +114,11 @@ public class CreateCSV {
             Header.append(" Level :");
             Header.append(counter);
             Header.append(",");
-            
+
 
 
             counter++;
-            if(counter > 3){
+            if(counter > 4){
                 counter = 2;
             }
             if ((i + Offset) < MainActivity.IsCheckedInAuto.length){
@@ -146,7 +146,7 @@ public class CreateCSV {
             Offset = 17;
             WingCounter = 6;
         }
-
+        counter = 2;
         for (int i = 0; i < MainActivity.IsCheckedInTelop.length; i++) {
             if ((i + 1) % 3 == 0){
                 WingCounter++;
