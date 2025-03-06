@@ -155,6 +155,8 @@
     <string name="barge_left_right_text">Barge On Left Or Right</string>
     <string name="jerry">Jerry</string>
     <string name="extra_data_header">Extra Data:</string>
+    <string name="played_defense_check_text">Played Defense</string>
+    <string name="coral_header">Coral:</string>
 
     <string-array name="planets_array">
         <item>Did Not Park</item>

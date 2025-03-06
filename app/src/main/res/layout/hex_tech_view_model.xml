@@ -106,406 +106,408 @@
                 android:orientation="horizontal">
 
                 <LinearLayout
-                    android:layout_width="676dp"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical">
 
                     <LinearLayout
-                        android:layout_width="match_parent"
+                        android:layout_width="977dp"
                         android:layout_height="352dp"
                         android:orientation="horizontal">
 
-                        <TextView
-                            android:id="@+id/BargeReferenceHeaderLeft"
-                            android:layout_width="50dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:textSize="45sp"
-                            android:layout_gravity="center"
-                            android:textColor="@color/white"
-                            android:text="@string/barge_reference_header_text" />
-
-                        <androidx.constraintlayout.widget.ConstraintLayout
-                            android:layout_width="360dp"
+                        <LinearLayout
+                            android:layout_width="461dp"
                             android:layout_height="wrap_content"
-                            android:visibility="visible">
-
-                            <CheckBox
-                                android:id="@+id/checkBox29"
-                                android:layout_width="40dp"
-                                android:layout_height="40dp"
-                                android:layout_marginEnd="40dp"
-                                android:layout_marginBottom="140dp"
-                                app:layout_constraintBottom_toBottomOf="@+id/spaceHorizontal"
-                                app:layout_constraintEnd_toEndOf="@+id/spaceVertical"
-                                tools:ignore="TouchTargetSizeCheck" />
-
-                            <CheckBox
-                                android:id="@+id/checkBox32"
-                                android:layout_width="40dp"
-                                android:layout_height="40dp"
-                                android:layout_marginStart="40dp"
-                                android:layout_marginBottom="140dp"
-                                app:layout_constraintBottom_toBottomOf="@+id/spaceHorizontal"
-                                app:layout_constraintStart_toStartOf="@+id/spaceVertical"
-                                tools:ignore="TouchTargetSizeCheck" />
-
-                            <CheckBox
-                                android:id="@+id/checkBox26"
-                                android:layout_width="40dp"
-                                android:layout_height="40dp"
-                                android:layout_marginEnd="80dp"
-                                android:layout_marginBottom="120dp"
-                                app:layout_constraintBottom_toBottomOf="@+id/spaceHorizontal"
-                                app:layout_constraintEnd_toEndOf="@+id/spaceVertical"
-                                tools:ignore="TouchTargetSizeCheck,DuplicateSpeakableTextCheck" />
-
-                            <CheckBox
-                                android:id="@+id/checkBox35"
-                                android:layout_width="40dp"
-                                android:layout_height="40dp"
-                                android:layout_marginStart="80dp"
-                                android:layout_marginBottom="120dp"
-                                app:layout_constraintBottom_toBottomOf="@+id/spaceHorizontal"
-                                app:layout_constraintStart_toStartOf="@+id/spaceVertical"
-                                tools:ignore="TouchTargetSizeCheck" />
-
-                            <CheckBox
-                                android:id="@+id/checkBox28"
-                                android:layout_width="40dp"
-                                android:layout_height="40dp"
-                                android:layout_marginEnd="20dp"
-                                android:layout_marginBottom="100dp"
-                                app:layout_constraintBottom_toBottomOf="@+id/spaceHorizontal"
-                                app:layout_constraintEnd_toEndOf="@+id/spaceVertical"
-                                tools:ignore="TouchTargetSizeCheck" />
-
-                            <CheckBox
-                                android:id="@+id/checkBox31"
-                                android:layout_width="40dp"
-                                android:layout_height="40dp"
-                                android:layout_marginStart="20dp"
-                                android:layout_marginBottom="100dp"
-                                app:layout_constraintBottom_toBottomOf="@+id/spaceHorizontal"
-                                app:layout_constraintStart_toStartOf="@+id/spaceVertical"
-                                tools:ignore="TouchTargetSizeCheck" />
-
-                            <CheckBox
-                                android:id="@+id/checkBox25"
-                                android:layout_width="40dp"
-                                android:layout_height="40dp"
-                                android:layout_marginEnd="60dp"
-                                android:layout_marginBottom="80dp"
-                                app:layout_constraintBottom_toBottomOf="@+id/spaceHorizontal"
-                                app:layout_constraintEnd_toEndOf="@+id/spaceVertical"
-                                tools:ignore="TouchTargetSizeCheck" />
-
-                            <CheckBox
-                                android:id="@+id/checkBox34"
-                                android:layout_width="40dp"
-                                android:layout_height="40dp"
-                                android:layout_marginStart="60dp"
-                                android:layout_marginBottom="80dp"
-                                app:layout_constraintBottom_toBottomOf="@+id/spaceHorizontal"
-                                app:layout_constraintStart_toStartOf="@+id/spaceVertical"
-                                tools:ignore="TouchTargetSizeCheck" />
-
-                            <CheckBox
-                                android:id="@+id/checkBox27"
-                                android:layout_width="40dp"
-                                android:layout_height="40dp"
-                                android:layout_marginBottom="60dp"
-                                app:layout_constraintBottom_toBottomOf="@+id/spaceHorizontal"
-                                app:layout_constraintEnd_toEndOf="@+id/spaceVertical"
-                                tools:ignore="TouchTargetSizeCheck" />
-
-                            <CheckBox
-                                android:id="@+id/checkBox30"
-                                android:layout_width="40dp"
-                                android:layout_height="40dp"
-                                android:layout_marginBottom="60dp"
-                                app:layout_constraintBottom_toBottomOf="@+id/spaceHorizontal"
-                                app:layout_constraintStart_toStartOf="@+id/spaceVertical"
-                                tools:ignore="TouchTargetSizeCheck" />
-
-                            <CheckBox
-                                android:id="@+id/checkBox24"
-                                android:layout_width="40dp"
-                                android:layout_height="40dp"
-                                android:layout_marginEnd="40dp"
-                                android:layout_marginBottom="40dp"
-                                app:layout_constraintBottom_toBottomOf="@+id/spaceHorizontal"
-                                app:layout_constraintEnd_toEndOf="@+id/spaceVertical"
-                                tools:ignore="TouchTargetSizeCheck" />
-
-                            <CheckBox
-                                android:id="@+id/checkBox33"
-                                android:layout_width="40dp"
-                                android:layout_height="40dp"
-                                android:layout_marginStart="40dp"
-                                android:layout_marginBottom="40dp"
-                                app:layout_constraintBottom_toBottomOf="@+id/spaceHorizontal"
-                                app:layout_constraintStart_toStartOf="@+id/spaceVertical"
-                                tools:ignore="TouchTargetSizeCheck" />
-
-                            <CheckBox
-                                android:id="@+id/checkBox23"
-                                android:layout_width="40dp"
-                                android:layout_height="40dp"
-                                android:layout_marginEnd="140dp"
-                                app:layout_constraintBottom_toBottomOf="@+id/spaceHorizontal"
-                                app:layout_constraintEnd_toEndOf="@+id/spaceVertical"
-                                tools:ignore="TouchTargetSizeCheck" />
-
-                            <CheckBox
-                                android:id="@+id/checkBox22"
-                                android:layout_width="40dp"
-                                android:layout_height="40dp"
-                                android:layout_marginEnd="100dp"
-                                app:layout_constraintBottom_toBottomOf="@+id/spaceHorizontal"
-                                app:layout_constraintEnd_toEndOf="@+id/spaceVertical"
-                                tools:ignore="TouchTargetSizeCheck" />
-
-                            <CheckBox
-                                android:id="@+id/checkBox21"
-                                android:layout_width="40dp"
-                                android:layout_height="40dp"
-                                android:layout_marginEnd="60dp"
-                                app:layout_constraintBottom_toBottomOf="@+id/spaceHorizontal"
-                                app:layout_constraintEnd_toEndOf="@+id/spaceVertical"
-                                tools:ignore="TouchTargetSizeCheck"
-
-                                />
-
-                            <CheckBox
-                                android:id="@+id/checkBox0"
-                                android:layout_width="40dp"
-                                android:layout_height="40dp"
-                                android:layout_marginStart="60dp"
-                                app:layout_constraintBottom_toBottomOf="@+id/spaceHorizontal"
-                                app:layout_constraintStart_toStartOf="@+id/spaceVertical"
-                                tools:ignore="TouchTargetSizeCheck" />
-
-                            <CheckBox
-                                android:id="@+id/checkBox1"
-                                android:layout_width="40dp"
-                                android:layout_height="40dp"
-                                android:layout_marginStart="100dp"
-                                android:layout_marginBottom="0dp"
-                                app:layout_constraintBottom_toBottomOf="@+id/spaceHorizontal"
-                                app:layout_constraintStart_toStartOf="@+id/spaceVertical"
-                                tools:ignore="TouchTargetSizeCheck" />
-
-                            <CheckBox
-                                android:id="@+id/checkBox2"
-                                android:layout_width="40dp"
-                                android:layout_height="40dp"
-                                android:layout_marginStart="140dp"
-                                app:layout_constraintBottom_toBottomOf="@+id/spaceHorizontal"
-                                app:layout_constraintStart_toStartOf="@+id/spaceVertical"
-                                tools:ignore="TouchTargetSizeCheck" />
-
-                            <CheckBox
-                                android:id="@+id/checkBox20"
-                                android:layout_width="40dp"
-                                android:layout_height="40dp"
-                                android:layout_marginEnd="140dp"
-                                app:layout_constraintEnd_toEndOf="@+id/spaceVertical"
-                                app:layout_constraintTop_toTopOf="@+id/spaceHorizontal"
-                                tools:ignore="TouchTargetSizeCheck" />
-
-                            <CheckBox
-                                android:id="@+id/checkBox19"
-                                android:layout_width="40dp"
-                                android:layout_height="40dp"
-                                android:layout_marginEnd="100dp"
-                                app:layout_constraintEnd_toEndOf="@+id/spaceVertical"
-                                app:layout_constraintTop_toTopOf="@+id/spaceHorizontal"
-                                tools:ignore="TouchTargetSizeCheck" />
-
-                            <CheckBox
-                                android:id="@+id/checkBox18"
-                                android:layout_width="40dp"
-                                android:layout_height="40dp"
-                                android:layout_marginEnd="60dp"
-                                app:layout_constraintEnd_toEndOf="@+id/spaceVertical"
-                                app:layout_constraintTop_toTopOf="@+id/spaceHorizontal"
-                                tools:ignore="TouchTargetSizeCheck" />
-
-                            <CheckBox
-                                android:id="@+id/checkBox3"
-                                android:layout_width="40dp"
-                                android:layout_height="40dp"
-                                android:layout_marginStart="60dp"
-                                app:layout_constraintStart_toStartOf="@+id/spaceVertical"
-                                app:layout_constraintTop_toTopOf="@+id/spaceHorizontal"
-                                tools:ignore="TouchTargetSizeCheck" />
-
-                            <CheckBox
-                                android:id="@+id/checkBox4"
-                                android:layout_width="40dp"
-                                android:layout_height="40dp"
-                                android:layout_marginStart="100dp"
-                                android:layout_marginTop="0dp"
-                                app:layout_constraintStart_toStartOf="@+id/spaceVertical"
-                                app:layout_constraintTop_toTopOf="@+id/spaceHorizontal"
-                                tools:ignore="TouchTargetSizeCheck" />
-
-                            <CheckBox
-                                android:id="@+id/checkBox5"
-                                android:layout_width="40dp"
-                                android:layout_height="40dp"
-                                android:layout_marginStart="140dp"
-                                app:layout_constraintStart_toStartOf="@+id/spaceVertical"
-                                app:layout_constraintTop_toTopOf="@+id/spaceHorizontal"
-                                tools:ignore="TouchTargetSizeCheck" />
-
-                            <CheckBox
-                                android:id="@+id/checkBox15"
-                                android:layout_width="40dp"
-                                android:layout_height="40dp"
-                                android:layout_marginTop="40dp"
-                                android:layout_marginEnd="40dp"
-                                app:layout_constraintEnd_toEndOf="@+id/spaceVertical"
-                                app:layout_constraintTop_toTopOf="@+id/spaceHorizontal"
-                                tools:ignore="TouchTargetSizeCheck" />
-
-                            <CheckBox
-                                android:id="@+id/checkBox6"
-                                android:layout_width="40dp"
-                                android:layout_height="40dp"
-                                android:layout_marginStart="40dp"
-                                android:layout_marginTop="40dp"
-                                app:layout_constraintStart_toStartOf="@+id/spaceVertical"
-                                app:layout_constraintTop_toTopOf="@+id/spaceHorizontal"
-                                tools:ignore="TouchTargetSizeCheck" />
-
-                            <CheckBox
-                                android:id="@+id/checkBox12"
-                                android:layout_width="40dp"
-                                android:layout_height="40dp"
-                                android:layout_marginTop="60dp"
-                                app:layout_constraintEnd_toEndOf="@+id/spaceVertical"
-                                app:layout_constraintTop_toTopOf="@+id/spaceHorizontal"
-                                tools:ignore="TouchTargetSizeCheck" />
-
-                            <CheckBox
-                                android:id="@+id/checkBox9"
-                                android:layout_width="40dp"
-                                android:layout_height="40dp"
-                                android:layout_marginTop="60dp"
-                                app:layout_constraintStart_toStartOf="@+id/spaceVertical"
-                                app:layout_constraintTop_toTopOf="@+id/spaceHorizontal"
-                                tools:ignore="TouchTargetSizeCheck" />
-
-                            <CheckBox
-                                android:id="@+id/checkBox16"
-                                android:layout_width="40dp"
-                                android:layout_height="40dp"
-                                android:layout_marginTop="80dp"
-                                android:layout_marginEnd="60dp"
-                                app:layout_constraintEnd_toEndOf="@+id/spaceVertical"
-                                app:layout_constraintTop_toTopOf="@+id/spaceHorizontal"
-                                tools:ignore="TouchTargetSizeCheck" />
-
-
-                            <CheckBox
-                                android:id="@+id/checkBox7"
-                                android:layout_width="40dp"
-                                android:layout_height="40dp"
-                                android:layout_marginStart="60dp"
-                                android:layout_marginTop="80dp"
-                                app:layout_constraintStart_toStartOf="@+id/spaceVertical"
-                                app:layout_constraintTop_toTopOf="@+id/spaceHorizontal"
-                                tools:ignore="TouchTargetSizeCheck" />
-
-                            <CheckBox
-                                android:id="@+id/checkBox13"
-                                android:layout_width="40dp"
-                                android:layout_height="40dp"
-                                android:layout_marginTop="100dp"
-                                android:layout_marginEnd="20dp"
-                                app:layout_constraintEnd_toEndOf="@+id/spaceVertical"
-                                app:layout_constraintTop_toTopOf="@+id/spaceHorizontal"
-                                tools:ignore="TouchTargetSizeCheck" />
-
-                            <CheckBox
-                                android:id="@+id/checkBox10"
-                                android:layout_width="40dp"
-                                android:layout_height="40dp"
-                                android:layout_marginStart="20dp"
-                                android:layout_marginTop="100dp"
-                                app:layout_constraintStart_toStartOf="@+id/spaceVertical"
-                                app:layout_constraintTop_toTopOf="@+id/spaceHorizontal"
-                                tools:ignore="TouchTargetSizeCheck" />
-
-                            <CheckBox
-                                android:id="@+id/checkBox17"
-                                android:layout_width="40dp"
-                                android:layout_height="40dp"
-                                android:layout_marginTop="120dp"
-                                android:layout_marginEnd="80dp"
-                                app:layout_constraintEnd_toEndOf="@+id/spaceVertical"
-                                app:layout_constraintTop_toTopOf="@+id/spaceHorizontal"
-                                tools:ignore="TouchTargetSizeCheck" />
-
-                            <CheckBox
-                                android:id="@+id/checkBox8"
-                                android:layout_width="40dp"
-                                android:layout_height="40dp"
-                                android:layout_marginStart="80dp"
-                                android:layout_marginTop="120dp"
-                                app:layout_constraintStart_toStartOf="@+id/spaceVertical"
-                                app:layout_constraintTop_toTopOf="@+id/spaceHorizontal"
-                                tools:ignore="TouchTargetSizeCheck" />
-
-                            <CheckBox
-                                android:id="@+id/checkBox14"
-                                android:layout_width="40dp"
-                                android:layout_height="40dp"
-                                android:layout_marginTop="140dp"
-                                android:layout_marginEnd="40dp"
-                                app:layout_constraintEnd_toEndOf="@+id/spaceVertical"
-                                app:layout_constraintTop_toTopOf="@+id/spaceHorizontal"
-                                tools:ignore="TouchTargetSizeCheck" />
-
-                            <CheckBox
-                                android:id="@+id/checkBox11"
-                                android:layout_width="40dp"
-                                android:layout_height="40dp"
-                                android:layout_marginStart="40dp"
-                                android:layout_marginTop="140dp"
-                                app:layout_constraintStart_toStartOf="@+id/spaceVertical"
-                                app:layout_constraintTop_toTopOf="@+id/spaceHorizontal"
-                                tools:ignore="TouchTargetSizeCheck" />
-
-                            <android.widget.Space
-                                android:id="@+id/spaceVertical"
-                                android:layout_width="1dp"
-                                android:layout_height="360dp"
-                                android:layout_marginStart="180dp"
-                                app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toTopOf="parent" />
-
-                            <android.widget.Space
-                                android:id="@+id/spaceHorizontal"
-                                android:layout_width="360dp"
-                                android:layout_height="1dp"
-                                android:layout_marginTop="180dp"
-                                app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toTopOf="parent" />
-
-                        </androidx.constraintlayout.widget.ConstraintLayout>
-
-                        <TextView
-                            android:id="@+id/BargeReferenceHeaderRight"
-                            android:layout_width="50dp"
-                            android:layout_height="match_parent"
                             android:layout_weight="1"
-                            android:textSize="45sp"
-                            android:layout_gravity="center"
-                            android:textColor="@color/white"
-                            android:text="@string/barge_reference_header_text" />
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/textView"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/coral_header" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/L1Text"
+                                    android:layout_width="64dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="@string/l1_text" />
+
+                                <TextView
+                                    android:id="@+id/L1Points"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="@string/_0" />
+
+                                <Button
+                                    android:id="@+id/L1CoralDec"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:backgroundTint="@color/black"
+                                    android:text="@string/dec_button" />
+
+                                <Button
+                                    android:id="@+id/L1CoralInc"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:backgroundTint="@color/black"
+                                    android:text="@string/inc_button" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/L2Text"
+                                    android:layout_width="64dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="@string/l2_text" />
+
+                                <TextView
+                                    android:id="@+id/L2Points"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="@string/_0" />
+
+                                <Button
+                                    android:id="@+id/L2CoralDec"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:backgroundTint="@color/black"
+                                    android:text="@string/dec_button" />
+
+                                <Button
+                                    android:id="@+id/L2CoralInc"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:backgroundTint="@color/black"
+                                    android:text="@string/inc_button" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/L3Text"
+                                    android:layout_width="64dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="@string/l3_text" />
+
+                                <TextView
+                                    android:id="@+id/L3Points"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="@string/_0" />
+
+                                <Button
+                                    android:id="@+id/L3CoralDec"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:backgroundTint="@color/black"
+                                    android:text="@string/dec_button" />
+
+                                <Button
+                                    android:id="@+id/L3CoralInc"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:backgroundTint="@color/black"
+                                    android:text="@string/inc_button" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/L4Text"
+                                    android:layout_width="64dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="@string/l4_text" />
+
+                                <TextView
+                                    android:id="@+id/L4Points"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="@string/_0" />
+
+                                <Button
+                                    android:id="@+id/L4CoralDec"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:backgroundTint="@color/black"
+                                    android:text="@string/dec_button" />
+
+                                <Button
+                                    android:id="@+id/L4CoralInc"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:backgroundTint="@color/black"
+                                    android:text="@string/inc_button" />
+                            </LinearLayout>
+
+                            <View
+                                android:id="@+id/divider3"
+                                android:layout_width="match_parent"
+                                android:layout_height="10dp"
+                                android:background="?android:attr/listDivider" />
+
+                            <TextView
+                                android:id="@+id/algaeHeader"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/algae_text" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/ProcessorText"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="@string/processor_text" />
+
+                                <TextView
+                                    android:id="@+id/ProcessorPoints"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="@string/_0" />
+
+                                <Button
+                                    android:id="@+id/ProcessorDec"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:backgroundTint="@color/medium_green"
+                                    android:text="@string/dec_button" />
+
+                                <Button
+                                    android:id="@+id/ProcessorInc"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:backgroundTint="@color/medium_green"
+                                    android:text="@string/inc_button" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="59dp"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/NetText"
+                                    android:layout_width="67dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="@string/net_text" />
+
+                                <TextView
+                                    android:id="@+id/NetPoints"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="@string/_0" />
+
+                                <Button
+                                    android:id="@+id/NetDec"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:backgroundTint="@color/medium_green"
+                                    android:text="@string/dec_button" />
+
+                                <Button
+                                    android:id="@+id/NetInc"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:backgroundTint="@color/medium_green"
+                                    android:text="@string/inc_button" />
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <View
+                            android:id="@+id/dividerSideBar"
+                            android:layout_width="25dp"
+                            android:layout_height="match_parent"
+                            android:background="?android:attr/listDivider" />
+
+                        <LinearLayout
+                            android:id="@+id/rightBar"
+                            android:layout_width="272dp"
+                            android:layout_height="350dp"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="76dp"
+                                android:orientation="vertical">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="65dp"
+                                    android:orientation="horizontal">
+
+                                    <LinearLayout
+                                        android:layout_width="134dp"
+                                        android:layout_height="match_parent"
+                                        android:orientation="vertical">
+
+                                        <TextView
+                                            android:id="@+id/autoHeader"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="31dp"
+                                            android:layout_weight="1"
+                                            android:text="@string/auto_data_text" />
+
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_weight="1"
+                                            android:orientation="horizontal">
+
+                                            <TextView
+                                                android:id="@+id/PastStartingLineText"
+                                                android:layout_width="87dp"
+                                                android:layout_height="wrap_content"
+                                                android:text="@string/past_starting_line_text" />
+
+                                            <CheckBox
+                                                android:id="@+id/PastStartingLineCheck"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:buttonTint="@color/orange"
+                                                tools:ignore="TouchTargetSizeCheck" />
+                                        </LinearLayout>
+
+                                    </LinearLayout>
+
+                                    <View
+                                        android:id="@+id/dividerTeleOp"
+                                        android:layout_width="10dp"
+                                        android:layout_height="match_parent"
+                                        android:background="?android:attr/listDivider" />
+
+                                    <LinearLayout
+                                        android:layout_width="124dp"
+                                        android:layout_height="match_parent"
+                                        android:orientation="vertical">
+
+                                        <TextView
+                                            android:id="@+id/teleopHeader"
+                                            android:layout_width="124dp"
+                                            android:layout_height="wrap_content"
+                                            android:text="@string/tele_op_switch_text" />
+
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:orientation="horizontal">
+
+                                            <TextView
+                                                android:id="@+id/teleOpCheckText"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_weight="1"
+                                                android:text="@string/tele_op_switch_data_text_auto" />
+
+                                            <Switch
+                                                android:id="@+id/teleOpCheck"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="match_parent"
+                                                android:layout_weight="1" />
+                                        </LinearLayout>
+                                    </LinearLayout>
+                                </LinearLayout>
+
+                                <View
+                                    android:id="@+id/dividerEndGame"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="10dp"
+                                    android:background="?android:attr/listDivider" />
+                            </LinearLayout>
+
+                            <TextView
+                                android:id="@+id/endGameHeader"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/end_game_text" />
+
+                            <Spinner
+                                android:id="@+id/parkDropDown"
+                                android:layout_width="match_parent"
+                                android:layout_height="53dp"
+                                android:background="#fafad2 "
+                                android:backgroundTint="#FAFAD2" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="48dp"
+                                android:orientation="horizontal">
+
+                                <CheckBox
+                                    android:id="@+id/checkBox"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:buttonTint="@color/gold"
+                                    android:text="@string/gold_team_text"
+                                    tools:ignore="InefficientWeight" />
+
+                                <CheckBox
+                                    android:id="@+id/defense"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="@string/played_defense_check_text" />
+                            </LinearLayout>
+
+                            <Button
+                                android:id="@+id/SubmitButtion"
+                                android:layout_width="match_parent"
+                                android:layout_height="77dp"
+                                android:text="@string/submit"
+                                tools:ignore="TouchTargetSizeCheck" />
+
+                            <Button
+                                android:id="@+id/jerry"
+                                android:layout_width="match_parent"
+                                android:layout_height="58dp"
+                                android:layout_weight="1"
+                                android:text="@string/jerry" />
+
+                        </LinearLayout>
 
                         <View
                             android:id="@+id/divider4"
@@ -519,419 +521,29 @@
                             android:layout_height="match_parent"
                             android:orientation="vertical">
 
-                            <TextView
-                                android:id="@+id/textView2"
+                            <ImageView
+                                android:id="@+id/imageView"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="@string/extra_data_header" />
-
-                            <Button
-                                android:id="@+id/SubmitButtion"
-                                android:layout_width="match_parent"
-                                android:layout_height="139dp"
-                                android:text="@string/submit"
-                                tools:ignore="TouchTargetSizeCheck" />
-
-                            <Button
-                                android:id="@+id/jerry"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="@string/jerry" />
-
-                            <CheckBox
-                                android:id="@+id/checkBox"
-                                android:layout_width="match_parent"
-                                android:layout_height="101dp"
-                                android:layout_weight="1"
-                                android:buttonTint="@color/gold"
-                                android:text="@string/gold_team_text"
-                                tools:ignore="InefficientWeight" />
-
-                            <Switch
-                                android:id="@+id/BargeSwitcher"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="@string/barge_left_right_text" />
-                        </LinearLayout>
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical">
-
-                        <View
-                            android:id="@+id/divider3"
-                            android:layout_width="match_parent"
-                            android:layout_height="10dp"
-                            android:background="?android:attr/listDivider" />
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:orientation="horizontal">
-
-                            <LinearLayout
-                                android:layout_width="307dp"
                                 android:layout_height="match_parent"
-                                android:orientation="vertical">
-
-                                <TextView
-                                    android:id="@+id/reefKeyText"
-                                    android:layout_width="293dp"
-                                    android:layout_height="wrap_content"
-                                    android:text="@string/coral_reef_key_header" />
-
-                                <LinearLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:orientation="horizontal">
-
-                                    <TextView
-                                        android:id="@+id/L2KeyText"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:layout_weight="1"
-                                        android:text="@string/l2_text" />
-
-                                    <CheckBox
-                                        android:id="@+id/L2Key"
-                                        android:layout_width="0dp"
-                                        android:layout_height="wrap_content"
-                                        android:layout_weight="2"
-                                        android:checked="true"
-                                        android:clickable="false"
-                                        android:text=""
-                                        tools:ignore="TouchTargetSizeCheck" />
-
-                                    <TextView
-                                        android:id="@+id/L3KeyText"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:layout_weight="1"
-                                        android:text="@string/l3_text" />
-
-                                    <CheckBox
-                                        android:id="@+id/L3Key"
-                                        android:layout_width="0dp"
-                                        android:layout_height="match_parent"
-                                        android:layout_weight="2"
-                                        android:checked="true"
-                                        android:clickable="false"
-                                        android:text=""
-                                        tools:ignore="TouchTargetSizeCheck" />
-
-                                    <TextView
-                                        android:id="@+id/L4KeyText"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:layout_weight="1"
-                                        android:text="@string/l4_text" />
-
-                                    <CheckBox
-                                        android:id="@+id/L4Key"
-                                        android:layout_width="32dp"
-                                        android:layout_height="wrap_content"
-                                        android:layout_weight="2"
-                                        android:checked="true"
-                                        android:clickable="false"
-
-                                        android:text=""
-                                        tools:ignore="TouchTargetSizeCheck" />
-                                </LinearLayout>
-
-                                <LinearLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:orientation="horizontal">
-
-                                    <TextView
-                                        android:id="@+id/L1Text"
-                                        android:layout_width="64dp"
-                                        android:layout_height="wrap_content"
-                                        android:layout_weight="1"
-                                        android:text="@string/l1_text" />
-
-                                    <TextView
-                                        android:id="@+id/L1Points"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:layout_weight="1"
-                                        android:text="@string/_0" />
-
-                                    <Button
-                                        android:id="@+id/L1CoralDec"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:layout_weight="1"
-                                        android:backgroundTint="@color/black"
-                                        android:text="@string/dec_button" />
-
-                                    <Button
-                                        android:id="@+id/L1CoralInc"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:layout_weight="1"
-                                        android:backgroundTint="@color/black"
-                                        android:text="@string/inc_button" />
-                                </LinearLayout>
-
-                            </LinearLayout>
-
-                            <View
-                                android:id="@+id/divider2"
-                                android:layout_width="1dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:background="?android:attr/listDivider" />
-
-                            <LinearLayout
-                                android:layout_width="360dp"
-                                android:layout_height="match_parent"
-                                android:orientation="vertical">
-
-                                <TextView
-                                    android:id="@+id/algaeHeader"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:text="@string/algae_text" />
-
-                                <LinearLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:orientation="horizontal">
-
-                                    <TextView
-                                        android:id="@+id/ProcessorText"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:layout_weight="1"
-                                        android:text="@string/processor_text" />
-
-                                    <TextView
-                                        android:id="@+id/ProcessorPoints"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:layout_weight="1"
-                                        android:text="@string/_0" />
-
-                                    <Button
-                                        android:id="@+id/ProcessorDec"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:layout_weight="1"
-                                        android:backgroundTint="@color/medium_green"
-                                        android:text="@string/dec_button" />
-
-                                    <Button
-                                        android:id="@+id/ProcessorInc"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:layout_weight="1"
-                                        android:backgroundTint="@color/medium_green"
-                                        android:text="@string/inc_button" />
-                                </LinearLayout>
-
-                                <LinearLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:orientation="horizontal">
-
-                                    <TextView
-                                        android:id="@+id/NetText"
-                                        android:layout_width="67dp"
-                                        android:layout_height="wrap_content"
-                                        android:layout_weight="1"
-                                        android:text="@string/net_text" />
-
-                                    <TextView
-                                        android:id="@+id/NetPoints"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:layout_weight="1"
-                                        android:text="@string/_0" />
-
-                                    <Button
-                                        android:id="@+id/NetDec"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:layout_weight="1"
-                                        android:backgroundTint="@color/medium_green"
-                                        android:text="@string/dec_button" />
-
-                                    <Button
-                                        android:id="@+id/NetInc"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:layout_weight="1"
-                                        android:backgroundTint="@color/medium_green"
-                                        android:text="@string/inc_button" />
-                                </LinearLayout>
-                            </LinearLayout>
-
+                                app:srcCompat="@drawable/gear" />
                         </LinearLayout>
 
                     </LinearLayout>
 
-                </LinearLayout>
-
-                <View
-                    android:id="@+id/dividerSideBar"
-                    android:layout_width="25dp"
-                    android:layout_height="match_parent"
-                    android:background="?android:attr/listDivider" />
-
-                <LinearLayout
-                    android:id="@+id/rightBar"
-                    android:layout_width="272dp"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
-
-                    <LinearLayout
+                    <View
+                        android:id="@+id/divider"
                         android:layout_width="match_parent"
-                        android:layout_height="76dp"
-                        android:orientation="vertical">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="65dp"
-                            android:orientation="horizontal">
-
-                            <LinearLayout
-                                android:layout_width="134dp"
-                                android:layout_height="match_parent"
-                                android:orientation="vertical">
-
-                                <TextView
-                                    android:id="@+id/autoHeader"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="31dp"
-                                    android:layout_weight="1"
-                                    android:text="@string/auto_data_text" />
-
-                                <LinearLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:orientation="horizontal">
-
-                                    <TextView
-                                        android:id="@+id/PastStartingLineText"
-                                        android:layout_width="87dp"
-                                        android:layout_height="wrap_content"
-                                        android:text="@string/past_starting_line_text" />
-
-                                    <CheckBox
-                                        android:id="@+id/PastStartingLineCheck"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:buttonTint="@color/orange"
-                                        tools:ignore="TouchTargetSizeCheck" />
-                                </LinearLayout>
-
-                            </LinearLayout>
-
-                            <View
-                                android:id="@+id/dividerTeleOp"
-                                android:layout_width="10dp"
-                                android:layout_height="match_parent"
-                                android:background="?android:attr/listDivider" />
-
-                            <LinearLayout
-                                android:layout_width="124dp"
-                                android:layout_height="match_parent"
-                                android:orientation="vertical">
-
-                                <TextView
-                                    android:id="@+id/teleopHeader"
-                                    android:layout_width="124dp"
-                                    android:layout_height="wrap_content"
-                                    android:text="@string/tele_op_switch_text" />
-
-                                <LinearLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:orientation="horizontal">
-
-                                    <TextView
-                                        android:id="@+id/teleOpCheckText"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:layout_weight="1"
-                                        android:text="@string/tele_op_switch_data_text_auto" />
-
-                                    <Switch
-                                        android:id="@+id/teleOpCheck"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:layout_weight="1" />
-                                </LinearLayout>
-                            </LinearLayout>
-                        </LinearLayout>
-
-                        <View
-                            android:id="@+id/dividerEndGame"
-                            android:layout_width="match_parent"
-                            android:layout_height="10dp"
-                            android:background="?android:attr/listDivider" />
-                    </LinearLayout>
-
-                    <TextView
-                        android:id="@+id/endGameHeader"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/end_game_text" />
-
-                    <Spinner
-                        android:id="@+id/parkDropDown"
-                        android:layout_width="match_parent"
-                        android:layout_height="53dp"
-                        android:background="#fafad2 "
-                        android:backgroundTint="#FAFAD2" />
+                        android:layout_height="18dp"
+                        android:background="?android:attr/listDivider" />
 
                     <EditText
                         android:id="@+id/notes"
                         android:layout_width="match_parent"
-                        android:layout_height="264dp"
+                        android:layout_height="98dp"
                         android:ems="10"
                         android:hint="@string/notes"
+                        android:maxWidth="950dp"
                         android:inputType="text" />
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="59dp"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:id="@+id/BargeText"
-                            android:layout_width="74dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="@string/total_barge_algae_text" />
-
-                        <TextView
-                            android:id="@+id/BargePoints"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="@string/_0" />
-
-                        <Button
-                            android:id="@+id/BargeDec"
-                            android:layout_width="65dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="@string/dec_button" />
-
-                        <Button
-                            android:id="@+id/BargeInc"
-                            android:layout_width="63dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="@string/inc_button" />
-                    </LinearLayout>
 
                 </LinearLayout>
 
