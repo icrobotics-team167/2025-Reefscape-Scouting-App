@@ -153,6 +153,7 @@ public class MainActivity extends AppCompatActivity {
         BargeReferenceHeaderRight = findViewById(R.id.BargeReferenceHeaderRight);
         BargeReferenceHeaderLeft = findViewById(R.id.BargeReferenceHeaderLeft);
 
+        BargeIsLeft = findViewById(R.id.BargeSwitcher);
 
 
 
@@ -183,7 +184,7 @@ public class MainActivity extends AppCompatActivity {
         L4Key.setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_yellow)));
         L3Key.setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_orange)));
         L2Key.setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_red)));
-
+        BargeIsLeft.setThumbTintList(ColorStateList.valueOf(getColor(R.color.dull_red)));
         boolean FilpFlop = false;
         for (int i = 0; i < CheckBoxes.length; i++) {
             if ((i+1)%3 == 0){
@@ -299,17 +300,19 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        BargeIsLeft = findViewById(R.id.BargeSwitcher);
         BargeIsLeft.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 if (BargeIsLeft.isChecked()){
                     BargeReferenceHeaderLeft.setBackgroundResource(R.color.white);
                     BargeReferenceHeaderRight.setBackgroundResource(R.color.dull_blue);
+                    BargeIsLeft.setThumbTintList(ColorStateList.valueOf(getColor(R.color.dull_blue)));
                     BargeOnLeft = true;
+
                 }else{
                     BargeReferenceHeaderRight.setBackgroundResource(R.color.white);
                     BargeReferenceHeaderLeft.setBackgroundResource(R.color.dull_red);
+                    BargeIsLeft.setThumbTintList(ColorStateList.valueOf(getColor(R.color.dull_red)));
                     BargeOnLeft = false;
 
                 }

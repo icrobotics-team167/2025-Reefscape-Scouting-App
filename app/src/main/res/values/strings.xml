@@ -151,6 +151,10 @@
     <string name="enter_your_info">Enter your info</string>
     <string name="generate_qr_code">Generate QR Code</string>
     <string name="barge_reference_header_text">BARGE</string>
+    <string name="gold_team_text">Gold Team</string>
+    <string name="barge_left_right_text">Barge On Left Or Right</string>
+    <string name="jerry">Jerry</string>
+    <string name="extra_data_header">Extra Data:</string>
 
     <string-array name="planets_array">
         <item>Did Not Park</item>

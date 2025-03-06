@@ -117,10 +117,13 @@
 
                         <TextView
                             android:id="@+id/BargeReferenceHeaderLeft"
-                            android:layout_width="wrap_content"
+                            android:layout_width="50dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
-                            android:text="TextView" />
+                            android:textSize="45sp"
+                            android:layout_gravity="center"
+                            android:textColor="@color/white"
+                            android:text="@string/barge_reference_header_text" />
 
                         <androidx.constraintlayout.widget.ConstraintLayout
                             android:layout_width="360dp"
@@ -496,10 +499,13 @@
 
                         <TextView
                             android:id="@+id/BargeReferenceHeaderRight"
-                            android:layout_width="wrap_content"
+                            android:layout_width="50dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
-                            android:text="TextView" />
+                            android:textSize="45sp"
+                            android:layout_gravity="center"
+                            android:textColor="@color/white"
+                            android:text="@string/barge_reference_header_text" />
 
                         <View
                             android:id="@+id/divider4"
@@ -517,7 +523,7 @@
                                 android:id="@+id/textView2"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="TextView" />
+                                android:text="@string/extra_data_header" />
 
                             <Button
                                 android:id="@+id/SubmitButtion"
@@ -531,7 +537,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text="Jerry" />
+                                android:text="@string/jerry" />
 
                             <CheckBox
                                 android:id="@+id/checkBox"
@@ -539,14 +545,14 @@
                                 android:layout_height="101dp"
                                 android:layout_weight="1"
                                 android:buttonTint="@color/gold"
-                                android:text="Gold Team"
+                                android:text="@string/gold_team_text"
                                 tools:ignore="InefficientWeight" />
 
                             <Switch
                                 android:id="@+id/BargeSwitcher"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="Barge On Left Or Right" />
+                                android:text="@string/barge_left_right_text" />
                         </LinearLayout>
                     </LinearLayout>
 
@@ -860,8 +866,7 @@
                                         android:id="@+id/teleOpCheck"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
-                                        android:layout_weight="1"
-                                        android:text="" />
+                                        android:layout_weight="1" />
                                 </LinearLayout>
                             </LinearLayout>
                         </LinearLayout>
