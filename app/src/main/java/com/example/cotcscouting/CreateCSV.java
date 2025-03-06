@@ -78,112 +78,38 @@ public class CreateCSV {
         vals.append(MainActivity.WhareParked);
         vals.append(",");
 
-        Header.append("Total Barge Alge,");
-        vals.append(MainActivity.BargePoints);
+        Header.append("L1 Auto,");
+        vals.append(MainActivity.AutoL1Points);
         vals.append(",");
 
+        Header.append("L1 Telop,");
+        vals.append(MainActivity.TelopL1Points);
+        vals.append(",");
 
-        //Starts at h based of the blue judges tabel and goes clock wise
+        Header.append("L2 Auto,");
+        vals.append(MainActivity.AutoL2Points);
+        vals.append(",");
 
-        int Offset = 0;
-        //Wing counter is uesd to keep track of waht wing it is;
-        int WingCounter = 0;
+        Header.append("L2 Telop,");
+        vals.append(MainActivity.TelopL2Points);
+        vals.append(",");
 
-        if (!MainActivity.BargeOnLeft){
-            Offset = 17;
-            WingCounter = 6;
-        }
-        char[] Places = {'h','g','f','e','d','c','b','a','l','k','j','i'};
+        Header.append("L3 Auto,");
+        vals.append(MainActivity.AutoL3Points);
+        vals.append(",");
 
+        Header.append("L3 Telop,");
+        vals.append(MainActivity.TelopL3Points);
+        vals.append(",");
 
-        //Counter is ued to keep track of whareter its l2 l3 l4
-        int counter = 2;
-        for (int i = 0; i < MainActivity.IsCheckedInAuto.length; i++) {
-            if ((i + 1) % 3 == 0){
-                WingCounter++;
-            }
+        Header.append("L4 Auto,");
+        vals.append(MainActivity.AutoL4Points);
+        vals.append(",");
 
-            if(WingCounter >= Places.length){
-                WingCounter = WingCounter - Places.length;
-            }
+        Header.append("L4 Telop,");
+        vals.append(MainActivity.TelopL4Points);
+        vals.append(",");
 
-            //TODO: Finsih the logic here for rotation
-            Header.append("Auto Wing :");
-
-            Header.append(Places[WingCounter]);
-            Header.append(" Level :");
-            Header.append(counter);
-            Header.append(",");
-
-
-
-            counter++;
-            if(counter > 4){
-                counter = 2;
-            }
-            if ((i + Offset) < MainActivity.IsCheckedInAuto.length){
-                if(MainActivity.IsCheckedInAuto[i + Offset]){
-                    vals.append("1,");
-                }else{
-                    vals.append("0,");
-                }
-            }else {
-                if (MainActivity.IsCheckedInAuto[(i + Offset) - MainActivity.IsCheckedInAuto.length]) {
-                    vals.append("1,");
-                } else {
-                    vals.append("0,");
-                }
-            }
-
-        }
-
-
-        Offset = 0;
-        //Wing counter is uesd to keep track of What wing it is ie
-        WingCounter = 0;
-
-        if (!MainActivity.BargeOnLeft){
-            Offset = 17;
-            WingCounter = 6;
-        }
-        counter = 2;
-        for (int i = 0; i < MainActivity.IsCheckedInTelop.length; i++) {
-            if ((i + 1) % 3 == 0){
-                WingCounter++;
-            }
-
-            if(WingCounter >= Places.length){
-                WingCounter = WingCounter - Places.length;
-            }
-
-            //TODO: Finsih the logic here for rotation
-            Header.append("Telop Wing :");
-
-            Header.append(Places[WingCounter]);
-            Header.append(" Level :");
-            Header.append(counter);
-            Header.append(",");
-
-
-            counter++;
-            if(counter > 4){
-                counter = 2;
-            }
-            if ((i + Offset) < MainActivity.IsCheckedInAuto.length){
-                if(MainActivity.IsCheckedInTelop[i + Offset]){
-                    vals.append("1,");
-                }else{
-                    vals.append("0,");
-                }
-            }else {
-                if (MainActivity.IsCheckedInTelop[(i + Offset) - MainActivity.IsCheckedInAuto.length]) {
-                    vals.append("1,");
-                } else {
-                    vals.append("0,");
-                }
-            }
-
-        }
 
 
         Header.append("Notes,");
