@@ -20,6 +20,8 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.material.textfield.TextInputEditText;
+
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -318,32 +320,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-        // TODO: was commented to complex
-//        BargeReferenceHeaderRight.setOnClickListener(view -> {
-//            if(isDullBlue && BargeIsLeft.isChecked()) {
-//                BargeReferenceHeaderRight.setBackgroundResource(R.color.dull_red);
-//                BargeReferenceHeaderLeft.setBackgroundResource(R.color.white);
-//
-//                isDullBlue = false;
-//            } else if(BargeIsLeft.isChecked()) {
-//                BargeReferenceHeaderRight.setBackgroundResource(R.color.dull_blue);
-//                BargeReferenceHeaderLeft.setBackgroundResource(R.color.white);
-//
-//                isDullBlue = true;
-//            }
-//        });
-//
-//        BargeReferenceHeaderLeft.setOnClickListener(view -> {
-//            if(isDullBlue && !BargeIsLeft.isChecked()) {
-//                BargeReferenceHeaderLeft.setBackgroundResource(R.color.dull_red);
-//                BargeReferenceHeaderRight.setBackgroundResource(R.color.white);
-//                isDullBlue = false;
-//            } else if(!BargeIsLeft.isChecked()){
-//                BargeReferenceHeaderLeft.setBackgroundResource(R.color.dull_blue);
-//                BargeReferenceHeaderRight.setBackgroundResource(R.color.white);
-//                isDullBlue = true;
-//            }
-//        });
+
 
         //needs to be at the bottem this is also whare the Telop switch happens IsTelop
         IsTelop.setOnClickListener(view -> {
@@ -466,6 +443,7 @@ public class MainActivity extends AppCompatActivity {
 
         Submit.setOnClickListener(view -> {
             new CreateCSV().GenerateCs(this,MainActivity.this);
+            RestMem();
         });
 
         //go to the qr code screen
@@ -501,7 +479,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 setContentView(R.layout.hex_tech_view_model);
-                RestMem();
+                RestMemForGoingToMainScreen();
                 SetUpMainScreen();
             }
         });
@@ -564,6 +542,24 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 // checkBox + num + teleop
+    public void RestMemForGoingToMainScreen(){
+        TelopProsserPoints = 0;
+        AutopProsserPoints = 0;
+        TelopNetPoints = 0;
+        AutoNetPoints = 0;
+        TelopL1Points = 0;
+        AutoL1Points = 0;
+        BargePoints = 0;
+        for(int i = 0; i < 36; i++) {
+            IsCheckedInAuto[i] = false;
+            IsCheckedInTelop[i] = false;
+        }
+
+
+    }
+
+
+    //Should only be used when in the data entry screen
     public void RestMem(){
         TelopProsserPoints = 0;
         AutopProsserPoints = 0;
@@ -576,6 +572,65 @@ public class MainActivity extends AppCompatActivity {
             IsCheckedInAuto[i] = false;
             IsCheckedInTelop[i] = false;
         }
-    }
 
+        ProsserPoints.setText(String.valueOf(AutopProsserPoints));
+        NetPoints.setText(String.valueOf(AutoNetPoints));
+        L1Points.setText(String.valueOf(AutoL1Points));
+        BargePointsLabel.setText("");
+        TeleOpCheckText.setText("Auto");
+
+
+        //check box reset uses is check in auto
+        for(int i = 0; i < 36; i++) {
+            CheckBoxes[i].setChecked(IsCheckedInAuto[i]);
+        }
+
+        IsTelop.setChecked(false);
+
+        //color for auto l2,l3,l4
+        CheckBox L2Key = findViewById(R.id.L2Key);
+        CheckBox L3Key = findViewById(R.id.L3Key);
+        CheckBox L4Key = findViewById(R.id.L4Key);
+
+        L4Key.setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_yellow)));
+        L3Key.setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_orange)));
+        L2Key.setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_red)));
+
+
+        boolean NewFilpFlop = false;
+        for (int i = 0; i < CheckBoxes.length; i++) {
+            if ((i+1)%3 == 0){
+                CheckBoxes[i].setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_yellow)));
+            } else if (NewFilpFlop) {
+                NewFilpFlop = !NewFilpFlop;
+                CheckBoxes[i].setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_orange)));
+            }else{
+                NewFilpFlop = !NewFilpFlop;
+                CheckBoxes[i].setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_red)));
+            }
+        }
+        //color extras
+        if(true) {
+            //colors L1
+            L1Dec.setBackgroundTintList(ColorStateList.valueOf(getColor(R.color.black)));
+            L1Inc.setBackgroundTintList(ColorStateList.valueOf(getColor(R.color.black)));
+            //algae
+            ProserDec.setBackgroundTintList(ColorStateList.valueOf(getColor(R.color.medium_green)));
+            ProserInc.setBackgroundTintList(ColorStateList.valueOf(getColor(R.color.medium_green)));
+            NetDec.setBackgroundTintList(ColorStateList.valueOf(getColor(R.color.medium_green)));
+            NetInc.setBackgroundTintList(ColorStateList.valueOf(getColor(R.color.medium_green)));
+            //Switch
+            IsTelop.setThumbTintList(ColorStateList.valueOf(getColor(R.color.medium_orange)));
+        }
+
+        TextInputEditText RestMatchNumber = findViewById(R.id.match_number);
+        RestMatchNumber.setText("");
+
+        TextInputEditText RestTeamNumber = findViewById(R.id.team_number);
+        RestTeamNumber.setText("");
+
+        TextInputEditText RestTotalPoints = findViewById(R.id.total_points);
+        RestTotalPoints.setText("");
+
+    }
 }
