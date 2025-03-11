@@ -197,9 +197,9 @@ public class MainActivity extends AppCompatActivity {
         SatBehindJudges.setOnClickListener(view -> {
             try {
                 if (IsTrackingBlue.isChecked()){
-                    Writer.append("0\n");
-                }else{
                     Writer.append("1\n");
+                }else{
+                    Writer.append("0\n");
                 }
                 Writer.flush();
                 Writer.close();
@@ -212,9 +212,9 @@ public class MainActivity extends AppCompatActivity {
         SatFarFromJudges.setOnClickListener(view -> {
             try {
                 if (IsTrackingBlue.isChecked()){
-                    Writer.append("2\n");
-                }else{
                     Writer.append("3\n");
+                }else{
+                    Writer.append("2\n");
                 }
                 Writer.flush();
                 Writer.close();
@@ -317,7 +317,7 @@ public class MainActivity extends AppCompatActivity {
         //color for telop Barge?
         L4Key.setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_yellow)));
         L3Key.setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_orange)));
-        L2Key.setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_green)));
+        L2Key.setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_red)));
         boolean FilpFlop = false;
         for (int i = 0; i < CheckBoxes.length; i++) {
             if ((i + 1)%3 == 0){
@@ -327,7 +327,7 @@ public class MainActivity extends AppCompatActivity {
                 CheckBoxes[i].setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_orange)));
             }else{
                 FilpFlop = !FilpFlop;
-                CheckBoxes[i].setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_green)));
+                CheckBoxes[i].setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_red)));
             }
         }
 
