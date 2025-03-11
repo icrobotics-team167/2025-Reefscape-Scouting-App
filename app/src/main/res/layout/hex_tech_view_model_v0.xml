@@ -115,19 +115,10 @@
                         android:layout_height="352dp"
                         android:orientation="horizontal">
 
-                        <TextView
-                            android:id="@+id/BargeReferenceHeaderLeft"
-                            android:layout_width="50dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:textSize="45sp"
-                            android:layout_gravity="center"
-                            android:textColor="@color/white"
-                            android:text="@string/barge_reference_header_text" />
-
                         <androidx.constraintlayout.widget.ConstraintLayout
                             android:layout_width="360dp"
                             android:layout_height="wrap_content"
+                            android:background="#FF0000"
                             android:visibility="visible">
 
                             <CheckBox
@@ -497,16 +488,6 @@
 
                         </androidx.constraintlayout.widget.ConstraintLayout>
 
-                        <TextView
-                            android:id="@+id/BargeReferenceHeaderRight"
-                            android:layout_width="50dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:textSize="45sp"
-                            android:layout_gravity="center"
-                            android:textColor="@color/white"
-                            android:text="@string/barge_reference_header_text" />
-
                         <View
                             android:id="@+id/divider4"
                             android:layout_width="18dp"
@@ -537,7 +518,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text="Skibbidi" />
+                                android:text="@string/jerry" />
 
                             <CheckBox
                                 android:id="@+id/GoldTeam"
@@ -548,11 +529,6 @@
                                 android:text="@string/gold_team_text"
                                 tools:ignore="InefficientWeight" />
 
-                            <Switch
-                                android:id="@+id/BargeSwitcher"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="@string/barge_left_right_text" />
                         </LinearLayout>
                     </LinearLayout>
 

@@ -14,7 +14,6 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.ImageView;
-import android.widget.RadioButton;
 import android.widget.Spinner;
 import android.widget.Switch;
 import android.widget.TextView;
@@ -30,7 +29,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
-import java.util.concurrent.atomic.AtomicInteger;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -39,13 +37,11 @@ public class MainActivity extends AppCompatActivity {
 
     //Declarations
     Button ProserDec, ProserInc, NetDec, NetInc, L1Dec, L1Inc, BargeInc, BargeDec;
-    TextView ProsserPoints, NetPoints, L1Points, BargePointsLabel, BargeReferenceHeaderRight, BargeReferenceHeaderLeft;
+    TextView ProsserPoints, NetPoints, L1Points, BargePointsLabel;
 
     static int TelopProsserPoints, AutopProsserPoints, TelopNetPoints, AutoNetPoints, TelopL1Points, AutoL1Points, BargePoints = 0;
 
 
-    @SuppressLint("UseSwitchCompatOrMaterialCode")
-    Switch BargeIsLeft;
     static CheckBox[] CheckBoxes = new CheckBox[36];
 
     static Boolean[] IsCheckedInAuto = new Boolean[36];
@@ -82,7 +78,6 @@ public class MainActivity extends AppCompatActivity {
 
     //the boolen for where on left or right Barge header
 
-    static boolean BargeOnLeft = true;
 
 
     //all below this line is for the qr code screen
@@ -94,15 +89,15 @@ public class MainActivity extends AppCompatActivity {
 
     //Used By settings
         //Valid vals 0,1,2,3 for line 1
+        // when value = -1 means it has not yet been set
         // when value = 0 means you are sitting behind the refes
         // When Value = 1 Means you are sitting in froint of the judges
-        int PostionWhareSitting;
+        int VersionOfMainView = -1;
 
 
         //used to track if its tracking a red Team
         boolean IsTrackingRed;
 
-        int TeamTracked;
 
     @SuppressLint("SetTextI18n")
     @Override
@@ -128,26 +123,31 @@ public class MainActivity extends AppCompatActivity {
           and choose the right screen to laod depending on whare they are sitting and what bot they are tracking
          */
 
-        Scanner scan;
-        File Config = new File(this.getFilesDir(),"Config");
-        try {
-            scan = new Scanner(Config);
-        } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
 
+        if (VersionOfMainView == -1){
+            Scanner scan;
+            File Config = new File(this.getFilesDir(),"Config");
+            try {
+                scan = new Scanner(Config);
+            } catch (FileNotFoundException e) {
+                throw new RuntimeException(e);
+
+            }
+            String location = scan.nextLine();
+            VersionOfMainView = Integer.parseInt(location);
+            Log.d("Location", location);
         }
 
-        String location = scan.nextLine();
-        Log.d("Location", location);
 
-        scan.close();
 
         //TODO: Add more views
 
-        if (Integer.parseInt(location) == 0){
-            setContentView(R.layout.hex_tech_view_model);
-        } else if (Integer.parseInt(location) == 1) {
-            setContentView(R.layout.hex_tech_view_model_v2);
+        if (VersionOfMainView == 0){
+            setContentView(R.layout.hex_tech_view_model_v0);
+        } else if (VersionOfMainView == 1) {
+            setContentView(R.layout.hex_tech_view_model_v1);
+        }else{
+            System.exit(1);
         }
     }
 
@@ -157,9 +157,9 @@ public class MainActivity extends AppCompatActivity {
 
         Switch IsTrackingBlue = findViewById(R.id.IsTrackingRed);
 
-        Button SatAway = findViewById(R.id.AwayFromJudges);
+        Button SatBehindJudges = findViewById(R.id.AwayFromJudges);
 
-        Button SatByJudges = findViewById(R.id.SatByJudges);
+        Button SatFarFromJudges = findViewById(R.id.SatByJudges);
 
         IsTrackingBlue.setOnClickListener(view ->{
             if (IsTrackingBlue.isChecked()){
@@ -181,8 +181,10 @@ public class MainActivity extends AppCompatActivity {
 
         //Used By settings
         //Valid vals 0,1,2,3 for line 1
-        // when value = 0 means you are sitting behind the refes or away from refes
-        // When Value = 1 Means you are sitting in froint of the judges or close to
+        // when value = 0 means you are sitting Behind the refs and following a red bot
+        // When Value = 1 Means you are sitting Behind the refs and following a blue bot
+        // when value = 2 means you are sitting In front of the refs and following a red bot
+        // When Value = 3 Means you are sitting In front of the refs and following a blue bot
 
         FileWriter Writer;
 
@@ -192,9 +194,13 @@ public class MainActivity extends AppCompatActivity {
             throw new RuntimeException(e);
         }
 
-        SatAway.setOnClickListener(view -> {
+        SatBehindJudges.setOnClickListener(view -> {
             try {
-                Writer.append("0\n");
+                if (IsTrackingBlue.isChecked()){
+                    Writer.append("0\n");
+                }else{
+                    Writer.append("1\n");
+                }
                 Writer.flush();
                 Writer.close();
                 SetUpMainScreen();
@@ -203,9 +209,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        SatByJudges.setOnClickListener(view -> {
+        SatFarFromJudges.setOnClickListener(view -> {
             try {
-                Writer.append("1\n");
+                if (IsTrackingBlue.isChecked()){
+                    Writer.append("2\n");
+                }else{
+                    Writer.append("3\n");
+                }
                 Writer.flush();
                 Writer.close();
                 SetUpMainScreen();
@@ -276,10 +286,8 @@ public class MainActivity extends AppCompatActivity {
         BargeDec = findViewById(R.id.BargeDec);
         BargeInc = findViewById(R.id.BargeInc);
         BargePointsLabel = findViewById(R.id.BargePoints);
-        BargeReferenceHeaderRight = findViewById(R.id.BargeReferenceHeaderRight);
-        BargeReferenceHeaderLeft = findViewById(R.id.BargeReferenceHeaderLeft);
 
-        BargeIsLeft = findViewById(R.id.BargeSwitcher);
+
 
 
 
@@ -310,7 +318,6 @@ public class MainActivity extends AppCompatActivity {
         L4Key.setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_yellow)));
         L3Key.setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_orange)));
         L2Key.setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_red)));
-        BargeIsLeft.setThumbTintList(ColorStateList.valueOf(getColor(R.color.dull_red)));
         boolean FilpFlop = false;
         for (int i = 0; i < CheckBoxes.length; i++) {
             if ((i+1)%3 == 0){
@@ -412,8 +419,7 @@ public class MainActivity extends AppCompatActivity {
 
         //barge logic
 
-        BargeReferenceHeaderRight.setBackgroundResource(R.color.white);
-        BargeReferenceHeaderLeft.setBackgroundResource(R.color.dull_red);
+
 
         IsTelop.setThumbTintList(ColorStateList.valueOf(getColor(R.color.medium_orange)));
 
@@ -426,24 +432,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        BargeIsLeft.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                if (BargeIsLeft.isChecked()){
-                    BargeReferenceHeaderLeft.setBackgroundResource(R.color.white);
-                    BargeReferenceHeaderRight.setBackgroundResource(R.color.dull_blue);
-                    BargeIsLeft.setThumbTintList(ColorStateList.valueOf(getColor(R.color.dull_blue)));
-                    BargeOnLeft = true;
-
-                }else{
-                    BargeReferenceHeaderRight.setBackgroundResource(R.color.white);
-                    BargeReferenceHeaderLeft.setBackgroundResource(R.color.dull_red);
-                    BargeIsLeft.setThumbTintList(ColorStateList.valueOf(getColor(R.color.dull_red)));
-                    BargeOnLeft = false;
-
-                }
-            }
-        });
 
 
         //needs to be at the bottem this is also whare the Telop switch happens IsTelop
@@ -613,7 +601,7 @@ public class MainActivity extends AppCompatActivity {
         GoBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                setContentView(R.layout.hex_tech_view_model);
+                setContentView(R.layout.hex_tech_view_model_v0);
                 RestMemForGoingToMainScreen();
                 SetUpMainScreen();
             }
