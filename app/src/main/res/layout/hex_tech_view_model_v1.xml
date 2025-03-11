@@ -118,7 +118,7 @@
                         <androidx.constraintlayout.widget.ConstraintLayout
                             android:layout_width="360dp"
                             android:layout_height="wrap_content"
-                            android:background="#0018FF"
+                            android:background="#FFFFFF"
                             android:visibility="visible">
 
                             <CheckBox
@@ -494,7 +494,7 @@
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:background="?android:attr/listDivider"
-                            tools:background="#FFFFFF" />
+                            tools:background="#003BFE" />
 
                         <LinearLayout
                             android:layout_width="186dp"
