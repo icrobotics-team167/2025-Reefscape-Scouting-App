@@ -529,6 +529,13 @@
                                 android:text="@string/gold_team_text"
                                 tools:ignore="InefficientWeight" />
 
+                            <TextView
+                                android:id="@+id/TrackedBot"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Red 1"
+                                android:textSize="30dp" />
+
                         </LinearLayout>
                     </LinearLayout>
 

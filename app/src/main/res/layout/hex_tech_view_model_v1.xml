@@ -530,11 +530,13 @@
                                 android:text="@string/gold_team_text"
                                 tools:ignore="InefficientWeight" />
 
-                            <Switch
-                                android:id="@+id/BargeSwitcher"
+                            <TextView
+                                android:id="@+id/TrackedBot"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="@string/barge_left_right_text" />
+                                android:text="Red 1"
+                                android:textSize="30dp" />
+
                         </LinearLayout>
                     </LinearLayout>
 

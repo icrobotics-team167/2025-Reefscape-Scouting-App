@@ -14,6 +14,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.ImageView;
+import android.widget.RadioButton;
 import android.widget.Spinner;
 import android.widget.Switch;
 import android.widget.TextView;
@@ -93,10 +94,9 @@ public class MainActivity extends AppCompatActivity {
         // when value = 0 means you are sitting behind the refes
         // When Value = 1 Means you are sitting in froint of the judges
         int VersionOfMainView = -1;
-
+        int TrackedBot = 0;
 
         //used to track if its tracking a red Team
-        boolean IsTrackingRed;
 
 
     @SuppressLint("SetTextI18n")
@@ -133,9 +133,10 @@ public class MainActivity extends AppCompatActivity {
                 throw new RuntimeException(e);
 
             }
-            String location = scan.nextLine();
-            VersionOfMainView = Integer.parseInt(location);
-            Log.d("Location", location);
+            VersionOfMainView = Integer.parseInt(scan.nextLine());
+            TrackedBot = Integer.parseInt(scan.nextLine());
+            Log.d("Location", VersionOfMainView + "");
+            Log.d("Bot tracked", "Bot :" + TrackedBot);
         }
 
 
@@ -160,6 +161,12 @@ public class MainActivity extends AppCompatActivity {
         Button SatBehindJudges = findViewById(R.id.AwayFromJudges);
 
         Button SatFarFromJudges = findViewById(R.id.SatByJudges);
+
+        RadioButton TrackingBot1 = findViewById(R.id.TrackingBot1);
+        RadioButton TrackingBot2 = findViewById(R.id.TrackingBot2);
+        RadioButton TrackingBot3 = findViewById(R.id.TrackingBot3);
+
+
 
         IsTrackingBlue.setOnClickListener(view ->{
             if (IsTrackingBlue.isChecked()){
@@ -201,6 +208,18 @@ public class MainActivity extends AppCompatActivity {
                 }else{
                     Writer.append("0\n");
                 }
+
+
+                //for what bot is tracked
+                if(TrackingBot1.isChecked()){
+                    Writer.append("1");
+                } else if (TrackingBot2.isChecked()) {
+                    Writer.append("2");
+                }else {
+                    Writer.append("3");
+                }
+
+
                 Writer.flush();
                 Writer.close();
                 SetUpMainScreen();
@@ -211,11 +230,24 @@ public class MainActivity extends AppCompatActivity {
 
         SatFarFromJudges.setOnClickListener(view -> {
             try {
+
+                //for what data entry version to load
                 if (IsTrackingBlue.isChecked()){
                     Writer.append("3\n");
                 }else{
                     Writer.append("2\n");
                 }
+
+                //for what bot is tracked
+                if(TrackingBot1.isChecked()){
+                    Writer.append("1");
+                } else if (TrackingBot2.isChecked()) {
+                    Writer.append("2");
+                }else {
+                    Writer.append("3");
+                }
+
+
                 Writer.flush();
                 Writer.close();
                 SetUpMainScreen();
@@ -265,12 +297,6 @@ public class MainActivity extends AppCompatActivity {
         CheckBox L3Key = findViewById(R.id.L3Key);
         CheckBox L4Key = findViewById(R.id.L4Key);
 
-
-
-
-
-
-
         ProserDec  = findViewById(R.id.ProcessorDec);
         ProserInc = findViewById(R.id.ProcessorInc);
         ProsserPoints =  findViewById(R.id.ProcessorPoints);
@@ -287,9 +313,8 @@ public class MainActivity extends AppCompatActivity {
         BargeInc = findViewById(R.id.BargeInc);
         BargePointsLabel = findViewById(R.id.BargePoints);
 
-
-
-
+        //this local as it is only used here show what bot should be tracked
+        TextView WhatBotToFollow = findViewById(R.id.TrackedBot);
 
 
 
@@ -586,6 +611,13 @@ public class MainActivity extends AppCompatActivity {
         GoldenTeam.setOnClickListener(view -> {
             IsGoodTeam = GoldenTeam.isChecked();
         });
+
+
+        if (VersionOfMainView == 0){
+            WhatBotToFollow.setText("Track Red " + TrackedBot);
+        }else if (VersionOfMainView == 1){
+            WhatBotToFollow.setText("Track Blue " + TrackedBot);
+        }
 
         //If the passed the starting line
 
