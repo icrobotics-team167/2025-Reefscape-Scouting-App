@@ -3,7 +3,6 @@ package com.example.cotcscouting;
 import static com.example.cotcscouting.R.color.medium_purple;
 
 import android.annotation.SuppressLint;
-import android.content.Context;
 import android.content.res.ColorStateList;
 import android.net.Uri;
 import android.os.Bundle;
@@ -18,7 +17,6 @@ import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Switch;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -90,10 +88,16 @@ public class MainActivity extends AppCompatActivity {
     ImageView TheQrImage2;
 
     //Used By settings
-        //Valid vals 0,1,2,3
+        //Valid vals 0,1,2,3 for line 1
         // when value = 0 means you are sitting behind the refes
         // When Value = 1 Means you are sitting in froint of the judges
         int PostionWhareSitting;
+
+
+        //used to track if its tracking a red Team
+        boolean IsTrackingRed;
+
+        int TeamTracked;
 
     @SuppressLint("SetTextI18n")
     @Override
@@ -499,7 +503,7 @@ public class MainActivity extends AppCompatActivity {
 
         //is good team / golden team
 
-        GoldenTeam = findViewById(R.id.checkBox);
+        GoldenTeam = findViewById(R.id.GoldTeam);
 
         GoldenTeam.setOnClickListener(view -> {
             IsGoodTeam = GoldenTeam.isChecked();
@@ -610,6 +614,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     //Should only be used when in the data entry screen
+    @SuppressLint("SetTextI18n")
     public void RestMem(){
         TelopProsserPoints = 0;
         AutopProsserPoints = 0;
@@ -626,8 +631,11 @@ public class MainActivity extends AppCompatActivity {
         ProsserPoints.setText(String.valueOf(AutopProsserPoints));
         NetPoints.setText(String.valueOf(AutoNetPoints));
         L1Points.setText(String.valueOf(AutoL1Points));
-        BargePointsLabel.setText("");
+        BargePointsLabel.setText("0");
         TeleOpCheckText.setText("Auto");
+
+        DidTheyPassGo.setChecked(false);
+        GoldenTeam.setChecked(false);
 
 
         //check box reset uses is check in auto
