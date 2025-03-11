@@ -18,7 +18,7 @@
             android:orientation="vertical">
 
             <Button
-                android:id="@+id/AwayFromJudges"
+                android:id="@+id/SatInFrontOfJudges"
                 android:layout_width="156dp"
                 android:layout_height="88dp"
                 android:text="Sat Away From judges" />
@@ -30,7 +30,7 @@
                 app:srcCompat="@drawable/frc_2025_feild" />
 
             <Button
-                android:id="@+id/SatByJudges"
+                android:id="@+id/BehindJudges"
                 android:layout_width="156dp"
                 android:layout_height="88dp"
                 android:text="Sat By Judges" />

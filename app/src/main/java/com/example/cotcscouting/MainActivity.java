@@ -12,7 +12,6 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
-import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.Spinner;
@@ -158,9 +157,9 @@ public class MainActivity extends AppCompatActivity {
 
         Switch IsTrackingBlue = findViewById(R.id.IsTrackingRed);
 
-        Button SatBehindJudges = findViewById(R.id.AwayFromJudges);
+        Button SatBehindJudges = findViewById(R.id.BehindJudges);
 
-        Button SatFarFromJudges = findViewById(R.id.SatByJudges);
+        Button SatFarFromJudges = findViewById(R.id.SatInFrontOfJudges);
 
         RadioButton TrackingBot1 = findViewById(R.id.TrackingBot1);
         RadioButton TrackingBot2 = findViewById(R.id.TrackingBot2);
@@ -276,7 +275,6 @@ public class MainActivity extends AppCompatActivity {
         for (int i = 1; i <= 36; i++) {
             @SuppressLint("DiscouragedApi") int resID = getResources().getIdentifier("checkBox" + i, "id", getPackageName());
             CheckBoxes[i-1] = findViewById(resID);
-            CheckBoxes[i-1].setButtonTintList(ColorStateList.valueOf(getColor(medium_purple)));
         }
 
         for (int i = 0; i < CheckBoxes.length; i++) {

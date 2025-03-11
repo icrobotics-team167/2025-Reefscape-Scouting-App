@@ -20,7 +20,6 @@ public class CreateCSV {
         EditText team_number = activity.findViewById(R.id.team_number);
         EditText Notes = activity.findViewById(R.id.notes);
         EditText total_points = activity.findViewById(R.id.total_points);
-
         //For the Message
         String FileName = scoutNameEditText.getText().toString() + "_" + match_number.getText().toString() + "_" + team_number.getText().toString();
         StringBuilder Header = new StringBuilder();
@@ -84,6 +83,49 @@ public class CreateCSV {
 
 
         //TODO: READD THE BARGE SCORES
+        String[] Letters = {"A","B","C","D","E","F","G","H","I","J","K","L","M"};
+        //Used to say what Branch your on
+        int Counter = 0;
+        int Level = 2;
+        for (int i = 0; i < MainActivity.IsCheckedInTelop.length; i++) {
+            if((i+1) % 4 == 0){
+                Counter++;
+            }
+            if (Level > 4){
+                Level  = 2;
+            }
+            Header.append("Telop " + Letters[Counter] + Level + ",");
+
+            if (MainActivity.IsCheckedInTelop[i]){
+                vals.append("1,");
+                Log.d("TAG", "Found one that was checked: ");
+            }else{
+                vals.append("0,");
+                Log.d("Did not find it", "Found one that wasnt checked: ");
+            }
+
+            Level++;
+        }
+
+        Counter = 0;
+        Level = 2;
+        for (int i = 0; i < MainActivity.IsCheckedInAuto.length; i++) {
+            if((i+1) % 3 == 0){
+                Counter++;
+            }
+            if (Level > 4){
+                Level  = 2;
+            }
+            Header.append("Auto " + Letters[Counter] + Level + ",");
+
+            if (MainActivity.IsCheckedInAuto[i]){
+                vals.append("1,");
+            }else{
+                vals.append("0,");
+            }
+
+            Level++;
+        }
 
         Header.append("Notes,");
         vals.append(Notes.getText().toString());
