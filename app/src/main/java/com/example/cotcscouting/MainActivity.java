@@ -329,17 +329,8 @@ public class MainActivity extends AppCompatActivity {
                 NetPoints.setText(String.valueOf(TelopNetPoints));
                 L1Points.setText(String.valueOf(TelopL1Points));
                 TeleOpCheckText.setText("Tele-Op");
-                //check box reset
-                for(int i = 0; i < 36; i++) {
-                    CheckBoxes[i].setChecked(IsCheckedInTelop[i]);
-                }
 
-                //color for auto
-                L4Key.setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_magenta)));
-                L3Key.setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_purple)));
-                L2Key.setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_blue)));
-
-
+                //sets the color of the chekc boxes
                 boolean NewFilpFlop = false;
                 for (int i = 0; i < CheckBoxes.length; i++) {
                     if ((i+1)%3 == 0){
@@ -352,6 +343,25 @@ public class MainActivity extends AppCompatActivity {
                         CheckBoxes[i].setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_blue)));
                     }
                 }
+
+
+                //check box reset
+                for(int i = 0; i < 36; i++) {
+                    if (!IsCheckedInAuto[i]) {
+                        CheckBoxes[i].setChecked(IsCheckedInTelop[i]);
+                    }else{
+                        CheckBoxes[i].setClickable(false);
+                        CheckBoxes[i].setButtonTintList(ColorStateList.valueOf(getColor(R.color.md_theme_dark_outline)));
+                    }
+                }
+
+                //color for auto
+                L4Key.setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_magenta)));
+                L3Key.setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_purple)));
+                L2Key.setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_blue)));
+
+
+
 
 
                 //color extras
@@ -376,6 +386,7 @@ public class MainActivity extends AppCompatActivity {
                 //check box reset uses is check in auto
                 for(int i = 0; i < 36; i++) {
                     CheckBoxes[i].setChecked(IsCheckedInAuto[i]);
+                    CheckBoxes[i].setClickable(true);
                 }
 
                 //color for auto l2,l3,l4
