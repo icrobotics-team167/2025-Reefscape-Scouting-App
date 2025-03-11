@@ -91,7 +91,7 @@ public class CreateCSV {
 
 
         //TODO: READD THE BARGE SCORES
-        String[] Letters = {"A","B","C","D","E","F","G","H","I","J","K","L","M"};
+        String[] Letters = {"A","B","C","D","E","F","G","H","I","J","K","L"};
         //Used to say what Branch your on
         int Counter = 0;
         int Level = 2;
@@ -126,7 +126,7 @@ public class CreateCSV {
         Counter = 0;
         Level = 2;
         for (int i = 0; i < MainActivity.IsCheckedInAuto.length; i++) {
-            if((i+1) % 3 == 0){
+            if((i+1) % 4 == 0){
                 Counter++;
             }
             if (Level > 4){
