@@ -14,6 +14,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.ImageView;
+import android.widget.RadioButton;
 import android.widget.Spinner;
 import android.widget.Switch;
 import android.widget.TextView;
@@ -23,9 +24,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.material.textfield.TextInputEditText;
 
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Scanner;
+import java.util.concurrent.atomic.AtomicInteger;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -104,6 +109,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+//        RestMem();
+        //TODO: DELETE WHEN NOT TESTING PLEASE
+        JavaData.removeAllFilesInDir(MainActivity.this);
+
+
         File Config = new File(this.getFilesDir(),"Config");
 
         if (!Config.exists()){
@@ -113,10 +123,53 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    public void MainScreenLoader(){
+        /*TODO: need to make it load the config
+          and choose the right screen to laod depending on whare they are sitting and what bot they are tracking
+         */
+
+        Scanner scan;
+        File Config = new File(this.getFilesDir(),"Config");
+        try {
+            scan = new Scanner(Config);
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+
+        }
+
+        String location = scan.nextLine();
+        Log.d("Location", location);
+
+        scan.close();
+
+        //TODO: Add more views
+
+        if (Integer.parseInt(location) == 0){
+            setContentView(R.layout.hex_tech_view_model);
+        } else if (Integer.parseInt(location) == 1) {
+            setContentView(R.layout.hex_tech_view_model_v2);
+        }
+    }
+
+    @SuppressLint({"UseSwitchCompatOrMaterialCode", "SetTextI18n"})
     public void SetUpSettings(){
         setContentView(R.layout.setup_screen);
 
+        Switch IsTrackingBlue = findViewById(R.id.IsTrackingRed);
 
+        Button SatAway = findViewById(R.id.AwayFromJudges);
+
+        Button SatByJudges = findViewById(R.id.SatByJudges);
+
+        IsTrackingBlue.setOnClickListener(view ->{
+            if (IsTrackingBlue.isChecked()){
+                IsTrackingBlue.setText("Tablet Will Track Blue");
+            }else{
+                IsTrackingBlue.setText("Tablet Will Track Red");
+            }
+        });
+
+        //This is used to create the config log
         File Config = new File(this.getFilesDir(),"Config");
         try {
             Config.createNewFile();
@@ -126,15 +179,52 @@ public class MainActivity extends AppCompatActivity {
             throw new RuntimeException(e);
         }
 
+        //Used By settings
+        //Valid vals 0,1,2,3 for line 1
+        // when value = 0 means you are sitting behind the refes or away from refes
+        // When Value = 1 Means you are sitting in froint of the judges or close to
+
+        FileWriter Writer;
+
+        try {
+            Writer = new FileWriter(Config);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+        SatAway.setOnClickListener(view -> {
+            try {
+                Writer.append("0\n");
+                Writer.flush();
+                Writer.close();
+                SetUpMainScreen();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        });
+
+        SatByJudges.setOnClickListener(view -> {
+            try {
+                Writer.append("1\n");
+                Writer.flush();
+                Writer.close();
+                SetUpMainScreen();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        });
+
+
 
 
     }
 
     @SuppressLint({"SetTextI18n", "UseCompatLoadingForDrawables"})
     public void SetUpMainScreen(){
-        setContentView(R.layout.hex_tech_view_model);
-        //restes the memery of the hexagon
+        //loads the correct xml
+        MainScreenLoader();
 
+        //restes the memery of the hexagon
         Arrays.fill(IsCheckedInAuto, Boolean.FALSE);
         Arrays.fill(IsCheckedInTelop, Boolean.FALSE);
 

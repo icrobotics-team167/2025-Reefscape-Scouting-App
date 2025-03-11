@@ -25,8 +25,8 @@
 
             <ImageView
                 android:id="@+id/imageView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="525dp"
+                android:layout_height="465dp"
                 app:srcCompat="@drawable/frc_2025_feild" />
 
             <Button
@@ -42,10 +42,33 @@
             android:orientation="vertical">
 
             <Switch
-                android:id="@+id/switch1"
+                android:id="@+id/IsTrackingRed"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Switch" />
+                android:text="Tablet Will Track Red" />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <RadioButton
+                    android:id="@+id/TrackingBot1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Tracking Red 1" />
+
+                <RadioButton
+                    android:id="@+id/TrackingBot2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Tracking Red 2" />
+
+                <RadioButton
+                    android:id="@+id/TrackingBot3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Tracking Red 3" />
+            </RadioGroup>
         </LinearLayout>
 
     </LinearLayout>
