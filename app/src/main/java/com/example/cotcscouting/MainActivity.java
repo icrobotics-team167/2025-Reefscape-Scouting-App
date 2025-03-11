@@ -530,6 +530,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 JavaData.removeAllFilesInDir(MainActivity.this);
+                System.exit(0);
             }
         });
 

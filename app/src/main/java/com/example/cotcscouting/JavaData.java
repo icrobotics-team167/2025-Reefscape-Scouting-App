@@ -67,7 +67,7 @@ public class JavaData {
         Log.d("Starting Deletion Of All Files!","Make sure this is called after all data is collected");
 
         // Create a File object pointing to the directory
-        File dir = new File(context.getFilesDir(), "QRCodeImages");
+        File dir = new File(context.getFilesDir().toString());
 
         // Create an ArrayList to hold the file names
 
