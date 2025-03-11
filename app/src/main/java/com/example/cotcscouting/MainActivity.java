@@ -3,6 +3,7 @@ package com.example.cotcscouting;
 import static com.example.cotcscouting.R.color.medium_purple;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.res.ColorStateList;
 import android.net.Uri;
 import android.os.Bundle;
@@ -17,12 +18,14 @@ import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Switch;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.textfield.TextInputEditText;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -81,24 +84,51 @@ public class MainActivity extends AppCompatActivity {
 
     //all below this line is for the qr code screen
 
-    Button GoBack;
+    Button GoBack, RestMem;
 
     ImageView TheQrImage1;
     ImageView TheQrImage2;
 
+    //Used By settings
+        //Valid vals 0,1,2,3
+        // when value = 0 means you are sitting behind the refes
+        // When Value = 1 Means you are sitting in froint of the judges
+        int PostionWhareSitting;
+
     @SuppressLint("SetTextI18n")
     @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.hex_tech_view_model);
-        SetUpMainScreen();
+
+        File Config = new File(this.getFilesDir(),"Config");
+
+        if (!Config.exists()){
+            SetUpSettings();
+        }else{
+            SetUpMainScreen();
+        }
     }
 
+    public void SetUpSettings(){
+        setContentView(R.layout.setup_screen);
 
+
+        File Config = new File(this.getFilesDir(),"Config");
+        try {
+            Config.createNewFile();
+
+        } catch (IOException e) {
+            Log.d("Failed to create config", ":(: ");
+            throw new RuntimeException(e);
+        }
+
+
+
+    }
 
     @SuppressLint({"SetTextI18n", "UseCompatLoadingForDrawables"})
     public void SetUpMainScreen(){
+        setContentView(R.layout.hex_tech_view_model);
         //restes the memery of the hexagon
 
         Arrays.fill(IsCheckedInAuto, Boolean.FALSE);
@@ -492,6 +522,14 @@ public class MainActivity extends AppCompatActivity {
                 setContentView(R.layout.hex_tech_view_model);
                 RestMemForGoingToMainScreen();
                 SetUpMainScreen();
+            }
+        });
+
+        RestMem = findViewById(R.id.RestMem);
+        RestMem.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                JavaData.removeAllFilesInDir(MainActivity.this);
             }
         });
 
