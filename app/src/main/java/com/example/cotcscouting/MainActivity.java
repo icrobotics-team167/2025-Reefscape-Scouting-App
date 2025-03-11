@@ -241,10 +241,10 @@ public class MainActivity extends AppCompatActivity {
 
 
         // will probaly make caulder happy
-        for (int i = 0; i < 36; i++) {
+        for (int i = 1; i <= 36; i++) {
             @SuppressLint("DiscouragedApi") int resID = getResources().getIdentifier("checkBox" + i, "id", getPackageName());
-            CheckBoxes[i] = findViewById(resID);
-            CheckBoxes[i].setButtonTintList(ColorStateList.valueOf(getColor(medium_purple)));
+            CheckBoxes[i-1] = findViewById(resID);
+            CheckBoxes[i-1].setButtonTintList(ColorStateList.valueOf(getColor(medium_purple)));
         }
 
         for (int i = 0; i < CheckBoxes.length; i++) {
@@ -317,17 +317,17 @@ public class MainActivity extends AppCompatActivity {
         //color for telop Barge?
         L4Key.setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_yellow)));
         L3Key.setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_orange)));
-        L2Key.setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_red)));
+        L2Key.setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_green)));
         boolean FilpFlop = false;
         for (int i = 0; i < CheckBoxes.length; i++) {
-            if ((i+1)%3 == 0){
+            if ((i + 1)%3 == 0){
                 CheckBoxes[i].setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_yellow)));
             } else if (FilpFlop) {
                 FilpFlop = !FilpFlop;
                 CheckBoxes[i].setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_orange)));
             }else{
                 FilpFlop = !FilpFlop;
-                CheckBoxes[i].setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_red)));
+                CheckBoxes[i].setButtonTintList(ColorStateList.valueOf(getColor(R.color.medium_green)));
             }
         }
 
