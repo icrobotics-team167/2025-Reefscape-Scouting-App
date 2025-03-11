@@ -3,7 +3,6 @@ package com.example.cotcscouting;
 import android.app.Activity;
 import android.content.Context;
 import android.util.Log;
-import android.widget.CheckBox;
 import android.widget.EditText;
 
 import com.example.cotcscouting.data.model.QRCodeUtils;
@@ -82,6 +81,15 @@ public class CreateCSV {
         vals.append(",");
 
 
+        int ScoredOnL2InTelop = 0;
+        int ScoredOnL3InTelop = 0;
+        int ScoredOnL4InTelop = 0;
+
+        int ScoredOnL2InAuto = 0;
+        int ScoredOnL3InAuto = 0;
+        int ScoredOnL4InAuto = 0;
+
+
         //TODO: READD THE BARGE SCORES
         String[] Letters = {"A","B","C","D","E","F","G","H","I","J","K","L","M"};
         //Used to say what Branch your on
@@ -99,6 +107,14 @@ public class CreateCSV {
             if (MainActivity.IsCheckedInTelop[i]){
                 vals.append("1,");
                 Log.d("TAG", "Found one that was checked: ");
+
+                if (Level == 2){
+                    ScoredOnL2InTelop++;
+                }else if(Level == 3){
+                    ScoredOnL3InTelop++;
+                }else{
+                    ScoredOnL4InTelop++;
+                }
             }else{
                 vals.append("0,");
                 Log.d("Did not find it", "Found one that wasnt checked: ");
@@ -120,12 +136,46 @@ public class CreateCSV {
 
             if (MainActivity.IsCheckedInAuto[i]){
                 vals.append("1,");
+
+                if (Level == 2){
+                    ScoredOnL2InAuto++;
+                }else if(Level == 3){
+                    ScoredOnL3InAuto++;
+                }else{
+                    ScoredOnL4InAuto++;
+                }
+
             }else{
                 vals.append("0,");
             }
 
             Level++;
         }
+
+        Header.append("Scored on l2 Telop,");
+        vals.append(ScoredOnL2InTelop);
+        vals.append(",");
+
+        Header.append("Scored on l3 Telop,");
+        vals.append(ScoredOnL3InTelop);
+        vals.append(",");
+
+        Header.append("Scored on l4 Telop,");
+        vals.append(ScoredOnL4InTelop);
+        vals.append(",");
+
+        Header.append("Scored on l2 Auto,");
+        vals.append(ScoredOnL2InAuto);
+        vals.append(",");
+
+        Header.append("Scored on l3 Auto,");
+        vals.append(ScoredOnL3InAuto);
+        vals.append(",");
+
+        Header.append("Scored on l2 Auto,");
+        vals.append(ScoredOnL4InAuto);
+        vals.append(",");
+
 
         Header.append("Notes,");
         vals.append(Notes.getText().toString());
