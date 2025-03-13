@@ -174,11 +174,15 @@ public class CreateCSV {
 
         Header.append("Scored on l2 Auto,");
         vals.append(ScoredOnL4InAuto);
-        vals.append(",");
 
+
+        //Check for notes
 
         Header.append("Notes,");
-        vals.append(Notes.getText().toString());
+        if (!Notes.getText().toString().isEmpty()){
+            vals.append(",");
+            vals.append(Notes.getText().toString());
+        }
 
         Log.d("Header", Header.toString());
 
