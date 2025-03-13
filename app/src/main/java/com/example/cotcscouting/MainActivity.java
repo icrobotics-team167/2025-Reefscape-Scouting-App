@@ -17,6 +17,7 @@ import android.widget.RadioButton;
 import android.widget.Spinner;
 import android.widget.Switch;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -49,8 +50,8 @@ public class MainActivity extends AppCompatActivity {
     static Boolean[] IsCheckedInTelop = new Boolean[36];
 
     //Used for the golden check box
-    static boolean IsGoodTeam = false;
-    CheckBox GoldenTeam;
+    static boolean PlayedDefense = false;
+    CheckBox DefensiveTeam;
 
     //Used for if they passed start in auto
     static boolean PassedGo = false;
@@ -105,7 +106,8 @@ public class MainActivity extends AppCompatActivity {
 
 //        RestMem();
         //TODO: DELETE WHEN NOT TESTING PLEASE
-        JavaData.removeAllFilesInDir(MainActivity.this);
+//        JavaData.removeAllFilesInDir(MainActivity.this);
+//        JavaData.DelteConfig(MainActivity.this);
 
 
         File Config = new File(this.getFilesDir(),"Config");
@@ -228,31 +230,34 @@ public class MainActivity extends AppCompatActivity {
         });
 
         SatFarFromJudges.setOnClickListener(view -> {
-            try {
+//            TODO: Add in the 2 seeting behind this
+            Toast.makeText(MainActivity.this,"DOES NOT WORK", Toast.LENGTH_SHORT).show();
 
-                //for what data entry version to load
-                if (IsTrackingBlue.isChecked()){
-                    Writer.append("3\n");
-                }else{
-                    Writer.append("2\n");
-                }
-
-                //for what bot is tracked
-                if(TrackingBot1.isChecked()){
-                    Writer.append("1");
-                } else if (TrackingBot2.isChecked()) {
-                    Writer.append("2");
-                }else {
-                    Writer.append("3");
-                }
-
-
-                Writer.flush();
-                Writer.close();
-                SetUpMainScreen();
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
+//            try {
+//
+//                //for what data entry version to load
+//                if (IsTrackingBlue.isChecked()){
+//                    Writer.append("3\n");
+//                }else{
+//                    Writer.append("2\n");
+//                }
+//
+//                //for what bot is tracked
+//                if(TrackingBot1.isChecked()){
+//                    Writer.append("1");
+//                } else if (TrackingBot2.isChecked()) {
+//                    Writer.append("2");
+//                }else {
+//                    Writer.append("3");
+//                }
+//
+//
+//                Writer.flush();
+//                Writer.close();
+//                SetUpMainScreen();
+//            } catch (IOException e) {
+//                throw new RuntimeException(e);
+//            }
         });
 
 
@@ -604,10 +609,10 @@ public class MainActivity extends AppCompatActivity {
 
         //is good team / golden team
 
-        GoldenTeam = findViewById(R.id.GoldTeam);
+        DefensiveTeam = findViewById(R.id.PlayedDefense);
 
-        GoldenTeam.setOnClickListener(view -> {
-            IsGoodTeam = GoldenTeam.isChecked();
+        DefensiveTeam.setOnClickListener(view -> {
+            PlayedDefense = DefensiveTeam.isChecked();
         });
 
 
@@ -622,7 +627,7 @@ public class MainActivity extends AppCompatActivity {
         DidTheyPassGo = findViewById(R.id.PastStartingLineCheck);
 
         DidTheyPassGo.setOnClickListener(view -> {
-            PassedGo = GoldenTeam.isChecked();
+            PassedGo = DefensiveTeam.isChecked();
         });
     }
 
@@ -641,7 +646,8 @@ public class MainActivity extends AppCompatActivity {
         RestMem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                JavaData.removeAllFilesInDir(MainActivity.this);
+                JavaData.RemoveQrCodes(MainActivity.this);
+                JavaData.DelteConfig(MainActivity.this);
                 System.exit(0);
             }
         });
@@ -743,7 +749,7 @@ public class MainActivity extends AppCompatActivity {
         TeleOpCheckText.setText("Auto");
 
         DidTheyPassGo.setChecked(false);
-        GoldenTeam.setChecked(false);
+        DefensiveTeam.setChecked(false);
 
 
         //check box reset uses is check in auto

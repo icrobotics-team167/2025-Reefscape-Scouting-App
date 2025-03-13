@@ -40,8 +40,8 @@ public class CreateCSV {
         vals.append(total_points.getText().toString());
         vals.append(",");
 
-        Header.append("Is Good Team,");
-        vals.append(MainActivity.IsGoodTeam);
+        Header.append("Played Defense,");
+        vals.append(MainActivity.PlayedDefense);
         vals.append(",");
 
         Header.append("Auto L1 Points,");
