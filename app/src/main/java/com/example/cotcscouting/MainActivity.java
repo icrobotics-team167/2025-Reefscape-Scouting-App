@@ -17,7 +17,6 @@ import android.widget.RadioButton;
 import android.widget.Spinner;
 import android.widget.Switch;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -55,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
 
     //Used for if they passed start in auto
     static boolean PassedGo = false;
-    CheckBox DidTheyPassGo;
+    CheckBox DidTheyPassStart;
 
     //for the drop down of parking
 
@@ -94,7 +93,7 @@ public class MainActivity extends AppCompatActivity {
         // when value = 0 means you are sitting behind the refes
         // When Value = 1 Means you are sitting in froint of the judges
         int VersionOfMainView = -1;
-        int TrackedBot = 0;
+        int TrackedBot = 1;
 
         //used to track if its tracking a red Team
 
@@ -148,6 +147,10 @@ public class MainActivity extends AppCompatActivity {
             setContentView(R.layout.hex_tech_view_model_v0);
         } else if (VersionOfMainView == 1) {
             setContentView(R.layout.hex_tech_view_model_v1);
+        }else if(VersionOfMainView == 2){
+            setContentView(R.layout.hex_tech_view_model_v2);
+        } else if (VersionOfMainView == 3) {
+            setContentView(R.layout.hex_tech_view_model_v3);
         }else{
             System.exit(1);
         }
@@ -230,34 +233,31 @@ public class MainActivity extends AppCompatActivity {
         });
 
         SatFarFromJudges.setOnClickListener(view -> {
-//            TODO: Add in the 2 seeting behind this
-            Toast.makeText(MainActivity.this,"DOES NOT WORK", Toast.LENGTH_SHORT).show();
+            try {
 
-//            try {
-//
-//                //for what data entry version to load
-//                if (IsTrackingBlue.isChecked()){
-//                    Writer.append("3\n");
-//                }else{
-//                    Writer.append("2\n");
-//                }
-//
-//                //for what bot is tracked
-//                if(TrackingBot1.isChecked()){
-//                    Writer.append("1");
-//                } else if (TrackingBot2.isChecked()) {
-//                    Writer.append("2");
-//                }else {
-//                    Writer.append("3");
-//                }
-//
-//
-//                Writer.flush();
-//                Writer.close();
-//                SetUpMainScreen();
-//            } catch (IOException e) {
-//                throw new RuntimeException(e);
-//            }
+                //for what data entry version to load
+                if (IsTrackingBlue.isChecked()){
+                    Writer.append("3\n");
+                }else{
+                    Writer.append("2\n");
+                }
+
+                //for what bot is tracked
+                if(TrackingBot1.isChecked()){
+                    Writer.append("1");
+                } else if (TrackingBot2.isChecked()) {
+                    Writer.append("2");
+                }else {
+                    Writer.append("3");
+                }
+
+
+                Writer.flush();
+                Writer.close();
+                SetUpMainScreen();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
         });
 
 
@@ -615,18 +615,21 @@ public class MainActivity extends AppCompatActivity {
             PlayedDefense = DefensiveTeam.isChecked();
         });
 
-
+        // This code say what bot to track
         if (VersionOfMainView == 0){
             WhatBotToFollow.setText("Track Red " + TrackedBot);
         }else if (VersionOfMainView == 1){
             WhatBotToFollow.setText("Track Blue " + TrackedBot);
+        }else if (VersionOfMainView == 2){
+            WhatBotToFollow.setText("Track Red " + TrackedBot);
+        }else{
+            WhatBotToFollow.setText("Track Blue " + TrackedBot);
         }
 
         //If the passed the starting line
+        DidTheyPassStart = findViewById(R.id.PastStartingLineCheck);
 
-        DidTheyPassGo = findViewById(R.id.PastStartingLineCheck);
-
-        DidTheyPassGo.setOnClickListener(view -> {
+        DidTheyPassStart.setOnClickListener(view -> {
             PassedGo = DefensiveTeam.isChecked();
         });
     }
@@ -748,7 +751,7 @@ public class MainActivity extends AppCompatActivity {
         BargePointsLabel.setText("0");
         TeleOpCheckText.setText("Auto");
 
-        DidTheyPassGo.setChecked(false);
+        DidTheyPassStart.setChecked(false);
         DefensiveTeam.setChecked(false);
 
 
