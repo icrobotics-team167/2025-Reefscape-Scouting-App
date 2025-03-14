@@ -1,0 +1,929 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:visibility="visible">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="16dp">
+
+        <LinearLayout
+            android:layout_width="979dp"
+            android:layout_height="799dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/top"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    tools:ignore="ExtraText">
+
+
+                    <TextView
+                        android:id="@+id/scout_name_text"
+                        android:layout_width="47dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/scout_name_text" />
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/scout_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:hint="@string/scout_name_input" />
+
+                    <TextView
+                        android:id="@+id/match_number_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/match_number_text" />
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/match_number"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:hint="@string/match_number_input"
+                        tools:ignore="DuplicateIds" />
+
+                    <TextView
+                        android:id="@+id/team_number_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/team_number_text" />
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/team_number"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:hint="@string/team_number_input" />
+
+                    <TextView
+                        android:id="@+id/total_points_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/total_points_text" />
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/total_points"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:hint="@string/total_points_input" />
+
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/dividerTop"
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:background="?android:attr/listDivider" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/TheSplitter"
+                android:layout_width="match_parent"
+                android:layout_height="475dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="676dp"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="352dp"
+                        android:orientation="horizontal">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="360dp"
+                            android:layout_height="wrap_content"
+                            android:background="#FFFFFF"
+                            android:visibility="visible">
+
+                            <CheckBox
+                                android:id="@+id/checkBox33"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_marginEnd="40dp"
+                                android:layout_marginBottom="140dp"
+                                app:layout_constraintBottom_toBottomOf="@+id/spaceHorizontal"
+                                app:layout_constraintEnd_toEndOf="@+id/spaceVertical"
+                                tools:ignore="TouchTargetSizeCheck" />
+
+                            <CheckBox
+                                android:id="@+id/checkBox30"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_marginStart="40dp"
+                                android:layout_marginBottom="140dp"
+                                app:layout_constraintBottom_toBottomOf="@+id/spaceHorizontal"
+                                app:layout_constraintStart_toStartOf="@+id/spaceVertical"
+                                tools:ignore="TouchTargetSizeCheck" />
+
+                            <CheckBox
+                                android:id="@+id/checkBox36"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_marginEnd="80dp"
+                                android:layout_marginBottom="120dp"
+                                app:layout_constraintBottom_toBottomOf="@+id/spaceHorizontal"
+                                app:layout_constraintEnd_toEndOf="@+id/spaceVertical"
+                                tools:ignore="TouchTargetSizeCheck,DuplicateSpeakableTextCheck" />
+
+                            <CheckBox
+                                android:id="@+id/checkBox27"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_marginStart="80dp"
+                                android:layout_marginBottom="120dp"
+                                app:layout_constraintBottom_toBottomOf="@+id/spaceHorizontal"
+                                app:layout_constraintStart_toStartOf="@+id/spaceVertical"
+                                tools:ignore="TouchTargetSizeCheck" />
+
+                            <CheckBox
+                                android:id="@+id/checkBox32"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_marginEnd="20dp"
+                                android:layout_marginBottom="100dp"
+                                app:layout_constraintBottom_toBottomOf="@+id/spaceHorizontal"
+                                app:layout_constraintEnd_toEndOf="@+id/spaceVertical"
+                                tools:ignore="TouchTargetSizeCheck" />
+
+                            <CheckBox
+                                android:id="@+id/checkBox29"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_marginStart="20dp"
+                                android:layout_marginBottom="100dp"
+                                app:layout_constraintBottom_toBottomOf="@+id/spaceHorizontal"
+                                app:layout_constraintStart_toStartOf="@+id/spaceVertical"
+                                tools:ignore="TouchTargetSizeCheck" />
+
+                            <CheckBox
+                                android:id="@+id/checkBox35"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_marginEnd="60dp"
+                                android:layout_marginBottom="80dp"
+                                app:layout_constraintBottom_toBottomOf="@+id/spaceHorizontal"
+                                app:layout_constraintEnd_toEndOf="@+id/spaceVertical"
+                                tools:ignore="TouchTargetSizeCheck" />
+
+                            <CheckBox
+                                android:id="@+id/checkBox26"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_marginStart="60dp"
+                                android:layout_marginBottom="80dp"
+                                app:layout_constraintBottom_toBottomOf="@+id/spaceHorizontal"
+                                app:layout_constraintStart_toStartOf="@+id/spaceVertical"
+                                tools:ignore="TouchTargetSizeCheck" />
+
+                            <CheckBox
+                                android:id="@+id/checkBox31"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_marginBottom="60dp"
+                                app:layout_constraintBottom_toBottomOf="@+id/spaceHorizontal"
+                                app:layout_constraintEnd_toEndOf="@+id/spaceVertical"
+                                tools:ignore="TouchTargetSizeCheck" />
+
+                            <CheckBox
+                                android:id="@+id/checkBox28"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_marginBottom="60dp"
+                                app:layout_constraintBottom_toBottomOf="@+id/spaceHorizontal"
+                                app:layout_constraintStart_toStartOf="@+id/spaceVertical"
+                                tools:ignore="TouchTargetSizeCheck" />
+
+                            <CheckBox
+                                android:id="@+id/checkBox34"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_marginEnd="40dp"
+                                android:layout_marginBottom="40dp"
+                                app:layout_constraintBottom_toBottomOf="@+id/spaceHorizontal"
+                                app:layout_constraintEnd_toEndOf="@+id/spaceVertical"
+                                tools:ignore="TouchTargetSizeCheck" />
+
+                            <CheckBox
+                                android:id="@+id/checkBox25"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_marginStart="40dp"
+                                android:layout_marginBottom="40dp"
+                                app:layout_constraintBottom_toBottomOf="@+id/spaceHorizontal"
+                                app:layout_constraintStart_toStartOf="@+id/spaceVertical"
+                                tools:ignore="TouchTargetSizeCheck" />
+
+                            <CheckBox
+                                android:id="@+id/checkBox3"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_marginEnd="140dp"
+                                app:layout_constraintBottom_toBottomOf="@+id/spaceHorizontal"
+                                app:layout_constraintEnd_toEndOf="@+id/spaceVertical"
+                                tools:ignore="TouchTargetSizeCheck" />
+
+                            <CheckBox
+                                android:id="@+id/checkBox2"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_marginEnd="100dp"
+                                app:layout_constraintBottom_toBottomOf="@+id/spaceHorizontal"
+                                app:layout_constraintEnd_toEndOf="@+id/spaceVertical"
+                                tools:ignore="TouchTargetSizeCheck" />
+
+                            <CheckBox
+                                android:id="@+id/checkBox1"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_marginEnd="60dp"
+                                app:layout_constraintBottom_toBottomOf="@+id/spaceHorizontal"
+                                app:layout_constraintEnd_toEndOf="@+id/spaceVertical"
+                                tools:ignore="TouchTargetSizeCheck"
+
+                                />
+
+                            <CheckBox
+                                android:id="@+id/checkBox22"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_marginStart="60dp"
+                                app:layout_constraintBottom_toBottomOf="@+id/spaceHorizontal"
+                                app:layout_constraintStart_toStartOf="@+id/spaceVertical"
+                                tools:ignore="TouchTargetSizeCheck" />
+
+                            <CheckBox
+                                android:id="@+id/checkBox23"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_marginStart="100dp"
+                                android:layout_marginBottom="0dp"
+                                app:layout_constraintBottom_toBottomOf="@+id/spaceHorizontal"
+                                app:layout_constraintStart_toStartOf="@+id/spaceVertical"
+                                tools:ignore="TouchTargetSizeCheck" />
+
+                            <CheckBox
+                                android:id="@+id/checkBox24"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_marginStart="140dp"
+                                app:layout_constraintBottom_toBottomOf="@+id/spaceHorizontal"
+                                app:layout_constraintStart_toStartOf="@+id/spaceVertical"
+                                tools:ignore="TouchTargetSizeCheck" />
+
+                            <CheckBox
+                                android:id="@+id/checkBox6"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_marginEnd="140dp"
+                                app:layout_constraintEnd_toEndOf="@+id/spaceVertical"
+                                app:layout_constraintTop_toTopOf="@+id/spaceHorizontal"
+                                tools:ignore="TouchTargetSizeCheck" />
+
+                            <CheckBox
+                                android:id="@+id/checkBox5"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_marginEnd="100dp"
+                                app:layout_constraintEnd_toEndOf="@+id/spaceVertical"
+                                app:layout_constraintTop_toTopOf="@+id/spaceHorizontal"
+                                tools:ignore="TouchTargetSizeCheck" />
+
+                            <CheckBox
+                                android:id="@+id/checkBox4"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_marginEnd="60dp"
+                                app:layout_constraintEnd_toEndOf="@+id/spaceVertical"
+                                app:layout_constraintTop_toTopOf="@+id/spaceHorizontal"
+                                tools:ignore="TouchTargetSizeCheck" />
+
+                            <CheckBox
+                                android:id="@+id/checkBox19"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_marginStart="60dp"
+                                app:layout_constraintStart_toStartOf="@+id/spaceVertical"
+                                app:layout_constraintTop_toTopOf="@+id/spaceHorizontal"
+                                tools:ignore="TouchTargetSizeCheck" />
+
+                            <CheckBox
+                                android:id="@+id/checkBox20"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_marginStart="100dp"
+                                android:layout_marginTop="0dp"
+                                app:layout_constraintStart_toStartOf="@+id/spaceVertical"
+                                app:layout_constraintTop_toTopOf="@+id/spaceHorizontal"
+                                tools:ignore="TouchTargetSizeCheck" />
+
+                            <CheckBox
+                                android:id="@+id/checkBox21"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_marginStart="140dp"
+                                app:layout_constraintStart_toStartOf="@+id/spaceVertical"
+                                app:layout_constraintTop_toTopOf="@+id/spaceHorizontal"
+                                tools:ignore="TouchTargetSizeCheck" />
+
+                            <CheckBox
+                                android:id="@+id/checkBox7"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_marginTop="40dp"
+                                android:layout_marginEnd="40dp"
+                                app:layout_constraintEnd_toEndOf="@+id/spaceVertical"
+                                app:layout_constraintTop_toTopOf="@+id/spaceHorizontal"
+                                tools:ignore="TouchTargetSizeCheck" />
+
+                            <CheckBox
+                                android:id="@+id/checkBox16"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_marginStart="40dp"
+                                android:layout_marginTop="40dp"
+                                app:layout_constraintStart_toStartOf="@+id/spaceVertical"
+                                app:layout_constraintTop_toTopOf="@+id/spaceHorizontal"
+                                tools:ignore="TouchTargetSizeCheck" />
+
+                            <CheckBox
+                                android:id="@+id/checkBox10"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_marginTop="60dp"
+                                app:layout_constraintEnd_toEndOf="@+id/spaceVertical"
+                                app:layout_constraintTop_toTopOf="@+id/spaceHorizontal"
+                                tools:ignore="TouchTargetSizeCheck" />
+
+                            <CheckBox
+                                android:id="@+id/checkBox13"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_marginTop="60dp"
+                                app:layout_constraintStart_toStartOf="@+id/spaceVertical"
+                                app:layout_constraintTop_toTopOf="@+id/spaceHorizontal"
+                                tools:ignore="TouchTargetSizeCheck" />
+
+                            <CheckBox
+                                android:id="@+id/checkBox8"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_marginTop="80dp"
+                                android:layout_marginEnd="60dp"
+                                app:layout_constraintEnd_toEndOf="@+id/spaceVertical"
+                                app:layout_constraintTop_toTopOf="@+id/spaceHorizontal"
+                                tools:ignore="TouchTargetSizeCheck" />
+
+
+                            <CheckBox
+                                android:id="@+id/checkBox17"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_marginStart="60dp"
+                                android:layout_marginTop="80dp"
+                                app:layout_constraintStart_toStartOf="@+id/spaceVertical"
+                                app:layout_constraintTop_toTopOf="@+id/spaceHorizontal"
+                                tools:ignore="TouchTargetSizeCheck" />
+
+                            <CheckBox
+                                android:id="@+id/checkBox11"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_marginTop="100dp"
+                                android:layout_marginEnd="20dp"
+                                app:layout_constraintEnd_toEndOf="@+id/spaceVertical"
+                                app:layout_constraintTop_toTopOf="@+id/spaceHorizontal"
+                                tools:ignore="TouchTargetSizeCheck" />
+
+                            <CheckBox
+                                android:id="@+id/checkBox14"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_marginStart="20dp"
+                                android:layout_marginTop="100dp"
+                                app:layout_constraintStart_toStartOf="@+id/spaceVertical"
+                                app:layout_constraintTop_toTopOf="@+id/spaceHorizontal"
+                                tools:ignore="TouchTargetSizeCheck" />
+
+                            <CheckBox
+                                android:id="@+id/checkBox9"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_marginTop="120dp"
+                                android:layout_marginEnd="80dp"
+                                app:layout_constraintEnd_toEndOf="@+id/spaceVertical"
+                                app:layout_constraintTop_toTopOf="@+id/spaceHorizontal"
+                                tools:ignore="TouchTargetSizeCheck" />
+
+                            <CheckBox
+                                android:id="@+id/checkBox18"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_marginStart="80dp"
+                                android:layout_marginTop="120dp"
+                                app:layout_constraintStart_toStartOf="@+id/spaceVertical"
+                                app:layout_constraintTop_toTopOf="@+id/spaceHorizontal"
+                                tools:ignore="TouchTargetSizeCheck" />
+
+                            <CheckBox
+                                android:id="@+id/checkBox12"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_marginTop="140dp"
+                                android:layout_marginEnd="40dp"
+                                app:layout_constraintEnd_toEndOf="@+id/spaceVertical"
+                                app:layout_constraintTop_toTopOf="@+id/spaceHorizontal"
+                                tools:ignore="TouchTargetSizeCheck" />
+
+                            <CheckBox
+                                android:id="@+id/checkBox15"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_marginStart="40dp"
+                                android:layout_marginTop="140dp"
+                                app:layout_constraintStart_toStartOf="@+id/spaceVertical"
+                                app:layout_constraintTop_toTopOf="@+id/spaceHorizontal"
+                                tools:ignore="TouchTargetSizeCheck" />
+
+                            <android.widget.Space
+                                android:id="@+id/spaceVertical"
+                                android:layout_width="1dp"
+                                android:layout_height="360dp"
+                                android:layout_marginStart="180dp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <android.widget.Space
+                                android:id="@+id/spaceHorizontal"
+                                android:layout_width="360dp"
+                                android:layout_height="1dp"
+                                android:layout_marginTop="180dp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <View
+                            android:id="@+id/divider4"
+                            android:layout_width="18dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="?android:attr/listDivider"
+                            tools:background="#003BFE" />
+
+                        <LinearLayout
+                            android:layout_width="186dp"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/textView2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/extra_data_header" />
+
+                            <Button
+                                android:id="@+id/SubmitButtion"
+                                android:layout_width="match_parent"
+                                android:layout_height="139dp"
+                                android:text="@string/submit"
+                                tools:ignore="TouchTargetSizeCheck" />
+
+                            <Button
+                                android:id="@+id/jerry"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Skibbidi" />
+
+                            <CheckBox
+                                android:id="@+id/PlayedDefense"
+                                android:layout_width="match_parent"
+                                android:layout_height="101dp"
+                                android:layout_weight="1"
+                                android:buttonTint="@color/gold"
+                                android:text="@string/gold_team_text"
+                                tools:ignore="InefficientWeight" />
+
+                            <TextView
+                                android:id="@+id/TrackedBot"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Red 1"
+                                android:textSize="30dp" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <View
+                            android:id="@+id/divider3"
+                            android:layout_width="match_parent"
+                            android:layout_height="10dp"
+                            android:background="?android:attr/listDivider" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:layout_width="307dp"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/reefKeyText"
+                                    android:layout_width="293dp"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/coral_reef_key_header" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:id="@+id/L2KeyText"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:text="@string/l2_text" />
+
+                                    <CheckBox
+                                        android:id="@+id/L2Key"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="2"
+                                        android:checked="true"
+                                        android:clickable="false"
+                                        android:text=""
+                                        tools:ignore="TouchTargetSizeCheck" />
+
+                                    <TextView
+                                        android:id="@+id/L3KeyText"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:text="@string/l3_text" />
+
+                                    <CheckBox
+                                        android:id="@+id/L3Key"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="2"
+                                        android:checked="true"
+                                        android:clickable="false"
+                                        android:text=""
+                                        tools:ignore="TouchTargetSizeCheck" />
+
+                                    <TextView
+                                        android:id="@+id/L4KeyText"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:text="@string/l4_text" />
+
+                                    <CheckBox
+                                        android:id="@+id/L4Key"
+                                        android:layout_width="32dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="2"
+                                        android:checked="true"
+                                        android:clickable="false"
+
+                                        android:text=""
+                                        tools:ignore="TouchTargetSizeCheck" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:id="@+id/L1Text"
+                                        android:layout_width="64dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:text="@string/l1_text" />
+
+                                    <TextView
+                                        android:id="@+id/L1Points"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:text="@string/_0" />
+
+                                    <Button
+                                        android:id="@+id/L1CoralDec"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:backgroundTint="@color/black"
+                                        android:text="@string/dec_button" />
+
+                                    <Button
+                                        android:id="@+id/L1CoralInc"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:backgroundTint="@color/black"
+                                        android:text="@string/inc_button" />
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                            <View
+                                android:id="@+id/divider2"
+                                android:layout_width="1dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:background="?android:attr/listDivider" />
+
+                            <LinearLayout
+                                android:layout_width="360dp"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/algaeHeader"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/algae_text" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:id="@+id/ProcessorText"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:text="@string/processor_text" />
+
+                                    <TextView
+                                        android:id="@+id/ProcessorPoints"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:text="@string/_0" />
+
+                                    <Button
+                                        android:id="@+id/ProcessorDec"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:backgroundTint="@color/medium_green"
+                                        android:text="@string/dec_button" />
+
+                                    <Button
+                                        android:id="@+id/ProcessorInc"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:backgroundTint="@color/medium_green"
+                                        android:text="@string/inc_button" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:id="@+id/NetText"
+                                        android:layout_width="67dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:text="@string/net_text" />
+
+                                    <TextView
+                                        android:id="@+id/NetPoints"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:text="@string/_0" />
+
+                                    <Button
+                                        android:id="@+id/NetDec"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:backgroundTint="@color/medium_green"
+                                        android:text="@string/dec_button" />
+
+                                    <Button
+                                        android:id="@+id/NetInc"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:backgroundTint="@color/medium_green"
+                                        android:text="@string/inc_button" />
+                                </LinearLayout>
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/dividerSideBar"
+                    android:layout_width="25dp"
+                    android:layout_height="match_parent"
+                    android:background="?android:attr/listDivider" />
+
+                <LinearLayout
+                    android:id="@+id/rightBar"
+                    android:layout_width="272dp"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="76dp"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="65dp"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:layout_width="134dp"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/autoHeader"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="31dp"
+                                    android:layout_weight="1"
+                                    android:text="@string/auto_data_text" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:id="@+id/PastStartingLineText"
+                                        android:layout_width="87dp"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/past_starting_line_text" />
+
+                                    <CheckBox
+                                        android:id="@+id/PastStartingLineCheck"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:buttonTint="@color/orange"
+                                        tools:ignore="TouchTargetSizeCheck" />
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                            <View
+                                android:id="@+id/dividerTeleOp"
+                                android:layout_width="10dp"
+                                android:layout_height="match_parent"
+                                android:background="?android:attr/listDivider" />
+
+                            <LinearLayout
+                                android:layout_width="124dp"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/teleopHeader"
+                                    android:layout_width="124dp"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tele_op_switch_text" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:id="@+id/teleOpCheckText"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:text="@string/tele_op_switch_data_text_auto" />
+
+                                    <Switch
+                                        android:id="@+id/teleOpCheck"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1" />
+                                </LinearLayout>
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <View
+                            android:id="@+id/dividerEndGame"
+                            android:layout_width="match_parent"
+                            android:layout_height="10dp"
+                            android:background="?android:attr/listDivider" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/endGameHeader"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/end_game_text" />
+
+                    <Spinner
+                        android:id="@+id/parkDropDown"
+                        android:layout_width="match_parent"
+                        android:layout_height="53dp"
+                        android:background="#fafad2 "
+                        android:backgroundTint="#FAFAD2" />
+
+                    <EditText
+                        android:id="@+id/notes"
+                        android:layout_width="match_parent"
+                        android:layout_height="264dp"
+                        android:ems="10"
+                        android:hint="@string/notes"
+                        android:inputType="text" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="59dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/BargeText"
+                            android:layout_width="74dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/total_barge_algae_text" />
+
+                        <TextView
+                            android:id="@+id/BargePoints"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/_0" />
+
+                        <Button
+                            android:id="@+id/BargeDec"
+                            android:layout_width="65dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/dec_button" />
+
+                        <Button
+                            android:id="@+id/BargeInc"
+                            android:layout_width="63dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/inc_button" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
