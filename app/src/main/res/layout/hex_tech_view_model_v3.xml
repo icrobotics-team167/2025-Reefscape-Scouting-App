@@ -882,10 +882,10 @@
                         android:ems="10"
                         android:gravity="start|top"
                         android:hint="@string/notes"
-                        android:inputType="text"
+                        android:inputType="textMultiLine"
                         android:lines="5"
-                        android:scrollHorizontally="true"
-                        tools:inputType="textMultiLine" />
+                        android:scrollHorizontally="false"
+                        android:breakStrategy="simple" />
 
                     <TextView
                         android:id="@+id/defenseText"
