@@ -879,8 +879,12 @@
                         android:layout_width="match_parent"
                         android:layout_height="264dp"
                         android:ems="10"
+                        android:gravity="start|top"
                         android:hint="@string/notes"
-                        android:inputType="text" />
+                        android:inputType="text"
+                        android:lines="5"
+                        android:scrollHorizontally="true"
+                        tools:inputType="textMultiLine" />
 
                     <TextView
                         android:id="@+id/defenseText"
