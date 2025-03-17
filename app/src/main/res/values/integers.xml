@@ -1,2 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <integer name="min_defense_score">0</integer>
+    <integer name="max_defense_score">4</integer>
+
+<!--    Shuld be half way between min and max-->
+    <integer name="mid_defense_score">2</integer>
+</resources>

@@ -18,8 +18,10 @@ import android.widget.Spinner;
 import android.widget.Switch;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.material.slider.Slider;
 import com.google.android.material.textfield.TextInputEditText;
 
 import java.io.File;
@@ -36,8 +38,8 @@ public class MainActivity extends AppCompatActivity {
     //all below this line is for the data entry
 
     //Declarations
-    Button ProserDec, ProserInc, NetDec, NetInc, L1Dec, L1Inc, BargeInc, BargeDec;
-    TextView ProsserPoints, NetPoints, L1Points, BargePointsLabel;
+    Button ProserDec, ProserInc, NetDec, NetInc, L1Dec, L1Inc;
+    TextView ProsserPoints, NetPoints, L1Points;
 
     static int TelopProsserPoints, AutopProsserPoints, TelopNetPoints, AutoNetPoints, TelopL1Points, AutoL1Points, BargePoints = 0;
 
@@ -76,7 +78,10 @@ public class MainActivity extends AppCompatActivity {
     //The Qr Code Screen
     Button GoToQrCode;
 
-    //the boolen for where on left or right Barge header
+    //This is used to keep track how good they were at defense
+
+    Slider DefenseSlider;
+    static int DefenseScore;
 
 
 
@@ -312,9 +317,10 @@ public class MainActivity extends AppCompatActivity {
         NetInc = findViewById(R.id.NetInc);
         NetPoints = findViewById(R.id.NetPoints);
 
-        BargeDec = findViewById(R.id.BargeDec);
-        BargeInc = findViewById(R.id.BargeInc);
-        BargePointsLabel = findViewById(R.id.BargePoints);
+
+
+        //used to define what the defense slider does
+        DefenseSlider = findViewById(R.id.DefenseSlider);
 
         //this local as it is only used here show what bot should be tracked
         TextView WhatBotToFollow = findViewById(R.id.TrackedBot);
@@ -360,7 +366,14 @@ public class MainActivity extends AppCompatActivity {
         }
 
 
-
+        //Defense slider
+        DefenseSlider.addOnChangeListener(new Slider.OnChangeListener() {
+            @Override
+            public void onValueChange(@NonNull Slider slider, float value, boolean fromUser) {
+                DefenseScore = (int) value;
+                Log.d("Slider moved", "New val = " + DefenseScore);
+            }
+        });
 
         //prosser
 
@@ -432,33 +445,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-
-        //barge
-        BargeDec.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (BargePoints > 0){
-                    BargePoints--;
-                    BargePointsLabel.setText(String.valueOf(BargePoints));
-                }
-            }
-        });
-
-
-        //barge logic
-
-
-
         IsTelop.setThumbTintList(ColorStateList.valueOf(getColor(R.color.medium_orange)));
-
-
-        BargeInc.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                BargePoints++;
-                BargePointsLabel.setText(String.valueOf(BargePoints));
-            }
-        });
 
 
 
@@ -748,7 +735,6 @@ public class MainActivity extends AppCompatActivity {
         ProsserPoints.setText(String.valueOf(AutopProsserPoints));
         NetPoints.setText(String.valueOf(AutoNetPoints));
         L1Points.setText(String.valueOf(AutoL1Points));
-        BargePointsLabel.setText("0");
         TeleOpCheckText.setText("Auto");
 
         DidTheyPassStart.setChecked(false);

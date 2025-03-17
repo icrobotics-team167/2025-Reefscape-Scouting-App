@@ -44,6 +44,10 @@ public class CreateCSV {
         vals.append(MainActivity.PlayedDefense);
         vals.append(",");
 
+        Header.append("Defense Score,");
+        vals.append(MainActivity.DefenseScore);
+        vals.append(",");
+
         Header.append("Auto L1 Points,");
         vals.append(MainActivity.AutoL1Points);
         vals.append(",");
@@ -76,9 +80,7 @@ public class CreateCSV {
         vals.append(MainActivity.WhareParked);
         vals.append(",");
 
-        Header.append("Total Barge Alge,");
-        vals.append(MainActivity.BargePoints);
-        vals.append(",");
+
 
 
         int ScoredOnL2InTelop = 0;
