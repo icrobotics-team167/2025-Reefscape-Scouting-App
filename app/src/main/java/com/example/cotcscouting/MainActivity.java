@@ -81,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
     //This is used to keep track how good they were at defense
 
     Slider DefenseSlider;
-    static int DefenseScore;
+    static int DefenseScore = -1;
 
 
 
@@ -600,6 +600,13 @@ public class MainActivity extends AppCompatActivity {
 
         DefensiveTeam.setOnClickListener(view -> {
             PlayedDefense = DefensiveTeam.isChecked();
+            DefenseSlider.setEnabled(PlayedDefense);
+            if (!PlayedDefense){
+                DefenseSlider.setValue(0);
+                DefenseScore = -1;
+            }else{
+                DefenseScore = 0;
+            }
         });
 
         // This code say what bot to track

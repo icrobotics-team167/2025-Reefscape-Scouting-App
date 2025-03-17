@@ -893,6 +893,7 @@
                         android:id="@+id/DefenseSlider"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:enabled="false"
                         android:stepSize="1"
                         android:valueFrom="@dimen/min_defense_score"
                         android:valueTo="@dimen/max_defense_score" />
