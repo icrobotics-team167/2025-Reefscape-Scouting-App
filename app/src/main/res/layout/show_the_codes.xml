@@ -48,6 +48,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Go Back To Data Collection" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="198dp" />
+
+            <Button
+                android:id="@+id/RestMem"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Rest App DO NOT CLICK IF YOU DOINT MEAN TO FOR THE LOVE OF TADA" />
         </LinearLayout>
     </LinearLayout>
 

@@ -3,10 +3,9 @@ package com.example.cotcscouting;
 import android.app.Activity;
 import android.content.Context;
 import android.util.Log;
-import android.widget.CheckBox;
 import android.widget.EditText;
 
-import com.example.cotcscouting.data.model.QRCodeUtils;
+import com.example.cotcscouting.QRCodeUtils;
 
 //TODO: When making chages make sure to sinc or the changes to this file woint affect the programing
 
@@ -20,7 +19,6 @@ public class CreateCSV {
         EditText team_number = activity.findViewById(R.id.team_number);
         EditText Notes = activity.findViewById(R.id.notes);
         EditText total_points = activity.findViewById(R.id.total_points);
-
         //For the Message
         String FileName = scoutNameEditText.getText().toString() + "_" + match_number.getText().toString() + "_" + team_number.getText().toString();
         StringBuilder Header = new StringBuilder();
@@ -42,8 +40,12 @@ public class CreateCSV {
         vals.append(total_points.getText().toString());
         vals.append(",");
 
-        Header.append("Is Good Team,");
-        vals.append(MainActivity.IsGoodTeam);
+        Header.append("Played Defense,");
+        vals.append(MainActivity.PlayedDefense);
+        vals.append(",");
+
+        Header.append("Defense Score,");
+        vals.append(MainActivity.DefenseScore);
         vals.append(",");
 
         Header.append("Auto L1 Points,");
@@ -78,112 +80,103 @@ public class CreateCSV {
         vals.append(MainActivity.WhareParked);
         vals.append(",");
 
-        Header.append("Total Barge Alge,");
-        vals.append(MainActivity.BargePoints);
+
+
+
+        int ScoredOnL2InTelop = 0;
+        int ScoredOnL3InTelop = 0;
+        int ScoredOnL4InTelop = 0;
+
+        int ScoredOnL2InAuto = 0;
+        int ScoredOnL3InAuto = 0;
+        int ScoredOnL4InAuto = 0;
+
+
+        //TODO: READD THE BARGE SCORES
+        String[] Letters = {"A","B","C","D","E","F","G","H","I","J","K","L"};
+        //Used to say what Branch your on
+        int Counter = 0;
+        int Level = 2;
+        for (int i = 0; i < MainActivity.IsCheckedInTelop.length; i++) {
+            if((i+1) % 4 == 0){
+                Counter++;
+            }
+            if (Level > 4){
+                Level  = 2;
+            }
+            Header.append("Telop " + Letters[Counter] + Level + ",");
+
+            if (MainActivity.IsCheckedInTelop[i]){
+                vals.append("1,");
+                Log.d("TAG", "Found one that was checked: ");
+
+                if (Level == 2){
+                    ScoredOnL2InTelop++;
+                }else if(Level == 3){
+                    ScoredOnL3InTelop++;
+                }else{
+                    ScoredOnL4InTelop++;
+                }
+            }else{
+                vals.append("0,");
+                Log.d("Did not find it", "Found one that wasnt checked: ");
+            }
+
+            Level++;
+        }
+
+        Counter = 0;
+        Level = 2;
+        for (int i = 0; i < MainActivity.IsCheckedInAuto.length; i++) {
+            if((i+1) % 4 == 0){
+                Counter++;
+            }
+            if (Level > 4){
+                Level  = 2;
+            }
+            Header.append("Auto " + Letters[Counter] + Level + ",");
+
+            if (MainActivity.IsCheckedInAuto[i]){
+                vals.append("1,");
+
+                if (Level == 2){
+                    ScoredOnL2InAuto++;
+                }else if(Level == 3){
+                    ScoredOnL3InAuto++;
+                }else{
+                    ScoredOnL4InAuto++;
+                }
+
+            }else{
+                vals.append("0,");
+            }
+
+            Level++;
+        }
+
+        Header.append("Scored on l2 Telop,");
+        vals.append(ScoredOnL2InTelop);
         vals.append(",");
 
+        Header.append("Scored on l3 Telop,");
+        vals.append(ScoredOnL3InTelop);
+        vals.append(",");
 
-        //Starts at h based of the blue judges tabel and goes clock wise
+        Header.append("Scored on l4 Telop,");
+        vals.append(ScoredOnL4InTelop);
+        vals.append(",");
 
-        int Offset = 0;
-        //Wing counter is uesd to keep track of waht wing it is;
-        int WingCounter = 0;
+        Header.append("Scored on l2 Auto,");
+        vals.append(ScoredOnL2InAuto);
+        vals.append(",");
 
-        if (!MainActivity.BargeOnLeft){
-            Offset = 17;
-            WingCounter = 6;
-        }
-        char[] Places = {'h','g','f','e','d','c','b','a','l','k','j','i'};
+        Header.append("Scored on l3 Auto,");
+        vals.append(ScoredOnL3InAuto);
+        vals.append(",");
 
-
-        //Counter is ued to keep track of whareter its l2 l3 l4
-        int counter = 2;
-        for (int i = 0; i < MainActivity.IsCheckedInAuto.length; i++) {
-            if ((i + 1) % 3 == 0){
-                WingCounter++;
-            }
-
-            if(WingCounter >= Places.length){
-                WingCounter = WingCounter - Places.length;
-            }
-
-            //TODO: Finsih the logic here for rotation
-            Header.append("Auto Wing :");
-
-            Header.append(Places[WingCounter]);
-            Header.append(" Level :");
-            Header.append(counter);
-            Header.append(",");
-
-
-
-            counter++;
-            if(counter > 4){
-                counter = 2;
-            }
-            if ((i + Offset) < MainActivity.IsCheckedInAuto.length){
-                if(MainActivity.IsCheckedInAuto[i + Offset]){
-                    vals.append("1,");
-                }else{
-                    vals.append("0,");
-                }
-            }else {
-                if (MainActivity.IsCheckedInAuto[(i + Offset) - MainActivity.IsCheckedInAuto.length]) {
-                    vals.append("1,");
-                } else {
-                    vals.append("0,");
-                }
-            }
-
-        }
-
-
-        Offset = 0;
-        //Wing counter is uesd to keep track of What wing it is ie
-        WingCounter = 0;
-
-        if (!MainActivity.BargeOnLeft){
-            Offset = 17;
-            WingCounter = 6;
-        }
-        counter = 2;
-        for (int i = 0; i < MainActivity.IsCheckedInTelop.length; i++) {
-            if ((i + 1) % 3 == 0){
-                WingCounter++;
-            }
-
-            if(WingCounter >= Places.length){
-                WingCounter = WingCounter - Places.length;
-            }
-
-            //TODO: Finsih the logic here for rotation
-            Header.append("Telop Wing :");
-
-            Header.append(Places[WingCounter]);
-            Header.append(" Level :");
-            Header.append(counter);
-            Header.append(",");
-
-
-            counter++;
-            if(counter > 4){
-                counter = 2;
-            }
-            if ((i + Offset) < MainActivity.IsCheckedInAuto.length){
-                if(MainActivity.IsCheckedInTelop[i + Offset]){
-                    vals.append("1,");
-                }else{
-                    vals.append("0,");
-                }
-            }else {
-                if (MainActivity.IsCheckedInTelop[(i + Offset) - MainActivity.IsCheckedInAuto.length]) {
-                    vals.append("1,");
-                } else {
-                    vals.append("0,");
-                }
-            }
-
-        }
+        Header.append("Scored on l2 Auto,");
+        vals.append(ScoredOnL4InAuto);
+        vals.append(",");
 
 
         Header.append("Notes,");

@@ -62,12 +62,33 @@ public class JavaData {
         return fileList; // Return the list of file names
     }
 
-    public static void removeAllFilesInDir(Context context) {
+    public static void DelteConfig(Context context){
+        Log.d("Starting Deletion Of Config","Make sure to re do it");
+
+        File dir = new File(context.getFilesDir().toString());
+
+        // Check if the directory exists and is a directory
+        if (dir.exists() && dir.isDirectory()) {
+            // Get all files in the directory
+            File[] files = dir.listFiles();
+
+            // If files are found, loop through them and add their names to the list
+            if (files != null) {
+                for (File file : files) {
+                    if (file.isFile()) {
+                        file.delete(); // Add only file names to the list
+                    }
+                }
+            }
+        }
+    }
+
+    public static void RemoveQrCodes(Context context) {
 
         Log.d("Starting Deletion Of All Files!","Make sure this is called after all data is collected");
 
         // Create a File object pointing to the directory
-        File dir = new File(context.getFilesDir(), "QRCodeImages");
+        File dir = new File(context.getFilesDir(),"QRCodeImages");
 
         // Create an ArrayList to hold the file names
 

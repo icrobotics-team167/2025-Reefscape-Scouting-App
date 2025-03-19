@@ -115,23 +115,14 @@
                         android:layout_height="352dp"
                         android:orientation="horizontal">
 
-                        <TextView
-                            android:id="@+id/BargeReferenceHeaderLeft"
-                            android:layout_width="50dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:textSize="45sp"
-                            android:layout_gravity="center"
-                            android:textColor="@color/white"
-                            android:text="@string/barge_reference_header_text" />
-
                         <androidx.constraintlayout.widget.ConstraintLayout
                             android:layout_width="360dp"
                             android:layout_height="wrap_content"
+                            android:background="#FFFFFF"
                             android:visibility="visible">
 
                             <CheckBox
-                                android:id="@+id/checkBox29"
+                                android:id="@+id/checkBox15"
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
                                 android:layout_marginEnd="40dp"
@@ -141,7 +132,7 @@
                                 tools:ignore="TouchTargetSizeCheck" />
 
                             <CheckBox
-                                android:id="@+id/checkBox32"
+                                android:id="@+id/checkBox12"
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
                                 android:layout_marginStart="40dp"
@@ -151,7 +142,7 @@
                                 tools:ignore="TouchTargetSizeCheck" />
 
                             <CheckBox
-                                android:id="@+id/checkBox26"
+                                android:id="@+id/checkBox18"
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
                                 android:layout_marginEnd="80dp"
@@ -161,7 +152,7 @@
                                 tools:ignore="TouchTargetSizeCheck,DuplicateSpeakableTextCheck" />
 
                             <CheckBox
-                                android:id="@+id/checkBox35"
+                                android:id="@+id/checkBox9"
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
                                 android:layout_marginStart="80dp"
@@ -171,7 +162,7 @@
                                 tools:ignore="TouchTargetSizeCheck" />
 
                             <CheckBox
-                                android:id="@+id/checkBox28"
+                                android:id="@+id/checkBox14"
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
                                 android:layout_marginEnd="20dp"
@@ -181,7 +172,7 @@
                                 tools:ignore="TouchTargetSizeCheck" />
 
                             <CheckBox
-                                android:id="@+id/checkBox31"
+                                android:id="@+id/checkBox11"
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
                                 android:layout_marginStart="20dp"
@@ -191,7 +182,7 @@
                                 tools:ignore="TouchTargetSizeCheck" />
 
                             <CheckBox
-                                android:id="@+id/checkBox25"
+                                android:id="@+id/checkBox17"
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
                                 android:layout_marginEnd="60dp"
@@ -201,7 +192,7 @@
                                 tools:ignore="TouchTargetSizeCheck" />
 
                             <CheckBox
-                                android:id="@+id/checkBox34"
+                                android:id="@+id/checkBox8"
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
                                 android:layout_marginStart="60dp"
@@ -211,7 +202,7 @@
                                 tools:ignore="TouchTargetSizeCheck" />
 
                             <CheckBox
-                                android:id="@+id/checkBox27"
+                                android:id="@+id/checkBox13"
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
                                 android:layout_marginBottom="60dp"
@@ -220,7 +211,7 @@
                                 tools:ignore="TouchTargetSizeCheck" />
 
                             <CheckBox
-                                android:id="@+id/checkBox30"
+                                android:id="@+id/checkBox10"
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
                                 android:layout_marginBottom="60dp"
@@ -229,7 +220,7 @@
                                 tools:ignore="TouchTargetSizeCheck" />
 
                             <CheckBox
-                                android:id="@+id/checkBox24"
+                                android:id="@+id/checkBox16"
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
                                 android:layout_marginEnd="40dp"
@@ -239,7 +230,7 @@
                                 tools:ignore="TouchTargetSizeCheck" />
 
                             <CheckBox
-                                android:id="@+id/checkBox33"
+                                android:id="@+id/checkBox7"
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
                                 android:layout_marginStart="40dp"
@@ -249,7 +240,7 @@
                                 tools:ignore="TouchTargetSizeCheck" />
 
                             <CheckBox
-                                android:id="@+id/checkBox23"
+                                android:id="@+id/checkBox21"
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
                                 android:layout_marginEnd="140dp"
@@ -258,7 +249,7 @@
                                 tools:ignore="TouchTargetSizeCheck" />
 
                             <CheckBox
-                                android:id="@+id/checkBox22"
+                                android:id="@+id/checkBox20"
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
                                 android:layout_marginEnd="100dp"
@@ -267,7 +258,7 @@
                                 tools:ignore="TouchTargetSizeCheck" />
 
                             <CheckBox
-                                android:id="@+id/checkBox21"
+                                android:id="@+id/checkBox19"
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
                                 android:layout_marginEnd="60dp"
@@ -278,7 +269,7 @@
                                 />
 
                             <CheckBox
-                                android:id="@+id/checkBox0"
+                                android:id="@+id/checkBox4"
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
                                 android:layout_marginStart="60dp"
@@ -287,7 +278,7 @@
                                 tools:ignore="TouchTargetSizeCheck" />
 
                             <CheckBox
-                                android:id="@+id/checkBox1"
+                                android:id="@+id/checkBox5"
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
                                 android:layout_marginStart="100dp"
@@ -297,7 +288,7 @@
                                 tools:ignore="TouchTargetSizeCheck" />
 
                             <CheckBox
-                                android:id="@+id/checkBox2"
+                                android:id="@+id/checkBox6"
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
                                 android:layout_marginStart="140dp"
@@ -306,7 +297,7 @@
                                 tools:ignore="TouchTargetSizeCheck" />
 
                             <CheckBox
-                                android:id="@+id/checkBox20"
+                                android:id="@+id/checkBox24"
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
                                 android:layout_marginEnd="140dp"
@@ -315,7 +306,7 @@
                                 tools:ignore="TouchTargetSizeCheck" />
 
                             <CheckBox
-                                android:id="@+id/checkBox19"
+                                android:id="@+id/checkBox23"
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
                                 android:layout_marginEnd="100dp"
@@ -324,7 +315,7 @@
                                 tools:ignore="TouchTargetSizeCheck" />
 
                             <CheckBox
-                                android:id="@+id/checkBox18"
+                                android:id="@+id/checkBox22"
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
                                 android:layout_marginEnd="60dp"
@@ -333,7 +324,7 @@
                                 tools:ignore="TouchTargetSizeCheck" />
 
                             <CheckBox
-                                android:id="@+id/checkBox3"
+                                android:id="@+id/checkBox1"
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
                                 android:layout_marginStart="60dp"
@@ -342,7 +333,7 @@
                                 tools:ignore="TouchTargetSizeCheck" />
 
                             <CheckBox
-                                android:id="@+id/checkBox4"
+                                android:id="@+id/checkBox2"
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
                                 android:layout_marginStart="100dp"
@@ -352,7 +343,7 @@
                                 tools:ignore="TouchTargetSizeCheck" />
 
                             <CheckBox
-                                android:id="@+id/checkBox5"
+                                android:id="@+id/checkBox3"
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
                                 android:layout_marginStart="140dp"
@@ -361,9 +352,9 @@
                                 tools:ignore="TouchTargetSizeCheck" />
 
                             <CheckBox
-                                android:id="@+id/checkBox15"
-                                android:layout_width="40dp"
-                                android:layout_height="40dp"
+                                android:id="@+id/checkBox25"
+                                android:layout_width="38dp"
+                                android:layout_height="49dp"
                                 android:layout_marginTop="40dp"
                                 android:layout_marginEnd="40dp"
                                 app:layout_constraintEnd_toEndOf="@+id/spaceVertical"
@@ -371,7 +362,7 @@
                                 tools:ignore="TouchTargetSizeCheck" />
 
                             <CheckBox
-                                android:id="@+id/checkBox6"
+                                android:id="@+id/checkBox34"
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
                                 android:layout_marginStart="40dp"
@@ -381,7 +372,7 @@
                                 tools:ignore="TouchTargetSizeCheck" />
 
                             <CheckBox
-                                android:id="@+id/checkBox12"
+                                android:id="@+id/checkBox28"
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
                                 android:layout_marginTop="60dp"
@@ -390,7 +381,7 @@
                                 tools:ignore="TouchTargetSizeCheck" />
 
                             <CheckBox
-                                android:id="@+id/checkBox9"
+                                android:id="@+id/checkBox31"
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
                                 android:layout_marginTop="60dp"
@@ -399,7 +390,7 @@
                                 tools:ignore="TouchTargetSizeCheck" />
 
                             <CheckBox
-                                android:id="@+id/checkBox16"
+                                android:id="@+id/checkBox26"
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
                                 android:layout_marginTop="80dp"
@@ -410,7 +401,7 @@
 
 
                             <CheckBox
-                                android:id="@+id/checkBox7"
+                                android:id="@+id/checkBox35"
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
                                 android:layout_marginStart="60dp"
@@ -420,7 +411,7 @@
                                 tools:ignore="TouchTargetSizeCheck" />
 
                             <CheckBox
-                                android:id="@+id/checkBox13"
+                                android:id="@+id/checkBox29"
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
                                 android:layout_marginTop="100dp"
@@ -430,9 +421,9 @@
                                 tools:ignore="TouchTargetSizeCheck" />
 
                             <CheckBox
-                                android:id="@+id/checkBox10"
-                                android:layout_width="40dp"
-                                android:layout_height="40dp"
+                                android:id="@+id/checkBox32"
+                                android:layout_width="45dp"
+                                android:layout_height="50dp"
                                 android:layout_marginStart="20dp"
                                 android:layout_marginTop="100dp"
                                 app:layout_constraintStart_toStartOf="@+id/spaceVertical"
@@ -440,7 +431,7 @@
                                 tools:ignore="TouchTargetSizeCheck" />
 
                             <CheckBox
-                                android:id="@+id/checkBox17"
+                                android:id="@+id/checkBox27"
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
                                 android:layout_marginTop="120dp"
@@ -450,7 +441,7 @@
                                 tools:ignore="TouchTargetSizeCheck" />
 
                             <CheckBox
-                                android:id="@+id/checkBox8"
+                                android:id="@+id/checkBox36"
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
                                 android:layout_marginStart="80dp"
@@ -460,7 +451,7 @@
                                 tools:ignore="TouchTargetSizeCheck" />
 
                             <CheckBox
-                                android:id="@+id/checkBox14"
+                                android:id="@+id/checkBox30"
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
                                 android:layout_marginTop="140dp"
@@ -470,7 +461,7 @@
                                 tools:ignore="TouchTargetSizeCheck" />
 
                             <CheckBox
-                                android:id="@+id/checkBox11"
+                                android:id="@+id/checkBox33"
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
                                 android:layout_marginStart="40dp"
@@ -497,22 +488,12 @@
 
                         </androidx.constraintlayout.widget.ConstraintLayout>
 
-                        <TextView
-                            android:id="@+id/BargeReferenceHeaderRight"
-                            android:layout_width="50dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:textSize="45sp"
-                            android:layout_gravity="center"
-                            android:textColor="@color/white"
-                            android:text="@string/barge_reference_header_text" />
-
                         <View
                             android:id="@+id/divider4"
                             android:layout_width="18dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
-                            android:background="?android:attr/listDivider" />
+                            android:background="#FF0000" />
 
                         <LinearLayout
                             android:layout_width="186dp"
@@ -540,19 +521,21 @@
                                 android:text="@string/jerry" />
 
                             <CheckBox
-                                android:id="@+id/checkBox"
+                                android:id="@+id/PlayedDefense"
                                 android:layout_width="match_parent"
                                 android:layout_height="101dp"
                                 android:layout_weight="1"
                                 android:buttonTint="@color/gold"
-                                android:text="@string/gold_team_text"
+                                android:text="Played Defense"
                                 tools:ignore="InefficientWeight" />
 
-                            <Switch
-                                android:id="@+id/BargeSwitcher"
+                            <TextView
+                                android:id="@+id/TrackedBot"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="@string/barge_left_right_text" />
+                                android:text="Red 1"
+                                android:textSize="30dp" />
+
                         </LinearLayout>
                     </LinearLayout>
 
@@ -896,42 +879,27 @@
                         android:layout_width="match_parent"
                         android:layout_height="264dp"
                         android:ems="10"
+                        android:gravity="start|top"
                         android:hint="@string/notes"
-                        android:inputType="text" />
+                        android:inputType="textMultiLine"
+                        android:lines="5"
+                        android:scrollHorizontally="false"
+                        android:breakStrategy="simple" />
 
-                    <LinearLayout
+                    <TextView
+                        android:id="@+id/DefenseText"
                         android:layout_width="match_parent"
-                        android:layout_height="59dp"
-                        android:orientation="horizontal">
+                        android:layout_height="wrap_content"
+                        android:text="Defense Score" />
 
-                        <TextView
-                            android:id="@+id/BargeText"
-                            android:layout_width="74dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="@string/total_barge_algae_text" />
-
-                        <TextView
-                            android:id="@+id/BargePoints"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="@string/_0" />
-
-                        <Button
-                            android:id="@+id/BargeDec"
-                            android:layout_width="65dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="@string/dec_button" />
-
-                        <Button
-                            android:id="@+id/BargeInc"
-                            android:layout_width="63dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="@string/inc_button" />
-                    </LinearLayout>
+                    <com.google.android.material.slider.Slider
+                        android:id="@+id/DefenseSlider"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:enabled="false"
+                        android:stepSize="1"
+                        android:valueFrom="@dimen/min_defense_score"
+                        android:valueTo="@dimen/max_defense_score" />
 
                 </LinearLayout>
 

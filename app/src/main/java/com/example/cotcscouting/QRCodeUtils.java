@@ -1,4 +1,4 @@
-package com.example.cotcscouting.data.model;
+package com.example.cotcscouting;
 
 import android.content.Context;
 import android.graphics.Bitmap;

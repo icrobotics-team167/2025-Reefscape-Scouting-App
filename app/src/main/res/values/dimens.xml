@@ -2,4 +2,9 @@
     <!-- Default screen margins, per the Android Design guidelines. -->
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
+
+<!--For what ever reason sliders take dime not ints :shrug: -->
+    <dimen name="min_defense_score">0</dimen>
+    <dimen name="max_defense_score">4</dimen>
+
 </resources>
