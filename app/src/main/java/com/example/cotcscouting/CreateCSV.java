@@ -5,7 +5,7 @@ import android.content.Context;
 import android.util.Log;
 import android.widget.EditText;
 
-import com.example.cotcscouting.data.model.QRCodeUtils;
+import com.example.cotcscouting.QRCodeUtils;
 
 //TODO: When making chages make sure to sinc or the changes to this file woint affect the programing
 
