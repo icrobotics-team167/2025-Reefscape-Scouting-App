@@ -45,7 +45,8 @@
                 android:id="@+id/IsTrackingRed"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Tablet Will Track Red" />
+                android:text="Tablet Will Track Red"
+                tools:ignore="TouchTargetSizeCheck" />
 
             <RadioGroup
                 android:layout_width="match_parent"
