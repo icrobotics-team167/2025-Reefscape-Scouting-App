@@ -890,7 +890,7 @@
                         android:id="@+id/DefenseText"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Defense Score" />
+                        android:text="Low         Defense Score                 High" />
 
                     <com.google.android.material.slider.Slider
                         android:id="@+id/DefenseSlider"

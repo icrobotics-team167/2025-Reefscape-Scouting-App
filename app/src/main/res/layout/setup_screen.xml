@@ -45,7 +45,8 @@
                 android:id="@+id/IsTrackingRed"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Tablet Will Track Red" />
+                android:text="Tablet Will Track Red"
+                tools:ignore="TouchTargetSizeCheck" />
 
             <RadioGroup
                 android:layout_width="match_parent"
@@ -55,19 +56,19 @@
                     android:id="@+id/TrackingBot1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Tracking Red 1" />
+                    android:text="Tracking Bot 1" />
 
                 <RadioButton
                     android:id="@+id/TrackingBot2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Tracking Red 2" />
+                    android:text="Tracking BOt 2" />
 
                 <RadioButton
                     android:id="@+id/TrackingBot3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Tracking Red 3" />
+                    android:text="Tracking Bot 3" />
             </RadioGroup>
         </LinearLayout>
 

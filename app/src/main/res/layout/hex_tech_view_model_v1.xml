@@ -493,8 +493,7 @@
                             android:layout_width="18dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
-                            android:background="?android:attr/listDivider"
-                            tools:background="#003BFE" />
+                            android:background="#0009FF" />
 
                         <LinearLayout
                             android:layout_width="186dp"
@@ -519,7 +518,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text="Skibbidi" />
+                                android:text="Jerry" />
 
                             <CheckBox
                                 android:id="@+id/PlayedDefense"
@@ -527,7 +526,7 @@
                                 android:layout_height="101dp"
                                 android:layout_weight="1"
                                 android:buttonTint="@color/gold"
-                                android:text="@string/gold_team_text"
+                                android:text="Played Defense"
                                 tools:ignore="InefficientWeight" />
 
                             <TextView
@@ -891,7 +890,7 @@
                         android:id="@+id/defenseText"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Defense Score" />
+                        android:text="Low         Defense Score                 High" />
 
                     <com.google.android.material.slider.Slider
                         android:id="@+id/DefenseSlider"
