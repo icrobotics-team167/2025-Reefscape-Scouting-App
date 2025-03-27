@@ -518,7 +518,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text="Skibbidi" />
+                                android:text="Jerry" />
 
                             <CheckBox
                                 android:id="@+id/PlayedDefense"
@@ -526,7 +526,7 @@
                                 android:layout_height="101dp"
                                 android:layout_weight="1"
                                 android:buttonTint="@color/gold"
-                                android:text="@string/gold_team_text"
+                                android:text="Played Defense"
                                 tools:ignore="InefficientWeight" />
 
                             <TextView
