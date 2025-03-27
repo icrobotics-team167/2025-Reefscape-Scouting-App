@@ -142,7 +142,7 @@
                                 tools:ignore="TouchTargetSizeCheck" />
 
                             <CheckBox
-                                android:id="@+id/checkBox16"
+                                android:id="@+id/checkBox18"
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
                                 android:layout_marginEnd="80dp"
@@ -220,7 +220,7 @@
                                 tools:ignore="TouchTargetSizeCheck" />
 
                             <CheckBox
-                                android:id="@+id/checkBox18"
+                                android:id="@+id/checkBox16"
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
                                 android:layout_marginEnd="40dp"
