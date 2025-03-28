@@ -762,6 +762,7 @@ public class MainActivity extends AppCompatActivity {
         //check box reset uses is check in auto
         for(int i = 0; i < 36; i++) {
             CheckBoxes[i].setChecked(IsCheckedInAuto[i]);
+            CheckBoxes[i].setClickable(true);
         }
 
         IsTelop.setChecked(false);
