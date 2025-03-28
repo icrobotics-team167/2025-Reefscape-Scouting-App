@@ -64,10 +64,6 @@ public class MainActivity extends AppCompatActivity {
     Spinner ParkingPlaces;
     static String WhareParked = "Did Not Park";
 
-
-    boolean isDullBlue = true;
-
-
     //is checked
     @SuppressLint("UseSwitchCompatOrMaterialCode")
     Switch IsTelop;
