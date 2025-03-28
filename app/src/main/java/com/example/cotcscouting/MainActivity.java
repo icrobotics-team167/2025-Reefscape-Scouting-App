@@ -815,5 +815,9 @@ public class MainActivity extends AppCompatActivity {
 
         EditText Notes = findViewById(R.id.notes);
         Notes.setText("");
+
+        DefenseSlider.setValue(0);
+        DefenseSlider.setClickable(false);
+
     }
 }
