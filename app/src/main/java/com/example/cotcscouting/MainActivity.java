@@ -12,6 +12,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.Spinner;
@@ -812,5 +813,7 @@ public class MainActivity extends AppCompatActivity {
         TextInputEditText RestTotalPoints = findViewById(R.id.total_points);
         RestTotalPoints.setText("");
 
+        EditText Notes = findViewById(R.id.notes);
+        Notes.setText("");
     }
 }
