@@ -26,7 +26,7 @@
             <ImageView
                 android:id="@+id/imageView"
                 android:layout_width="525dp"
-                android:layout_height="465dp"
+                android:layout_height="285dp"
                 app:srcCompat="@drawable/frc_2025_feild" />
 
             <Button

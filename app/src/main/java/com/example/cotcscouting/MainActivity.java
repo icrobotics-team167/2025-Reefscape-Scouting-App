@@ -138,7 +138,7 @@ public class MainActivity extends AppCompatActivity {
                 throw new RuntimeException(e);
 
             }
-            VersionOfMainView = Integer.parseInt(scan.nextLine());
+       VersionOfMainView = Integer.parseInt(scan.nextLine());
             TrackedBot = Integer.parseInt(scan.nextLine());
             Log.d("Location", VersionOfMainView + "");
             Log.d("Bot tracked", "Bot :" + TrackedBot);
@@ -292,10 +292,14 @@ public class MainActivity extends AppCompatActivity {
             CheckBoxes[i].setOnClickListener(view -> {
                 if (IsTelop.isChecked()){
                     IsCheckedInTelop[finalI] = CheckBoxes[finalI].isChecked();
-                    Log.d("Hecagon checked", "buttion With id: " + finalI + "Was checked and set is checked in telop to " + CheckBoxes[finalI].isChecked());
+                    if (Config.Debug) {
+                        Log.d("Hecagon checked", "buttion With id: " + finalI + "Was checked and set is checked in telop to " + CheckBoxes[finalI].isChecked());
+                    }
                 }else if (!IsTelop.isChecked()){
                     IsCheckedInAuto[finalI] = CheckBoxes[finalI].isChecked();
-                    Log.d("Hecagon checked", "buttion With id: " + finalI + "Was checked and set is check in Auto to " + CheckBoxes[finalI].isChecked());
+                    if (Config.Debug) {
+                        Log.d("Hecagon checked", "buttion With id: " + finalI + "Was checked and set is check in Auto to " + CheckBoxes[finalI].isChecked());
+                    }
                 }
             });
         }
@@ -371,7 +375,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onValueChange(@NonNull Slider slider, float value, boolean fromUser) {
                 DefenseScore = (int) value;
+                if (Config.Debug) {
                 Log.d("Slider moved", "New val = " + DefenseScore);
+                }
             }
         });
 
@@ -691,13 +697,18 @@ public class MainActivity extends AppCompatActivity {
                 Uri uri2 = Uri.fromFile(file2);
 
                 TheQrImage1.setImageURI(uri1);
-                Log.d("Set image 1", selectedItem1);
+                if (Config.Debug) {
+                    Log.d("Set image 1", selectedItem1);
+                }
                 TheQrImage2.setImageURI(uri2);
-                Log.d("Set image 2", selectedItem2);
-
+                if (Config.Debug) {
+                    Log.d("Set image 2", selectedItem2);
+                }
 
                 // You can now use the selectedItem
-                Log.d("Spinner", "Selected item: " + selectedItem1);
+                if (Config.Debug) {
+                    Log.d("Spinner", "Selected item: " + selectedItem1);
+                }
             }
 
             @Override

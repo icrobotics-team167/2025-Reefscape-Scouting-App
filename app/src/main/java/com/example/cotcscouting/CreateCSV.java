@@ -10,6 +10,8 @@ import com.example.cotcscouting.QRCodeUtils;
 //TODO: When making chages make sure to sinc or the changes to this file woint affect the programing
 
 public class CreateCSV {
+
+    private boolean DebugMode = Config.Debug;
     public void GenerateCs(Activity activity, Context context){
         //creates file needs to be save the data am lazy
         //TODO: add fix and make work
@@ -108,7 +110,10 @@ public class CreateCSV {
 
             if (MainActivity.IsCheckedInTelop[i]){
                 vals.append("1,");
-                Log.d("TAG", "Found one that was checked: ");
+                //For preformnse hopefully
+                if (DebugMode) {
+                    Log.d("TAG", "Found one that was checked: ");
+                }
 
                 if (Level == 2){
                     ScoredOnL2InTelop++;
@@ -119,7 +124,9 @@ public class CreateCSV {
                 }
             }else{
                 vals.append("0,");
-                Log.d("Did not find it", "Found one that wasnt checked: ");
+                if (DebugMode) {
+                    Log.d("Did not find it", "Found one that wasnt checked: ");
+                }
             }
 
             Level++;
@@ -181,9 +188,9 @@ public class CreateCSV {
 
         Header.append("Notes,");
         vals.append(Notes.getText().toString());
-
-        Log.d("Header", Header.toString());
-
+        if(DebugMode) {
+            Log.d("Header", Header.toString());
+        }
 
         QRCodeUtils.generateAndSaveQRCode(context,vals.toString(),FileName);
         QRCodeUtils.generateAndSaveQRCode(context,Header.toString(),FileName + "P2");

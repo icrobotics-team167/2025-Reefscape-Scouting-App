@@ -45,9 +45,6 @@ public class JavaData {
             // Get all files in the directory
             File[] files = dir.listFiles();
             assert files != null;
-            for (File FileName: files) {
-                Log.d("Found File", FileName.getName());
-            }
 
             // If files are found, loop through them and add their names to the list
             if (files != null) {
@@ -63,7 +60,7 @@ public class JavaData {
     }
 
     public static void DelteConfig(Context context){
-        Log.d("Starting Deletion Of Config","Make sure to re do it");
+//        Log.d("Starting Deletion Of Config","Make sure to re do it");
 
         File dir = new File(context.getFilesDir().toString());
 
@@ -85,7 +82,7 @@ public class JavaData {
 
     public static void RemoveQrCodes(Context context) {
 
-        Log.d("Starting Deletion Of All Files!","Make sure this is called after all data is collected");
+//        Log.d("Starting Deletion Of All Files!","Make sure this is called after all data is collected");
 
         // Create a File object pointing to the directory
         File dir = new File(context.getFilesDir(),"QRCodeImages");
@@ -108,7 +105,6 @@ public class JavaData {
             }
         }
 
-        Log.d("Finsihed Deletion Of All Files!","Make sure this is called after all data is collected");
     }
 
 }
