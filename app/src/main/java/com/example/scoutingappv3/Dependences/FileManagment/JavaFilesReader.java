@@ -49,8 +49,6 @@ public class JavaFilesReader {
         File ReadFile = new File(Path,file);
         Scanner FileReader;
 
-
-
         try {
             FileReader = new Scanner(ReadFile);
         } catch (FileNotFoundException e) {

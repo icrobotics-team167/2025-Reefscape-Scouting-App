@@ -9,8 +9,10 @@ import android.widget.EditText;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.scoutingappv3.Dependences.Config;
 import com.example.scoutingappv3.Dependences.FileManagment.JavaFilesReader;
 import com.example.scoutingappv3.Dependences.FileManagment.JavaFilesWriter;
+import com.example.scoutingappv3.Dependences.QrCodeManagment.CreateQrCodes;
 
 public class Main extends AppCompatActivity{
     Button SubmitButtion;
@@ -25,32 +27,30 @@ public class Main extends AppCompatActivity{
         setContentView(R.layout.temp);
         SetUpTempScreen();
 
-        DebugWriteing = new JavaFilesWriter(this,"DebugFiles");
-        DebugReading = new JavaFilesReader(this,"DebugFiles");
+        DebugWriteing = new JavaFilesWriter(this,Config.CsvFolder);
+        DebugReading = new JavaFilesReader(this,Config.CsvFolder);
 
-        DebugWriteing.ClearFile("Test1.txt");
+        DebugWriteing.ClearFile(Config.CsvFile);
 
         Log.d("Clearing File", "File cleared");
 
 //        DebugWriteing.WriteLn("Test1.txt","lolSigma",0);
 //        Log.d("test", DebugReading.ReadData("Test1.txt",0));
 
-        DebugWriteing.AppedToFile("Test1.txt","Hello");
-        Log.d("test", DebugReading.ReadLine("Test1.txt",0));
+        DebugWriteing.AppedToFile(Config.CsvFile,"Hello");
+        Log.d("test", DebugReading.ReadLine(Config.CsvFile,0));
 
-        DebugWriteing.AppedToFile("Test1.txt"," World");
-        Log.d("test", DebugReading.ReadLine("Test1.txt",0));
+        DebugWriteing.AppedToFile(Config.CsvFile," World");
+        Log.d("test", DebugReading.ReadLine(Config.CsvFile,0));
     }
 
     public void SetUpTempScreen(){
         Data = findViewById(R.id.Data);
         SubmitButtion = findViewById(R.id.Submit);
 
-        SubmitButtion.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Log.d("Buttion Clicked", "Data: " + Data.getText());
-            }
+        SubmitButtion.setOnClickListener(v -> {
+            Log.d("Buttion Clicked", "Data: " + Data.getText());
+            CreateQrCodes.CreateCodes(this);
         });
     }
 }

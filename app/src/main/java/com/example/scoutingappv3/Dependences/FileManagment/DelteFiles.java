@@ -5,10 +5,9 @@ import android.content.Context;
 import java.io.File;
 
 public class DelteFiles {
-    public static void DeleteFilesInDir(Context context){
-//        Log.d("Starting Deletion Of Config","Make sure to re do it");
+    public static void DeleteFilesInDir(Context context, String Dir){
 
-        File dir = new File(context.getFilesDir().toString());
+        File dir = new File(context.getFilesDir(),Dir);
 
         // Check if the directory exists and is a directory
         if (dir.exists() && dir.isDirectory()) {
