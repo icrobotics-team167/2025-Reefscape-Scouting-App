@@ -1,4 +1,4 @@
-package com.example.cotcscouting;
+package com.example.scoutingappv3.Dependences.QrCodeManagment;
 
 import android.content.Context;
 import android.graphics.Bitmap;
