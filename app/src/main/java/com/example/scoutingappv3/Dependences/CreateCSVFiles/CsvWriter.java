@@ -7,17 +7,20 @@ import com.example.scoutingappv3.Dependences.FileManagment.JavaFilesWriter;
 
 public class CsvWriter {
 
-    JavaFilesWriter CsvWriter;
-    public CsvWriter(Context context){
-        CsvWriter = new JavaFilesWriter(context, Config.CsvFolder, Config.CsvFile);
+    JavaFilesWriter LocalCsvWriter;
+    public CsvWriter(){
+        LocalCsvWriter = new JavaFilesWriter(Config.AppContext, Config.CsvFolder, Config.CsvFile);
     }
 
     public void AppendData(String data){
-        CsvWriter.AppedToFile(data);
+        LocalCsvWriter.AppedToFile(data);
     }
 
     public void AppendDataLn(String data){
-        CsvWriter.AppedToFileLine(data);
+        LocalCsvWriter.AppedToFileLine(data);
     }
 
+    public void ResetFile(){
+        LocalCsvWriter.ClearFile();
+    }
 }

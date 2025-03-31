@@ -61,9 +61,6 @@ public class JavaFilesReader {
             Lines++;
         }
 
-        Log.d("Number of lines", Lines + "");
-
-
         return Lines;
     }
 }
