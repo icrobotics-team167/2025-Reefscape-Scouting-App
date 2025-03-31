@@ -1,5 +1,6 @@
 package com.example.scoutingappv3.Dependences;
 
+import android.app.Activity;
 import android.content.Context;
 
 public class Config {
