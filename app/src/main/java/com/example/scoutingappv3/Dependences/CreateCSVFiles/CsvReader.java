@@ -12,7 +12,7 @@ public class CsvReader {
     }
 
     public String ReadLine(String file, int line){
-        return CsvReader.ReadData(file, line);
+        return CsvReader.ReadLine(file, line);
     }
 
     public int GetNumOfLines(String file){

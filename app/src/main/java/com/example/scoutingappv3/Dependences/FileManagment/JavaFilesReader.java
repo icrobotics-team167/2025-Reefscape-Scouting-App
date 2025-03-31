@@ -19,7 +19,7 @@ public class JavaFilesReader {
 
 
     //TODO: Optmise as will be kindda slow
-    public String ReadData(String file,int line){
+    public String ReadLine(String file, int line){
         File ReadFile = new File(Path,file);
         Scanner FileReader;
 
@@ -39,7 +39,7 @@ public class JavaFilesReader {
         ArrayList<String> Data = new ArrayList<>();
 
         while (FileReader.hasNext()){
-            Data.add(FileReader.next());
+            Data.add(FileReader.nextLine());
         }
 
         return Data.get(line);
@@ -48,6 +48,8 @@ public class JavaFilesReader {
     public int GetSize(String file){
         File ReadFile = new File(Path,file);
         Scanner FileReader;
+
+
 
         try {
             FileReader = new Scanner(ReadFile);
@@ -61,6 +63,9 @@ public class JavaFilesReader {
             FileReader.nextLine();
             Lines++;
         }
+
+        Log.d("Number of lines", Lines + "");
+
 
         return Lines;
     }

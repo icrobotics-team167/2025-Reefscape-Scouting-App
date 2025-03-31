@@ -1,4 +1,4 @@
 package com.example.scoutingappv3.Dependences.FileManagment;
 
-public class JavaFileFinder {
+public class FileManager {
 }

@@ -28,11 +28,18 @@ public class Main extends AppCompatActivity{
         DebugWriteing = new JavaFilesWriter(this,"DebugFiles");
         DebugReading = new JavaFilesReader(this,"DebugFiles");
 
-        DebugWriteing.AppedToFileLine("Test1.txt","Lol");
+        DebugWriteing.ClearFile("Test1.txt");
 
-        Log.d("Found data!", DebugReading.ReadData("Test1.txt",0));
+        Log.d("Clearing File", "File cleared");
 
+//        DebugWriteing.WriteLn("Test1.txt","lolSigma",0);
+//        Log.d("test", DebugReading.ReadData("Test1.txt",0));
 
+        DebugWriteing.AppedToFile("Test1.txt","Hello");
+        Log.d("test", DebugReading.ReadLine("Test1.txt",0));
+
+        DebugWriteing.AppedToFile("Test1.txt"," World");
+        Log.d("test", DebugReading.ReadLine("Test1.txt",0));
     }
 
     public void SetUpTempScreen(){
