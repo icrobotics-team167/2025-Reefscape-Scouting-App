@@ -1,6 +1,8 @@
 package com.example.scoutingappv3;
 
+import android.content.Context;
 import android.os.Bundle;
+import android.os.Environment;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -18,6 +20,12 @@ import com.example.scoutingappv3.Dependences.QrCodeManagment.CreateQrCodes;
 import com.example.scoutingappv3.LoadScreens.LoadDataEntry;
 import com.example.scoutingappv3.LoadScreens.LoadTesting;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.util.Stack;
+
 public class Main extends AppCompatActivity{
 
     @Override
@@ -28,5 +36,13 @@ public class Main extends AppCompatActivity{
 
         LoadTesting.LoadTestMenu(this);
 
+        CsvWriter test = new CsvWriter();
+        test.ResetFile();
+        test.AppendDataLn("Lol");
+        test.AppendData("Lol 1");
+
+
     }
+
+
 }

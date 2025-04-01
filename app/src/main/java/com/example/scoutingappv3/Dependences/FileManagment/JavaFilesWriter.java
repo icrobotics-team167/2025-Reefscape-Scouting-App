@@ -2,13 +2,13 @@ package com.example.scoutingappv3.Dependences.FileManagment;
 
 import android.content.Context;
 import android.os.Build;
+import android.os.Environment;
 import android.util.Log;
 
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
-import java.util.ArrayList;
 import java.util.List;
 
 public class JavaFilesWriter {
@@ -92,4 +92,87 @@ public class JavaFilesWriter {
     }
 
 
+    public void WriteDataToDownloadsAppend(String newFile, String Data) {
+        if (Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)) {
+
+            // Get the Downloads directory
+            File downloadsDir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
+            File file = new File(downloadsDir, newFile);
+
+            try {
+                // Ensure the Downloads directory exists
+                if (!downloadsDir.exists()) {
+                    downloadsDir.mkdirs();
+                }
+
+                // Write the content to the file
+                FileWriter Writer = new FileWriter(file,true);
+                Writer.write(Data);
+                Writer.flush();
+                Writer.close();
+
+                Log.d("Saved file","File saved successfully at: ${file.absolutePath}");
+            } catch (Exception e){
+                e.printStackTrace();
+            }
+        } else {
+            Log.d("asd","External storage is not available");
+        }
+    }
+
+    public void WriteDataToDownloadsAppendLine(String newFile, String Data) {
+        if (Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)) {
+
+            // Get the Downloads directory
+            File downloadsDir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
+            File file = new File(downloadsDir, newFile);
+
+            try {
+                // Ensure the Downloads directory exists
+                if (!downloadsDir.exists()) {
+                    downloadsDir.mkdirs();
+                }
+
+                // Write the content to the file
+                FileWriter Writer = new FileWriter(file,true);
+                Writer.write(Data + "\n");
+                Writer.flush();
+                Writer.close();
+
+                Log.d("Saved file","File saved successfully at: ${file.absolutePath}");
+            } catch (Exception e){
+                e.printStackTrace();
+            }
+        } else {
+            Log.d("asd","External storage is not available");
+        }
+    }
+
+    public void ClearDowloadsFile(String File) {
+        if (Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)) {
+
+            // Get the Downloads directory
+            File downloadsDir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
+            File file = new File(downloadsDir, File);
+
+            try {
+                // Ensure the Downloads directory exists
+                if (!downloadsDir.exists()) {
+                    downloadsDir.mkdirs();
+                }
+
+                // Write the content to the file
+                FileWriter Writer = new FileWriter(file);
+                Writer.write("");
+                Writer.flush();
+                Writer.close();
+
+                Log.d("Saved file","File saved successfully at: ${file.absolutePath}");
+            } catch (Exception e){
+                e.printStackTrace();
+            }
+        } else {
+            Log.d("asd","External storage is not available");
+        }
+    }
 }
