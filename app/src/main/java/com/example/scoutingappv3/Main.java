@@ -40,6 +40,7 @@ public class Main extends AppCompatActivity{
         test.ResetFile();
         test.AppendDataLn("Lol");
         test.AppendData("Lol 1");
+        test.AppendData("\n Lol 2");
 
 
     }

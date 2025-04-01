@@ -18,13 +18,13 @@ public class JavaFilesWriter {
 
     private String FileName;
 
-    public JavaFilesWriter(Context context, String folder,String FileName){
+    public JavaFilesWriter(Context context, String folder,String fileName){
         dir = new File(context.getFilesDir(), folder);
         if(!dir.exists()){
             dir.mkdir();
         }
-
-        dir = new File(dir,FileName);
+        FileName = fileName;
+        dir = new File(dir,fileName);
     }
     //This does not appends a new line to the end of your message
     public void AppedToFile(String Message){
@@ -92,12 +92,12 @@ public class JavaFilesWriter {
     }
 
 
-    public void WriteDataToDownloadsAppend(String newFile, String Data) {
+    public void WriteDataToDownloadsAppend(String Data) {
         if (Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)) {
 
             // Get the Downloads directory
             File downloadsDir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
-            File file = new File(downloadsDir, newFile);
+            File file = new File(downloadsDir, FileName);
 
             try {
                 // Ensure the Downloads directory exists
@@ -120,12 +120,12 @@ public class JavaFilesWriter {
         }
     }
 
-    public void WriteDataToDownloadsAppendLine(String newFile, String Data) {
+    public void WriteDataToDownloadsAppendLine(String Data) {
         if (Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)) {
 
             // Get the Downloads directory
             File downloadsDir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
-            File file = new File(downloadsDir, newFile);
+            File file = new File(downloadsDir, FileName);
 
             try {
                 // Ensure the Downloads directory exists
@@ -148,12 +148,12 @@ public class JavaFilesWriter {
         }
     }
 
-    public void ClearDowloadsFile(String File) {
+    public void ClearDowloadsFile() {
         if (Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)) {
 
             // Get the Downloads directory
             File downloadsDir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
-            File file = new File(downloadsDir, File);
+            File file = new File(downloadsDir, FileName);
 
             try {
                 // Ensure the Downloads directory exists

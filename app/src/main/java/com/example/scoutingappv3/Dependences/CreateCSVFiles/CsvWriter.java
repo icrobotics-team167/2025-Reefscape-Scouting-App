@@ -12,16 +12,16 @@ public class CsvWriter {
 
     public void AppendData(String data){
         LocalCsvWriter.AppedToFile(data);
-        LocalCsvWriter.WriteDataToDownloadsAppend(Config.CsvFile,data);
+        LocalCsvWriter.WriteDataToDownloadsAppend(data);
     }
 
     public void AppendDataLn(String data){
         LocalCsvWriter.AppedToFileLine(data);
-        LocalCsvWriter.WriteDataToDownloadsAppendLine(Config.CsvFile,data);
+        LocalCsvWriter.WriteDataToDownloadsAppendLine(data);
     }
 
     public void ResetFile(){
         LocalCsvWriter.ClearFile();
-        LocalCsvWriter.ClearDowloadsFile(Config.CsvFile);
+        LocalCsvWriter.ClearDowloadsFile();
     }
 }
