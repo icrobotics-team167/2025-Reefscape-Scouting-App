@@ -8,14 +8,14 @@ import com.example.scoutingappv3.Dependences.FileManagment.JavaFilesReader;
 public class CsvReader {
     JavaFilesReader CsvReader;
     CsvReader(Context context){
-        CsvReader = new JavaFilesReader(context, Config.CsvFolder);
+        CsvReader = new JavaFilesReader(context, Config.CsvFolder,Config.CsvFile);
     }
 
-    public String ReadLine(String file, int line){
-        return CsvReader.ReadLine(file, line);
+    public String ReadLine(int line){
+        return CsvReader.ReadLine(line);
     }
 
-    public int GetNumOfLines(String file){
-        return CsvReader.GetSize(file);
+    public int GetNumOfLines(){
+        return CsvReader.GetSize();
     }
 }

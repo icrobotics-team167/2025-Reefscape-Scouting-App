@@ -9,15 +9,15 @@ public class CsvWriter {
 
     JavaFilesWriter CsvWriter;
     public CsvWriter(Context context){
-        CsvWriter = new JavaFilesWriter(context, Config.CsvFolder);
+        CsvWriter = new JavaFilesWriter(context, Config.CsvFolder, Config.CsvFile);
     }
 
-    public void AppendData(String file, String data){
-        CsvWriter.AppedToFile(file,data);
+    public void AppendData(String data){
+        CsvWriter.AppedToFile(data);
     }
 
-    public void AppendDataLn(String file, String data){
-        CsvWriter.AppedToFileLine(file,data);
+    public void AppendDataLn(String data){
+        CsvWriter.AppedToFileLine(data);
     }
 
 }
