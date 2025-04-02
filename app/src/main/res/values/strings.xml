@@ -157,10 +157,60 @@
     <string name="jerry">Jerry</string>
     <string name="extra_data_header">Extra Data:</string>
 
-    <string-array name="planets_array">
+<!--    V5 STRINGS-->
+<!--        DATA ENTRY XML STRINGS-->
+    <string name="decrement_button_text">-</string>
+    <string name="increment_button_text">+</string>
+
+    <string name="l4_coral_text">L4:</string>
+    <string name="l3_coral_text">L3:</string>
+    <string name="l2_coral_text">L2:</string>
+    <string name="l1_coral_text">L1:</string>
+    <string name="dropped_coral_text">Dropped:</string>
+
+    <string name="l4_coral_value_auto">L4-A-Val</string>
+    <string name="l3_coral_value_auto">L3-A-Val</string>
+    <string name="l2_coral_value_auto">L2-A-Val</string>
+    <string name="l1_coral_value_auto">L1-A-Val</string>
+    <string name="dropped_coral_value_auto">Drop-A-Val</string>
+
+    <string name="l4_coral_value_teleop">L4-T-Val</string>
+    <string name="l3_coral_value_teleop">L3-T-Val</string>
+    <string name="l2_coral_value_teleop">L2-T-Val</string>
+    <string name="l1_coral_value_teleop">L1-T-Val</string>
+    <string name="dropped_coral_value_teleop">Drop-T-Val</string>
+
+    <string name="processor_algae_text">Processor:</string>
+    <string name="barge_algae_text">Barge:</string>
+    <string name="net_missed_algae_text">Net Missed:</string>
+    <string name="dereefed_algae_text">De-Reefed:</string>
+
+    <string name="processor_algae_value">PR-Val</string>
+    <string name="barge_algae_value">BA-Val</string>
+    <string name="net_missed_algae_value">NM-Val</string>
+    <string name="dereefed_algae_value">DR-Val</string>
+
+    <string name="algae_header">Algae:</string>
+    <string name="coral_header">Coral:</string>
+    <string name="move_check_text">Move:</string>
+    <string name="defense_check_text">Defense:</string>
+    <string name="auto_header">Auto:</string>
+    <string name="teleop_header">Tele-Op:</string>
+    <string name="driver_rating_star_text">Driver Rating:</string>
+    <string name="scout_name_placeholder_text">NAME</string>
+    <string name="team_number_placeholder_text">TEAM NUMBER</string>
+    <string name="match_number_placeholder_text">MATCH NUMBER</string>
+    <string name="sign_out_button_text">Sign Out</string>
+    <string name="ten_star_placeholder_button_text">THIS IS 10 STARS</string>
+    <string name="submit_button_text">Submit</string>
+    <string name="skip_button_text">Skip</string>
+
+
+    <!--        CLIMB SPINNER ITEMS-->
+    <string-array name="climb_array">
         <item>Did Not Park</item>
         <item>Parked</item>
-        <item>Low Hang</item>
-        <item>High Hang</item>
+        <item>Shallow Hang</item>
+        <item>Deep Hang</item>
     </string-array>
 </resources>
