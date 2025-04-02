@@ -1,23 +1,27 @@
 package com.example.scoutingappv3.Dependences.CreateCSVFiles;
 
-import android.content.Context;
-
 import com.example.scoutingappv3.Dependences.Config;
 import com.example.scoutingappv3.Dependences.FileManagment.JavaFilesWriter;
 
 public class CsvWriter {
 
-    JavaFilesWriter CsvWriter;
-    public CsvWriter(Context context){
-        CsvWriter = new JavaFilesWriter(context, Config.CsvFolder);
+    JavaFilesWriter LocalCsvWriter;
+    public CsvWriter(){
+        LocalCsvWriter = new JavaFilesWriter(Config.AppContext, Config.CsvFolder, Config.CsvFile);
     }
 
-    public void AppendData(String file, String data){
-        CsvWriter.AppedToFile(file,data);
+    public void AppendData(String data){
+        LocalCsvWriter.AppedToFile(data);
+        LocalCsvWriter.WriteDataToDownloadsAppend(data);
     }
 
-    public void AppendDataLn(String file, String data){
-        CsvWriter.AppedToFileLine(file,data);
+    public void AppendDataLn(String data){
+        LocalCsvWriter.AppedToFileLine(data);
+        LocalCsvWriter.WriteDataToDownloadsAppendLine(data);
     }
 
+    public void ResetFile(){
+        LocalCsvWriter.ClearFile();
+        LocalCsvWriter.ClearDowloadsFile();
+    }
 }

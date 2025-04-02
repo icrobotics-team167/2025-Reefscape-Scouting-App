@@ -4,6 +4,7 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.widget.Toast;
 
+import com.example.scoutingappv3.Dependences.Config;
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.WriterException;
 import com.journeyapps.barcodescanner.BarcodeEncoder;
@@ -16,7 +17,7 @@ import java.io.IOException;
 public class QRCodeUtils {
 
     // Generate and save the QR Code
-    public static void generateAndSaveQRCode(Context context, String Message,String Filename) {
+    public static void CreateQRCode(Context context, String Message,String Filename) {
         // Create the QR code bitmap
         BarcodeEncoder barcodeEncoder = new BarcodeEncoder();
         try {
@@ -40,7 +41,7 @@ public class QRCodeUtils {
         String fileName = text + ".png";
 
         // Define the directory and file path (saving in app's internal storage)
-        File fileDir = new File(context.getFilesDir(), "QRCodeImages");
+        File fileDir = new File(context.getFilesDir(), Config.QrCodesFolder);
         if (!fileDir.exists()) {
             fileDir.mkdir(); // Create directory if it doesn't exist
         }

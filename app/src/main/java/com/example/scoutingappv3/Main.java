@@ -1,6 +1,8 @@
 package com.example.scoutingappv3;
 
+import android.content.Context;
 import android.os.Bundle;
+import android.os.Environment;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -9,41 +11,39 @@ import android.widget.EditText;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.scoutingappv3.Dependences.Config;
+import com.example.scoutingappv3.Dependences.CreateCSVFiles.CsvReader;
+import com.example.scoutingappv3.Dependences.CreateCSVFiles.CsvWriter;
 import com.example.scoutingappv3.Dependences.FileManagment.JavaFilesReader;
 import com.example.scoutingappv3.Dependences.FileManagment.JavaFilesWriter;
+import com.example.scoutingappv3.Dependences.QrCodeManagment.CreateQrCodes;
+import com.example.scoutingappv3.LoadScreens.LoadDataEntry;
+import com.example.scoutingappv3.LoadScreens.LoadTesting;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.util.Stack;
 
 public class Main extends AppCompatActivity{
-    Button SubmitButtion;
-    EditText Data;
-
-    JavaFilesWriter DebugWriteing;
-    JavaFilesReader DebugReading;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.temp);
-        SetUpTempScreen();
+        //Very Importent DO NOT DELTE
+        Config.setAppContext(this);
 
-        DebugWriteing = new JavaFilesWriter(this,"DebugFiles");
-        DebugReading = new JavaFilesReader(this,"DebugFiles");
+        LoadTesting.LoadTestMenu(this);
 
-        DebugWriteing.AppedToFileLine("Test1.txt","Lol");
-
-        Log.d("Found data!", DebugReading.ReadData("Test1.txt",0));
+        CsvWriter test = new CsvWriter();
+        test.ResetFile();
+        test.AppendDataLn("Lol");
+        test.AppendData("Lol 1");
+        test.AppendData("\n Lol 2");
 
 
     }
 
-    public void SetUpTempScreen(){
-        Data = findViewById(R.id.Data);
-        SubmitButtion = findViewById(R.id.Submit);
 
-        SubmitButtion.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Log.d("Buttion Clicked", "Data: " + Data.getText());
-            }
-        });
-    }
 }

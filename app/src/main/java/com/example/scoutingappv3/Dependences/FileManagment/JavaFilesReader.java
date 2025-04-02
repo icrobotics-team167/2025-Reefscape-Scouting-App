@@ -11,19 +11,19 @@ import java.util.Scanner;
 public class JavaFilesReader {
     private final String Path;
 
-    public JavaFilesReader(Context appContext, String folder) {
+    public JavaFilesReader(Context appContext, String folder,String file) {
 
-        Path = appContext.getFilesDir() + "/" + folder;
+        Path = appContext.getFilesDir() + "/" + folder + "/" + file;
         Log.d("Path", "Data IS stored at: " + Path);
     }
 
 
     //TODO: Optmise as will be kindda slow
-    public String ReadData(String file,int line){
-        File ReadFile = new File(Path,file);
+    public String ReadLine(int line){
+
         Scanner FileReader;
 
-        int NumberOfLines = GetSize(file);
+        int NumberOfLines = GetSize();
 
         if (NumberOfLines < line){
             Log.d("Out Of Bounds", "that was to big max size: " + NumberOfLines + " Provied Size: " + line);
@@ -31,7 +31,7 @@ public class JavaFilesReader {
         }
 
         try {
-             FileReader = new Scanner(ReadFile);
+             FileReader = new Scanner(new File(Path));
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         }
@@ -39,18 +39,17 @@ public class JavaFilesReader {
         ArrayList<String> Data = new ArrayList<>();
 
         while (FileReader.hasNext()){
-            Data.add(FileReader.next());
+            Data.add(FileReader.nextLine());
         }
 
         return Data.get(line);
     }
 
-    public int GetSize(String file){
-        File ReadFile = new File(Path,file);
+    public int GetSize(){
         Scanner FileReader;
 
         try {
-            FileReader = new Scanner(ReadFile);
+            FileReader = new Scanner(new File(Path));
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         }
