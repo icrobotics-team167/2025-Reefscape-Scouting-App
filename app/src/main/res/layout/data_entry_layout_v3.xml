@@ -6,10 +6,8 @@
     android:layout_height="match_parent">
 
     <LinearLayout
-        android:layout_width="1274dp"
-        android:layout_height="804dp"
-        android:layout_marginStart="1dp"
-        android:layout_marginTop="1dp"
+        android:layout_width="1026dp"
+        android:layout_height="566dp"
         android:orientation="vertical"
         android:weightSum="8"
         app:layout_constraintStart_toStartOf="parent"
@@ -48,6 +46,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                style="@style/Theme.ScoutingAppV3Dark.tertiary"
                 android:text="@string/sign_out_button_text" />
 
         </LinearLayout>
@@ -70,12 +69,14 @@
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
+                    android:backgroundTint="@color/coral_L4_auto_button"
                     android:background="?android:attr/listDivider" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="19"
+                    android:weightSum="84"
                     android:orientation="horizontal">
 
                     <LinearLayout
@@ -118,7 +119,7 @@
                             android:id="@+id/CoralHeaderAuto"
                             android:layout_width="match_parent"
                             android:layout_height="0dp"
-                            android:layout_weight="1"
+                            android:layout_weight="2"
                             android:text="@string/coral_header" />
 
                         <LinearLayout
@@ -139,6 +140,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
+                                style="@style/Theme.ScoutingAppV3Dark.tertiary"
                                 android:text="@string/decrement_button_text" />
 
                             <TextView
@@ -153,6 +155,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
+                                style="@style/Theme.ScoutingAppV3Dark.tertiary"
                                 android:text="@string/increment_button_text" />
                         </LinearLayout>
 
@@ -174,6 +177,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
+                                style="@style/Theme.ScoutingAppV3Dark.tertiary"
                                 android:text="@string/decrement_button_text" />
 
                             <TextView
@@ -188,6 +192,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
+                                style="@style/Theme.ScoutingAppV3Dark.tertiary"
                                 android:text="@string/increment_button_text" />
                         </LinearLayout>
 
@@ -209,6 +214,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
+                                style="@style/Theme.ScoutingAppV3Dark.tertiary"
                                 android:text="@string/decrement_button_text" />
 
                             <TextView
@@ -223,6 +229,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
+                                style="@style/Theme.ScoutingAppV3Dark.tertiary"
                                 android:text="@string/increment_button_text" />
                         </LinearLayout>
 
@@ -244,6 +251,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
+                                style="@style/Theme.ScoutingAppV3Dark.tertiary"
                                 android:text="@string/decrement_button_text" />
 
                             <TextView
@@ -258,6 +266,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
+                                style="@style/Theme.ScoutingAppV3Dark.tertiary"
                                 android:text="@string/increment_button_text" />
                         </LinearLayout>
 
@@ -279,6 +288,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
+                                style="@style/Theme.ScoutingAppV3Dark.tertiary"
                                 android:text="@string/decrement_button_text" />
 
                             <TextView
@@ -293,9 +303,35 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
+                                style="@style/Theme.ScoutingAppV3Dark.tertiary"
                                 android:text="@string/increment_button_text" />
                         </LinearLayout>
 
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="5"
+                        android:weightSum="19"
+                        android:orientation="vertical">
+
+                        <Space
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="2" />
+
+                        <ImageView
+                            android:id="@+id/CoralBranchAutoImage"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="16"
+                            app:srcCompat="@drawable/am_5523" />
+
+                        <Space
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1" />
                     </LinearLayout>
 
                     <View
@@ -303,12 +339,13 @@
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
+                        android:backgroundTint=""
                         android:background="?android:attr/listDivider" />
 
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_weight="49"
+                        android:layout_weight="54"
                         android:orientation="vertical"
                         android:weightSum="19">
 
@@ -346,7 +383,7 @@
                             android:layout_height="0dp"
                             android:layout_weight="17"
                             android:orientation="horizontal"
-                            android:weightSum="49">
+                            android:weightSum="54">
 
                             <LinearLayout
                                 android:layout_width="0dp"
@@ -381,6 +418,7 @@
                                         android:layout_width="0dp"
                                         android:layout_height="match_parent"
                                         android:layout_weight="1"
+                                        style="@style/Theme.ScoutingAppV3Dark.secondary"
                                         android:text="@string/decrement_button_text" />
 
                                     <TextView
@@ -395,6 +433,7 @@
                                         android:layout_width="0dp"
                                         android:layout_height="match_parent"
                                         android:layout_weight="1"
+                                        style="@style/Theme.ScoutingAppV3Dark.secondary"
                                         android:text="@string/increment_button_text" />
                                 </LinearLayout>
 
@@ -417,6 +456,7 @@
                                         android:layout_width="0dp"
                                         android:layout_height="match_parent"
                                         android:layout_weight="1"
+                                        style="@style/Theme.ScoutingAppV3Dark.secondary"
                                         android:text="@string/decrement_button_text" />
 
                                     <TextView
@@ -431,6 +471,7 @@
                                         android:layout_width="0dp"
                                         android:layout_height="match_parent"
                                         android:layout_weight="1"
+                                        style="@style/Theme.ScoutingAppV3Dark.secondary"
                                         android:text="@string/increment_button_text" />
                                 </LinearLayout>
 
@@ -452,6 +493,7 @@
                                         android:layout_width="0dp"
                                         android:layout_height="match_parent"
                                         android:layout_weight="1"
+                                        style="@style/Theme.ScoutingAppV3Dark.secondary"
                                         android:text="@string/decrement_button_text" />
 
                                     <TextView
@@ -466,6 +508,7 @@
                                         android:layout_width="0dp"
                                         android:layout_height="match_parent"
                                         android:layout_weight="1"
+                                        style="@style/Theme.ScoutingAppV3Dark.secondary"
                                         android:text="@string/increment_button_text" />
                                 </LinearLayout>
 
@@ -487,6 +530,7 @@
                                         android:layout_width="0dp"
                                         android:layout_height="match_parent"
                                         android:layout_weight="1"
+                                        style="@style/Theme.ScoutingAppV3Dark.secondary"
                                         android:text="@string/decrement_button_text" />
 
                                     <TextView
@@ -501,6 +545,7 @@
                                         android:layout_width="0dp"
                                         android:layout_height="match_parent"
                                         android:layout_weight="1"
+                                        style="@style/Theme.ScoutingAppV3Dark.secondary"
                                         android:text="@string/increment_button_text" />
                                 </LinearLayout>
 
@@ -522,6 +567,7 @@
                                         android:layout_width="0dp"
                                         android:layout_height="match_parent"
                                         android:layout_weight="1"
+                                        style="@style/Theme.ScoutingAppV3Dark.secondary"
                                         android:text="@string/decrement_button_text" />
 
                                     <TextView
@@ -536,9 +582,30 @@
                                         android:layout_width="0dp"
                                         android:layout_height="match_parent"
                                         android:layout_weight="1"
+                                        style="@style/Theme.ScoutingAppV3Dark.secondary"
                                         android:text="@string/increment_button_text" />
                                 </LinearLayout>
 
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="5"
+                                android:weightSum="17"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:id="@+id/CoralBranchTeleopImage"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    android:layout_weight="16"
+                                    app:srcCompat="@drawable/am_5523" />
+
+                                <Space
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    android:layout_weight="1" />
                             </LinearLayout>
 
                             <View
@@ -546,6 +613,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
+                                android:backgroundTint=""
                                 android:background="?android:attr/listDivider" />
 
                             <LinearLayout
@@ -560,9 +628,7 @@
                                     android:layout_height="0dp"
                                     android:layout_weight="3"
                                     android:orientation="horizontal"
-                                    android:weightSum="3"
-                                    tools:layout_editor_absoluteX="1dp"
-                                    tools:layout_editor_absoluteY="710dp">
+                                    android:weightSum="3">
 
                                     <TextView
                                         android:id="@+id/DriverRatingStarText"
@@ -576,6 +642,7 @@
                                         android:layout_width="0dp"
                                         android:layout_height="match_parent"
                                         android:layout_weight="2"
+                                        style="@style/Theme.ScoutingAppV3Dark.tertiary"
                                         android:text="@string/ten_star_placeholder_button_text" />
 
                                 </LinearLayout>
@@ -606,6 +673,7 @@
                                         android:layout_width="0dp"
                                         android:layout_height="match_parent"
                                         android:layout_weight="1"
+                                        style="@style/Theme.ScoutingAppV3Dark.primary"
                                         android:text="@string/decrement_button_text" />
 
                                     <TextView
@@ -620,6 +688,7 @@
                                         android:layout_width="0dp"
                                         android:layout_height="match_parent"
                                         android:layout_weight="1"
+                                        style="@style/Theme.ScoutingAppV3Dark.primary"
                                         android:text="@string/increment_button_text" />
 
                                 </LinearLayout>
@@ -643,6 +712,7 @@
                                         android:layout_width="0dp"
                                         android:layout_height="match_parent"
                                         android:layout_weight="1"
+                                        style="@style/Theme.ScoutingAppV3Dark.primary"
                                         android:text="@string/decrement_button_text" />
 
                                     <TextView
@@ -657,6 +727,7 @@
                                         android:layout_width="0dp"
                                         android:layout_height="match_parent"
                                         android:layout_weight="1"
+                                        style="@style/Theme.ScoutingAppV3Dark.primary"
                                         android:text="@string/increment_button_text" />
 
                                 </LinearLayout>
@@ -680,6 +751,7 @@
                                         android:layout_width="0dp"
                                         android:layout_height="match_parent"
                                         android:layout_weight="1"
+                                        style="@style/Theme.ScoutingAppV3Dark.primary"
                                         android:text="@string/decrement_button_text" />
 
                                     <TextView
@@ -694,6 +766,7 @@
                                         android:layout_width="0dp"
                                         android:layout_height="match_parent"
                                         android:layout_weight="1"
+                                        style="@style/Theme.ScoutingAppV3Dark.primary"
                                         android:text="@string/increment_button_text" />
 
                                 </LinearLayout>
@@ -717,6 +790,7 @@
                                         android:layout_width="0dp"
                                         android:layout_height="match_parent"
                                         android:layout_weight="1"
+                                        style="@style/Theme.ScoutingAppV3Dark.primary"
                                         android:text="@string/decrement_button_text" />
 
                                     <TextView
@@ -731,6 +805,7 @@
                                         android:layout_width="0dp"
                                         android:layout_height="match_parent"
                                         android:layout_weight="1"
+                                        style="@style/Theme.ScoutingAppV3Dark.primary"
                                         android:text="@string/increment_button_text" />
 
                                 </LinearLayout>
@@ -745,6 +820,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
+                    android:backgroundTint="@color/coral_L4_auto_button"
                     android:background="?android:attr/listDivider" />
 
             </LinearLayout>
@@ -777,6 +853,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
+                    style="@style/Theme.ScoutingAppV3Dark.tertiary"
                     android:text="@string/submit_button_text" />
 
                 <Button
@@ -784,6 +861,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
+                    style="@style/Theme.ScoutingAppV3Dark.tertiary"
                     android:text="@string/skip_button_text" />
             </LinearLayout>
         </LinearLayout>
