@@ -19,6 +19,7 @@ public class DataEntryScreen {
     Button DroppedCoralDecButtonAuto;
     Button DroppedCoralIncButtonAuto;
 
+
     // Teleop buttons
     Button L4CoralDecButtonTeleop;
     Button L4CoralIncButtonTeleop;
@@ -51,10 +52,15 @@ public class DataEntryScreen {
     int L2CoralValueAuto = 0;
     int L1CoralValueAuto = 0;
 
+    int DroppedCoralAuto = 0;
+
     int L4CoralValueTeleop = 0;
     int L3CoralValueTeleop = 0;
     int L2CoralValueTeleop = 0;
     int L1CoralValueTeleop = 0;
+
+    int DroppedCoralTelop = 0;
+
 
 
 
@@ -105,6 +111,13 @@ public class DataEntryScreen {
         L1CoralDecButtonTeleop = AppActivity.findViewById(R.id.L1CoralDecButtonTeleop);
         L1CoralIncButtonTeleop = AppActivity.findViewById(R.id.L1CoralIncButtonTeleop);
         L1CoralValueTeleopView = AppActivity.findViewById(R.id.L1CoralValueTeleop);
+
+        //Droped coral in auto
+
+        DroppedCoralDecButtonAuto = AppActivity.findViewById(R.id.DroppedCoralDecButtonAuto);
+        DroppedCoralIncButtonAuto = AppActivity.findViewById(R.id.DroppedCoralIncButtonAuto);
+        DroppedCoralValueAutoView = AppActivity.findViewById(R.id.DroppedCoralTextAuto);
+
 
 
         //Start of Auto
@@ -158,6 +171,19 @@ public class DataEntryScreen {
         L1CoralIncButtonAuto.setOnClickListener(v -> {
             L1CoralValueAuto++;
             L1CoralValueAutoView.setText(L1CoralValueAuto + "");
+        });
+
+        //Dropped Coral
+        DroppedCoralDecButtonAuto.setOnClickListener(v -> {
+            if (L1CoralValueAuto > 0) {
+                DroppedCoralAuto--;
+                DroppedCoralValueAutoView.setText(DroppedCoralAuto + "");
+            }
+        });
+
+        DroppedCoralIncButtonAuto.setOnClickListener(v -> {
+            DroppedCoralAuto++;
+            L1CoralValueAutoView.setText(DroppedCoralAuto + "");
         });
 
         //Start of Teleop

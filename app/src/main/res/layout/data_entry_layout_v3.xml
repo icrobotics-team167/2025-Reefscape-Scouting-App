@@ -339,8 +339,8 @@
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:backgroundTint=""
-                        android:background="?android:attr/listDivider" />
+                        android:background="?android:attr/listDivider"
+                        android:backgroundTint="#868686" />
 
                     <LinearLayout
                         android:layout_width="0dp"
