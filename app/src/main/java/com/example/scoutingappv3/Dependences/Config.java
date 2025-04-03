@@ -13,5 +13,7 @@ public class Config {
 
     public static void setAppContext(Context appContext) {
         AppContext = appContext;
+
     }
+
 }
