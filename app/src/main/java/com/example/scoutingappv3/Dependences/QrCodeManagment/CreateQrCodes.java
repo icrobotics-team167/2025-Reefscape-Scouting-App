@@ -5,9 +5,12 @@ import android.content.Context;
 import com.example.scoutingappv3.Dependences.Config;
 import com.example.scoutingappv3.Dependences.FileManagment.JavaFilesReader;
 
+@Deprecated
 public class CreateQrCodes {
 
     static Context LocalAppContext;
+
+
     public static void CreateCodes(){
         if (LocalAppContext == null){
             LocalAppContext = Config.AppContext;

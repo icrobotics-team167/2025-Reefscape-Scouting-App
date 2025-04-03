@@ -12,13 +12,13 @@ import com.example.scoutingappv3.R;
 public class LoadTesting {
 
     public static void LoadTestMenu(Activity AppActivity){
-        AppActivity.setContentView(R.layout.temp);
+//        AppActivity.setContentView(R.layout.temp);
 
-        Button SubmitButtion = AppActivity.findViewById(R.id.Submit);
-        EditText TextEdit = AppActivity.findViewById(R.id.Data);
+//        Button SubmitButtion = AppActivity.findViewById(R.id.Submit);
+//        EditText TextEdit = AppActivity.findViewById(R.id.Data);
 
-        SubmitButtion.setOnClickListener(v -> {
-            Toast.makeText(Config.AppContext,"Data: " + TextEdit.getText().toString(), Toast.LENGTH_SHORT).show();
-        });
+//        SubmitButtion.setOnClickListener(v -> {
+//            Toast.makeText(Config.AppContext,"Data: " + TextEdit.getText().toString(), Toast.LENGTH_SHORT).show();
+//        });
     }
 }
