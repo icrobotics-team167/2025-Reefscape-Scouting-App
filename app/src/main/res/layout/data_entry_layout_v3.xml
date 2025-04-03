@@ -69,7 +69,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
-                    android:backgroundTint="@color/coral_L4_auto_button"
                     android:background="?android:attr/listDivider" />
 
                 <LinearLayout
@@ -339,8 +338,7 @@
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:background="?android:attr/listDivider"
-                        android:backgroundTint="#868686" />
+                        android:background="?android:attr/listDivider" />
 
                     <LinearLayout
                         android:layout_width="0dp"
@@ -613,7 +611,6 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:backgroundTint=""
                                 android:background="?android:attr/listDivider" />
 
                             <LinearLayout
@@ -820,7 +817,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
-                    android:backgroundTint="@color/coral_L4_auto_button"
                     android:background="?android:attr/listDivider" />
 
             </LinearLayout>
