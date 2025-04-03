@@ -6,10 +6,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.scoutingappv3.Dependences.Config;
-import com.example.scoutingappv3.Dependences.CreateCSVFiles.CsvWriter;
-import com.example.scoutingappv3.LoadScreens.LoadDataEntry;
-import com.example.scoutingappv3.LoadScreens.LoadTesting;
-
+import com.example.scoutingappv3.LoadScreens.DataEntryScreen;
 
 
 public class Main extends AppCompatActivity{
@@ -20,8 +17,9 @@ public class Main extends AppCompatActivity{
         //Very Importent DO NOT DELTE
         Config.setAppContext(this);
 
-        LoadDataEntry.LoadDataScreen(this);
+        DataEntryScreen DataLoader = new DataEntryScreen();
 
+        DataLoader.LoadDataScreen(this);
 
     }
 
