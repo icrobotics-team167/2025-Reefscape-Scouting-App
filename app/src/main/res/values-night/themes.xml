@@ -1,18 +1,21 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Theme.ScoutingAppV3Dark.primary" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <item name="android:textSize">20sp</item>
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/md_theme_light_primary</item>
         <item name="colorPrimaryVariant">@color/md_theme_light_onPrimaryContainer</item>
         <item name="colorOnPrimary">@color/md_theme_light_onPrimary</item>
     </style>
     <style name="Theme.ScoutingAppV3Dark.secondary" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <item name="android:textSize">20sp</item>
     <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/md_theme_light_secondary</item>
         <item name="colorSecondaryVariant">@color/md_theme_light_onSecondaryContainer</item>
         <item name="colorOnSecondary">@color/md_theme_light_onSecondary</item>
     </style>
     <style name="Theme.ScoutingAppV3Dark.tertiary" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <item name="android:textSize">20sp</item>
         <!-- Tertiary brand color. -->
         <item name="colorTertiary">@color/md_theme_light_tertiary</item>
         <item name="colorOnTertiaryFixedVariant">@color/md_theme_light_tertiaryContainer</item>
