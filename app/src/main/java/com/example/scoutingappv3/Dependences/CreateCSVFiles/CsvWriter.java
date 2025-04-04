@@ -25,12 +25,4 @@ public class CsvWriter {
         LocalCsvWriter.ClearDowloadsFile();
     }
 
-    private static CsvWriter instance;
-
-    public static CsvWriter getInstance() {
-        if (instance == null) {
-            instance = new CsvWriter();
-        }
-        return instance;
-    }
 }
