@@ -10,11 +10,14 @@ public class CsvBuilder {
         StringBuilder CsvHeader = new StringBuilder();
 
         char[] NotesChars = dataEntry.Notes.getText().toString().toCharArray();
-
-        for (int i = 0; i < NotesChars.length; i++) {
-            if (NotesChars[i] == '\n' || NotesChars[i] == ','){
-                NotesChars[i] = ' ';
+        if (NotesChars.length > 0) {
+            for (int i = 0; i < NotesChars.length; i++) {
+                if (NotesChars[i] == '\n' || NotesChars[i] == ',') {
+                    NotesChars[i] = ' ';
+                }
             }
+        }else {
+            NotesChars = "No Notes".toCharArray();
         }
 
         CsvHeader.append("Notes,");
@@ -79,6 +82,14 @@ public class CsvBuilder {
 
         CsvHeader.append("NetMissedAlgae,");
         CsvData.append(dataEntry.NetMissedAlgae);
+        CsvData.append(",");
+
+        CsvHeader.append("Played Defense,");
+        CsvData.append(dataEntry.PlayedDefense.isChecked());
+        CsvData.append(",");
+
+        CsvHeader.append("Moved Past Go,");
+        CsvData.append(dataEntry.MoveCheckBox.isChecked());
         CsvData.append(",");
 
         new CsvWriter().AppendDataLn(CsvData.toString());

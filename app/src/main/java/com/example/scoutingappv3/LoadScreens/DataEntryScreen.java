@@ -3,6 +3,7 @@ package com.example.scoutingappv3.LoadScreens;
 import android.app.Activity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -42,6 +43,10 @@ public class DataEntryScreen {
     Button NetMissedAlgaeDecButton;
     Button NetMissedAlgaeIncButton;
     Button SubmitButton;
+
+    //Check box
+    public CheckBox PlayedDefense;
+    public CheckBox MoveCheckBox;
 
     // Point Views
     TextView L4CoralValueAutoView;
@@ -166,8 +171,15 @@ public class DataEntryScreen {
         //Notes
         Notes = AppActivity.findViewById(R.id.NotesTextBox);
 
-        //Submit Buttion
+        //Submit Button
         SubmitButton = AppActivity.findViewById(R.id.SubmitButton);
+
+        //played Defense
+        PlayedDefense = AppActivity.findViewById(R.id.DefenseCheckBox);
+
+        //Moved past go
+        MoveCheckBox = AppActivity.findViewById(R.id.MoveCheckBox);
+
 
         //Start of Auto
         //L4 Coral Auto
