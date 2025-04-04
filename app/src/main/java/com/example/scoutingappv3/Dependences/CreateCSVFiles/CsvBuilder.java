@@ -81,7 +81,6 @@ public class CsvBuilder {
         CsvData.append(dataEntry.NetMissedAlgae);
         CsvData.append(",");
 
-        new CsvWriter().ResetFile();
         new CsvWriter().AppendDataLn(CsvData.toString());
         Log.d("Header", CsvHeader.toString());
 
