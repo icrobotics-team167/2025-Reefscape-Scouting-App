@@ -3,8 +3,10 @@ package com.example.scoutingappv3.LoadScreens;
 import android.app.Activity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
+import com.example.scoutingappv3.Dependences.CreateCSVFiles.CsvBuilder;
 import com.example.scoutingappv3.R;
 
 public class DataEntryScreen {
@@ -31,6 +33,15 @@ public class DataEntryScreen {
     Button L1CoralIncButtonTeleop;
     Button DroppedCoralDecButtonTeleop;
     Button DroppedCoralIncButtonTeleop;
+    Button ProcessorAlgaeDecButton;
+    Button ProcessorAlgaeIncButton;
+    Button BargeAlgaeDecButton;
+    Button BargeAlgaeIncButton;
+    Button DereefedAlgaeDecButton;
+    Button DereefedAlgaeIncButton;
+    Button NetMissedAlgaeDecButton;
+    Button NetMissedAlgaeIncButton;
+    Button SubmitButton;
 
     // Point Views
     TextView L4CoralValueAutoView;
@@ -38,28 +49,38 @@ public class DataEntryScreen {
     TextView L2CoralValueAutoView;
     TextView L1CoralValueAutoView;
     TextView DroppedCoralValueAutoView;
-
     TextView L4CoralValueTeleopView;
     TextView L3CoralValueTeleopView;
     TextView L2CoralValueTeleopView;
     TextView L1CoralValueTeleopView;
     TextView DroppedCoralValueTeleopView;
+    TextView ProcessorAlgaeValue;
+    TextView BargeAlgaeValue;
+    TextView DereefedAlgaeValue;
+    TextView NetMissedAlgaeValue;
 
     //int vals
 
-    int L4CoralValueAuto = 0;
-    int L3CoralValueAuto = 0;
-    int L2CoralValueAuto = 0;
-    int L1CoralValueAuto = 0;
+    public int L4CoralValueAuto = 0;
+    public int L3CoralValueAuto = 0;
+    public int L2CoralValueAuto = 0;
+    public int L1CoralValueAuto = 0;
 
-    int DroppedCoralAuto = 0;
+    public int DroppedCoralAuto = 0;
 
-    int L4CoralValueTeleop = 0;
-    int L3CoralValueTeleop = 0;
-    int L2CoralValueTeleop = 0;
-    int L1CoralValueTeleop = 0;
+    public int L4CoralValueTeleop = 0;
+    public int L3CoralValueTeleop = 0;
+    public int L2CoralValueTeleop = 0;
+    public int L1CoralValueTeleop = 0;
+    public int DroppedCoralTeleop = 0;
+    public int ProsserScored = 0;
+    public int BargeScored = 0;
+    public int DereefedAlgae = 0;
+    public int NetMissedAlgae = 0;
 
-    int DroppedCoralTelop = 0;
+    //Notes
+    public EditText Notes;
+
 
 
 
@@ -92,6 +113,11 @@ public class DataEntryScreen {
         L1CoralIncButtonAuto = AppActivity.findViewById(R.id.L1CoralIncButtonAuto);
         L1CoralValueAutoView = AppActivity.findViewById(R.id.L1CoralValueAuto);
 
+        //Droped coral in auto
+        DroppedCoralDecButtonAuto = AppActivity.findViewById(R.id.DroppedCoralDecButtonAuto);
+        DroppedCoralIncButtonAuto = AppActivity.findViewById(R.id.DroppedCoralIncButtonAuto);
+        DroppedCoralValueAutoView = AppActivity.findViewById(R.id.DroppedCoralValueAuto);
+
         //l4 Coral Teleop
         L4CoralDecButtonTeleop = AppActivity.findViewById(R.id.L4CoralDecButtonTeleop);
         L4CoralIncButtonTeleop = AppActivity.findViewById(R.id.L4CoralIncButtonTeleop);
@@ -113,12 +139,35 @@ public class DataEntryScreen {
         L1CoralValueTeleopView = AppActivity.findViewById(R.id.L1CoralValueTeleop);
 
         //Droped coral in auto
+        DroppedCoralDecButtonTeleop = AppActivity.findViewById(R.id.DroppedCoralDecButtonTeleop);
+        DroppedCoralIncButtonTeleop = AppActivity.findViewById(R.id.DroppedCoralIncButtonTeleop);
+        DroppedCoralValueTeleopView = AppActivity.findViewById(R.id.DroppedCoralValueTeleop);
 
-        DroppedCoralDecButtonAuto = AppActivity.findViewById(R.id.DroppedCoralDecButtonAuto);
-        DroppedCoralIncButtonAuto = AppActivity.findViewById(R.id.DroppedCoralIncButtonAuto);
-        DroppedCoralValueAutoView = AppActivity.findViewById(R.id.DroppedCoralTextAuto);
+        //Prosser
+        ProcessorAlgaeDecButton = AppActivity.findViewById(R.id.ProcessorAlgaeDecButton);
+        ProcessorAlgaeIncButton = AppActivity.findViewById(R.id.ProcessorAlgaeIncButton);
+        ProcessorAlgaeValue = AppActivity.findViewById(R.id.ProcessorAlgaeValue);
 
+        //Barge
+        BargeAlgaeDecButton = AppActivity.findViewById(R.id.BargeAlgaeDecButton);
+        BargeAlgaeIncButton = AppActivity.findViewById(R.id.BargeAlgaeIncButton);
+        BargeAlgaeValue = AppActivity.findViewById(R.id.BargeAlgaeValue);
 
+        //Dereef
+        DereefedAlgaeDecButton = AppActivity.findViewById(R.id.DereefedAlgaeDecButton);
+        DereefedAlgaeIncButton = AppActivity.findViewById(R.id.DereefedAlgaeIncButton);
+        DereefedAlgaeValue = AppActivity.findViewById(R.id.DereefedAlgaeValue);
+
+        //Net Missed Alge
+        NetMissedAlgaeDecButton = AppActivity.findViewById(R.id.NetMissedAlgaeDecButton);
+        NetMissedAlgaeIncButton = AppActivity.findViewById(R.id.NetMissedAlgaeIncButton);
+        NetMissedAlgaeValue = AppActivity.findViewById(R.id.NetMissedAlgaeValue);
+
+        //Notes
+        Notes = AppActivity.findViewById(R.id.NotesTextBox);
+
+        //Submit Buttion
+        SubmitButton = AppActivity.findViewById(R.id.SubmitButton);
 
         //Start of Auto
         //L4 Coral Auto
@@ -173,9 +222,9 @@ public class DataEntryScreen {
             L1CoralValueAutoView.setText(L1CoralValueAuto + "");
         });
 
-        //Dropped Coral
+        //Dropped Coral Auto
         DroppedCoralDecButtonAuto.setOnClickListener(v -> {
-            if (L1CoralValueAuto > 0) {
+            if (DroppedCoralAuto > 0) {
                 DroppedCoralAuto--;
                 DroppedCoralValueAutoView.setText(DroppedCoralAuto + "");
             }
@@ -183,7 +232,7 @@ public class DataEntryScreen {
 
         DroppedCoralIncButtonAuto.setOnClickListener(v -> {
             DroppedCoralAuto++;
-            L1CoralValueAutoView.setText(DroppedCoralAuto + "");
+            DroppedCoralValueAutoView.setText(DroppedCoralAuto + "");
         });
 
         //Start of Teleop
@@ -236,8 +285,75 @@ public class DataEntryScreen {
             L1CoralValueTeleopView.setText(L1CoralValueTeleop + "");
         });
 
+        //Dropped Coral Teleop
+        DroppedCoralDecButtonTeleop.setOnClickListener(v -> {
+            if (DroppedCoralTeleop > 0) {
+                DroppedCoralTeleop--;
+                DroppedCoralValueTeleopView.setText(DroppedCoralTeleop + "");
+            }
+        });
 
+        DroppedCoralIncButtonTeleop.setOnClickListener(v -> {
+            DroppedCoralTeleop++;
+            DroppedCoralValueTeleopView.setText(DroppedCoralTeleop + "");
+        });
 
+        //prosser
+        ProcessorAlgaeDecButton.setOnClickListener(v -> {
+            if (ProsserScored > 0) {
+                ProsserScored--;
+                ProcessorAlgaeValue.setText(ProsserScored + "");
+            }
+        });
+
+        ProcessorAlgaeIncButton.setOnClickListener(v -> {
+            ProsserScored++;
+            ProcessorAlgaeValue.setText(ProsserScored + "");
+        });
+
+        //Barge
+        BargeAlgaeDecButton.setOnClickListener(v -> {
+            if (BargeScored > 0) {
+                BargeScored--;
+                BargeAlgaeValue.setText(BargeScored + "");
+            }
+        });
+
+        BargeAlgaeIncButton.setOnClickListener(v -> {
+            BargeScored++;
+            BargeAlgaeValue.setText(BargeScored + "");
+        });
+
+        //Barge
+        DereefedAlgaeDecButton.setOnClickListener(v -> {
+            if (DereefedAlgae > 0) {
+                DereefedAlgae--;
+                DereefedAlgaeValue.setText(DereefedAlgae + "");
+            }
+        });
+
+        DereefedAlgaeIncButton.setOnClickListener(v -> {
+            DereefedAlgae++;
+            DereefedAlgaeValue.setText(DereefedAlgae + "");
+        });
+
+        //Net missed alge
+        NetMissedAlgaeDecButton.setOnClickListener(v -> {
+            if (NetMissedAlgae > 0) {
+                NetMissedAlgae--;
+                NetMissedAlgaeValue.setText(NetMissedAlgae + "");
+            }
+        });
+
+        NetMissedAlgaeIncButton.setOnClickListener(v -> {
+            NetMissedAlgae++;
+            NetMissedAlgaeValue.setText(NetMissedAlgae + "");
+        });
+
+        //Submit Buttion;
+        SubmitButton.setOnClickListener(v -> {
+            CsvBuilder.BuildCsv(this);
+        });
 
     }
 }

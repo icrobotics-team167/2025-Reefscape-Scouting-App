@@ -1,0 +1,89 @@
+package com.example.scoutingappv3.Dependences.CreateCSVFiles;
+
+import android.util.Log;
+
+import com.example.scoutingappv3.LoadScreens.DataEntryScreen;
+
+public class CsvBuilder {
+    public static void BuildCsv(DataEntryScreen dataEntry){
+        StringBuilder CsvData = new StringBuilder();
+        StringBuilder CsvHeader = new StringBuilder();
+
+        char[] NotesChars = dataEntry.Notes.getText().toString().toCharArray();
+
+        for (int i = 0; i < NotesChars.length; i++) {
+            if (NotesChars[i] == '\n' || NotesChars[i] == ','){
+                NotesChars[i] = ' ';
+            }
+        }
+
+        CsvHeader.append("Notes,");
+        CsvData.append(NotesChars);
+        CsvData.append(",");
+
+        CsvHeader.append("L4 Scored In Auto,");
+        CsvData.append(dataEntry.L4CoralValueAuto);
+        CsvData.append(",");
+
+        CsvHeader.append("L3 Scored In Auto,");
+        CsvData.append(dataEntry.L3CoralValueAuto);
+        CsvData.append(",");
+
+        CsvHeader.append("L2 Scored In Auto,");
+        CsvData.append(dataEntry.L2CoralValueAuto);
+        CsvData.append(",");
+
+        CsvHeader.append("L1 Scored In Auto,");
+        CsvData.append(dataEntry.L1CoralValueAuto);
+        CsvData.append(",");
+
+        CsvHeader.append("Dropped Coral in auto,");
+        CsvData.append(dataEntry.DroppedCoralAuto);
+        CsvData.append(",");
+
+        CsvHeader.append("L4 Scored In Telop,");
+        CsvData.append(dataEntry.L4CoralValueTeleop);
+        CsvData.append(",");
+
+        CsvHeader.append("L3 Scored In Telop,");
+        CsvData.append(dataEntry.L3CoralValueTeleop);
+        CsvData.append(",");
+
+        CsvHeader.append("L2 Scored In Telop,");
+        CsvData.append(dataEntry.L2CoralValueTeleop);
+        CsvData.append(",");
+
+        CsvHeader.append("L1 Scored In Telop,");
+        CsvData.append(dataEntry.L1CoralValueTeleop);
+        CsvData.append(",");
+
+        CsvHeader.append("L1 Scored In Telop,");
+        CsvData.append(dataEntry.L1CoralValueTeleop);
+        CsvData.append(",");
+
+        CsvHeader.append("Dropped Coral in Teleop,");
+        CsvData.append(dataEntry.DroppedCoralTeleop);
+        CsvData.append(",");
+
+        CsvHeader.append("Prosser Scored,");
+        CsvData.append(dataEntry.ProsserScored);
+        CsvData.append(",");
+
+        CsvHeader.append("Barge Scored,");
+        CsvData.append(dataEntry.BargeScored);
+        CsvData.append(",");
+
+        CsvHeader.append("Dereefed Algae,");
+        CsvData.append(dataEntry.DereefedAlgae);
+        CsvData.append(",");
+
+        CsvHeader.append("NetMissedAlgae,");
+        CsvData.append(dataEntry.NetMissedAlgae);
+        CsvData.append(",");
+
+        new CsvWriter().ResetFile();
+        new CsvWriter().AppendDataLn(CsvData.toString());
+        Log.d("Header", CsvHeader.toString());
+
+    }
+}
