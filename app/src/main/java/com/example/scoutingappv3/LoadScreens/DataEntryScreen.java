@@ -1,5 +1,6 @@
 package com.example.scoutingappv3.LoadScreens;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.view.View;
 import android.widget.Button;
@@ -7,6 +8,7 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.example.scoutingappv3.Dependences.Config;
 import com.example.scoutingappv3.Dependences.CreateCSVFiles.CsvBuilder;
 import com.example.scoutingappv3.Main;
 import com.example.scoutingappv3.R;
@@ -44,6 +46,7 @@ public class DataEntryScreen {
     Button NetMissedAlgaeDecButton;
     Button NetMissedAlgaeIncButton;
     Button SubmitButton;
+    Button SignOutButton;
 
     //Check box
     public CheckBox PlayedDefense;
@@ -64,6 +67,9 @@ public class DataEntryScreen {
     TextView BargeAlgaeValue;
     TextView DereefedAlgaeValue;
     TextView NetMissedAlgaeValue;
+    TextView ScoutNamePlaceholderText;
+    TextView TeamNumberPlaceholderText;
+    TextView MatchNumberPlaceholderText;
 
     //int vals
 
@@ -94,92 +100,99 @@ public class DataEntryScreen {
     Activity LocalActivity;
 
 
-    public void LoadDataScreen(Activity AppActivity, Main main){
+    @SuppressLint("SetTextI18n")
+    public void LoadDataScreen(Activity appActivity, Main main){
 
-        AppActivity.setContentView(R.layout.data_entry_layout_v3);
+        appActivity.setContentView(R.layout.data_entry_layout_v3);
 
 
         //l4 Coral Auto
-        L4CoralDecButtonAuto = AppActivity.findViewById(R.id.L4CoralDecButtonAuto);
-        L4CoralIncButtonAuto = AppActivity.findViewById(R.id.L4CoralIncButtonAuto);
-        L4CoralValueAutoView = AppActivity.findViewById(R.id.L4CoralValueAuto);
+        L4CoralDecButtonAuto = appActivity.findViewById(R.id.L4CoralDecButtonAuto);
+        L4CoralIncButtonAuto = appActivity.findViewById(R.id.L4CoralIncButtonAuto);
+        L4CoralValueAutoView = appActivity.findViewById(R.id.L4CoralValueAuto);
 
         //l3 Coral Auto
-        L3CoralDecButtonAuto = AppActivity.findViewById(R.id.L3CoralDecButtonAuto);
-        L3CoralIncButtonAuto = AppActivity.findViewById(R.id.L3CoralIncButtonAuto);
-        L3CoralValueAutoView = AppActivity.findViewById(R.id.L3CoralValueAuto);
+        L3CoralDecButtonAuto = appActivity.findViewById(R.id.L3CoralDecButtonAuto);
+        L3CoralIncButtonAuto = appActivity.findViewById(R.id.L3CoralIncButtonAuto);
+        L3CoralValueAutoView = appActivity.findViewById(R.id.L3CoralValueAuto);
 
         //l2 Coral Auto
-        L2CoralDecButtonAuto = AppActivity.findViewById(R.id.L2CoralDecButtonAuto);
-        L2CoralIncButtonAuto = AppActivity.findViewById(R.id.L2CoralIncButtonAuto);
-        L2CoralValueAutoView = AppActivity.findViewById(R.id.L2CoralValueAuto);
+        L2CoralDecButtonAuto = appActivity.findViewById(R.id.L2CoralDecButtonAuto);
+        L2CoralIncButtonAuto = appActivity.findViewById(R.id.L2CoralIncButtonAuto);
+        L2CoralValueAutoView = appActivity.findViewById(R.id.L2CoralValueAuto);
 
         //l1 Coral Auto
-        L1CoralDecButtonAuto = AppActivity.findViewById(R.id.L1CoralDecButtonAuto);
-        L1CoralIncButtonAuto = AppActivity.findViewById(R.id.L1CoralIncButtonAuto);
-        L1CoralValueAutoView = AppActivity.findViewById(R.id.L1CoralValueAuto);
+        L1CoralDecButtonAuto = appActivity.findViewById(R.id.L1CoralDecButtonAuto);
+        L1CoralIncButtonAuto = appActivity.findViewById(R.id.L1CoralIncButtonAuto);
+        L1CoralValueAutoView = appActivity.findViewById(R.id.L1CoralValueAuto);
 
         //Droped coral in auto
-        DroppedCoralDecButtonAuto = AppActivity.findViewById(R.id.DroppedCoralDecButtonAuto);
-        DroppedCoralIncButtonAuto = AppActivity.findViewById(R.id.DroppedCoralIncButtonAuto);
-        DroppedCoralValueAutoView = AppActivity.findViewById(R.id.DroppedCoralValueAuto);
+        DroppedCoralDecButtonAuto = appActivity.findViewById(R.id.DroppedCoralDecButtonAuto);
+        DroppedCoralIncButtonAuto = appActivity.findViewById(R.id.DroppedCoralIncButtonAuto);
+        DroppedCoralValueAutoView = appActivity.findViewById(R.id.DroppedCoralValueAuto);
 
         //l4 Coral Teleop
-        L4CoralDecButtonTeleop = AppActivity.findViewById(R.id.L4CoralDecButtonTeleop);
-        L4CoralIncButtonTeleop = AppActivity.findViewById(R.id.L4CoralIncButtonTeleop);
-        L4CoralValueTeleopView = AppActivity.findViewById(R.id.L4CoralValueTeleop);
+        L4CoralDecButtonTeleop = appActivity.findViewById(R.id.L4CoralDecButtonTeleop);
+        L4CoralIncButtonTeleop = appActivity.findViewById(R.id.L4CoralIncButtonTeleop);
+        L4CoralValueTeleopView = appActivity.findViewById(R.id.L4CoralValueTeleop);
 
         // L3 Coral Teleop
-        L3CoralDecButtonTeleop = AppActivity.findViewById(R.id.L3CoralDecButtonTeleop);
-        L3CoralIncButtonTeleop = AppActivity.findViewById(R.id.L3CoralIncButtonTeleop);
-        L3CoralValueTeleopView = AppActivity.findViewById(R.id.L3CoralValueTeleop);
+        L3CoralDecButtonTeleop = appActivity.findViewById(R.id.L3CoralDecButtonTeleop);
+        L3CoralIncButtonTeleop = appActivity.findViewById(R.id.L3CoralIncButtonTeleop);
+        L3CoralValueTeleopView = appActivity.findViewById(R.id.L3CoralValueTeleop);
 
         // L2 Coral Teleop
-        L2CoralDecButtonTeleop = AppActivity.findViewById(R.id.L2CoralDecButtonTeleop);
-        L2CoralIncButtonTeleop = AppActivity.findViewById(R.id.L2CoralIncButtonTeleop);
-        L2CoralValueTeleopView = AppActivity.findViewById(R.id.L2CoralValueTeleop);
+        L2CoralDecButtonTeleop = appActivity.findViewById(R.id.L2CoralDecButtonTeleop);
+        L2CoralIncButtonTeleop = appActivity.findViewById(R.id.L2CoralIncButtonTeleop);
+        L2CoralValueTeleopView = appActivity.findViewById(R.id.L2CoralValueTeleop);
 
         // L1 Coral Teleop
-        L1CoralDecButtonTeleop = AppActivity.findViewById(R.id.L1CoralDecButtonTeleop);
-        L1CoralIncButtonTeleop = AppActivity.findViewById(R.id.L1CoralIncButtonTeleop);
-        L1CoralValueTeleopView = AppActivity.findViewById(R.id.L1CoralValueTeleop);
+        L1CoralDecButtonTeleop = appActivity.findViewById(R.id.L1CoralDecButtonTeleop);
+        L1CoralIncButtonTeleop = appActivity.findViewById(R.id.L1CoralIncButtonTeleop);
+        L1CoralValueTeleopView = appActivity.findViewById(R.id.L1CoralValueTeleop);
 
         //Droped coral in auto
-        DroppedCoralDecButtonTeleop = AppActivity.findViewById(R.id.DroppedCoralDecButtonTeleop);
-        DroppedCoralIncButtonTeleop = AppActivity.findViewById(R.id.DroppedCoralIncButtonTeleop);
-        DroppedCoralValueTeleopView = AppActivity.findViewById(R.id.DroppedCoralValueTeleop);
+        DroppedCoralDecButtonTeleop = appActivity.findViewById(R.id.DroppedCoralDecButtonTeleop);
+        DroppedCoralIncButtonTeleop = appActivity.findViewById(R.id.DroppedCoralIncButtonTeleop);
+        DroppedCoralValueTeleopView = appActivity.findViewById(R.id.DroppedCoralValueTeleop);
 
         //Prosser
-        ProcessorAlgaeDecButton = AppActivity.findViewById(R.id.ProcessorAlgaeDecButton);
-        ProcessorAlgaeIncButton = AppActivity.findViewById(R.id.ProcessorAlgaeIncButton);
-        ProcessorAlgaeValue = AppActivity.findViewById(R.id.ProcessorAlgaeValue);
+        ProcessorAlgaeDecButton = appActivity.findViewById(R.id.ProcessorAlgaeDecButton);
+        ProcessorAlgaeIncButton = appActivity.findViewById(R.id.ProcessorAlgaeIncButton);
+        ProcessorAlgaeValue = appActivity.findViewById(R.id.ProcessorAlgaeValue);
 
         //Barge
-        BargeAlgaeDecButton = AppActivity.findViewById(R.id.BargeAlgaeDecButton);
-        BargeAlgaeIncButton = AppActivity.findViewById(R.id.BargeAlgaeIncButton);
-        BargeAlgaeValue = AppActivity.findViewById(R.id.BargeAlgaeValue);
+        BargeAlgaeDecButton = appActivity.findViewById(R.id.BargeAlgaeDecButton);
+        BargeAlgaeIncButton = appActivity.findViewById(R.id.BargeAlgaeIncButton);
+        BargeAlgaeValue = appActivity.findViewById(R.id.BargeAlgaeValue);
 
         //Dereef
-        DereefedAlgaeDecButton = AppActivity.findViewById(R.id.DereefedAlgaeDecButton);
-        DereefedAlgaeIncButton = AppActivity.findViewById(R.id.DereefedAlgaeIncButton);
-        DereefedAlgaeValue = AppActivity.findViewById(R.id.DereefedAlgaeValue);
+        DereefedAlgaeDecButton = appActivity.findViewById(R.id.DereefedAlgaeDecButton);
+        DereefedAlgaeIncButton = appActivity.findViewById(R.id.DereefedAlgaeIncButton);
+        DereefedAlgaeValue = appActivity.findViewById(R.id.DereefedAlgaeValue);
 
         //Net Missed Alge
-        NetMissedAlgaeDecButton = AppActivity.findViewById(R.id.NetMissedAlgaeDecButton);
-        NetMissedAlgaeIncButton = AppActivity.findViewById(R.id.NetMissedAlgaeIncButton);
-        NetMissedAlgaeValue = AppActivity.findViewById(R.id.NetMissedAlgaeValue);
+        NetMissedAlgaeDecButton = appActivity.findViewById(R.id.NetMissedAlgaeDecButton);
+        NetMissedAlgaeIncButton = appActivity.findViewById(R.id.NetMissedAlgaeIncButton);
+        NetMissedAlgaeValue = appActivity.findViewById(R.id.NetMissedAlgaeValue);
 
         //Notes
-        Notes = AppActivity.findViewById(R.id.NotesTextBox);
+        Notes = appActivity.findViewById(R.id.NotesTextBox);
 
         //Submit Button
-        SubmitButton = AppActivity.findViewById(R.id.SubmitButton);
+        SubmitButton = appActivity.findViewById(R.id.SubmitButton);
+        //Logout Buttion
+        SignOutButton = appActivity.findViewById(R.id.SignOutButton);
 
         //played Defense
-        PlayedDefense = AppActivity.findViewById(R.id.DefenseCheckBox);
+        PlayedDefense = appActivity.findViewById(R.id.DefenseCheckBox);
 
         //Moved past go
-        MoveCheckBox = AppActivity.findViewById(R.id.MoveCheckBox);
+        MoveCheckBox = appActivity.findViewById(R.id.MoveCheckBox);
+
+        ScoutNamePlaceholderText = appActivity.findViewById(R.id.ScoutNamePlaceholderText);
+        TeamNumberPlaceholderText = appActivity.findViewById(R.id.TeamNumberPlaceholderText);
+        MatchNumberPlaceholderText = appActivity.findViewById(R.id.MatchNumberPlaceholderText);
 
 
         //Start of Auto
@@ -367,6 +380,17 @@ public class DataEntryScreen {
         SubmitButton.setOnClickListener(v -> {
             CsvBuilder.BuildCsv(this);
         });
+
+        //SignOutButton Buttion
+        SignOutButton.setOnClickListener(v -> {
+            main.SettingsLoader.LoadSettingsPage(appActivity,main);
+        });
+
+
+        ScoutNamePlaceholderText.setText("\nHello " + Config.UserName + "!");
+        TeamNumberPlaceholderText.setText("\nTrack " + Config.BotTracked);
+        MatchNumberPlaceholderText.setText("\nMatch " + Config.MatchNumber);
+
 
     }
 }
