@@ -1,17 +1,49 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.ScoutingAppV3" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <style name="Theme.ScoutingAppV3Dark" parent="Theme.AppCompat.DayNight.DarkActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/md_theme_dark_onPrimary</item>
-        <item name="colorPrimaryVariant">@color/md_theme_dark_inversePrimary</item>
-        <item name="colorOnPrimary">@color/text_3</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/md_theme_light_scrim</item>
+        <item name="android:buttonTint">@color/md_theme_light_tertiary1</item>
+    </style>
+    <style name="Theme.ScoutingAppV3Dark.coralText" parent="Theme.ScoutingAppV3Dark">
+        <!-- Primary brand color. -->
+        <item name="android:textSize">40sp</item>
+    </style>
+    <style name="Theme.ScoutingAppV3Dark.bigText" parent="Theme.ScoutingAppV3Dark">
+        <!-- Primary brand color. -->
+        <item name="android:textSize">30sp</item>
+    </style>
+
+
+    <style name="Widget.ScoutingAppV3Dark" parent="Theme.ScoutingAppV3Dark">
+        <!-- Primary brand color. -->
+        <item name="android:textSize">30sp</item>
+        <item name="android:textColor">@color/md_theme_light</item>
+        <item name="android:background">@drawable/button_smoothing</item>
+    </style>
+    <style name="Widget.ScoutingAppV3Dark.primary1" parent="Widget.ScoutingAppV3Dark">
+        <!-- Primary brand color. -->
+        <item name="android:backgroundTint">@color/md_theme_light_primary1</item>
+    </style>
+    <style name="Widget.ScoutingAppV3Dark.primary2" parent="Widget.ScoutingAppV3Dark">
+        <!-- Primary brand color. -->
+        <item name="android:backgroundTint">@color/md_theme_light_primary2</item>
+    </style>
+    <style name="Widget.ScoutingAppV3Dark.secondary1" parent="Widget.ScoutingAppV3Dark">
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/md_theme_dark_secondary</item>
-        <item name="colorSecondaryVariant">@color/md_theme_dark_inverseSurface</item>
-        <item name="colorOnSecondary">@color/md_theme_dark_onSecondary</item>
-        <!-- Status bar color. -->
-        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
-        <!-- Customize your theme here. -->
-        <item name="android:textColor">@color/text_1</item>
+        <item name="android:backgroundTint">@color/md_theme_light_secondary1</item>
+    </style>
+    <style name="Widget.ScoutingAppV3Dark.secondary2" parent="Widget.ScoutingAppV3Dark">
+        <!-- Secondary brand color. -->
+        <item name="android:backgroundTint">@color/md_theme_light_secondary2</item>
+    </style>
+    <style name="Widget.ScoutingAppV3Dark.tertiary1" parent="Widget.ScoutingAppV3Dark">
+        <!-- Tertiary brand color. -->
+        <item name="android:backgroundTint">@color/md_theme_light_tertiary1</item>
+    </style>
+    <style name="Widget.ScoutingAppV3Dark.tertiary2" parent="Widget.ScoutingAppV3Dark">
+        <!-- Tertiary brand color. -->
+        <item name="android:backgroundTint">@color/md_theme_light_tertiary2</item>
     </style>
 </resources>

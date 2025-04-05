@@ -6,8 +6,8 @@
     android:layout_height="match_parent">
 
     <LinearLayout
-        android:layout_width="1026dp"
-        android:layout_height="566dp"
+        android:layout_width="935dp"
+        android:layout_height="660dp"
         android:orientation="vertical"
         android:weightSum="8"
         app:layout_constraintStart_toStartOf="parent"
@@ -25,6 +25,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="3"
+                style="@style/Theme.ScoutingAppV3Dark.bigText"
                 android:text="@string/scout_name_placeholder_text" />
 
             <TextView
@@ -32,6 +33,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                style="@style/Theme.ScoutingAppV3Dark.bigText"
                 android:text="@string/team_number_placeholder_text" />
 
             <TextView
@@ -39,14 +41,15 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                style="@style/Theme.ScoutingAppV3Dark.bigText"
                 android:text="@string/match_number_placeholder_text" />
 
             <Button
                 android:id="@+id/SignOutButton"
+                style="@style/Widget.ScoutingAppV3Dark.secondary1"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                style="@style/Theme.ScoutingAppV3Dark.tertiary"
                 android:text="@string/sign_out_button_text" />
 
         </LinearLayout>
@@ -75,8 +78,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="19"
-                    android:weightSum="84"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:weightSum="84">
 
                     <LinearLayout
                         android:layout_width="0dp"
@@ -96,14 +99,16 @@
                                 android:id="@+id/AutoHeader"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
-                                android:layout_weight="3"
+                                android:layout_weight="2"
+                                style="@style/Theme.ScoutingAppV3Dark.bigText"
                                 android:text="@string/auto_header" />
 
                             <TextView
                                 android:id="@+id/MoveCheckText"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
+                                android:layout_weight="2"
+                                style="@style/Theme.ScoutingAppV3Dark.bigText"
                                 android:text="@string/move_check_text" />
 
                             <CheckBox
@@ -119,6 +124,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="0dp"
                             android:layout_weight="2"
+                            style="@style/Theme.ScoutingAppV3Dark.bigText"
                             android:text="@string/coral_header" />
 
                         <LinearLayout
@@ -132,14 +138,15 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
+                                style="@style/Theme.ScoutingAppV3Dark.coralText"
                                 android:text="@string/l4_coral_text" />
 
                             <Button
                                 android:id="@+id/L4CoralDecButtonAuto"
+                                style="@style/Widget.ScoutingAppV3Dark.tertiary1"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                style="@style/Theme.ScoutingAppV3Dark.tertiary"
                                 android:text="@string/decrement_button_text" />
 
                             <TextView
@@ -147,14 +154,15 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
+                                style="@style/Theme.ScoutingAppV3Dark.coralText"
                                 android:text="@string/l4_coral_value_auto" />
 
                             <Button
                                 android:id="@+id/L4CoralIncButtonAuto"
+                                style="@style/Widget.ScoutingAppV3Dark.tertiary1"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                style="@style/Theme.ScoutingAppV3Dark.tertiary"
                                 android:text="@string/increment_button_text" />
                         </LinearLayout>
 
@@ -169,14 +177,15 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
+                                style="@style/Theme.ScoutingAppV3Dark.coralText"
                                 android:text="@string/l3_coral_text" />
 
                             <Button
                                 android:id="@+id/L3CoralDecButtonAuto"
+                                style="@style/Widget.ScoutingAppV3Dark.tertiary2"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                style="@style/Theme.ScoutingAppV3Dark.tertiary"
                                 android:text="@string/decrement_button_text" />
 
                             <TextView
@@ -184,14 +193,15 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
+                                style="@style/Theme.ScoutingAppV3Dark.coralText"
                                 android:text="@string/l3_coral_value_auto" />
 
                             <Button
                                 android:id="@+id/L3CoralIncButtonAuto"
+                                style="@style/Widget.ScoutingAppV3Dark.tertiary2"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                style="@style/Theme.ScoutingAppV3Dark.tertiary"
                                 android:text="@string/increment_button_text" />
                         </LinearLayout>
 
@@ -206,14 +216,15 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
+                                style="@style/Theme.ScoutingAppV3Dark.coralText"
                                 android:text="@string/l2_coral_text" />
 
                             <Button
                                 android:id="@+id/L2CoralDecButtonAuto"
+                                style="@style/Widget.ScoutingAppV3Dark.tertiary1"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                style="@style/Theme.ScoutingAppV3Dark.tertiary"
                                 android:text="@string/decrement_button_text" />
 
                             <TextView
@@ -221,14 +232,15 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
+                                style="@style/Theme.ScoutingAppV3Dark.coralText"
                                 android:text="@string/l2_coral_value_auto" />
 
                             <Button
                                 android:id="@+id/L2CoralIncButtonAuto"
+                                style="@style/Widget.ScoutingAppV3Dark.tertiary1"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                style="@style/Theme.ScoutingAppV3Dark.tertiary"
                                 android:text="@string/increment_button_text" />
                         </LinearLayout>
 
@@ -243,14 +255,15 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
+                                style="@style/Theme.ScoutingAppV3Dark.coralText"
                                 android:text="@string/l1_coral_text" />
 
                             <Button
                                 android:id="@+id/L1CoralDecButtonAuto"
+                                style="@style/Widget.ScoutingAppV3Dark.tertiary2"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                style="@style/Theme.ScoutingAppV3Dark.tertiary"
                                 android:text="@string/decrement_button_text" />
 
                             <TextView
@@ -258,14 +271,15 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
+                                style="@style/Theme.ScoutingAppV3Dark.coralText"
                                 android:text="@string/l1_coral_value_auto" />
 
                             <Button
                                 android:id="@+id/L1CoralIncButtonAuto"
+                                style="@style/Widget.ScoutingAppV3Dark.tertiary2"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                style="@style/Theme.ScoutingAppV3Dark.tertiary"
                                 android:text="@string/increment_button_text" />
                         </LinearLayout>
 
@@ -284,10 +298,10 @@
 
                             <Button
                                 android:id="@+id/DroppedCoralDecButtonAuto"
+                                style="@style/Widget.ScoutingAppV3Dark.tertiary1"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                style="@style/Theme.ScoutingAppV3Dark.tertiary"
                                 android:text="@string/decrement_button_text" />
 
                             <TextView
@@ -295,14 +309,15 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
+                                style="@style/Theme.ScoutingAppV3Dark.coralText"
                                 android:text="@string/dropped_coral_value_auto" />
 
                             <Button
                                 android:id="@+id/DroppedCoralIncButtonAuto"
+                                style="@style/Widget.ScoutingAppV3Dark.tertiary1"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                style="@style/Theme.ScoutingAppV3Dark.tertiary"
                                 android:text="@string/increment_button_text" />
                         </LinearLayout>
 
@@ -312,8 +327,8 @@
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="5"
-                        android:weightSum="19"
-                        android:orientation="vertical">
+                        android:orientation="vertical"
+                        android:weightSum="19">
 
                         <Space
                             android:layout_width="match_parent"
@@ -352,28 +367,32 @@
                             android:layout_height="0dp"
                             android:layout_weight="2"
                             android:orientation="horizontal"
-                            android:weightSum="9">
+                            android:weightSum="13">
 
                             <TextView
                                 android:id="@+id/TeleopHeader"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
-                                android:layout_weight="7"
+                                android:layout_weight="5"
+                                style="@style/Theme.ScoutingAppV3Dark.bigText"
                                 android:text="@string/teleop_header" />
 
                             <TextView
-                                android:id="@+id/DefenseCheckText"
+                                android:id="@+id/DriverRatingStarText"
+                                style="@style/Theme.ScoutingAppV3Dark.bigText"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:text="@string/defense_check_text" />
+                                android:layout_weight="2"
+                                android:text="@string/driver_rating_star_text" />
 
-                            <CheckBox
-                                android:id="@+id/DefenseCheckBox"
+                            <Button
+                                android:id="@+id/TenStarPlaceholderButton"
+                                style="@style/Widget.ScoutingAppV3Dark.secondary1"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:text="" />
+                                android:layout_weight="6"
+                                android:text="@string/ten_star_placeholder_button_text" />
+
                         </LinearLayout>
 
                         <LinearLayout
@@ -395,6 +414,7 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="0dp"
                                     android:layout_weight="2"
+                                    style="@style/Theme.ScoutingAppV3Dark.bigText"
                                     android:text="@string/coral_header" />
 
                                 <LinearLayout
@@ -409,14 +429,15 @@
                                         android:layout_width="0dp"
                                         android:layout_height="match_parent"
                                         android:layout_weight="1"
+                                        style="@style/Theme.ScoutingAppV3Dark.coralText"
                                         android:text="@string/l4_coral_text" />
 
                                     <Button
                                         android:id="@+id/L4CoralDecButtonTeleop"
+                                        style="@style/Widget.ScoutingAppV3Dark.tertiary1"
                                         android:layout_width="0dp"
                                         android:layout_height="match_parent"
                                         android:layout_weight="1"
-                                        style="@style/Theme.ScoutingAppV3Dark.secondary"
                                         android:text="@string/decrement_button_text" />
 
                                     <TextView
@@ -424,14 +445,15 @@
                                         android:layout_width="0dp"
                                         android:layout_height="match_parent"
                                         android:layout_weight="1"
+                                        style="@style/Theme.ScoutingAppV3Dark.coralText"
                                         android:text="@string/l4_coral_value_teleop" />
 
                                     <Button
                                         android:id="@+id/L4CoralIncButtonTeleop"
+                                        style="@style/Widget.ScoutingAppV3Dark.tertiary1"
                                         android:layout_width="0dp"
                                         android:layout_height="match_parent"
                                         android:layout_weight="1"
-                                        style="@style/Theme.ScoutingAppV3Dark.secondary"
                                         android:text="@string/increment_button_text" />
                                 </LinearLayout>
 
@@ -447,14 +469,15 @@
                                         android:layout_width="0dp"
                                         android:layout_height="match_parent"
                                         android:layout_weight="1"
+                                        style="@style/Theme.ScoutingAppV3Dark.coralText"
                                         android:text="@string/l3_coral_text" />
 
                                     <Button
                                         android:id="@+id/L3CoralDecButtonTeleop"
+                                        style="@style/Widget.ScoutingAppV3Dark.tertiary2"
                                         android:layout_width="0dp"
                                         android:layout_height="match_parent"
                                         android:layout_weight="1"
-                                        style="@style/Theme.ScoutingAppV3Dark.secondary"
                                         android:text="@string/decrement_button_text" />
 
                                     <TextView
@@ -462,14 +485,15 @@
                                         android:layout_width="0dp"
                                         android:layout_height="match_parent"
                                         android:layout_weight="1"
+                                        style="@style/Theme.ScoutingAppV3Dark.coralText"
                                         android:text="@string/l3_coral_value_teleop" />
 
                                     <Button
                                         android:id="@+id/L3CoralIncButtonTeleop"
+                                        style="@style/Widget.ScoutingAppV3Dark.tertiary2"
                                         android:layout_width="0dp"
                                         android:layout_height="match_parent"
                                         android:layout_weight="1"
-                                        style="@style/Theme.ScoutingAppV3Dark.secondary"
                                         android:text="@string/increment_button_text" />
                                 </LinearLayout>
 
@@ -484,14 +508,15 @@
                                         android:layout_width="0dp"
                                         android:layout_height="match_parent"
                                         android:layout_weight="1"
+                                        style="@style/Theme.ScoutingAppV3Dark.coralText"
                                         android:text="@string/l2_coral_text" />
 
                                     <Button
                                         android:id="@+id/L2CoralDecButtonTeleop"
+                                        style="@style/Widget.ScoutingAppV3Dark.tertiary1"
                                         android:layout_width="0dp"
                                         android:layout_height="match_parent"
                                         android:layout_weight="1"
-                                        style="@style/Theme.ScoutingAppV3Dark.secondary"
                                         android:text="@string/decrement_button_text" />
 
                                     <TextView
@@ -499,14 +524,15 @@
                                         android:layout_width="0dp"
                                         android:layout_height="match_parent"
                                         android:layout_weight="1"
+                                        style="@style/Theme.ScoutingAppV3Dark.coralText"
                                         android:text="@string/l2_coral_value_teleop" />
 
                                     <Button
                                         android:id="@+id/L2CoralIncButtonTeleop"
+                                        style="@style/Widget.ScoutingAppV3Dark.tertiary1"
                                         android:layout_width="0dp"
                                         android:layout_height="match_parent"
                                         android:layout_weight="1"
-                                        style="@style/Theme.ScoutingAppV3Dark.secondary"
                                         android:text="@string/increment_button_text" />
                                 </LinearLayout>
 
@@ -521,14 +547,15 @@
                                         android:layout_width="0dp"
                                         android:layout_height="match_parent"
                                         android:layout_weight="1"
+                                        style="@style/Theme.ScoutingAppV3Dark.coralText"
                                         android:text="@string/l1_coral_text" />
 
                                     <Button
                                         android:id="@+id/L1CoralDecButtonTeleop"
+                                        style="@style/Widget.ScoutingAppV3Dark.tertiary2"
                                         android:layout_width="0dp"
                                         android:layout_height="match_parent"
                                         android:layout_weight="1"
-                                        style="@style/Theme.ScoutingAppV3Dark.secondary"
                                         android:text="@string/decrement_button_text" />
 
                                     <TextView
@@ -536,14 +563,15 @@
                                         android:layout_width="0dp"
                                         android:layout_height="match_parent"
                                         android:layout_weight="1"
+                                        style="@style/Theme.ScoutingAppV3Dark.coralText"
                                         android:text="@string/l1_coral_value_teleop" />
 
                                     <Button
                                         android:id="@+id/L1CoralIncButtonTeleop"
+                                        style="@style/Widget.ScoutingAppV3Dark.tertiary2"
                                         android:layout_width="0dp"
                                         android:layout_height="match_parent"
                                         android:layout_weight="1"
-                                        style="@style/Theme.ScoutingAppV3Dark.secondary"
                                         android:text="@string/increment_button_text" />
                                 </LinearLayout>
 
@@ -562,10 +590,10 @@
 
                                     <Button
                                         android:id="@+id/DroppedCoralDecButtonTeleop"
+                                        style="@style/Widget.ScoutingAppV3Dark.tertiary1"
                                         android:layout_width="0dp"
                                         android:layout_height="match_parent"
                                         android:layout_weight="1"
-                                        style="@style/Theme.ScoutingAppV3Dark.secondary"
                                         android:text="@string/decrement_button_text" />
 
                                     <TextView
@@ -573,14 +601,15 @@
                                         android:layout_width="0dp"
                                         android:layout_height="match_parent"
                                         android:layout_weight="1"
+                                        style="@style/Theme.ScoutingAppV3Dark.coralText"
                                         android:text="@string/dropped_coral_value_teleop" />
 
                                     <Button
                                         android:id="@+id/DroppedCoralIncButtonTeleop"
+                                        style="@style/Widget.ScoutingAppV3Dark.tertiary1"
                                         android:layout_width="0dp"
                                         android:layout_height="match_parent"
                                         android:layout_weight="1"
-                                        style="@style/Theme.ScoutingAppV3Dark.secondary"
                                         android:text="@string/increment_button_text" />
                                 </LinearLayout>
 
@@ -590,8 +619,8 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="5"
-                                android:weightSum="17"
-                                android:orientation="vertical">
+                                android:orientation="vertical"
+                                android:weightSum="17">
 
                                 <ImageView
                                     android:id="@+id/CoralBranchTeleopImage"
@@ -625,22 +654,22 @@
                                     android:layout_height="0dp"
                                     android:layout_weight="3"
                                     android:orientation="horizontal"
-                                    android:weightSum="3">
+                                    android:weightSum="5">
 
                                     <TextView
-                                        android:id="@+id/DriverRatingStarText"
+                                        android:id="@+id/DefenseCheckText"
+                                        style="@style/Theme.ScoutingAppV3Dark.bigText"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="4"
+                                        android:text="@string/defense_check_text" />
+
+                                    <CheckBox
+                                        android:id="@+id/DefenseCheckBox"
                                         android:layout_width="0dp"
                                         android:layout_height="match_parent"
                                         android:layout_weight="1"
-                                        android:text="@string/driver_rating_star_text" />
-
-                                    <Button
-                                        android:id="@+id/TenStarPlaceholderButton"
-                                        android:layout_width="0dp"
-                                        android:layout_height="match_parent"
-                                        android:layout_weight="2"
-                                        style="@style/Theme.ScoutingAppV3Dark.tertiary"
-                                        android:text="@string/ten_star_placeholder_button_text" />
+                                        android:text="" />
 
                                 </LinearLayout>
 
@@ -649,6 +678,7 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="0dp"
                                     android:layout_weight="2"
+                                    style="@style/Theme.ScoutingAppV3Dark.bigText"
                                     android:text="@string/algae_header" />
 
                                 <LinearLayout
@@ -659,33 +689,34 @@
                                     android:weightSum="4">
 
                                     <TextView
-                                        android:id="@+id/ProcessorAlgaeText"
+                                        android:id="@+id/DereefedAlgaeText"
                                         android:layout_width="0dp"
                                         android:layout_height="match_parent"
                                         android:layout_weight="1"
-                                        android:text="@string/processor_algae_text" />
+                                        android:text="@string/dereefed_algae_text" />
 
                                     <Button
-                                        android:id="@+id/ProcessorAlgaeDecButton"
+                                        android:id="@+id/DereefedAlgaeDecButton"
+                                        style="@style/Widget.ScoutingAppV3Dark.tertiary1"
                                         android:layout_width="0dp"
                                         android:layout_height="match_parent"
                                         android:layout_weight="1"
-                                        style="@style/Theme.ScoutingAppV3Dark.primary"
                                         android:text="@string/decrement_button_text" />
 
                                     <TextView
-                                        android:id="@+id/ProcessorAlgaeValue"
+                                        android:id="@+id/DereefedAlgaeValue"
+                                        style="@style/Theme.ScoutingAppV3Dark.coralText"
                                         android:layout_width="0dp"
                                         android:layout_height="match_parent"
                                         android:layout_weight="1"
-                                        android:text="@string/processor_algae_value" />
+                                        android:text="@string/dereefed_algae_value" />
 
                                     <Button
-                                        android:id="@+id/ProcessorAlgaeIncButton"
+                                        android:id="@+id/DereefedAlgaeIncButton"
+                                        style="@style/Widget.ScoutingAppV3Dark.tertiary1"
                                         android:layout_width="0dp"
                                         android:layout_height="match_parent"
                                         android:layout_weight="1"
-                                        style="@style/Theme.ScoutingAppV3Dark.primary"
                                         android:text="@string/increment_button_text" />
 
                                 </LinearLayout>
@@ -706,10 +737,10 @@
 
                                     <Button
                                         android:id="@+id/BargeAlgaeDecButton"
+                                        style="@style/Widget.ScoutingAppV3Dark.tertiary2"
                                         android:layout_width="0dp"
                                         android:layout_height="match_parent"
                                         android:layout_weight="1"
-                                        style="@style/Theme.ScoutingAppV3Dark.primary"
                                         android:text="@string/decrement_button_text" />
 
                                     <TextView
@@ -717,53 +748,15 @@
                                         android:layout_width="0dp"
                                         android:layout_height="match_parent"
                                         android:layout_weight="1"
+                                        style="@style/Theme.ScoutingAppV3Dark.coralText"
                                         android:text="@string/barge_algae_value" />
 
                                     <Button
                                         android:id="@+id/BargeAlgaeIncButton"
+                                        style="@style/Widget.ScoutingAppV3Dark.tertiary2"
                                         android:layout_width="0dp"
                                         android:layout_height="match_parent"
                                         android:layout_weight="1"
-                                        style="@style/Theme.ScoutingAppV3Dark.primary"
-                                        android:text="@string/increment_button_text" />
-
-                                </LinearLayout>
-
-                                <LinearLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="0dp"
-                                    android:layout_weight="3"
-                                    android:orientation="horizontal"
-                                    android:weightSum="4">
-
-                                    <TextView
-                                        android:id="@+id/DereefedAlgaeText"
-                                        android:layout_width="0dp"
-                                        android:layout_height="match_parent"
-                                        android:layout_weight="1"
-                                        android:text="@string/dereefed_algae_text" />
-
-                                    <Button
-                                        android:id="@+id/DereefedAlgaeDecButton"
-                                        android:layout_width="0dp"
-                                        android:layout_height="match_parent"
-                                        android:layout_weight="1"
-                                        style="@style/Theme.ScoutingAppV3Dark.primary"
-                                        android:text="@string/decrement_button_text" />
-
-                                    <TextView
-                                        android:id="@+id/DereefedAlgaeValue"
-                                        android:layout_width="0dp"
-                                        android:layout_height="match_parent"
-                                        android:layout_weight="1"
-                                        android:text="@string/dereefed_algae_value" />
-
-                                    <Button
-                                        android:id="@+id/DereefedAlgaeIncButton"
-                                        android:layout_width="0dp"
-                                        android:layout_height="match_parent"
-                                        android:layout_weight="1"
-                                        style="@style/Theme.ScoutingAppV3Dark.primary"
                                         android:text="@string/increment_button_text" />
 
                                 </LinearLayout>
@@ -784,10 +777,10 @@
 
                                     <Button
                                         android:id="@+id/NetMissedAlgaeDecButton"
+                                        style="@style/Widget.ScoutingAppV3Dark.tertiary1"
                                         android:layout_width="0dp"
                                         android:layout_height="match_parent"
                                         android:layout_weight="1"
-                                        style="@style/Theme.ScoutingAppV3Dark.primary"
                                         android:text="@string/decrement_button_text" />
 
                                     <TextView
@@ -795,14 +788,55 @@
                                         android:layout_width="0dp"
                                         android:layout_height="match_parent"
                                         android:layout_weight="1"
+                                        style="@style/Theme.ScoutingAppV3Dark.coralText"
                                         android:text="@string/net_missed_algae_value" />
 
                                     <Button
                                         android:id="@+id/NetMissedAlgaeIncButton"
+                                        style="@style/Widget.ScoutingAppV3Dark.tertiary1"
                                         android:layout_width="0dp"
                                         android:layout_height="match_parent"
                                         android:layout_weight="1"
-                                        style="@style/Theme.ScoutingAppV3Dark.primary"
+                                        android:text="@string/increment_button_text" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    android:layout_weight="3"
+                                    android:orientation="horizontal"
+                                    android:weightSum="4">
+
+                                    <TextView
+                                        android:id="@+id/ProcessorAlgaeText"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:text="@string/processor_algae_text" />
+
+                                    <Button
+                                        android:id="@+id/ProcessorAlgaeDecButton"
+                                        style="@style/Widget.ScoutingAppV3Dark.tertiary2"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:text="@string/decrement_button_text" />
+
+                                    <TextView
+                                        android:id="@+id/ProcessorAlgaeValue"
+                                        style="@style/Theme.ScoutingAppV3Dark.coralText"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:text="@string/processor_algae_value" />
+
+                                    <Button
+                                        android:id="@+id/ProcessorAlgaeIncButton"
+                                        style="@style/Widget.ScoutingAppV3Dark.tertiary2"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
                                         android:text="@string/increment_button_text" />
 
                                 </LinearLayout>
@@ -846,18 +880,18 @@
 
                 <Button
                     android:id="@+id/SubmitButton"
+                    style="@style/Widget.ScoutingAppV3Dark.secondary1"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
-                    style="@style/Theme.ScoutingAppV3Dark.tertiary"
                     android:text="@string/submit_button_text" />
 
                 <Button
                     android:id="@+id/SkipButton"
+                    style="@style/Widget.ScoutingAppV3Dark.secondary1"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
-                    style="@style/Theme.ScoutingAppV3Dark.tertiary"
                     android:text="@string/skip_button_text" />
             </LinearLayout>
         </LinearLayout>

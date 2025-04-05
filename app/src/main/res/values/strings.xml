@@ -166,7 +166,7 @@
     <string name="l3_coral_text">L3:</string>
     <string name="l2_coral_text">L2:</string>
     <string name="l1_coral_text">L1:</string>
-    <string name="dropped_coral_text">Dropped:</string>
+    <string name="dropped_coral_text">Drop:</string>
 
     <string name="l4_coral_value_auto">L4-A-Val</string>
     <string name="l3_coral_value_auto">L3-A-Val</string>
@@ -196,12 +196,12 @@
     <string name="defense_check_text">Defense:</string>
     <string name="auto_header">Auto:</string>
     <string name="teleop_header">Tele-Op:</string>
-    <string name="driver_rating_star_text">Driver Rating:</string>
+    <string name="driver_rating_star_text">Rating:</string>
     <string name="scout_name_placeholder_text">NAME</string>
     <string name="team_number_placeholder_text">TEAM NUMBER</string>
     <string name="match_number_placeholder_text">MATCH NUMBER</string>
     <string name="sign_out_button_text">Sign Out</string>
-    <string name="ten_star_placeholder_button_text">THIS IS 10 STARS</string>
+    <string name="ten_star_placeholder_button_text">10 STARS</string>
     <string name="submit_button_text">Submit</string>
     <string name="skip_button_text">Skip</string>
 
