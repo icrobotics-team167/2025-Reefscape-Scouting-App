@@ -6,40 +6,99 @@
     android:layout_height="match_parent">
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="427dp"
+        android:layout_height="314dp"
         android:orientation="vertical"
+        android:weightSum="5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <EditText
-            android:id="@+id/UserName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="Your Name"
-            android:inputType="text" />
+        <TextView
+            android:id="@+id/SettingsHeader"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            style="@style/Theme.ScoutingAppV3Dark.coralText"
+            android:text="@string/settings_header_text" />
 
         <EditText
-            android:id="@+id/RobotToTrack"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:id="@+id/SettingsNameEntryTextBox"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
             android:ems="10"
-            android:hint="Robot To Track"
-            android:inputType="text" />
+            android:inputType="text"
+            android:hint="@string/settings_name_hint_text" />
 
-        <EditText
-            android:id="@+id/MatchNumber"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="Match Number"
-            android:inputType="text" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:weightSum="13">
 
-        <Button
-            android:id="@+id/Loginbutton"
-            android:layout_width="210dp"
-            android:layout_height="wrap_content"
-            android:text="Login" />
+            <TextView
+                android:id="@+id/SettingsDefaultScoutingAssignmentText"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="5"
+                android:text="@string/default_scouting_assignment_text" />
+
+            <Spinner
+                android:id="@+id/spinner"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="8" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:weightSum="13">
+
+            <TextView
+                android:id="@+id/SettingsMatchNumberOverrideText"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="5"
+                android:text="@string/match_number_override_text" />
+
+            <EditText
+                android:id="@+id/SettingsMatchNumberOverrideTextBox"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="8"
+                android:ems="10"
+                android:inputType="number"
+                android:text="@string/match_number_placeholder_text" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <Button
+                android:id="@+id/SettingsCancelButton"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                style="@style/Widget.ScoutingAppV3Dark.secondary1"
+                android:text="@string/cancel_button_text" />
+
+            <Button
+                android:id="@+id/SettingsSubmitButton"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                style="@style/Widget.ScoutingAppV3Dark.secondary1"
+                android:text="@string/submit_button_text" />
+        </LinearLayout>
+
     </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
