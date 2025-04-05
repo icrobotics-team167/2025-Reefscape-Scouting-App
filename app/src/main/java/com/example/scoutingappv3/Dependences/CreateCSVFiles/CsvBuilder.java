@@ -33,8 +33,8 @@ public class CsvBuilder {
         CsvData.append(Config.MatchNumber);
         CsvData.append(",");
 
-        CsvHeader.append("Bot Tracked,");
-        CsvData.append(Config.BotTracked);
+        CsvHeader.append("Bot Number,");
+        CsvData.append(Config.TeamNumber);
         CsvData.append(",");
 
         CsvHeader.append("L4 Scored In Auto,");

@@ -397,7 +397,7 @@ public class DataEntryScreen {
         });
 
         ScoutNamePlaceholderText.setText("\nHello " + Config.UserName + "!");
-        TeamNumberPlaceholderText.setText("\nTrack " + Config.BotTracked);
+        TeamNumberPlaceholderText.setText("\nTrack " + Config.TeamNumber);
         MatchNumberPlaceholderText.setText("\nMatch " + Config.MatchNumber);
 
 

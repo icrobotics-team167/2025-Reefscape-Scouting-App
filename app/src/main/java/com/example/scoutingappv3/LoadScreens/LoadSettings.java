@@ -1,11 +1,13 @@
 package com.example.scoutingappv3.LoadScreens;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.scoutingappv3.Dependences.Config;
+import com.example.scoutingappv3.Dependences.MatchReader.MatchReader;
 import com.example.scoutingappv3.Main;
 import com.example.scoutingappv3.R;
 
@@ -15,7 +17,8 @@ public class LoadSettings {
     EditText BotToTrackEditText;
     EditText MatchNumberEditText;
 
-    public void LoadSettingsPage(Activity appActivity,Main main){
+    @SuppressLint("SetTextI18n")
+    public void LoadSettingsPage(Activity appActivity, Main main){
         appActivity.setContentView(R.layout.settings);
 
         LoginButton = appActivity.findViewById(R.id.Loginbutton);
@@ -23,24 +26,26 @@ public class LoadSettings {
         BotToTrackEditText = appActivity.findViewById(R.id.RobotToTrack);
         MatchNumberEditText = appActivity.findViewById(R.id.MatchNumber);
 
-        UserNameEditText.setText(Config.UserName + "");
-        BotToTrackEditText.setText(Config.BotTracked + "");
+        UserNameEditText.setText(Config.UserName);
+        BotToTrackEditText.setText(MatchReader.getValueFromFile(Config.MatchNumber,Config.TeamNumber) + "");
         if (Config.MatchNumber > 0) {
             MatchNumberEditText.setText(Config.MatchNumber + "");
         }
 
         LoginButton.setOnClickListener(v -> {
             String UserName = UserNameEditText.getText().toString();
-            String BotToTrack = BotToTrackEditText.getText().toString();
             int MatchNumber = -1;
+            int BotToTrack  = -1;
 
             try{
                 MatchNumber = Integer.parseInt(MatchNumberEditText.getText().toString());
+                BotToTrack = Integer.parseInt(BotToTrackEditText.getText().toString());
+
             } catch (NumberFormatException e) {
-                Toast.makeText(Config.AppContext,"Hey Thats Not A Valid Match Number",Toast.LENGTH_LONG).show();
+                Toast.makeText(Config.AppContext,"Hey Thats Not A Valid match / bot Number",Toast.LENGTH_LONG).show();
             }
 
-            if(MatchNumber >= 0){
+            if(MatchNumber >= 0 && BotToTrack >= 1){
                 Config.MatchNumber = MatchNumber;
                 Config.UserName = UserName;
                 Config.BotTracked = BotToTrack;
