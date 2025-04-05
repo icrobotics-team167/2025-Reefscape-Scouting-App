@@ -1,7 +1,6 @@
 package com.example.scoutingappv3.LoadScreens;
 
 import android.app.Activity;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -46,48 +45,27 @@ public class LoadSettings {
                 Config.UserName = UserName;
                 Config.BotTracked = BotToTrack;
 
-                switch (UserName.toLowerCase()){
-                    case "eldric":
-                        Toast.makeText(Config.AppContext,Config.TheFunny[0],Toast.LENGTH_SHORT).show();
+                boolean FoundUser = false;
+
+                for (int i = 0; i < Config.Names.length; i++) {
+                    if(Config.Names[i].toLowerCase().equals(UserName)){
+                        Toast.makeText(Config.AppContext,Config.TheFunnyMessages[i],Toast.LENGTH_LONG).show();
+                        FoundUser = true;
                         break;
-                    case "tada":
-                        Toast.makeText(Config.AppContext,Config.TheFunny[1],Toast.LENGTH_SHORT).show();
-                        break;
-                    case "jinann":
-                        Toast.makeText(Config.AppContext,Config.TheFunny[2],Toast.LENGTH_SHORT).show();
-                        break;
-                    case "calder":
-                        Toast.makeText(Config.AppContext,Config.TheFunny[3],Toast.LENGTH_SHORT).show();
-                        break;
-                    case "emma":
-                        Toast.makeText(Config.AppContext,Config.TheFunny[4],Toast.LENGTH_SHORT).show();
-                        break;
-                    case "jaynou":
-                        Toast.makeText(Config.AppContext,Config.TheFunny[5],Toast.LENGTH_SHORT).show();
-                        break;
-                    case "daniel":
-                        Toast.makeText(Config.AppContext,Config.TheFunny[6],Toast.LENGTH_SHORT).show();
-                        break;
-                    case "kazu":
-                        Toast.makeText(Config.AppContext,Config.TheFunny[7],Toast.LENGTH_SHORT).show();
-                        break;
-                    case "farhan":
-                        Toast.makeText(Config.AppContext,Config.TheFunny[8],Toast.LENGTH_SHORT).show();
-                        break;
-                    case "jerry":
-                        Toast.makeText(Config.AppContext,Config.TheFunny[9],Toast.LENGTH_SHORT).show();
-                        break;
-                    case "evan":
-                        Toast.makeText(Config.AppContext,Config.TheFunny[10],Toast.LENGTH_SHORT).show();
-                        break;
-                    case "sara":
-                        Toast.makeText(Config.AppContext,Config.TheFunny[11],Toast.LENGTH_SHORT).show();
-                        break;
-                    default:
-                        Toast.makeText(Config.AppContext,Config.UnknowUser,Toast.LENGTH_SHORT).show();
+                    }
+
+
                 }
 
-                main.DataLoader.LoadDataScreen(appActivity,main);
+                if (!FoundUser){
+                    Toast.makeText(Config.AppContext,Config.UnknowUser,Toast.LENGTH_LONG).show();
+                }
+
+                if (Config.UserName.equalsIgnoreCase("madison")){
+
+                }else {
+                    main.DataLoader.LoadDataScreen(appActivity, main);
+                }
             }
         });
 

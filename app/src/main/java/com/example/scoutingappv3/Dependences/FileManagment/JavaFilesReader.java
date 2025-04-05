@@ -17,6 +17,12 @@ public class JavaFilesReader {
         Log.d("Path", "Data IS stored at: " + Path);
     }
 
+    public JavaFilesReader(Context appContext,String file) {
+
+        Path = appContext.getFilesDir() + "/" + file;
+        Log.d("Path", "Data IS stored at: " + Path);
+    }
+
 
     //TODO: Optmise as will be kindda slow
     public String ReadLine(int line){
