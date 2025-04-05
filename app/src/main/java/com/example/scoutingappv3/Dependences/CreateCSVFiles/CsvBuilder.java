@@ -2,6 +2,7 @@ package com.example.scoutingappv3.Dependences.CreateCSVFiles;
 
 import android.util.Log;
 
+import com.example.scoutingappv3.Dependences.Config;
 import com.example.scoutingappv3.LoadScreens.DataEntryScreen;
 
 public class CsvBuilder {
@@ -22,6 +23,18 @@ public class CsvBuilder {
 
         CsvHeader.append("Notes,");
         CsvData.append(NotesChars);
+        CsvData.append(",");
+
+        CsvHeader.append("Name,");
+        CsvData.append(Config.UserName);
+        CsvData.append(",");
+
+        CsvHeader.append("Match Number,");
+        CsvData.append(Config.MatchNumber);
+        CsvData.append(",");
+
+        CsvHeader.append("Bot Tracked,");
+        CsvData.append(Config.BotTracked);
         CsvData.append(",");
 
         CsvHeader.append("L4 Scored In Auto,");

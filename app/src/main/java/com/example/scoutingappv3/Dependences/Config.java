@@ -12,7 +12,7 @@ public class Config {
     public static int MatchNumber = 0;
     public static String BotTracked = "";
 
-    public static String[] TheFunny = {"Hello Creator!","Shouldn't You Be Driving?","10 People?!?!?!?!!","man I lOvE StringInconsitent var_Names","Why all the jinann slander?", "Luzz iuzz Jaynuzz", "Why hello daniel >:)", "Chicken Jockey, Farhan watch out!", "Hi Eldric! -Calder", "Are you playing Minecraft right now?...", "EMMM-I mean SARA!!!!!"};
+    public static String[] TheFunny = {"Hello Creator!","Shouldn't You Be Driving?","10 People?!?!?!?!!","man I lOvE StringInconsitent var_Names","Hello SAR-I mean EMMA!!!!!", "Luzz iuzz Jaynuzz", "Why hello daniel >:)","Hello Kazu (tada didnt know any thing funny to put)" ,"Chicken Jockey, Farhan watch out!", "Hi Eldric! -Calder", "Are you playing Minecraft right now?...", "Hello EMMM-I mean SARA!!!!!"};
     public static String UnknowUser = "Thank you for scouting!";
     public static Context AppContext;
 

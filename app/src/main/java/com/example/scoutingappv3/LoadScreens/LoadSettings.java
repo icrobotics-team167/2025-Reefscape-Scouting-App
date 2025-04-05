@@ -24,6 +24,12 @@ public class LoadSettings {
         BotToTrackEditText = appActivity.findViewById(R.id.RobotToTrack);
         MatchNumberEditText = appActivity.findViewById(R.id.MatchNumber);
 
+        UserNameEditText.setText(Config.UserName + "");
+        BotToTrackEditText.setText(Config.BotTracked + "");
+        if (Config.MatchNumber > 0) {
+            MatchNumberEditText.setText(Config.MatchNumber + "");
+        }
+
         LoginButton.setOnClickListener(v -> {
             String UserName = UserNameEditText.getText().toString();
             String BotToTrack = BotToTrackEditText.getText().toString();
