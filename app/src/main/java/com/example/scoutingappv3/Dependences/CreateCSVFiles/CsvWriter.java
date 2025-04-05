@@ -24,4 +24,5 @@ public class CsvWriter {
         LocalCsvWriter.ClearFile();
         LocalCsvWriter.ClearDowloadsFile();
     }
+
 }

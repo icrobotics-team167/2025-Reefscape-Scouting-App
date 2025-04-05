@@ -50,6 +50,8 @@
     <color name="md_theme_dark_outlineVariant">#414941</color>
     <color name="md_theme_dark_scrim">#000000</color>
 
+    <color name="coral_L4_auto_button">#000000</color>
+
     <color name="text_1">#000000</color>
     <color name="text_2">#505050</color>
     <color name="text_3">#FAFAD2</color>
