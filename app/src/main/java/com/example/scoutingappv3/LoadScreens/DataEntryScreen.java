@@ -2,6 +2,7 @@ package com.example.scoutingappv3.LoadScreens;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -47,6 +48,8 @@ public class DataEntryScreen {
     Button NetMissedAlgaeIncButton;
     Button SubmitButton;
     Button SignOutButton;
+
+    Button SkipButton;
 
     //Check box
     public CheckBox PlayedDefense;
@@ -183,6 +186,8 @@ public class DataEntryScreen {
         SubmitButton = appActivity.findViewById(R.id.SubmitButton);
         //Logout Buttion
         SignOutButton = appActivity.findViewById(R.id.SignOutButton);
+
+        SkipButton = appActivity.findViewById(R.id.SkipButton);
 
         //played Defense
         PlayedDefense = appActivity.findViewById(R.id.DefenseCheckBox);
@@ -386,6 +391,10 @@ public class DataEntryScreen {
             main.SettingsLoader.LoadSettingsPage(appActivity,main);
         });
 
+        SkipButton.setOnClickListener(v -> {
+            Config.MatchNumber++;
+            MatchNumberPlaceholderText.setText("\nMatch " + Config.MatchNumber);
+        });
 
         ScoutNamePlaceholderText.setText("\nHello " + Config.UserName + "!");
         TeamNumberPlaceholderText.setText("\nTrack " + Config.BotTracked);
