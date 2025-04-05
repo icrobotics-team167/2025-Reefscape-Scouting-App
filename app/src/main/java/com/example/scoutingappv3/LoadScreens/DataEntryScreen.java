@@ -8,6 +8,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.example.scoutingappv3.Dependences.CreateCSVFiles.CsvBuilder;
+import com.example.scoutingappv3.Main;
 import com.example.scoutingappv3.R;
 
 public class DataEntryScreen {
@@ -93,7 +94,7 @@ public class DataEntryScreen {
     Activity LocalActivity;
 
 
-    public void LoadDataScreen(Activity AppActivity){
+    public void LoadDataScreen(Activity AppActivity, Main main){
 
         AppActivity.setContentView(R.layout.data_entry_layout_v3);
 

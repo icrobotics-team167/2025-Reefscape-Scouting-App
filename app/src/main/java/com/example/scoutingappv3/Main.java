@@ -7,9 +7,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.scoutingappv3.Dependences.Config;
 import com.example.scoutingappv3.LoadScreens.DataEntryScreen;
+import com.example.scoutingappv3.LoadScreens.LoadSettings;
 
 
 public class Main extends AppCompatActivity{
+
+    public DataEntryScreen DataLoader;
+    public LoadSettings SettingsLoader;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -17,9 +21,10 @@ public class Main extends AppCompatActivity{
         //Very Importent DO NOT DELTE
         Config.setAppContext(this);
 
-        DataEntryScreen DataLoader = new DataEntryScreen();
+         DataLoader = new DataEntryScreen();
+         SettingsLoader = new LoadSettings();
 
-        DataLoader.LoadDataScreen(this);
+        SettingsLoader.LoadSettingsPage(this,this);
 
     }
 

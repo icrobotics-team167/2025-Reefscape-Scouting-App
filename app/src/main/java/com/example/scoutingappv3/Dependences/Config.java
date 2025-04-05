@@ -8,12 +8,16 @@ public class Config {
     public static String CsvFolder = "Csv_Files";
     public static String CsvFile = "Csv_File.txt";
     public static String QrCodesFolder = "QrCodes";
+    public static String UserName = "";
+    public static int MatchNumber = 0;
+    public static String BotTracked = "";
 
+    public static String[] TheFunny = {"Hell Yeah Back End Work","Shouldn't You Be Driving?","30!!!!!","man I lOvE StringInconsitent var_Names","Why all the jinann slander?", "Luzz iuzz Jaynuzz", "Why hello daniel >:)", "Chicken Jockey, Farhan watch out!", "Hi Eldric! -Calder", "Are you playing Minecraft right now?...", "EMMM-I mean SARA!!!!!"};
+    public static String UnknowUser = "Thank you for scouting!";
     public static Context AppContext;
 
     public static void setAppContext(Context appContext) {
         AppContext = appContext;
-
     }
 
 }

@@ -13,7 +13,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <EditText
-            android:id="@+id/editTextText"
+            android:id="@+id/UserName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -21,7 +21,7 @@
             android:inputType="text" />
 
         <EditText
-            android:id="@+id/editTextText2"
+            android:id="@+id/RobotToTrack"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -29,7 +29,7 @@
             android:inputType="text" />
 
         <EditText
-            android:id="@+id/editTextText3"
+            android:id="@+id/MatchNumber"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -37,9 +37,9 @@
             android:inputType="text" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/Loginbutton"
             android:layout_width="210dp"
             android:layout_height="wrap_content"
-            android:text="Button" />
+            android:text="Login" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
