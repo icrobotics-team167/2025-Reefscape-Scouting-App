@@ -166,29 +166,24 @@
     <string name="l3_coral_text">L3:</string>
     <string name="l2_coral_text">L2:</string>
     <string name="l1_coral_text">L1:</string>
-    <string name="dropped_coral_text">Drop:</string>
 
     <string name="l4_coral_value_auto">L4-A-Val</string>
     <string name="l3_coral_value_auto">L3-A-Val</string>
     <string name="l2_coral_value_auto">L2-A-Val</string>
     <string name="l1_coral_value_auto">L1-A-Val</string>
-    <string name="dropped_coral_value_auto">Drop-A-Val</string>
 
     <string name="l4_coral_value_teleop">L4-T-Val</string>
     <string name="l3_coral_value_teleop">L3-T-Val</string>
     <string name="l2_coral_value_teleop">L2-T-Val</string>
     <string name="l1_coral_value_teleop">L1-T-Val</string>
-    <string name="dropped_coral_value_teleop">Drop-T-Val</string>
 
     <string name="processor_algae_text">Processor:</string>
     <string name="barge_algae_text">Barge:</string>
-    <string name="net_missed_algae_text">Net Missed:</string>
-    <string name="dereefed_algae_text">De-Reefed:</string>
 
-    <string name="processor_algae_value">PR-Val</string>
-    <string name="barge_algae_value">BA-Val</string>
-    <string name="net_missed_algae_value">NM-Val</string>
-    <string name="dereefed_algae_value">DR-Val</string>
+    <string name="processor_algae_value_auto">PR-Val</string>
+    <string name="barge_algae_value_auto">BA-Val</string>
+    <string name="processor_algae_value_teleop">PR-Val</string>
+    <string name="barge_algae_value_teleop">BA-Val</string>
 
     <string name="algae_header">Algae:</string>
     <string name="coral_header">Coral:</string>

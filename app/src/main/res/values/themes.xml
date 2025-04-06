@@ -2,7 +2,7 @@
     <!-- Base application theme. -->
     <style name="Theme.ScoutingAppV3Dark" parent="Theme.AppCompat.DayNight.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="android:textSize">20sp</item>
+        <item name="android:textSize">25sp</item>
         <item name="android:textColor">@color/md_theme_light_scrim</item>
         <item name="android:buttonTint">@color/md_theme_light_tertiary1</item>
     </style>
@@ -21,7 +21,7 @@
 
     <style name="Widget.ScoutingAppV3Dark" parent="Theme.ScoutingAppV3Dark">
         <!-- Primary brand color. -->
-        <item name="android:textSize">30sp</item>
+        <item name="android:textSize">28sp</item>
         <item name="android:textColor">@color/md_theme_light</item>
         <item name="android:background">@drawable/button_smoothing</item>
     </style>
