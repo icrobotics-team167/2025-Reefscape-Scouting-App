@@ -209,6 +209,10 @@
     <string name="default_scouting_assignment_text">Default Scouting Assignment:</string>
     <string name="settings_name_hint_text">Enter Your First Name Here</string>
     <string name="settings_header_text">Settings:</string>
+    <string name="go_button_welcome_screen_text">Go</string>
+    <string name="you_are_scouting_text">You are scouting:</string>
+    <string name="settings_button_text">Settings</string>
+    <string name="match_number_introduction_text">Match Number:</string>
 
 
     <!--        CLIMB SPINNER ITEMS-->

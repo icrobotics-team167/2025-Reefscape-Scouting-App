@@ -7,7 +7,6 @@
 
     <com.google.android.material.slider.Slider
         android:id="@+id/seekBar6"
-        style="@style/Widget.AppCompat.SeekBar.Discrete"
         android:layout_width="620dp"
         android:layout_height="56dp"
         android:valueTo="400"
