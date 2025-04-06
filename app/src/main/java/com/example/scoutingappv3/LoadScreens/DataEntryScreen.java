@@ -222,9 +222,8 @@ public class DataEntryScreen {
 
         //to start with a clean slate
         resetData();
-
         DriverRating.setOnRatingBarChangeListener((ratingBar, rating, fromUser) -> {
-            Config.DriverScore = (int) (rating + 0.99);
+            Config.DriverScore = (int) ((rating * 2) + 0.5);
             LayerDrawable stars = (LayerDrawable) ratingBar.getProgressDrawable();
 
             // Filled stars (progress)
@@ -236,7 +235,7 @@ public class DataEntryScreen {
             // Empty stars (background)
             stars.getDrawable(0).setColorFilter(Color.DKGRAY, PorterDuff.Mode.SRC_ATOP);
 
-            DriverRating.setRating(Config.DriverScore);
+            DriverRating.setRating(Config.DriverScore / 2f);
         });
 
 

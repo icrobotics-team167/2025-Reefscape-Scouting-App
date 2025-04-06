@@ -367,14 +367,14 @@
                             android:layout_height="0dp"
                             android:layout_weight="2"
                             android:orientation="horizontal"
-                            android:weightSum="13">
+                            android:weightSum="15">
 
                             <TextView
                                 android:id="@+id/TeleopHeader"
                                 style="@style/Theme.ScoutingAppV3Dark.bigText"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
-                                android:layout_weight="2"
+                                android:layout_weight="8"
                                 android:text="@string/teleop_header" />
 
                             <TextView
@@ -382,17 +382,19 @@
                                 style="@style/Theme.ScoutingAppV3Dark.bigText"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
-                                android:layout_weight="2"
+                                android:layout_weight="7"
                                 android:text="@string/driver_rating_star_text" />
 
                             <RatingBar
                                 android:id="@+id/ratingBar"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:numStars="10"
-                                android:stepSize="0"
+                                android:layout_height="50dp"
+                                android:numStars="5"
+                                android:stepSize="0.5"
                                 android:rating="0"
                                 android:isIndicator="false"
+                                android:scaleY="0.8"
+                                android:translationY="-8dp"
                                 android:progressTint="@color/yellow"
                                 android:secondaryProgressTint="@color/cardview_light_background"
                                 android:backgroundTint="@color/dark_grey" />
