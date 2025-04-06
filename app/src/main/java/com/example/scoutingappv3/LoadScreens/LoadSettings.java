@@ -112,6 +112,7 @@ public class LoadSettings {
             }
 
             if (Config.UserName.equalsIgnoreCase("madison")){
+                JokeLoader.LoadJokeDataEntryOne(main);
 
             }else {
                 main.DataLoader.LoadDataScreen(main);
