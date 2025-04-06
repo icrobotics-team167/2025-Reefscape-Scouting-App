@@ -18,16 +18,16 @@ public class LoadSettings {
     EditText MatchNumberEditText;
 
     @SuppressLint("SetTextI18n")
-    public void LoadSettingsPage(Activity appActivity, Main main){
-        appActivity.setContentView(R.layout.settings);
+    public void LoadSettingsPage(Main main){
+        main.setContentView(R.layout.settings);
 
-        LoginButton = appActivity.findViewById(R.id.Loginbutton);
-        UserNameEditText = appActivity.findViewById(R.id.UserName);
-        BotToTrackEditText = appActivity.findViewById(R.id.RobotToTrack);
-        MatchNumberEditText = appActivity.findViewById(R.id.MatchNumber);
+        LoginButton = main.findViewById(R.id.Loginbutton);
+        UserNameEditText = main.findViewById(R.id.UserName);
+        BotToTrackEditText = main.findViewById(R.id.RobotToTrack);
+        MatchNumberEditText = main.findViewById(R.id.MatchNumber);
 
         UserNameEditText.setText(Config.UserName);
-        BotToTrackEditText.setText(MatchReader.getValueFromFile(Config.MatchNumber,Config.TeamNumber) + "");
+        BotToTrackEditText.setText(MatchReader.getValueFromFile(Config.MatchNumber,Config.BotTracked) + "");
         if (Config.MatchNumber > 0) {
             MatchNumberEditText.setText(Config.MatchNumber + "");
         }
@@ -48,7 +48,7 @@ public class LoadSettings {
             if(MatchNumber >= 0 && BotToTrack >= 1){
                 Config.MatchNumber = MatchNumber;
                 Config.UserName = UserName;
-                Config.BotTracked = BotToTrack;
+                Config.TeamNumber = BotToTrack;
 
                 boolean FoundUser = false;
 
@@ -69,7 +69,7 @@ public class LoadSettings {
                 if (Config.UserName.equalsIgnoreCase("madison")){
 
                 }else {
-                    main.DataLoader.LoadDataScreen(appActivity, main);
+                    main.DataLoader.LoadDataScreen(main);
                 }
             }
         });

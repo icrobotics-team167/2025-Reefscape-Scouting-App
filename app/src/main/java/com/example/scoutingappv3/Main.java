@@ -1,14 +1,11 @@
 package com.example.scoutingappv3;
 
 import android.os.Bundle;
-import android.util.Log;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.scoutingappv3.Dependences.BlueAllianceAPI;
 import com.example.scoutingappv3.Dependences.Config;
-import com.example.scoutingappv3.Dependences.MatchReader.MatchReader;
 import com.example.scoutingappv3.LoadScreens.DataEntryScreen;
 import com.example.scoutingappv3.LoadScreens.LoadSettings;
 
@@ -30,7 +27,7 @@ public class Main extends AppCompatActivity{
          DataLoader = new DataEntryScreen();
          SettingsLoader = new LoadSettings();
 
-        SettingsLoader.LoadSettingsPage(this,this);
+        SettingsLoader.LoadSettingsPage(this);
 
     }
 
