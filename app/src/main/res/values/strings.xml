@@ -204,6 +204,11 @@
     <string name="ten_star_placeholder_button_text">10 STARS</string>
     <string name="submit_button_text">Submit</string>
     <string name="skip_button_text">Skip</string>
+    <string name="cancel_button_text">Cancel</string>
+    <string name="match_number_override_text">Match Number Override:</string>
+    <string name="default_scouting_assignment_text">Default Scouting Assignment:</string>
+    <string name="settings_name_hint_text">Enter Your First Name Here</string>
+    <string name="settings_header_text">Settings:</string>
 
 
     <!--        CLIMB SPINNER ITEMS-->
