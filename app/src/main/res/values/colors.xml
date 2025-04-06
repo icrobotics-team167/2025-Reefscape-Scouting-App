@@ -75,5 +75,8 @@
     <color name="md_theme_light_onTertiary">#FFFFFF</color>
     <color name="md_theme_light_onTertiaryContainer">#002111</color>
 
+    <color name="yellow">#ffee00</color>
+    <color name="dark_grey">#7d7d7d</color>
+
 
 </resources>

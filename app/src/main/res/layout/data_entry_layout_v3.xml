@@ -387,14 +387,16 @@
 
                             <RatingBar
                                 android:id="@+id/ratingBar"
-                                android:layout_width="0dp"
-                                android:layout_height="46dp"
-                                android:layout_weight="9"
-                                android:isIndicator="true"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
                                 android:numStars="10"
-                                android:scaleY="0.8"
-                                android:stepSize="1"
-                                android:translationY="-9dp" />
+                                android:stepSize="0"
+                                android:rating="0"
+                                android:isIndicator="false"
+                                android:progressTint="@color/yellow"
+                                android:secondaryProgressTint="@color/cardview_light_background"
+                                android:backgroundTint="@color/dark_grey" />
+
 
                         </LinearLayout>
 

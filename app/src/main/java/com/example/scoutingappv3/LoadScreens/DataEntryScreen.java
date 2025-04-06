@@ -2,12 +2,16 @@ package com.example.scoutingappv3.LoadScreens;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.graphics.Color;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.LayerDrawable;
 import android.util.AndroidException;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -83,6 +87,8 @@ public class DataEntryScreen {
     //For confermation
     Snackbar SubmitConfermation;
 
+
+    RatingBar DriverRating;
     //int vals
 
     public int L4CoralValueAuto = 0;
@@ -102,6 +108,8 @@ public class DataEntryScreen {
     public int DereefedAlgae = 0;
     public int NetMissedAlgae = 0;
 
+    public int DriverRatingScore;
+
     //Notes
     public EditText Notes;
 
@@ -117,6 +125,9 @@ public class DataEntryScreen {
         main.setContentView(R.layout.data_entry_layout_v3);
 
         SubmitConfermation = Snackbar.make(main.findViewById(android.R.id.content), "Are you sure you want to submit?", Snackbar.LENGTH_LONG);
+
+        //Driver Rating
+        DriverRating = main.findViewById(R.id.ratingBar);
 
         //l4 Coral Auto
         L4CoralDecButtonAuto = main.findViewById(R.id.L4CoralDecButtonAuto);
@@ -211,6 +222,21 @@ public class DataEntryScreen {
         //to start with a clean slate
         resetData();
 
+        DriverRating.setOnRatingBarChangeListener((ratingBar, rating, fromUser) -> {
+            DriverRatingScore =((int)(((int) rating) + 0.6));
+            LayerDrawable stars = (LayerDrawable) ratingBar.getProgressDrawable();
+
+            // Filled stars (progress)
+            stars.getDrawable(2).setColorFilter(Color.YELLOW, PorterDuff.Mode.SRC_ATOP);
+
+            // Half-filled stars (secondary progress)
+            stars.getDrawable(1).setColorFilter(Color.LTGRAY, PorterDuff.Mode.SRC_ATOP);
+
+            // Empty stars (background)
+            stars.getDrawable(0).setColorFilter(Color.DKGRAY, PorterDuff.Mode.SRC_ATOP);
+
+            DriverRating.setRating(DriverRatingScore);
+        });
 
 
         //Start of Auto
