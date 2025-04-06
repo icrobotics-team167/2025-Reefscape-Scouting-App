@@ -86,6 +86,7 @@ public class DataEntryScreen {
 
     //For confermation
     Snackbar SubmitConfermation;
+    Snackbar SkipConfermation;
 
 
     RatingBar DriverRating;
@@ -122,7 +123,9 @@ public class DataEntryScreen {
     public void LoadDataScreen(Main main){
         main.setContentView(R.layout.data_entry_layout_v3);
 
-        SubmitConfermation = Snackbar.make(main.findViewById(android.R.id.content), "Are you sure you want to submit?", Snackbar.LENGTH_LONG);
+        SubmitConfermation = Snackbar.make(main.findViewById(android.R.id.content), "Submit?", Snackbar.LENGTH_LONG);
+        SkipConfermation = Snackbar.make(main.findViewById(android.R.id.content), "Skip Match?", Snackbar.LENGTH_LONG);
+
 
         //Driver Rating
         DriverRating = main.findViewById(R.id.ratingBar);
@@ -418,7 +421,7 @@ public class DataEntryScreen {
             NetMissedAlgaeValue.setText(NetMissedAlgae + "");
         });
 
-        SubmitConfermation.setAction("Yes (Swipe Down To Ignore)", v -> {
+        SubmitConfermation.setAction("Yes", v -> {
             Config.MatchNumber++;
             MatchNumberPlaceholderText.setText("Match " + Config.MatchNumber);
             Config.TeamNumber = MatchReader.getValueFromFile(Config.MatchNumber,Config.BotTracked);
@@ -432,6 +435,18 @@ public class DataEntryScreen {
             main.MatchIntroductionLoader.LoadIntroduction(main);
         });
 
+        SubmitConfermation.setBackgroundTint(Color.GRAY);
+
+        SkipConfermation.setAction("Yes", v -> {
+            Config.MatchNumber++;
+            MatchNumberPlaceholderText.setText("Match " + Config.MatchNumber);
+            Config.TeamNumber = MatchReader.getValueFromFile(Config.MatchNumber,Config.BotTracked);
+            TeamNumberPlaceholderText.setText("Track " + MatchReader.getValueFromFile(Config.MatchNumber,Config.BotTracked));
+        });
+
+        SkipConfermation.setBackgroundTint(Color.GRAY);
+
+
         //Submit Buttion;
         SubmitButton.setOnClickListener(v -> {
             SubmitConfermation.show();
@@ -443,11 +458,7 @@ public class DataEntryScreen {
         });
 
         SkipButton.setOnClickListener(v -> {
-            Config.MatchNumber++;
-            MatchNumberPlaceholderText.setText("Match " + Config.MatchNumber);
-            Config.TeamNumber = MatchReader.getValueFromFile(Config.MatchNumber,Config.BotTracked);
-            TeamNumberPlaceholderText.setText("Track " + MatchReader.getValueFromFile(Config.MatchNumber,Config.BotTracked));
-
+            SkipConfermation.show();
         });
 
         ScoutNamePlaceholderText.setText("Hello " + Config.UserName + "!");
