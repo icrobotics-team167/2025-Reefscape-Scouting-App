@@ -108,8 +108,6 @@ public class DataEntryScreen {
     public int DereefedAlgae = 0;
     public int NetMissedAlgae = 0;
 
-    public int DriverRatingScore;
-
     //Notes
     public EditText Notes;
 
@@ -223,7 +221,7 @@ public class DataEntryScreen {
         resetData();
 
         DriverRating.setOnRatingBarChangeListener((ratingBar, rating, fromUser) -> {
-            DriverRatingScore =((int)(((int) rating) + 0.6));
+            Config.DriverScore =((int)(((int) rating) + 0.6));
             LayerDrawable stars = (LayerDrawable) ratingBar.getProgressDrawable();
 
             // Filled stars (progress)
@@ -235,7 +233,7 @@ public class DataEntryScreen {
             // Empty stars (background)
             stars.getDrawable(0).setColorFilter(Color.DKGRAY, PorterDuff.Mode.SRC_ATOP);
 
-            DriverRating.setRating(DriverRatingScore);
+            DriverRating.setRating(Config.DriverScore);
         });
 
 
