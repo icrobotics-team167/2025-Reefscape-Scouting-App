@@ -34,57 +34,38 @@ public class LoadMatchIntroduction {
 
         String[] options = main.getResources().getStringArray(R.array.tracking_options);
 
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
-                main,
-                R.array.tracking_options,
-                android.R.layout.simple_spinner_item
-        );
+        for (int i = 0; i < options.length; i++) {
+            options[i] += ": " + MatchReader.getValueFromFile(Config.MatchNumber,i);
+        }
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(
+                Config.AppContext,
+                android.R.layout.simple_spinner_item,
+                options
+        ) ;
+
+
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         ScoutingAssignMentSpinner.setAdapter(adapter);
+
+        ScoutingAssignMentSpinner.setSelection(Config.BotTracked);
 
         ScoutingAssignMentSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                switch (options[position]){
-                    case "Red 1":
-                        Config.BotTracked = 0;
-                        Log.d("Bot Chosen", "Red 1");
-                        break;
-                    case "Red 2":
-                        Config.BotTracked = 1;
-                        Log.d("Bot Chosen", "Red 2");
-                        break;
-                    case "Red 3":
-                        Config.BotTracked = 2;
-                        break;
-                    case "Blue 1":
-                        Config.BotTracked = 3;
-                        break;
-                    case "Blue 2":
-                        Config.BotTracked = 4;
-                        break;
-                    case "Blue 3":
-                        Config.BotTracked = 5;
-                        Log.d("Bot Chosen", "Blue 3");
-                        break;
-                    default:
-                        break;
-
-                }
-
-                MatchNumberPlaceHolder.setText(MatchReader.getValueFromFile(Config.MatchNumber,Config.BotTracked) + "");
+                Config.BotTracked = position;
             }
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-
+                ScoutingAssignMentSpinner.setSelection(Config.BotTracked);
             }
         });
 
 
         //Tells what bot
 
-        MatchNumberPlaceHolder.setText(MatchReader.getValueFromFile(Config.MatchNumber,Config.BotTracked) + "");
+        MatchNumberPlaceHolder.setText(Config.MatchNumber + "");
 
         SettingsButton.setOnClickListener(v ->{
             main.SettingsLoader.LoadSettingsPage(main);
