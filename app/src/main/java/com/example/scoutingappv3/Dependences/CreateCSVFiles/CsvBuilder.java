@@ -3,6 +3,7 @@ package com.example.scoutingappv3.Dependences.CreateCSVFiles;
 import android.util.Log;
 
 import com.example.scoutingappv3.Dependences.Config;
+import com.example.scoutingappv3.Dependences.MatchReader.MatchReader;
 import com.example.scoutingappv3.LoadScreens.DataEntryScreen;
 
 public class CsvBuilder {
@@ -33,8 +34,13 @@ public class CsvBuilder {
         CsvData.append(Config.MatchNumber);
         CsvData.append(",");
 
+        CsvHeader.append("Driver Score,");
+        CsvData.append(Config.DriverScore);
+        CsvData.append(",");
+
+
         CsvHeader.append("Bot Number,");
-        CsvData.append(Config.TeamNumber);
+        CsvData.append(MatchReader.getValueFromFile(Config.MatchNumber,Config.BotTracked));
         CsvData.append(",");
 
         CsvHeader.append("L4 Scored In Auto,");

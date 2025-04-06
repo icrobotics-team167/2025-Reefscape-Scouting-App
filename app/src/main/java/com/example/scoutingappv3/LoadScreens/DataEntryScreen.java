@@ -108,8 +108,6 @@ public class DataEntryScreen {
     public int DereefedAlgae = 0;
     public int NetMissedAlgae = 0;
 
-    public int DriverRatingScore;
-
     //Notes
     public EditText Notes;
 
@@ -235,7 +233,7 @@ public class DataEntryScreen {
             // Empty stars (background)
             stars.getDrawable(0).setColorFilter(Color.DKGRAY, PorterDuff.Mode.SRC_ATOP);
 
-            DriverRating.setRating(DriverRatingScore);
+            DriverRating.setRating(Config.DriverScore);
         });
 
 
