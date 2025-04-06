@@ -404,6 +404,8 @@ public class DataEntryScreen {
             CsvBuilder.BuildCsv(this);
             resetData();
             Toast.makeText(Config.AppContext,"Saving Data",Toast.LENGTH_LONG).show();
+
+            main.MatchIntroductionLoader.LoadIntroduction(main);
         });
 
         //Submit Buttion;

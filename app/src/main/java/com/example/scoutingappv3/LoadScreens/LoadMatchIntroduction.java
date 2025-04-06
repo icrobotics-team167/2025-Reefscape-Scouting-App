@@ -1,45 +1,34 @@
 package com.example.scoutingappv3.LoadScreens;
 
-
-import android.annotation.SuppressLint;
 import android.util.Log;
 import android.view.View;
-import android.widget.Adapter;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.Toast;
+import android.widget.TextView;
 
 import com.example.scoutingappv3.Dependences.Config;
+import com.example.scoutingappv3.Dependences.MatchReader.MatchReader;
 import com.example.scoutingappv3.Main;
 import com.example.scoutingappv3.R;
 
-public class LoadSettings {
-    Button SettingsSubmitButton;
-    EditText SettingsNameEntryTextBox;
-    Spinner BotSpinner;
-    EditText SettingsMatchNumberOverrideTextBox;
+public class LoadMatchIntroduction {
 
-    @SuppressLint("SetTextI18n")
-    public void LoadSettingsPage(Main main) {
-        main.setContentView(R.layout.settings);
+    Button SettingsButton;
+    Button GoButton;
+    TextView MatchNumberPlaceHolder;
+    Spinner ScoutingAssignMentSpinner;
 
-        //Buttions
-        SettingsSubmitButton = main.findViewById(R.id.SettingsSubmitButton);
+    public void LoadIntroduction(Main main){
+        main.setContentView(R.layout.match_introduction_layout);
 
-        //Text edit
-        SettingsNameEntryTextBox = main.findViewById(R.id.SettingsNameEntryTextBox);
-        SettingsMatchNumberOverrideTextBox = main.findViewById(R.id.BotSpinner);
+        SettingsButton = main.findViewById(R.id.SettingsButton);
+        GoButton = main.findViewById(R.id.GoButton);
 
-        //Spinner
-        BotSpinner = main.findViewById(R.id.MatchSpinner);
+        MatchNumberPlaceHolder = main.findViewById(R.id.MatchNumberPlaceHolder);
 
-
-        //Load Defaults
-        SettingsNameEntryTextBox.setText(Config.UserName);
-        SettingsMatchNumberOverrideTextBox.setText(Config.MatchNumber + "");
+        ScoutingAssignMentSpinner = main.findViewById(R.id.ScoutingAssignMentSpinner);
 
         //Spinner Code
 
@@ -51,9 +40,9 @@ public class LoadSettings {
                 android.R.layout.simple_spinner_item
         );
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        BotSpinner.setAdapter(adapter);
+        ScoutingAssignMentSpinner.setAdapter(adapter);
 
-        BotSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        ScoutingAssignMentSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 switch (options[position]){
@@ -80,7 +69,10 @@ public class LoadSettings {
                         break;
                     default:
                         break;
+
                 }
+
+                MatchNumberPlaceHolder.setText(MatchReader.getValueFromFile(Config.MatchNumber,Config.BotTracked) + "");
             }
 
             @Override
@@ -90,35 +82,16 @@ public class LoadSettings {
         });
 
 
-        SettingsSubmitButton.setOnClickListener(v -> {
-            String UserName = SettingsNameEntryTextBox.getText().toString().toLowerCase();
+        //Tells what bot
 
-            Config.UserName = UserName;
+        MatchNumberPlaceHolder.setText(MatchReader.getValueFromFile(Config.MatchNumber,Config.BotTracked) + "");
 
-            boolean FoundUser = false;
-
-            for (int i = 0; i < Config.Names.length; i++) {
-                if(Config.Names[i].toLowerCase().equals(UserName)){
-                    Toast.makeText(Config.AppContext,Config.TheFunnyMessages[i],Toast.LENGTH_LONG).show();
-                    FoundUser = true;
-                    break;
-                }
-
-
-            }
-
-            if (!FoundUser){
-                Toast.makeText(Config.AppContext,Config.UnknowUser,Toast.LENGTH_LONG).show();
-            }
-
-            if (Config.UserName.equalsIgnoreCase("madison")){
-                JokeLoader.LoadJokeDataEntryOne(main);
-
-            }else {
-                main.MatchIntroductionLoader.LoadIntroduction(main);
-            }
+        SettingsButton.setOnClickListener(v ->{
+            main.SettingsLoader.LoadSettingsPage(main);
         });
 
-
+        GoButton.setOnClickListener(v -> {
+            main.DataLoader.LoadDataScreen(main);
+        });
     }
 }

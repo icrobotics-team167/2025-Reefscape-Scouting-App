@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.scoutingappv3.Dependences.Config;
 import com.example.scoutingappv3.LoadScreens.DataEntryScreen;
+import com.example.scoutingappv3.LoadScreens.LoadMatchIntroduction;
 import com.example.scoutingappv3.LoadScreens.LoadSettings;
 
 
@@ -14,6 +15,7 @@ public class Main extends AppCompatActivity{
 
     public DataEntryScreen DataLoader;
     public LoadSettings SettingsLoader;
+    public LoadMatchIntroduction MatchIntroductionLoader;
 
 
 
@@ -26,6 +28,7 @@ public class Main extends AppCompatActivity{
 
          DataLoader = new DataEntryScreen();
          SettingsLoader = new LoadSettings();
+         MatchIntroductionLoader = new LoadMatchIntroduction();
 
         SettingsLoader.LoadSettingsPage(this);
 
