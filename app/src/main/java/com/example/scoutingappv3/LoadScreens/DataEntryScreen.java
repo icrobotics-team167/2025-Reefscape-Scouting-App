@@ -114,11 +114,9 @@ public class DataEntryScreen {
 
     @SuppressLint("SetTextI18n")
     public void LoadDataScreen(Main main){
-
-        SubmitConfermation = Snackbar.make(main.findViewById(android.R.id.content), "Are you sure you want to submit?", Snackbar.LENGTH_LONG);
-
         main.setContentView(R.layout.data_entry_layout_v3);
 
+        SubmitConfermation = Snackbar.make(main.findViewById(android.R.id.content), "Are you sure you want to submit?", Snackbar.LENGTH_LONG);
 
         //l4 Coral Auto
         L4CoralDecButtonAuto = main.findViewById(R.id.L4CoralDecButtonAuto);
@@ -400,7 +398,8 @@ public class DataEntryScreen {
             Config.MatchNumber++;
             MatchNumberPlaceholderText.setText("Match " + Config.MatchNumber);
             Config.TeamNumber = MatchReader.getValueFromFile(Config.MatchNumber,Config.BotTracked);
-            TeamNumberPlaceholderText.setText("Track " + Config.TeamNumber);
+            TeamNumberPlaceholderText.setText("Track " + MatchReader.getValueFromFile(Config.MatchNumber,Config.BotTracked));
+
 
             CsvBuilder.BuildCsv(this);
             resetData();
@@ -421,11 +420,12 @@ public class DataEntryScreen {
             Config.MatchNumber++;
             MatchNumberPlaceholderText.setText("Match " + Config.MatchNumber);
             Config.TeamNumber = MatchReader.getValueFromFile(Config.MatchNumber,Config.BotTracked);
-            TeamNumberPlaceholderText.setText("Track " + Config.TeamNumber);
+            TeamNumberPlaceholderText.setText("Track " + MatchReader.getValueFromFile(Config.MatchNumber,Config.BotTracked));
+
         });
 
         ScoutNamePlaceholderText.setText("Hello " + Config.UserName + "!");
-        TeamNumberPlaceholderText.setText("Track " + Config.TeamNumber);
+        TeamNumberPlaceholderText.setText("Track " + MatchReader.getValueFromFile(Config.MatchNumber,Config.BotTracked));
         MatchNumberPlaceholderText.setText("Match " + Config.MatchNumber);
 
 
@@ -475,7 +475,7 @@ public class DataEntryScreen {
 
         // Optionally, reset placeholder texts if needed
         ScoutNamePlaceholderText.setText("Hello " + Config.UserName + "!");
-        TeamNumberPlaceholderText.setText("Track " + Config.TeamNumber);
+        TeamNumberPlaceholderText.setText("Track " + MatchReader.getValueFromFile(Config.MatchNumber,Config.BotTracked));
         MatchNumberPlaceholderText.setText("Match " + Config.MatchNumber);
     }
 
