@@ -374,7 +374,7 @@
                                 style="@style/Theme.ScoutingAppV3Dark.bigText"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
-                                android:layout_weight="5"
+                                android:layout_weight="2"
                                 android:text="@string/teleop_header" />
 
                             <TextView
@@ -385,13 +385,16 @@
                                 android:layout_weight="2"
                                 android:text="@string/driver_rating_star_text" />
 
-                            <Button
-                                android:id="@+id/TenStarPlaceholderButton"
-                                style="@style/Widget.ScoutingAppV3Dark.secondary1"
+                            <RatingBar
+                                android:id="@+id/ratingBar"
                                 android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="6"
-                                android:text="@string/ten_star_placeholder_button_text" />
+                                android:layout_height="46dp"
+                                android:layout_weight="9"
+                                android:isIndicator="true"
+                                android:numStars="10"
+                                android:scaleY="0.8"
+                                android:stepSize="1"
+                                android:translationY="-9dp" />
 
                         </LinearLayout>
 
