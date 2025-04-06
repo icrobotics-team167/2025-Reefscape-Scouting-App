@@ -6,13 +6,39 @@
     android:layout_height="match_parent">
 
     <SeekBar
-        android:id="@+id/seekBar2"
+        android:id="@+id/JokeSlider"
         style="@style/Widget.AppCompat.SeekBar.Discrete"
+        android:layout_width="177dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="175dp"
+        android:layout_marginTop="490dp"
+        android:layout_marginEnd="195dp"
+        android:layout_marginBottom="223dp"
+        android:max="400"
+        android:progress="3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/JokePoints"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:max="10"
-        android:progress="3"
-        tools:layout_editor_absoluteX="175dp"
-        tools:layout_editor_absoluteY="490dp" />
+        android:text="TextView"
+        app:layout_constraintBottom_toTopOf="@+id/JokeSlider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <SeekBar
+        android:id="@+id/SignOut"
+        style="@style/Widget.AppCompat.SeekBar.Discrete"
+        android:layout_width="111dp"
+        android:layout_height="76dp"
+        android:max="1"
+        android:progress="1"
+        android:rotation="90"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
