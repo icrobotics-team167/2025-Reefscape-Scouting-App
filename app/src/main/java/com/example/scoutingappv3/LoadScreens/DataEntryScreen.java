@@ -223,7 +223,7 @@ public class DataEntryScreen {
         resetData();
 
         DriverRating.setOnRatingBarChangeListener((ratingBar, rating, fromUser) -> {
-            DriverRatingScore =((int)(((int) rating) + 0.6));
+            DriverRatingScore = (int) (rating + 0.99);
             LayerDrawable stars = (LayerDrawable) ratingBar.getProgressDrawable();
 
             // Filled stars (progress)
