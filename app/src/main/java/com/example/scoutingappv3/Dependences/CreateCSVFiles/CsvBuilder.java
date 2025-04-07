@@ -59,8 +59,8 @@ public class CsvBuilder {
         CsvData.append(dataEntry.L1CoralValueAuto);
         CsvData.append(",");
 
-        CsvHeader.append("Dropped Coral in auto,");
-        CsvData.append(dataEntry.DroppedCoralAuto);
+        CsvHeader.append("Barge Scored in autp,");
+        CsvData.append(dataEntry.BargeScoredInAuto);
         CsvData.append(",");
 
         CsvHeader.append("L4 Scored In Telop,");
@@ -83,16 +83,16 @@ public class CsvBuilder {
         CsvData.append(dataEntry.L1CoralValueTeleop);
         CsvData.append(",");
 
-        CsvHeader.append("Dropped Coral in Teleop,");
-        CsvData.append(dataEntry.DroppedCoralTeleop);
+        CsvHeader.append("Prosser Scored In Auto");
+        CsvData.append(dataEntry.ProsserScoredInAuto);
         CsvData.append(",");
 
-        CsvHeader.append("Prosser Scored,");
-        CsvData.append(dataEntry.ProsserScored);
+        CsvHeader.append("Barge Scored In Teleop,");
+        CsvData.append(dataEntry.BargeScoredInTeleop);
         CsvData.append(",");
 
-        CsvHeader.append("Barge Scored,");
-        CsvData.append(dataEntry.BargeScored);
+        CsvHeader.append("Processor Algae In Teleop,");
+        CsvData.append(dataEntry.ProcessorAlgaeInTeleop);
         CsvData.append(",");
 
         CsvHeader.append("Dereefed Algae,");

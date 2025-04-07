@@ -5,17 +5,12 @@ import android.app.Activity;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.LayerDrawable;
-import android.util.AndroidException;
-import android.util.Log;
-import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.scoutingappv3.Dependences.Config;
 import com.example.scoutingappv3.Dependences.CreateCSVFiles.CsvBuilder;
@@ -33,8 +28,8 @@ public class DataEntryScreen {
     Button L2CoralIncButtonAuto;
     Button L1CoralDecButtonAuto;
     Button L1CoralIncButtonAuto;
-    Button DroppedCoralDecButtonAuto;
-    Button DroppedCoralIncButtonAuto;
+    Button BargeAlgaeDecButtonAuto;
+    Button BargeAlgaeIncButtonAuto;
 
 
     // Teleop buttons
@@ -47,15 +42,11 @@ public class DataEntryScreen {
     Button L1CoralDecButtonTeleop;
     Button L1CoralIncButtonTeleop;
     Button DroppedCoralDecButtonTeleop;
-    Button DroppedCoralIncButtonTeleop;
-    Button ProcessorAlgaeDecButton;
-    Button ProcessorAlgaeIncButton;
-    Button BargeAlgaeDecButton;
-    Button BargeAlgaeIncButton;
-    Button DereefedAlgaeDecButton;
-    Button DereefedAlgaeIncButton;
-    Button NetMissedAlgaeDecButton;
-    Button NetMissedAlgaeIncButton;
+    Button ProcessorAlgaeIncButtonAuto;
+    Button BargeAlgaeDecButtonTeleop;
+    Button BargeAlgaeIncButtonTeleop;
+    Button ProcessorAlgaeDecButtonTeleop;
+    Button ProcessorAlgaeIncButtonTeleop;
     Button SubmitButton;
     Button SignOutButton;
 
@@ -70,16 +61,14 @@ public class DataEntryScreen {
     TextView L3CoralValueAutoView;
     TextView L2CoralValueAutoView;
     TextView L1CoralValueAutoView;
-    TextView DroppedCoralValueAutoView;
+    TextView BargeAlgaeValueAuto;
     TextView L4CoralValueTeleopView;
     TextView L3CoralValueTeleopView;
     TextView L2CoralValueTeleopView;
     TextView L1CoralValueTeleopView;
-    TextView DroppedCoralValueTeleopView;
-    TextView ProcessorAlgaeValue;
-    TextView BargeAlgaeValue;
-    TextView DereefedAlgaeValue;
-    TextView NetMissedAlgaeValue;
+    TextView ProcessorAlgaeValueAuto;
+    TextView BargeAlgaeValueTeleop;
+    TextView ProcessorAlgaeValueTeleop;
     TextView ScoutNamePlaceholderText;
     TextView TeamNumberPlaceholderText;
     TextView MatchNumberPlaceholderText;
@@ -97,15 +86,15 @@ public class DataEntryScreen {
     public int L2CoralValueAuto = 0;
     public int L1CoralValueAuto = 0;
 
-    public int DroppedCoralAuto = 0;
+    public int BargeScoredInAuto = 0;
 
     public int L4CoralValueTeleop = 0;
     public int L3CoralValueTeleop = 0;
     public int L2CoralValueTeleop = 0;
     public int L1CoralValueTeleop = 0;
-    public int DroppedCoralTeleop = 0;
-    public int ProsserScored = 0;
-    public int BargeScored = 0;
+    public int ProsserScoredInAuto = 0;
+    public int BargeScoredInTeleop = 0;
+    public int ProcessorAlgaeInTeleop = 0;
     public int DereefedAlgae = 0;
     public int NetMissedAlgae = 0;
 
@@ -150,10 +139,10 @@ public class DataEntryScreen {
         L1CoralIncButtonAuto = main.findViewById(R.id.L1CoralIncButtonAuto);
         L1CoralValueAutoView = main.findViewById(R.id.L1CoralValueAuto);
 
-        //Droped coral in auto
-        DroppedCoralDecButtonAuto = main.findViewById(R.id.DroppedCoralDecButtonAuto);
-        DroppedCoralIncButtonAuto = main.findViewById(R.id.DroppedCoralIncButtonAuto);
-        DroppedCoralValueAutoView = main.findViewById(R.id.DroppedCoralValueAuto);
+        //Droped coral in auto TODO; Fix var storage
+        BargeAlgaeDecButtonAuto = main.findViewById(R.id.BargeAlgaeDecButtonAuto);
+        BargeAlgaeIncButtonAuto = main.findViewById(R.id.BargeAlgaeIncButtonAuto);
+        BargeAlgaeValueAuto = main.findViewById(R.id.BargeAlgaeValueAuto);
 
         //l4 Coral Teleop
         L4CoralDecButtonTeleop = main.findViewById(R.id.L4CoralDecButtonTeleop);
@@ -176,29 +165,19 @@ public class DataEntryScreen {
         L1CoralValueTeleopView = main.findViewById(R.id.L1CoralValueTeleop);
 
         //Droped coral in auto
-        DroppedCoralDecButtonTeleop = main.findViewById(R.id.DroppedCoralDecButtonTeleop);
-        DroppedCoralIncButtonTeleop = main.findViewById(R.id.DroppedCoralIncButtonTeleop);
-        DroppedCoralValueTeleopView = main.findViewById(R.id.DroppedCoralValueTeleop);
+        DroppedCoralDecButtonTeleop = main.findViewById(R.id.ProcessorAlgaeDecButtonAuto);
+        ProcessorAlgaeIncButtonAuto = main.findViewById(R.id.ProcessorAlgaeIncButtonAuto);
+        ProcessorAlgaeValueAuto = main.findViewById(R.id.ProcessorAlgaeValueAuto);
 
         //Prosser
-        ProcessorAlgaeDecButton = main.findViewById(R.id.ProcessorAlgaeDecButton);
-        ProcessorAlgaeIncButton = main.findViewById(R.id.ProcessorAlgaeIncButton);
-        ProcessorAlgaeValue = main.findViewById(R.id.ProcessorAlgaeValue);
+        BargeAlgaeDecButtonTeleop = main.findViewById(R.id.BargeAlgaeDecButtonTeleop);
+        BargeAlgaeIncButtonTeleop = main.findViewById(R.id.BargeAlgaeIncButtonTeleop);
+        BargeAlgaeValueTeleop = main.findViewById(R.id.BargeAlgaeValueTeleop);
 
         //Barge
-        BargeAlgaeDecButton = main.findViewById(R.id.BargeAlgaeDecButton);
-        BargeAlgaeIncButton = main.findViewById(R.id.BargeAlgaeIncButton);
-        BargeAlgaeValue = main.findViewById(R.id.BargeAlgaeValue);
-
-        //Dereef
-        DereefedAlgaeDecButton = main.findViewById(R.id.DereefedAlgaeDecButton);
-        DereefedAlgaeIncButton = main.findViewById(R.id.DereefedAlgaeIncButton);
-        DereefedAlgaeValue = main.findViewById(R.id.DereefedAlgaeValue);
-
-        //Net Missed Alge
-        NetMissedAlgaeDecButton = main.findViewById(R.id.NetMissedAlgaeDecButton);
-        NetMissedAlgaeIncButton = main.findViewById(R.id.NetMissedAlgaeIncButton);
-        NetMissedAlgaeValue = main.findViewById(R.id.NetMissedAlgaeValue);
+        ProcessorAlgaeDecButtonTeleop = main.findViewById(R.id.ProcessorAlgaeDecButtonTeleop);
+        ProcessorAlgaeIncButtonTeleop = main.findViewById(R.id.ProcessorAlgaeIncButtonTeleop);
+        ProcessorAlgaeValueTeleop = main.findViewById(R.id.ProcessorAlgaeValueTeleop);
 
         //Notes
         Notes = main.findViewById(R.id.NotesTextBox);
@@ -293,16 +272,16 @@ public class DataEntryScreen {
         });
 
         //Dropped Coral Auto
-        DroppedCoralDecButtonAuto.setOnClickListener(v -> {
-            if (DroppedCoralAuto > 0) {
-                DroppedCoralAuto--;
-                DroppedCoralValueAutoView.setText(DroppedCoralAuto + "");
+        BargeAlgaeDecButtonAuto.setOnClickListener(v -> {
+            if (BargeScoredInAuto > 0) {
+                BargeScoredInAuto--;
+                BargeAlgaeValueAuto.setText(BargeScoredInAuto + "");
             }
         });
 
-        DroppedCoralIncButtonAuto.setOnClickListener(v -> {
-            DroppedCoralAuto++;
-            DroppedCoralValueAutoView.setText(DroppedCoralAuto + "");
+        BargeAlgaeIncButtonAuto.setOnClickListener(v -> {
+            BargeScoredInAuto++;
+            BargeAlgaeValueAuto.setText(BargeScoredInAuto + "");
         });
 
         //Start of Teleop
@@ -357,69 +336,44 @@ public class DataEntryScreen {
 
         //Dropped Coral Teleop
         DroppedCoralDecButtonTeleop.setOnClickListener(v -> {
-            if (DroppedCoralTeleop > 0) {
-                DroppedCoralTeleop--;
-                DroppedCoralValueTeleopView.setText(DroppedCoralTeleop + "");
+            if (ProsserScoredInAuto > 0) {
+                ProsserScoredInAuto--;
+                ProcessorAlgaeValueAuto.setText(ProsserScoredInAuto + "");
             }
         });
 
-        DroppedCoralIncButtonTeleop.setOnClickListener(v -> {
-            DroppedCoralTeleop++;
-            DroppedCoralValueTeleopView.setText(DroppedCoralTeleop + "");
+        ProcessorAlgaeIncButtonAuto.setOnClickListener(v -> {
+            ProsserScoredInAuto++;
+            ProcessorAlgaeValueAuto.setText(ProsserScoredInAuto + "");
         });
 
         //prosser
-        ProcessorAlgaeDecButton.setOnClickListener(v -> {
-            if (ProsserScored > 0) {
-                ProsserScored--;
-                ProcessorAlgaeValue.setText(ProsserScored + "");
+        BargeAlgaeDecButtonTeleop.setOnClickListener(v -> {
+            if (BargeScoredInTeleop > 0) {
+                BargeScoredInTeleop--;
+                BargeAlgaeValueTeleop.setText(BargeScoredInTeleop + "");
             }
         });
 
-        ProcessorAlgaeIncButton.setOnClickListener(v -> {
-            ProsserScored++;
-            ProcessorAlgaeValue.setText(ProsserScored + "");
+        BargeAlgaeIncButtonTeleop.setOnClickListener(v -> {
+            BargeScoredInTeleop++;
+            BargeAlgaeValueTeleop.setText(BargeScoredInTeleop + "");
         });
 
         //Barge
-        BargeAlgaeDecButton.setOnClickListener(v -> {
-            if (BargeScored > 0) {
-                BargeScored--;
-                BargeAlgaeValue.setText(BargeScored + "");
+        ProcessorAlgaeDecButtonTeleop.setOnClickListener(v -> {
+            if (ProcessorAlgaeInTeleop > 0) {
+                ProcessorAlgaeInTeleop--;
+                ProcessorAlgaeValueTeleop.setText(ProcessorAlgaeInTeleop + "");
             }
         });
 
-        BargeAlgaeIncButton.setOnClickListener(v -> {
-            BargeScored++;
-            BargeAlgaeValue.setText(BargeScored + "");
+        ProcessorAlgaeIncButtonTeleop.setOnClickListener(v -> {
+            ProcessorAlgaeInTeleop++;
+            ProcessorAlgaeValueTeleop.setText(ProcessorAlgaeInTeleop + "");
         });
 
-        //Barge
-        DereefedAlgaeDecButton.setOnClickListener(v -> {
-            if (DereefedAlgae > 0) {
-                DereefedAlgae--;
-                DereefedAlgaeValue.setText(DereefedAlgae + "");
-            }
-        });
-
-        DereefedAlgaeIncButton.setOnClickListener(v -> {
-            DereefedAlgae++;
-            DereefedAlgaeValue.setText(DereefedAlgae + "");
-        });
-
-        //Net missed alge
-        NetMissedAlgaeDecButton.setOnClickListener(v -> {
-            if (NetMissedAlgae > 0) {
-                NetMissedAlgae--;
-                NetMissedAlgaeValue.setText(NetMissedAlgae + "");
-            }
-        });
-
-        NetMissedAlgaeIncButton.setOnClickListener(v -> {
-            NetMissedAlgae++;
-            NetMissedAlgaeValue.setText(NetMissedAlgae + "");
-        });
-
+        //Submit Confermation
         SubmitConfermation.setAction("Yes", v -> {
             Config.MatchNumber++;
             MatchNumberPlaceholderText.setText("Match " + Config.MatchNumber);
@@ -474,15 +428,15 @@ public class DataEntryScreen {
         L3CoralValueAuto = 0;
         L2CoralValueAuto = 0;
         L1CoralValueAuto = 0;
-        DroppedCoralAuto = 0;
+        BargeScoredInAuto = 0;
 
         L4CoralValueTeleop = 0;
         L3CoralValueTeleop = 0;
         L2CoralValueTeleop = 0;
         L1CoralValueTeleop = 0;
-        DroppedCoralTeleop = 0;
-        ProsserScored = 0;
-        BargeScored = 0;
+        ProsserScoredInAuto = 0;
+        BargeScoredInTeleop = 0;
+        ProcessorAlgaeInTeleop = 0;
         DereefedAlgae = 0;
         NetMissedAlgae = 0;
 
@@ -491,18 +445,20 @@ public class DataEntryScreen {
         L3CoralValueAutoView.setText("0");
         L2CoralValueAutoView.setText("0");
         L1CoralValueAutoView.setText("0");
-        DroppedCoralValueAutoView.setText("0");
+        BargeAlgaeValueAuto.setText("0");
 
         L4CoralValueTeleopView.setText("0");
         L3CoralValueTeleopView.setText("0");
         L2CoralValueTeleopView.setText("0");
         L1CoralValueTeleopView.setText("0");
-        DroppedCoralValueTeleopView.setText("0");
+        ProcessorAlgaeValueAuto.setText("0");
 
-        ProcessorAlgaeValue.setText("0");
-        BargeAlgaeValue.setText("0");
-        DereefedAlgaeValue.setText("0");
-        NetMissedAlgaeValue.setText("0");
+        BargeAlgaeValueTeleop.setText("0");
+        ProcessorAlgaeValueTeleop.setText("0");
+        BargeAlgaeValueAuto.setText("0");
+        ProcessorAlgaeValueAuto.setText("0");
+        BargeAlgaeValueTeleop.setText("0");
+        ProcessorAlgaeValueTeleop.setText("0");
 
         // Reset any other relevant values
         Notes.setText(""); // Clear the notes input
