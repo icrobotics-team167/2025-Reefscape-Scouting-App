@@ -777,11 +777,17 @@
 
                         </LinearLayout>
 
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            style="@style/Theme.ScoutingAppV3Dark"
+                            android:layout_weight="3" />
+
                         <EditText
                             android:id="@+id/NotesTextBox"
                             android:layout_width="match_parent"
                             android:layout_height="0dp"
-                            android:layout_weight="15"
+                            android:layout_weight="12"
                             android:ems="10"
                             android:hint="TEMPORARY HINT TEXT"
                             android:inputType="text" />
