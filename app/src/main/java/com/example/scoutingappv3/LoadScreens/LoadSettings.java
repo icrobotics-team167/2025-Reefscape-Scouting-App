@@ -17,6 +17,7 @@ import com.example.scoutingappv3.R;
 
 public class LoadSettings {
     Button SettingsSubmitButton;
+    Button SettingsCancelButton;
     EditText SettingsNameEntryTextBox;
     Spinner BotSpinner;
     EditText SettingsMatchNumberOverrideTextBox;
@@ -27,6 +28,7 @@ public class LoadSettings {
 
         //Buttions
         SettingsSubmitButton = main.findViewById(R.id.SettingsSubmitButton);
+        SettingsCancelButton = main.findViewById(R.id.SettingsCancelButton);
 
         //Text edit
         SettingsNameEntryTextBox = main.findViewById(R.id.SettingsNameEntryTextBox);
@@ -118,6 +120,10 @@ public class LoadSettings {
 
             main.MatchIntroductionLoader.LoadIntroduction(main);
 
+        });
+
+        SettingsCancelButton.setOnClickListener(v -> {
+            main.MatchIntroductionLoader.LoadIntroduction(main);
         });
 
 
