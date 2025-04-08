@@ -4,7 +4,6 @@ package com.example.scoutingappv3.LoadScreens;
 import android.annotation.SuppressLint;
 import android.util.Log;
 import android.view.View;
-import android.widget.Adapter;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -31,7 +30,7 @@ public class LoadSettings {
 
         //Text edit
         SettingsNameEntryTextBox = main.findViewById(R.id.SettingsNameEntryTextBox);
-        SettingsMatchNumberOverrideTextBox = main.findViewById(R.id.BotSpinner);
+        SettingsMatchNumberOverrideTextBox = main.findViewById(R.id.MatchNumberTextEntry);
 
         //Spinner
         BotSpinner = main.findViewById(R.id.MatchSpinner);
@@ -95,6 +94,12 @@ public class LoadSettings {
 
             Config.UserName = UserName;
 
+            try {
+                Config.MatchNumber = Integer.parseInt(SettingsMatchNumberOverrideTextBox.getText().toString());
+            } catch (NumberFormatException e) {
+                Toast.makeText(main,"Unknow match Number",Toast.LENGTH_SHORT).show();
+            }
+
             boolean FoundUser = false;
 
             for (int i = 0; i < Config.Names.length; i++) {
@@ -111,12 +116,8 @@ public class LoadSettings {
                 Toast.makeText(Config.AppContext,Config.UnknowUser,Toast.LENGTH_LONG).show();
             }
 
-            if (Config.UserName.equalsIgnoreCase("madison")){
-                JokeLoader.LoadJokeDataEntryOne(main);
+            main.MatchIntroductionLoader.LoadIntroduction(main);
 
-            }else {
-                main.MatchIntroductionLoader.LoadIntroduction(main);
-            }
         });
 
 

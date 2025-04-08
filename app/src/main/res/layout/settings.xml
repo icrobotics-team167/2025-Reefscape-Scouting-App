@@ -66,7 +66,7 @@
                 android:text="@string/match_number_override_text" />
 
             <EditText
-                android:id="@+id/BotSpinner"
+                android:id="@+id/MatchNumberTextEntry"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="8"
