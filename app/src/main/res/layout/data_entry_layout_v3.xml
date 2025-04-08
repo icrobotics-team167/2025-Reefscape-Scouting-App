@@ -777,10 +777,10 @@
 
                         </LinearLayout>
 
-                        <androidx.recyclerview.widget.RecyclerView
+                        <Spinner
+                            android:id="@+id/WhereParkerd"
                             android:layout_width="match_parent"
-                            android:layout_height="0dp"
-                            style="@style/Theme.ScoutingAppV3Dark"
+                            android:layout_height="wrap_content"
                             android:layout_weight="3" />
 
                         <EditText

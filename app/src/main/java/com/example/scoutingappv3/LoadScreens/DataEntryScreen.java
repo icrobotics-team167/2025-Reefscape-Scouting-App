@@ -5,12 +5,19 @@ import android.app.Activity;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.LayerDrawable;
+import android.view.View;
+import android.widget.Adapter;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RatingBar;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.scoutingappv3.Dependences.Config;
 import com.example.scoutingappv3.Dependences.CreateCSVFiles.CsvBuilder;
@@ -98,8 +105,14 @@ public class DataEntryScreen {
     public int DereefedAlgae = 0;
     public int NetMissedAlgae = 0;
 
+
+    //recyler
+    Spinner WhereParkerd;
     //Notes
     public EditText Notes;
+
+    //
+    public String ParkingPlace = "";
 
 
 
@@ -114,6 +127,9 @@ public class DataEntryScreen {
 
         SubmitConfermation = Snackbar.make(main.findViewById(android.R.id.content), "Submit?", Snackbar.LENGTH_LONG);
         SkipConfermation = Snackbar.make(main.findViewById(android.R.id.content), "Skip Match?", Snackbar.LENGTH_LONG);
+
+        WhereParkerd = main.findViewById(R.id.WhereParkerd);
+        ArrayAdapter<String> ParkingPlaces = new ArrayAdapter<>(main,android.R.layout.simple_spinner_item,Config.ParkingSpots);
 
 
         //Driver Rating
@@ -199,8 +215,24 @@ public class DataEntryScreen {
         TeamNumberPlaceholderText = main.findViewById(R.id.TeamNumberPlaceholderText);
         MatchNumberPlaceholderText = main.findViewById(R.id.MatchNumberPlaceholderText);
 
-        //to start with a clean slate
+        //to start with a clean slate all code should go below this
         resetData();
+
+
+        WhereParkerd.setAdapter(ParkingPlaces);
+
+        WhereParkerd.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                Config.ParkingPlace = Config.ParkingSpots[position];
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
         DriverRating.setOnRatingBarChangeListener((ratingBar, rating, fromUser) -> {
             Config.DriverScore = (int) ((rating * 2) + 0.5);
             LayerDrawable stars = (LayerDrawable) ratingBar.getProgressDrawable();

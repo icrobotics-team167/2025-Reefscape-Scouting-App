@@ -38,6 +38,10 @@ public class CsvBuilder {
         CsvData.append(Config.DriverScore);
         CsvData.append(",");
 
+        CsvHeader.append("Parking Place");
+        CsvData.append(Config.ParkingPlace);
+        CsvData.append(",");
+
 
         CsvHeader.append("Bot Number,");
         CsvData.append(MatchReader.getValueFromFile(Config.MatchNumber,Config.BotTracked));
