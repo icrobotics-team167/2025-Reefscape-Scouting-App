@@ -2,7 +2,6 @@ package com.example.scoutingappv3.LoadScreens;
 
 
 import android.annotation.SuppressLint;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -21,6 +20,7 @@ public class LoadSettings {
     EditText SettingsNameEntryTextBox;
     Spinner BotSpinner;
     EditText SettingsMatchNumberOverrideTextBox;
+    int LocalBotTracked = 0;
 
     @SuppressLint("SetTextI18n")
     public void LoadSettingsPage(Main main) {
@@ -54,34 +54,12 @@ public class LoadSettings {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         BotSpinner.setAdapter(adapter);
 
+        BotSpinner.setSelection(Config.BotTracked);
+
         BotSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                switch (options[position]){
-                    case "Red 1":
-                        Config.BotTracked = 0;
-                        Log.d("Bot Chosen", "Red 1");
-                        break;
-                    case "Red 2":
-                        Config.BotTracked = 1;
-                        Log.d("Bot Chosen", "Red 2");
-                        break;
-                    case "Red 3":
-                        Config.BotTracked = 2;
-                        break;
-                    case "Blue 1":
-                        Config.BotTracked = 3;
-                        break;
-                    case "Blue 2":
-                        Config.BotTracked = 4;
-                        break;
-                    case "Blue 3":
-                        Config.BotTracked = 5;
-                        Log.d("Bot Chosen", "Blue 3");
-                        break;
-                    default:
-                        break;
-                }
+                LocalBotTracked = position;
             }
 
             @Override
@@ -95,6 +73,7 @@ public class LoadSettings {
             String UserName = SettingsNameEntryTextBox.getText().toString().toLowerCase();
 
             Config.UserName = UserName;
+            Config.BotTracked = LocalBotTracked;
 
             try {
                 Config.MatchNumber = Integer.parseInt(SettingsMatchNumberOverrideTextBox.getText().toString());
