@@ -416,7 +416,7 @@
                         style="@style/Theme.ScoutingAppV3Dark.bigText"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_weight="17"
+                        android:layout_weight="13"
                         android:text="@string/teleop_header" />
 
                     <TextView
@@ -424,7 +424,7 @@
                         style="@style/Theme.ScoutingAppV3Dark.bigText"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_weight="5"
+                        android:layout_weight="9"
                         android:text="@string/driver_rating_star_text" />
 
                     <RatingBar

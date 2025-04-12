@@ -85,7 +85,7 @@ public class DataEntryScreen {
     Snackbar SkipConfermation;
 
 
-    RatingBar DriverRating;
+    public RatingBar DriverRating;
     //int vals
 
     public int L4CoralValueAuto = 0;
