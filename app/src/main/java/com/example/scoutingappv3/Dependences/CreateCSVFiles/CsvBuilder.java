@@ -67,7 +67,7 @@ public class CsvBuilder {
         CsvData.append(",");
 
         CsvHeader.append("Played Defense,");
-        CsvData.append(dataEntry.PlayedDefense);
+        CsvData.append(dataEntry.PlayedDefense.isChecked());
         CsvData.append(",");
 
         CsvHeader.append("Teleop L4,");
@@ -95,15 +95,7 @@ public class CsvBuilder {
         CsvData.append(",");
 
         CsvHeader.append("Driver Score,");
-        CsvData.append(dataEntry.DriverRating);
-        CsvData.append(",");
-
-        CsvHeader.append("Driver Score,");
-        CsvData.append(Config.DriverScore);
-        CsvData.append(",");
-
-        CsvHeader.append("Driver Score,");
-        CsvData.append(Config.DriverScore);
+        CsvData.append(dataEntry.DriverRating.getNumStars());
         CsvData.append(",");
 
         CsvHeader.append("Where Parked,");
