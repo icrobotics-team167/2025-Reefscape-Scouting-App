@@ -3,7 +3,7 @@ package com.example.scoutingappv3.Dependences;
 import android.content.Context;
 
 public class Config {
-    public static String[] ParkingSpots = {"Unknown","Did Not park","Parked in Middle","Shallow","Deep"};
+    public static String[] ParkingSpots = {"Unknown","Did Not Park","Parked","ShallowCage","DeepCage"};
     public static String ParkingPlace;
     public static String CsvFolder = "Csv_Files";
     public static String CsvFile = "Csv_File.txt";
