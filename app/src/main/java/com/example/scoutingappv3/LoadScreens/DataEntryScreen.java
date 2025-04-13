@@ -89,7 +89,7 @@ public class DataEntryScreen {
     Snackbar SkipConfermation;
 
 
-    RatingBar DriverRating;
+    public RatingBar DriverRating;
     //int vals
 
     public int L4CoralValueAuto = 0;
@@ -415,7 +415,6 @@ public class DataEntryScreen {
 
         //Submit Confermation
         SubmitConfermation.setAction("Yes", v -> {
-            Config.MatchNumber++;
             MatchNumberPlaceholderText.setText("Match " + Config.MatchNumber);
             Config.TeamNumber = MatchReader.getValueFromFile(Config.MatchNumber,Config.BotTracked);
             TeamNumberPlaceholderText.setText("Track " + MatchReader.getValueFromFile(Config.MatchNumber,Config.BotTracked));
@@ -424,6 +423,8 @@ public class DataEntryScreen {
             CsvBuilder.BuildCsv(this);
             resetData();
             Toast.makeText(Config.AppContext,"Saving Data",Toast.LENGTH_LONG).show();
+
+            Config.MatchNumber++;
 
             main.MatchIntroductionLoader.LoadIntroduction(main);
         });

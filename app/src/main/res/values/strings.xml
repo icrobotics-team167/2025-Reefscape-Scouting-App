@@ -191,7 +191,7 @@
     <string name="defense_check_text">Defense:</string>
     <string name="auto_header">Auto:</string>
     <string name="teleop_header">Tele-Op:</string>
-    <string name="driver_rating_star_text">Rating:</string>
+    <string name="driver_rating_star_text">Driver Rating:</string>
     <string name="scout_name_placeholder_text">NAME</string>
     <string name="team_number_placeholder_text">TEAM NUMBER</string>
     <string name="match_number_placeholder_text">MATCH NUMBER</string>

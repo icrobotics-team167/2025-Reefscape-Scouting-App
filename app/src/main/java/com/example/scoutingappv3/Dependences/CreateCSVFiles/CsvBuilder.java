@@ -22,98 +22,86 @@ public class CsvBuilder {
             NotesChars = "No Notes".toCharArray();
         }
 
-        CsvHeader.append("Notes,");
-        CsvData.append(NotesChars);
+        CsvHeader.append("Match Number,");
+        CsvData.append(Config.MatchNumber);
+        CsvData.append(",");
+
+        CsvHeader.append("Team Number");
+        CsvData.append(MatchReader.getValueFromFile(Config.MatchNumber,Config.BotTracked));
         CsvData.append(",");
 
         CsvHeader.append("Name,");
         CsvData.append(Config.UserName);
         CsvData.append(",");
 
-        CsvHeader.append("Match Number,");
-        CsvData.append(Config.MatchNumber);
+        CsvHeader.append("Notes,");
+        CsvData.append(NotesChars);
         CsvData.append(",");
 
-        CsvHeader.append("Driver Score,");
-        CsvData.append(Config.DriverScore);
+        CsvHeader.append("Moved In Auto,");
+        CsvData.append(dataEntry.MoveCheckBox.isChecked());
         CsvData.append(",");
 
-        CsvHeader.append("Parking Place");
-        CsvData.append(Config.ParkingPlace);
-        CsvData.append(",");
-
-
-        CsvHeader.append("Bot Number,");
-        CsvData.append(MatchReader.getValueFromFile(Config.MatchNumber,Config.BotTracked));
-        CsvData.append(",");
-
-        CsvHeader.append("L4 Scored In Auto,");
+        CsvHeader.append("L4 In Auto,");
         CsvData.append(dataEntry.L4CoralValueAuto);
         CsvData.append(",");
 
-        CsvHeader.append("L3 Scored In Auto,");
+        CsvHeader.append("L3 In Auto,");
         CsvData.append(dataEntry.L3CoralValueAuto);
         CsvData.append(",");
 
-        CsvHeader.append("L2 Scored In Auto,");
+        CsvHeader.append("L2 In Auto,");
         CsvData.append(dataEntry.L2CoralValueAuto);
         CsvData.append(",");
 
-        CsvHeader.append("L1 Scored In Auto,");
+        CsvHeader.append("L1 In Auto,");
         CsvData.append(dataEntry.L1CoralValueAuto);
         CsvData.append(",");
 
-        CsvHeader.append("Barge Scored in autp,");
+        CsvHeader.append("Auto Barge,");
         CsvData.append(dataEntry.BargeScoredInAuto);
         CsvData.append(",");
 
-        CsvHeader.append("L4 Scored In Telop,");
-        CsvData.append(dataEntry.L4CoralValueTeleop);
-        CsvData.append(",");
-
-        CsvHeader.append("L3 Scored In Telop,");
-        CsvData.append(dataEntry.L3CoralValueTeleop);
-        CsvData.append(",");
-
-        CsvHeader.append("L2 Scored In Telop,");
-        CsvData.append(dataEntry.L2CoralValueTeleop);
-        CsvData.append(",");
-
-        CsvHeader.append("L1 Scored In Telop,");
-        CsvData.append(dataEntry.L1CoralValueTeleop);
-        CsvData.append(",");
-
-        CsvHeader.append("L1 Scored In Telop,");
-        CsvData.append(dataEntry.L1CoralValueTeleop);
-        CsvData.append(",");
-
-        CsvHeader.append("Prosser Scored In Auto");
+        CsvHeader.append("Auto Prosser,");
         CsvData.append(dataEntry.ProsserScoredInAuto);
-        CsvData.append(",");
-
-        CsvHeader.append("Barge Scored In Teleop,");
-        CsvData.append(dataEntry.BargeScoredInTeleop);
-        CsvData.append(",");
-
-        CsvHeader.append("Processor Algae In Teleop,");
-        CsvData.append(dataEntry.ProcessorAlgaeInTeleop);
-        CsvData.append(",");
-
-        CsvHeader.append("Dereefed Algae,");
-        CsvData.append(dataEntry.DereefedAlgae);
-        CsvData.append(",");
-
-        CsvHeader.append("NetMissedAlgae,");
-        CsvData.append(dataEntry.NetMissedAlgae);
         CsvData.append(",");
 
         CsvHeader.append("Played Defense,");
         CsvData.append(dataEntry.PlayedDefense.isChecked());
         CsvData.append(",");
 
-        CsvHeader.append("Moved Past Go,");
-        CsvData.append(dataEntry.MoveCheckBox.isChecked());
+        CsvHeader.append("Teleop L4,");
+        CsvData.append(dataEntry.L4CoralValueTeleop);
         CsvData.append(",");
+
+        CsvHeader.append("Teleop L3,");
+        CsvData.append(dataEntry.L3CoralValueTeleop);
+        CsvData.append(",");
+
+        CsvHeader.append("Teleop L2,");
+        CsvData.append(dataEntry.L2CoralValueTeleop);
+        CsvData.append(",");
+
+        CsvHeader.append("Teleop L1,");
+        CsvData.append(dataEntry.L1CoralValueTeleop);
+        CsvData.append(",");
+
+        CsvHeader.append("Telop Barge,");
+        CsvData.append(dataEntry.BargeScoredInTeleop);
+        CsvData.append(",");
+
+        CsvHeader.append("Telop Prosser,");
+        CsvData.append(dataEntry.ProcessorAlgaeInTeleop);
+        CsvData.append(",");
+
+        CsvHeader.append("Driver Score,");
+        CsvData.append(dataEntry.DriverRating.getNumStars());
+        CsvData.append(",");
+
+        CsvHeader.append("Where Parked,");
+        CsvData.append(Config.ParkingPlace);
+        CsvData.append(",");
+
 
         new CsvWriter().AppendDataLn(CsvData.toString());
         Log.d("Header", CsvHeader.toString());
