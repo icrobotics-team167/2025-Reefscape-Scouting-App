@@ -2,8 +2,11 @@ package com.example.scoutingappv3.LoadScreens;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.content.res.ColorStateList;
+import android.content.res.Resources;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
 import android.graphics.drawable.LayerDrawable;
 import android.view.View;
 import android.widget.Adapter;
@@ -17,6 +20,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.scoutingappv3.Dependences.Config;
@@ -127,6 +131,10 @@ public class DataEntryScreen {
 
         SubmitConfermation = Snackbar.make(main.findViewById(android.R.id.content), "Submit?", Snackbar.LENGTH_LONG);
         SkipConfermation = Snackbar.make(main.findViewById(android.R.id.content), "Skip Match?", Snackbar.LENGTH_LONG);
+        View sbSubmitView = SubmitConfermation.getView();
+        sbSubmitView.setBackgroundColor(0x1B8D16);
+        View sbSkipView = SkipConfermation.getView();
+        sbSkipView.setBackgroundColor(0x1B8D16);
 
         WhereParkerd = main.findViewById(R.id.WhereParkerd);
         ArrayAdapter<String> ParkingPlaces = new ArrayAdapter<>(main,android.R.layout.simple_spinner_item,Config.ParkingSpots);
